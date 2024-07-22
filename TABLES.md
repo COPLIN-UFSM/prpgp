@@ -1,6 +1,7 @@
-# TABELAS
+# TABLES
 
-Tabelas e views usadas.
+Esta página descreve as tabelas e views usadas pelos relatórios do Power BI. As tabelas e views são oriundas do banco 
+bee da UFSM.
 
 ## Cursos de pós-graduação
 
@@ -90,52 +91,83 @@ create or replace view v_prpgp_concursos as (
 ## Docentes de pós-graduação com atividade nos últimos 15 anos
 
 ```sql
-select distinct gsu.ID_CONTRATO_RH, iserv.MATR_EXTERNA SIAPE, iserv.NOME_FUNCIONARIO, iserv.SEXO, CARGOS_RH.DESCR_CARGO,
-                gsu.DT_ADMISSAO_CARGO, gsu.DT_DESLIGAMENTO, iserv.NACIONALIDADE --, ac.NOME_CURSO
-from ISERV_GERAL iserv
-inner join GERAL_SERVIDORES_UFSM gsu on iserv.ID_CONTRATO_RH = gsu.ID_CONTRATO_RH
-inner join CARGOS_RH on gsu.ID_CARGO = CARGOS_RH.ID_CARGO
-inner join TURMAS_DOCENTES td on iserv.ID_CONTRATO_RH = td.ID_DOCENTE
-inner join CURRICULO_ALUNO ca on ca.ID_TURMA = td.ID_TURMA
---inner join V_DISCIPLINAS disci on ca.ID_ATIV_CURRIC = disci.ID_DISCIPLINA
---inner join TAB_ESTRUTURADA est_nivel on disci.NIVEL_CURSO_TAB = est_nivel.COD_TABELA and disci.NIVEL_CURSO_ITEM = est_nivel.ITEM_TABELA
-inner join cursos_alunos_atz caa on ca.ID_CURSO_ALUNO = caa.ID_CURSO_ALUNO
-inner join acad_cursos ac on caa.ID_CURSO = ac.ID_CURSO
-inner join ACAD_NIVEL_CURSOS anc on ac.ID_NIVEL = anc.ID_NIVEL
-inner join ACAD_MODALIDADE am on ac.ID_MODALIDADE = am.ID_MODALIDADE
-where anc.DESCRICAO = 'Pós-Graduação'
-and am.DESCRICAO in ('Mestrado', 'Doutorado')
-and ((year(current_date) - ca.ANO) <= 15)
-and ((iserv.DT_DESLIGAMENTO is null) or (year(iserv.DT_DESLIGAMENTO) >= year(current_date)));
+create or replace view V_PRPGP_DOCENTES_POS AS (
+    select distinct gsu.ID_CONTRATO_RH,
+                    iserv.MATR_EXTERNA SIAPE,
+                    iserv.NOME_FUNCIONARIO,
+                    iserv.SEXO,
+                    CARGOS_RH.DESCR_CARGO,
+                    gsu.DT_ADMISSAO_CARGO,
+                    gsu.DT_DESLIGAMENTO,
+                    iserv.NACIONALIDADE --, ac.NOME_CURSO
+    from ISERV_GERAL iserv
+             inner join GERAL_SERVIDORES_UFSM gsu on iserv.ID_CONTRATO_RH = gsu.ID_CONTRATO_RH
+             inner join CARGOS_RH on gsu.ID_CARGO = CARGOS_RH.ID_CARGO
+             inner join TURMAS_DOCENTES td on iserv.ID_CONTRATO_RH = td.ID_DOCENTE
+             inner join CURRICULO_ALUNO ca on ca.ID_TURMA = td.ID_TURMA
+             inner join cursos_alunos_atz caa on ca.ID_CURSO_ALUNO = caa.ID_CURSO_ALUNO
+             inner join acad_cursos ac on caa.ID_CURSO = ac.ID_CURSO
+             inner join ACAD_NIVEL_CURSOS anc on ac.ID_NIVEL = anc.ID_NIVEL
+             inner join ACAD_MODALIDADE am on ac.ID_MODALIDADE = am.ID_MODALIDADE
+    where anc.DESCRICAO = 'Pós-Graduação'
+      and am.DESCRICAO in ('Mestrado', 'Doutorado')
+      and ((year(current_date) - ca.ANO) <= 15)
+      and ((iserv.DT_DESLIGAMENTO is null) or (year(iserv.DT_DESLIGAMENTO) >= year(current_date)))
+);
 ```
 
 ## Discentes de pós-graduação com atividade nos últimos 15 anos
 
-* Apenas mestrado e doutorado
+* Apenas mestrado e doutorado (**sem** especialização nem residência)
 * Últimos 15 anos
 
 ```sql
-select caa.ID_CURSO_ALUNO, caa.MATRICULA, caa.NOME_ALUNO, caa.ANO_INGRESSO, caa.ANO_EVASAO, caa.FORMA_EVASAO, 
-       ac.NOME_CURSO, anc.DESCRICAO NIVEL_CURSO, am.DESCRICAO MODALIDADE_CURSO, caa.NACIONALIDADE
-from CURSOS_ALUNOS_ATZ caa
-inner join acad_cursos ac on caa.ID_CURSO = ac.ID_CURSO
-inner join ACAD_NIVEL_CURSOS anc on ac.ID_NIVEL = anc.ID_NIVEL
-inner join ACAD_MODALIDADE am on ac.ID_MODALIDADE = am.ID_MODALIDADE
-where anc.DESCRICAO = 'Pós-Graduação'
-and am.DESCRICAO in ('Mestrado', 'Doutorado')
-and ((year(current_date) - caa.ANO_INGRESSO) <= 15);
+create or replace view V_PRPGP_DISCENTES_POS AS (
+    select caa.ID_CURSO_ALUNO,
+           caa.MATRICULA,
+           caa.NOME_ALUNO,
+           caa.ANO_INGRESSO,
+           caa.ANO_EVASAO,
+           caa.FORMA_EVASAO,
+           ac.ID_CURSO,
+           ac.NOME_CURSO,
+           anc.DESCRICAO NIVEL_CURSO,
+           am.DESCRICAO  MODALIDADE_CURSO,
+           caa.NACIONALIDADE
+    from CURSOS_ALUNOS_ATZ caa
+             inner join acad_cursos ac on caa.ID_CURSO = ac.ID_CURSO
+             inner join ACAD_NIVEL_CURSOS anc on ac.ID_NIVEL = anc.ID_NIVEL
+             inner join ACAD_MODALIDADE am on ac.ID_MODALIDADE = am.ID_MODALIDADE
+    where anc.DESCRICAO = 'Pós-Graduação'
+      and am.DESCRICAO in ('Mestrado', 'Doutorado')
+      and ((year(current_date) - caa.ANO_INGRESSO) <= 15)
+);
+```
+
+### Disciplinas de pós-graduação
+
+```sql
+create or replace view V_PRPGP_DISCIPLINAS_POS as (
+    select ID_DISCIPLINA, COD_DISCIPLINA, NOME_DISCIPLINA, CH_TOTAL
+    from V_DISCIPLINAS disci
+             inner join TAB_ESTRUTURADA est_nivel
+                        on disci.NIVEL_CURSO_TAB = est_nivel.COD_TABELA and disci.NIVEL_CURSO_ITEM = est_nivel.ITEM_TABELA
+    where est_nivel.DESCRICAO = 'Pós-Graduação'
+);
 ```
 
 
 ## Turmas de pós-graduação dos últimos 15 anos
 
 ```sql
-select td.ID_DOCENTE, ca.ID_CURSO_ALUNO, DISCI.NOME_DISCIPLINA, est_nivel.DESCRICAO, ca.ANO ANO_TURMA, td.ENC_DIDATICO ENCARGO_DIDATICO_DOCENTE
-from CURRICULO_ALUNO ca
-inner join TURMAS_DOCENTES td on ca.ID_TURMA = td.ID_TURMA
-inner join V_DISCIPLINAS disci on ca.ID_ATIV_CURRIC = disci.ID_DISCIPLINA
-inner join TAB_ESTRUTURADA est_nivel on disci.NIVEL_CURSO_TAB = est_nivel.COD_TABELA and disci.NIVEL_CURSO_ITEM = est_nivel.ITEM_TABELA
-inner join cursos_alunos_atz caa on ca.ID_CURSO_ALUNO = caa.ID_CURSO_ALUNO
-where est_nivel.DESCRICAO = 'Pós-Graduação'
-and ((year(current_date) - ca.ANO) <= 15);
+create or replace view V_PRPGP_DISCIPLINAS_POS as (
+    select td.ID_DOCENTE,
+           ca.ID_CURSO_ALUNO,
+           ca.ID_ATIV_CURRIC ID_DISCIPLINA,
+           ca.ANO            ANO_TURMA,
+           td.ENC_DIDATICO   ENCARGO_DIDATICO_DOCENTE
+    from CURRICULO_ALUNO ca
+             inner join TURMAS_DOCENTES td on ca.ID_TURMA = td.ID_TURMA
+    where ((year(current_date) - ca.ANO) <= 15)
+);
 ```
