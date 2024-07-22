@@ -1,6 +1,6 @@
-# Título do repositório
+# PRPGP
 
-Descrição curta do repositório.
+Repositório para armazenar tabelas e rotinas de extração de demandas da PRPGP para preenchimento da ficha Sucupira.
 
 ## Sumário
 
