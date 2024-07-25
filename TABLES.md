@@ -171,3 +171,85 @@ create or replace view V_PRPGP_DISCIPLINAS_POS as (
     where ((year(current_date) - ca.ANO) <= 15)
 );
 ```
+
+## Projetos de cursos ou unidades de pós-graduação
+
+A partir de 2015.
+
+```sql
+CREATE OR REPLACE VIEW V_PRPGP_PROJETOS_POS AS
+WITH unidades_pos AS ( -- cursos de pós-graduação ou coordenadorias de pós-graduação com projetos
+    (
+        -- coordenadorias
+        SELECT inst.ID_UNIDADE
+        FROM ORG_INSTITUICAO left_inst
+        INNER JOIN CURSOS ON cursos.ID_UNIDADE = left_inst.ID_UNIDADE
+        INNER JOIN ORG_INSTITUICAO inst ON inst.ID_UNIDADE = left_inst.ID_UNID_VINC_ADM
+        inner join acad_nivel_cursos anc on cursos.NIVEL_CURSO_ITEM = anc.ID_NIVEL
+        inner join TAB_ESTRUTURADA te on left_inst.SITUACAO_TAB = te.COD_TABELA and left_inst.SITUACAO_ITEM = te.ITEM_TABELA
+        where upper(strip(anc.DESCRICAO)) in ('PÓS-GRADUAÇÃO', 'PROGRAMAS DE PÓS-GRADUAÇÃO')
+        and upper(strip(te.DESCRICAO)) in ('A DESATIVAR', 'DESATIVADA', 'EXTINTA')
+        -- WHERE cursos.NIVEL_CURSO_ITEM IN (6, 10, 12, 16)  -- pós-graduação, especialização, residência médica, programas de pós-graduação
+        -- AND left_inst.SITUACAO_ITEM NOT IN (99, 3, 4) -- a desativar, desativada, extinta
+    ) UNION (
+        -- cursos
+        SELECT CURSOS.ID_UNIDADE
+        FROM CURSOS
+        INNER JOIN ORG_INSTITUICAO right_inst ON right_inst.ID_UNIDADE = CURSOS.ID_UNIDADE
+        inner join acad_nivel_cursos anc on cursos.NIVEL_CURSO_ITEM = anc.ID_NIVEL
+        inner join TAB_ESTRUTURADA te on right_inst.SITUACAO_TAB = te.COD_TABELA and right_inst.SITUACAO_ITEM = te.ITEM_TABELA
+        where upper(strip(anc.DESCRICAO)) in ('PÓS-GRADUAÇÃO', 'PROGRAMAS DE PÓS-GRADUAÇÃO')
+        and upper(strip(te.DESCRICAO)) in ('A DESATIVAR', 'DESATIVADA', 'EXTINTA')
+        -- WHERE CURSOS.NIVEL_CURSO_ITEM IN (6, 10, 12, 16)  -- pós-graduação, especialização, residência médica, programas de pós-graduação
+        -- AND right_inst.SITUACAO_ITEM NOT IN (99, 3, 4)   -- a desativar, desativada, extinta
+    )
+)
+SELECT projs.ID_PROJETO,projs.NUM_PROCESSO,projs.TITULO,projs.CLASSIFICACAO,
+       BEE.GET_TAB_EST_DESC(projs.SITUACAO_TAB, projs.SITUACAO_ITEM) AS SITUACAO,
+       oinst.COD_ESTRUTURADO,oinst.NOME_UNIDADE,proj_orgaos.FUNCAO,
+       projs.DT_INICIAL,projs.DT_CONCLUSAO
+--        proj_orgaos.DT_INICIAL, proj_orgaos.DT_FINAL
+FROM PM_PROJETOS_COMPLETO projs
+INNER JOIN PM_PROJETOS_ORGAOS proj_orgaos ON projs.ID_PROJETO = proj_orgaos.ID_PROJETO
+INNER JOIN unidades_pos P ON P.ID_UNIDADE = proj_orgaos.ID_UNIDADE
+INNER JOIN ORG_INSTITUICAO oinst ON oinst.ID_UNIDADE = proj_orgaos.ID_UNIDADE
+WHERE projs.DT_REGISTRO >= '01.01.2015';
+```
+
+## Membros de banca externos
+
+```sql
+CREATE OR REPLACE VIEW V_PRPGP_MEMBROS_EXTERNOS_BANCAS AS
+select
+    ID_PARTICIP_PLANO, NOME_PART_EXTERNO, NOME_INST_ORIGEM, SIGLA_INST_ORIGEM, CPF,
+    CASE
+        WHEN strip(te.descricao) = 'Pós doctor' then 'Doutor'
+        WHEN strip(te.DESCRICAO) = 'PHD' then 'Doutor'
+        WHEN strip(te.DESCRICAO) = 'Graduado' then 'Graduação'
+        else te.DESCRICAO
+    END AS TITULACAO
+from PARTICIP_PLANO
+inner join TAB_ESTRUTURADA te on te.COD_TABELA = TITULACAO_TAB and te.ITEM_TABELA = TITULACAO_ITEM
+where ID_CONTRATO_RH is null;
+```
+
+## Membros de bancas
+
+```sql
+create or replace view V_PRPGP_MEMBROS_BANCA AS
+select
+    ID_PLANO_ESTUDO,
+    CASE
+        when PARTIC.ID_CONTRATO_RH is not null then ID_PARTICIP_PLANO
+        ELSE NULL
+    END AS ID_PARTICIP_PLANO,-- externo
+    ID_CONTRATO_RH, -- interno
+    NULL AS ID_CURSO_ALUNO, -- id_curso_aluno
+    DECODE(partic.TIPO_PARTICIP, 'F', 'Servidor', 'Externo') AS TIPO_VINCULO,
+    BEE.GET_TAB_EST_DESC(partic.SITUACAO_TAB, partic.SITUACAO_ITEM) AS SITUACAO,
+    GET_TAB_EST_DESC(partic.TIPO_PARTICIP_TAB, partic.TIPO_PARTICIP_ITEM) AS TIPO_PARTICIPANTE
+from PARTICIP_PLANO partic
+union
+select ID_PLANO_ESTUDO, NULL AS ID_PARTIC_PLANO, NULL AS ID_CONTRATO_RH, id_curso_aluno, 'Aluno' AS TIPO_VINCULO, 'Efetivo' as SITUACAO, 'Aluno' as TIPO_PARTICIPANTE
+from PLANOS_ESTUDOS plano;
+```

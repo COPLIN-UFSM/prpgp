@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 22.016701868246553,
         "y": 0
       },
       "nodes": [
         {
           "location": {
             "x": 1073.5937498699916,
-            "y": 261.61685989373569
+            "y": 278.55030701048878
           },
           "nodeIndex": "V_PRPGP_CONCURSOS",
           "nodeLineageTag": "d248c293-00b9-4b0d-8636-eb610f4df1fc",
@@ -19,12 +19,12 @@
             "height": 230.12811834602167,
             "width": 254.85792808570727
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
             "x": 780.89064404134331,
-            "y": 33.866894233506144
+            "y": 50.800341350259231
           },
           "nodeIndex": "V_PRPGP_CURSOS_POS",
           "nodeLineageTag": "e71a9a9e-1ad3-4a19-9975-16ddd7a54215",
@@ -32,12 +32,12 @@
             "height": 224,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
             "x": 478.14460814587409,
-            "y": 269.99429133165506
+            "y": 286.92773844840815
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "7b9427f6-d1c9-4823-8e7f-3f1399575792",
@@ -45,12 +45,12 @@
             "height": 364.8913318222003,
             "width": 280.35095130157163
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
             "x": 498.21468552444094,
-            "y": 743.265835355278
+            "y": 760.19928247203109
           },
           "nodeIndex": "V_PRPGP_DISCIPLINAS_POS",
           "nodeLineageTag": "8e90c4cf-8d4c-48eb-93d1-1f08f9b0be8c",
@@ -58,12 +58,12 @@
             "height": 206.9526426952358,
             "width": 282.66849886665022
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
             "x": 103.49158817100712,
-            "y": 298.70611734362046
+            "y": 315.63956446037355
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "59b9672f-16c7-4f62-9a1b-12d38bb44066",
@@ -71,12 +71,12 @@
             "height": 290.54038052062867,
             "width": 274.55708238887524
           },
-          "zIndex": 0
+          "zIndex": 5
         },
         {
           "location": {
             "x": 1343.9084986719886,
-            "y": 34.64685541576813
+            "y": 51.580302532521216
           },
           "nodeIndex": "V_PRPGP_TIPOS_COTAS",
           "nodeLineageTag": "abdac6c9-d5d1-47bc-8189-ef8d50303a73",
@@ -84,12 +84,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 6
         },
         {
           "location": {
             "x": 1006.04717399749,
-            "y": 643.36762568245217
+            "y": 660.30107279920526
           },
           "nodeIndex": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
           "nodeLineageTag": "e2cf0bb7-3746-4095-b677-c07d464bc564",
@@ -97,7 +97,20 @@
             "height": 321.49302321586447,
             "width": 381.16427038249003
           },
-          "zIndex": 0
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1524.4169105009814,
+            "y": 332.43032444915832
+          },
+          "nodeIndex": "V_PRPGP_PROJETOS_POS",
+          "nodeLineageTag": "f3153749-76ff-484e-aaa2-8de4da03db16",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
         }
       ],
       "name": "All tables",
@@ -106,8 +119,142 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 531,
+            "y": 175
+          },
+          "nodeIndex": "V_PRPGP_PROJETOS_POS",
+          "nodeLineageTag": "f3153749-76ff-484e-aaa2-8de4da03db16",
+          "size": {
+            "height": 337,
+            "width": 278
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "projetos",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 29
+          },
+          "nodeIndex": "V_PRPGP_CONCURSOS",
+          "nodeLineageTag": "d248c293-00b9-4b0d-8636-eb610f4df1fc",
+          "size": {
+            "height": 220,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 532,
+            "y": 44
+          },
+          "nodeIndex": "V_PRPGP_CURSOS_POS",
+          "nodeLineageTag": "e71a9a9e-1ad3-4a19-9975-16ddd7a54215",
+          "size": {
+            "height": 232,
+            "width": 255
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 894,
+            "y": 0
+          },
+          "nodeIndex": "V_PRPGP_DISCENTES_POS",
+          "nodeLineageTag": "7b9427f6-d1c9-4823-8e7f-3f1399575792",
+          "size": {
+            "height": 320,
+            "width": 273
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 727,
+            "y": 565
+          },
+          "nodeIndex": "V_PRPGP_DISCIPLINAS_POS",
+          "nodeLineageTag": "8e90c4cf-8d4c-48eb-93d1-1f08f9b0be8c",
+          "size": {
+            "height": 218,
+            "width": 270
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1210,
+            "y": 215
+          },
+          "nodeIndex": "V_PRPGP_DOCENTES_POS",
+          "nodeLineageTag": "59b9672f-16c7-4f62-9a1b-12d38bb44066",
+          "size": {
+            "height": 289,
+            "width": 270
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 324
+          },
+          "nodeIndex": "V_PRPGP_TIPOS_COTAS",
+          "nodeLineageTag": "abdac6c9-d5d1-47bc-8189-ef8d50303a73",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 271,
+            "y": 513
+          },
+          "nodeIndex": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+          "nodeLineageTag": "e2cf0bb7-3746-4095-b677-c07d464bc564",
+          "size": {
+            "height": 286,
+            "width": 382
+          },
+          "zIndex": 6
+        }
+      ],
+      "name": "cursos, docentes e discentes",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "All tables",
+  "selectedDiagram": "cursos, docentes e discentes",
   "defaultDiagram": "All tables"
 }
