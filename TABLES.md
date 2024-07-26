@@ -160,7 +160,7 @@ create or replace view V_PRPGP_DISCIPLINAS_POS as (
 ## Turmas de pós-graduação dos últimos 15 anos
 
 ```sql
-create or replace view V_PRPGP_DISCIPLINAS_POS as (
+create or replace view V_PRPGP_TURMAS_POS as (
     select td.ID_DOCENTE,
            ca.ID_CURSO_ALUNO,
            ca.ID_ATIV_CURRIC ID_DISCIPLINA,
@@ -176,8 +176,26 @@ create or replace view V_PRPGP_DISCIPLINAS_POS as (
 
 A partir de 2015.
 
+### Projetos
+
 ```sql
-CREATE OR REPLACE VIEW V_PRPGP_PROJETOS_POS AS
+CREATE OR REPLACE VIEW V_PRPGP_PROJETOS_POS as
+SELECT projs.ID_PROJETO,projs.NUM_PROCESSO,projs.TITULO,projs.CLASSIFICACAO,
+       BEE.GET_TAB_EST_DESC(projs.SITUACAO_TAB, projs.SITUACAO_ITEM) AS SITUACAO,
+       --oinst.COD_ESTRUTURADO,oinst.NOME_UNIDADE,
+       --proj_orgaos.FUNCAO,
+       projs.DT_INICIAL, projs.DT_CONCLUSAO
+FROM PM_PROJETOS_COMPLETO projs
+--INNER JOIN PM_PROJETOS_ORGAOS proj_orgaos ON projs.ID_PROJETO = proj_orgaos.ID_PROJETO
+--INNER JOIN unidades_pos P ON P.ID_UNIDADE = proj_orgaos.ID_UNIDADE
+--INNER JOIN ORG_INSTITUICAO oinst ON oinst.ID_UNIDADE = proj_orgaos.ID_UNIDADE
+WHERE projs.DT_REGISTRO >= '01.01.2015';
+```
+
+### Unidades executoras/participantes
+
+```sql
+CREATE OR REPLACE VIEW V_PRPGP_PROJETOS_POS_ORGAOS AS
 WITH unidades_pos AS ( -- cursos de pós-graduação ou coordenadorias de pós-graduação com projetos
     (
         -- coordenadorias
@@ -189,8 +207,6 @@ WITH unidades_pos AS ( -- cursos de pós-graduação ou coordenadorias de pós-g
         inner join TAB_ESTRUTURADA te on left_inst.SITUACAO_TAB = te.COD_TABELA and left_inst.SITUACAO_ITEM = te.ITEM_TABELA
         where upper(strip(anc.DESCRICAO)) in ('PÓS-GRADUAÇÃO', 'PROGRAMAS DE PÓS-GRADUAÇÃO')
         and upper(strip(te.DESCRICAO)) in ('A DESATIVAR', 'DESATIVADA', 'EXTINTA')
-        -- WHERE cursos.NIVEL_CURSO_ITEM IN (6, 10, 12, 16)  -- pós-graduação, especialização, residência médica, programas de pós-graduação
-        -- AND left_inst.SITUACAO_ITEM NOT IN (99, 3, 4) -- a desativar, desativada, extinta
     ) UNION (
         -- cursos
         SELECT CURSOS.ID_UNIDADE
@@ -200,20 +216,23 @@ WITH unidades_pos AS ( -- cursos de pós-graduação ou coordenadorias de pós-g
         inner join TAB_ESTRUTURADA te on right_inst.SITUACAO_TAB = te.COD_TABELA and right_inst.SITUACAO_ITEM = te.ITEM_TABELA
         where upper(strip(anc.DESCRICAO)) in ('PÓS-GRADUAÇÃO', 'PROGRAMAS DE PÓS-GRADUAÇÃO')
         and upper(strip(te.DESCRICAO)) in ('A DESATIVAR', 'DESATIVADA', 'EXTINTA')
-        -- WHERE CURSOS.NIVEL_CURSO_ITEM IN (6, 10, 12, 16)  -- pós-graduação, especialização, residência médica, programas de pós-graduação
-        -- AND right_inst.SITUACAO_ITEM NOT IN (99, 3, 4)   -- a desativar, desativada, extinta
     )
 )
-SELECT projs.ID_PROJETO,projs.NUM_PROCESSO,projs.TITULO,projs.CLASSIFICACAO,
-       BEE.GET_TAB_EST_DESC(projs.SITUACAO_TAB, projs.SITUACAO_ITEM) AS SITUACAO,
-       oinst.COD_ESTRUTURADO,oinst.NOME_UNIDADE,proj_orgaos.FUNCAO,
-       projs.DT_INICIAL,projs.DT_CONCLUSAO
---        proj_orgaos.DT_INICIAL, proj_orgaos.DT_FINAL
-FROM PM_PROJETOS_COMPLETO projs
-INNER JOIN PM_PROJETOS_ORGAOS proj_orgaos ON projs.ID_PROJETO = proj_orgaos.ID_PROJETO
+SELECT proj_orgaos.ID_PROJETO, -- projs.NUM_PROCESSO,projs.TITULO,projs.CLASSIFICACAO,
+       -- BEE.GET_TAB_EST_DESC(projs.SITUACAO_TAB, projs.SITUACAO_ITEM) AS SITUACAO,
+       oinst.COD_ESTRUTURADO,oinst.NOME_UNIDADE,
+       proj_orgaos.FUNCAO
+       -- projs.DT_INICIAL, projs.DT_CONCLUSAO
+FROm PM_PROJETOS_ORGAOS proj_orgaos
 INNER JOIN unidades_pos P ON P.ID_UNIDADE = proj_orgaos.ID_UNIDADE
-INNER JOIN ORG_INSTITUICAO oinst ON oinst.ID_UNIDADE = proj_orgaos.ID_UNIDADE
-WHERE projs.DT_REGISTRO >= '01.01.2015';
+INNER JOIN ORG_INSTITUICAO oinst ON oinst.ID_UNIDADE = proj_orgaos.ID_UNIDADE;
+```
+
+### Participantes (CPF)
+
+```sql
+select *
+from PM_PROJETOS_PARTICIPANTES;
 ```
 
 ## Membros de banca externos
@@ -250,6 +269,18 @@ select
     GET_TAB_EST_DESC(partic.TIPO_PARTICIP_TAB, partic.TIPO_PARTICIP_ITEM) AS TIPO_PARTICIPANTE
 from PARTICIP_PLANO partic
 union
-select ID_PLANO_ESTUDO, NULL AS ID_PARTIC_PLANO, NULL AS ID_CONTRATO_RH, id_curso_aluno, 'Aluno' AS TIPO_VINCULO, 'Efetivo' as SITUACAO, 'Aluno' as TIPO_PARTICIPANTE
+select
+    ID_PLANO_ESTUDO, NULL AS ID_PARTIC_PLANO, NULL AS ID_CONTRATO_RH, id_curso_aluno,
+    'Aluno' AS TIPO_VINCULO, 'Efetivo' as SITUACAO, 'Aluno' as TIPO_PARTICIPANTE
 from PLANOS_ESTUDOS plano;
+```
+
+## Defesas 
+
+```sql
+CREATE OR REPLACE VIEW V_PRPGP_DEFESAS AS
+select ID_PLANO_ESTUDO, ID_PROJETO, DH_DEFESA,
+    GET_TAB_EST_DESC(planos.SITUACAO_PLANO_TAB, planos.SITUACAO_PLANO_ITEM) AS SITUACAO_PLANO,
+    GET_TAB_EST_DESC(planos.SITUACAO_defesa_TAB, planos.SITUACAO_defesa_ITEM) AS SITUACAO_DEFESA
+from PLANOS_ESTUDOS planos;
 ```
