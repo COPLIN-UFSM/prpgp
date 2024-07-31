@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.131.1126.0 (24.07)"
+        "value": "2.131.1203.0 (24.07)"
       },
       {
         "name": "PBI_ProTooling",
@@ -140,14 +140,6 @@
         "fromTable": "V_PRPGP_MEMBROS_BANCA",
         "toColumn": "ID_PARTICIP_PLANO",
         "toTable": "V_PRPGP_MEMBROS_EXTERNOS_BANCAS"
-      },
-      {
-        "name": "a2f6f7d1-c8ee-4208-9fe6-d09b00ed32c8",
-        "fromColumn": "DT_INICIAL",
-        "fromTable": "PM_PROJETOS_PARTICIPANTES",
-        "joinOnDateBehavior": "datePartOnly",
-        "toColumn": "Date",
-        "toTable": "LocalDateTable_87ede297-f8af-43ec-8f69-bde857e6aa24"
       },
       {
         "name": "f8181591-1c9b-45aa-aabb-6e2312d6cb54",
@@ -2958,35 +2950,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "DT_INICIAL",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "lineageTag": "b99f34bb-115d-42b7-8136-777ca42ec031",
-            "sourceColumn": "DT_INICIAL",
-            "summarizeBy": "none",
-            "variations": [
-              {
-                "name": "Variation",
-                "defaultHierarchy": {
-                  "hierarchy": "Date Hierarchy",
-                  "table": "LocalDateTable_87ede297-f8af-43ec-8f69-bde857e6aa24"
-                },
-                "isDefault": true,
-                "relationship": "a2f6f7d1-c8ee-4208-9fe6-d09b00ed32c8"
-              }
-            ]
-          },
-          {
             "name": "DT_FINAL",
             "annotations": [
               {
@@ -3026,215 +2989,15 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    PM_PROJETOS_PARTICIPANTES1 = BEE{[Name=\"PM_PROJETOS_PARTICIPANTES\"]}[Data]",
+                "    PM_PROJETOS_PARTICIPANTES1 = BEE{[Name=\"PM_PROJETOS_PARTICIPANTES\"]}[Data],",
+                "    #\"Colunas Removidas\" = Table.RemoveColumns(PM_PROJETOS_PARTICIPANTES1,{\"DT_INICIAL\"})",
                 "in",
-                "    PM_PROJETOS_PARTICIPANTES1"
+                "    #\"Colunas Removidas\""
               ],
               "type": "m"
             }
           }
         ]
-      },
-      {
-        "name": "LocalDateTable_87ede297-f8af-43ec-8f69-bde857e6aa24",
-        "annotations": [
-          {
-            "name": "__PBI_LocalDateTable",
-            "value": "true"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Date",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataCategory": "PaddedDateTableDates",
-            "dataType": "dateTime",
-            "isHidden": true,
-            "isNameInferred": true,
-            "lineageTag": "e6346bd4-febe-471c-b670-539ade3056cd",
-            "sourceColumn": "[Date]",
-            "summarizeBy": "none",
-            "type": "calculatedTableColumn"
-          },
-          {
-            "name": "Year",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "TemplateId",
-                "value": "Year"
-              }
-            ],
-            "dataCategory": "Years",
-            "dataType": "int64",
-            "expression": "YEAR([Date])",
-            "isHidden": true,
-            "lineageTag": "d4627396-3d34-4353-a9ca-6d4d12d2c8ab",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "MonthNo",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "TemplateId",
-                "value": "MonthNumber"
-              }
-            ],
-            "dataCategory": "MonthOfYear",
-            "dataType": "int64",
-            "expression": "MONTH([Date])",
-            "isHidden": true,
-            "lineageTag": "ae1b5b8a-ae69-4c5a-924d-d2dacf18f7f1",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "Month",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "TemplateId",
-                "value": "Month"
-              }
-            ],
-            "dataCategory": "Months",
-            "dataType": "string",
-            "expression": "FORMAT([Date], \"MMMM\")",
-            "isHidden": true,
-            "lineageTag": "b93e6e4c-cbe0-4436-8da5-649accb164e6",
-            "sortByColumn": "MonthNo",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "QuarterNo",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "TemplateId",
-                "value": "QuarterNumber"
-              }
-            ],
-            "dataCategory": "QuarterOfYear",
-            "dataType": "int64",
-            "expression": "INT(([MonthNo] + 2) / 3)",
-            "isHidden": true,
-            "lineageTag": "f967355b-cb83-4781-8eea-8b2f6b038159",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "Quarter",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "TemplateId",
-                "value": "Quarter"
-              }
-            ],
-            "dataCategory": "Quarters",
-            "dataType": "string",
-            "expression": "\"Qtr \" & [QuarterNo]",
-            "isHidden": true,
-            "lineageTag": "b6430df4-325d-47fb-8430-9ec87503bc12",
-            "sortByColumn": "QuarterNo",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "Day",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "TemplateId",
-                "value": "Day"
-              }
-            ],
-            "dataCategory": "DayOfMonth",
-            "dataType": "int64",
-            "expression": "DAY([Date])",
-            "isHidden": true,
-            "lineageTag": "225ae3f5-5f3b-4703-9c96-818aa2de4e60",
-            "summarizeBy": "none",
-            "type": "calculated"
-          }
-        ],
-        "hierarchies": [
-          {
-            "name": "Date Hierarchy",
-            "annotations": [
-              {
-                "name": "TemplateId",
-                "value": "DateHierarchy"
-              }
-            ],
-            "levels": [
-              {
-                "name": "Year",
-                "column": "Year",
-                "lineageTag": "8dd5f72e-83c5-423a-b24d-f8a404be5227",
-                "ordinal": 0
-              },
-              {
-                "name": "Quarter",
-                "column": "Quarter",
-                "lineageTag": "73787ce1-ec22-4910-88eb-a7cad8ef026d",
-                "ordinal": 1
-              },
-              {
-                "name": "Month",
-                "column": "Month",
-                "lineageTag": "a7782c68-50c9-443f-a9e0-db5529ad45f3",
-                "ordinal": 2
-              },
-              {
-                "name": "Day",
-                "column": "Day",
-                "lineageTag": "189636fc-a515-43d7-8937-4ad54e9a0b87",
-                "ordinal": 3
-              }
-            ],
-            "lineageTag": "4c94ae25-a778-4aae-91e1-59ad5fc03630"
-          }
-        ],
-        "isHidden": true,
-        "lineageTag": "57d5d3f6-4eca-4899-8b5b-fb1612f1ce4f",
-        "partitions": [
-          {
-            "name": "LocalDateTable_87ede297-f8af-43ec-8f69-bde857e6aa24",
-            "mode": "import",
-            "source": {
-              "expression": "Calendar(Date(Year(MIN('PM_PROJETOS_PARTICIPANTES'[DT_INICIAL])), 1, 1), Date(Year(MAX('PM_PROJETOS_PARTICIPANTES'[DT_INICIAL])), 12, 31))",
-              "type": "calculated"
-            }
-          }
-        ],
-        "showAsVariationsOnly": true
       },
       {
         "name": "LocalDateTable_80b1c078-b91c-4491-a47d-6e8aca5ec8d5",
