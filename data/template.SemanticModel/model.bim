@@ -1038,12 +1038,107 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"V_PRPGP_DISCENTES_POS\",\"TableItemName\":\"NACIONALIDADE_AGRUPADA\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
               }
             ],
             "dataType": "string",
             "lineageTag": "cadf0df1-88b0-4a21-8518-5edc582e972a",
             "sourceColumn": "NACIONALIDADE",
             "summarizeBy": "none"
+          },
+          {
+            "name": "NACIONALIDADE_AGRUPADA",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"v\",\"Entity\":\"V_PRPGP_DISCENTES_POS\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"NACIONALIDADE\"}}],\"GroupItems\":[{\"DisplayName\":\"(Em branco)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"Alemã(ão) & Angolano(a) & Argentino(a) & Boliviano(a) & ...\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"NACIONALIDADE\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Alemã(ão)'\"}}],[{\"Literal\":{\"Value\":\"'Angolano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Argentino(a)'\"}}],[{\"Literal\":{\"Value\":\"'Boliviano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cabo-verdiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Camaronês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Chileno(a)'\"}}],[{\"Literal\":{\"Value\":\"'Colombiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cubano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Equatoriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Espanhol(a)'\"}}],[{\"Literal\":{\"Value\":\"'Ganês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guatemalteco(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guianês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Guineense'\"}}],[{\"Literal\":{\"Value\":\"'Haitiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Hondurenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'Indiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Italiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Mexicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Moçambicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Nicaraguense'\"}}],[{\"Literal\":{\"Value\":\"'Nigeriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Norte Americano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paquistanês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Peruano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Português(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Salvadorenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'São-tomense'\"}}],[{\"Literal\":{\"Value\":\"'Senegalês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Surinamês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Timorense'\"}}],[{\"Literal\":{\"Value\":\"'Tunisiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a) Naturalizado(a)'\"}}]]}}},{\"DisplayName\":\"Brasileiro(a) & Brasileiro(a) Naturalizado(a)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"NACIONALIDADE\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Brasileiro(a)'\"}}],[{\"Literal\":{\"Value\":\"'Brasileiro(a) Naturalizado(a)'\"}}]]}}}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataCategory": "Country",
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "\tTRUE,",
+              "\tISBLANK('V_PRPGP_DISCENTES_POS'[NACIONALIDADE]),",
+              "\t\"(Em branco)\",",
+              "\t'V_PRPGP_DISCENTES_POS'[NACIONALIDADE] IN {\"Alemã(ão)\",",
+              "\t\t\"Angolano(a)\",",
+              "\t\t\"Argentino(a)\",",
+              "\t\t\"Boliviano(a)\",",
+              "\t\t\"Cabo-verdiano(a)\",",
+              "\t\t\"Camaronês(esa)\",",
+              "\t\t\"Chileno(a)\",",
+              "\t\t\"Colombiano(a)\",",
+              "\t\t\"Cubano(a)\",",
+              "\t\t\"Equatoriano(a)\",",
+              "\t\t\"Espanhol(a)\",",
+              "\t\t\"Ganês(a)\",",
+              "\t\t\"Guatemalteco(a)\",",
+              "\t\t\"Guianês(esa)\",",
+              "\t\t\"Guineense\",",
+              "\t\t\"Haitiano(a)\",",
+              "\t\t\"Hondurenho(a)\",",
+              "\t\t\"Indiano(a)\",",
+              "\t\t\"Italiano(a)\",",
+              "\t\t\"Mexicano(a)\",",
+              "\t\t\"Moçambicano(a)\",",
+              "\t\t\"Nicaraguense\",",
+              "\t\t\"Nigeriano(a)\",",
+              "\t\t\"Norte Americano(a)\",",
+              "\t\t\"Paquistanês(a)\",",
+              "\t\t\"Paraguaio(a)\",",
+              "\t\t\"Paraguaio(a) Naturalizado(a)\",",
+              "\t\t\"Peruano(a)\",",
+              "\t\t\"Português(esa)\",",
+              "\t\t\"Salvadorenho(a)\",",
+              "\t\t\"São-tomense\",",
+              "\t\t\"Senegalês(esa)\",",
+              "\t\t\"Surinamês(a)\",",
+              "\t\t\"Timorense\",",
+              "\t\t\"Tunisiano(a)\",",
+              "\t\t\"Uruguaio(a)\",",
+              "\t\t\"Uruguaio(a) Naturalizado(a)\",",
+              "\t\t\"Venezuelano(a)\",",
+              "\t\t\"Venezuelano(a) Naturalizado(a)\"},",
+              "\t\"Alemã(ão) & Angolano(a) & Argentino(a) & Boliviano(a) & ...\",",
+              "\t'V_PRPGP_DISCENTES_POS'[NACIONALIDADE] IN {\"Brasileiro(a)\",",
+              "\t\t\"Brasileiro(a) Naturalizado(a)\"},",
+              "\t\"Brasileiro(a) & Brasileiro(a) Naturalizado(a)\",",
+              "\t'V_PRPGP_DISCENTES_POS'[NACIONALIDADE]",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "V_PRPGP_DISCENTES_POS"
+                          }
+                        },
+                        "Property": "NACIONALIDADE"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "ce12d12c-9ac8-4377-b60f-28ed6081b14c",
+            "summarizeBy": "none",
+            "type": "calculated"
           }
         ],
         "lineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
