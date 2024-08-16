@@ -1,9 +1,12 @@
 # Bus Matrix
 
-A bus matrix mostra o relacionamento de tabelas em um modelo relacional, indicando quais medidas estão contidas.
+A bus matrix mostra como as tabelas de fatos e dimensões se relacionam.
 
-FATOS NAS LINHAS
-DIMENSÕES NAS COLUNAS
+Cada linha é uma tabela de fato, e cada coluna uma tabela de dimensão.
+
+Em um modelo estrela, as tabelas aparecem exatamente uma vez na bus matrix, seja como linhas ou colunas. Já no modelo
+snowflake, as tabelas podem aparecer mais de uma vez.
+
 
 | Processo de negócio    | Tabela                               | 	Granularidade     | Medida | Calendário | V_PRPGP_TIPOS_COTAS | V_PRPGP_CONCURSOS | V_PRPGP_CURSOS_POS | V_PRPGP_DOCENTES_POS | V_PRPGP_DISCENTES_POS | V_PRPGP_DISCIPLINAS_POS | V_PRPGP_DEFESAS | V_PRPGP_MEMBROS_EXTERNOS_BANCAS | PM_PROJETOS_PARTICIPANTES | V_PRPGP_PROJETOS_POS_ORGAOS |   
 |:-----------------------|:-------------------------------------|:-------------------|:-------|:-----------|:--------------------|:------------------|--------------------|----------------------|:----------------------|:------------------------|:----------------|---------------------------------|:--------------------------|:----------------------------|
