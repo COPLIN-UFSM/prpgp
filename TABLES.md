@@ -42,46 +42,44 @@ create or replace view V_PRPGP_TIPOS_COTAS as (
 ### Vagas, inscritos e matriculados
 
 ```sql
-CREATE OR REPLACE VIEW V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS AS
-(
-select pdv.ID_CONCURSO,
-       pdv.ID_CONC_EDICAO,
-       pdv.ID_OPCAO,
-       pdv.ID_CURSO,
+CREATE OR REPLACE VIEW V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS AS (
+select pdv.ID_CONCURSO, pdv.ID_CONC_EDICAO, pdv.ID_OPCAO, pdv.ID_CURSO,
        case
            when cotas.CODIGO_COTA is null then 'AC'
            else cotas.CODIGO_COTA
-           end as CODIGO_COTA,
+       end as CODIGO_COTA,
        pdv.VAGAS_OFERECIDAS,
        count(*)   INSCRITOS,
        '?'     as APROVADOS,
        case
            when sum(matr.MATRICULOU) > 0 then sum(MATRICULOU)
            else 0
-           end as MATRICULADOS
+       end as MATRICULADOS
 from POS_DADOS_VAGAS pdv
-         inner join
-     POS_DADOS_INSCRICAO pdi on pdv.ID_CONCURSO = pdi.ID_CONCURSO and
-                                pdv.ID_CONC_EDICAO = pdi.ID_CONC_EDICAO and
-                                pdv.ID_OPCAO = pdi.ID_OPCAO and
-                                pdv.ID_CURSO = pdi.ID_CURSO
-         LEFT JOIN V_PRPGP_TIPOS_COTAS cotas
-                   ON cotas.ID_CONC_EDICAO = pdv.ID_CONC_EDICAO AND cotas.CODIGO_COTA = pdv.COD_COTA
-         left join (select id_candidato, 1 MATRICULOU
-                    from CURSOS_ALUNOS_ATZ) matr on matr.ID_CANDIDATO = pdi.ID_CANDIDATO
-group by pdv.ID_CONCURSO, pdv.ID_CONC_EDICAO, pdv.ID_OPCAO, pdv.ID_CURSO,
-         case
-             when cotas.CODIGO_COTA is null then 'AC'
-             else cotas.CODIGO_COTA
-             end,
-         pdv.VAGAS_OFERECIDAS
+inner join POS_DADOS_INSCRICAO pdi 
+    on pdv.ID_CONCURSO = pdi.ID_CONCURSO and
+    pdv.ID_CONC_EDICAO = pdi.ID_CONC_EDICAO and
+    pdv.ID_OPCAO = pdi.ID_OPCAO and
+    pdv.ID_CURSO = pdi.ID_CURSO
+    LEFT JOIN V_PRPGP_TIPOS_COTAS cotas 
+        ON cotas.ID_CONC_EDICAO = pdv.ID_CONC_EDICAO AND cotas.CODIGO_COTA = pdv.COD_COTA
+    left join (
+        select id_candidato, 1 MATRICULOU
+    from CURSOS_ALUNOS_ATZ) matr on matr.ID_CANDIDATO = pdi.ID_CANDIDATO
+group by 
+    pdv.ID_CONCURSO, pdv.ID_CONC_EDICAO, pdv.ID_OPCAO, pdv.ID_CURSO,
+    case
+        when cotas.CODIGO_COTA is null then 'AC'
+        else cotas.CODIGO_COTA
+    end,
+    pdv.VAGAS_OFERECIDAS
 );
 ```
 
 ### Concursos (i.e. processos seletivos)
 
 ```sql
-create or replace view v_prpgp_concursos as (
+create or replace view V_PRPGP_CONCURSOS as (
     select conc.ID_CONCURSO, conc.DESCR_CONCURSO, conc.ANO, conc_ed.ID_CONC_EDICAO, conc_ed.DESCR_CONC_EDICAO
     from bee.CONCURSOS conc
     inner JOIN bee.CONC_EDICOES conc_ed ON conc_ed.ID_CONCURSO = conc.ID_CONCURSO
@@ -233,6 +231,8 @@ INNER JOIN ORG_INSTITUICAO oinst ON oinst.ID_UNIDADE = proj_orgaos.ID_UNIDADE;
 ```
 
 ### Participantes (CPF)
+
+ver PM_PROJETOS_ORGAOS e participantes_proj
 
 ```sql
 select *
