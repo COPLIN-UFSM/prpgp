@@ -42,46 +42,44 @@ create or replace view V_PRPGP_TIPOS_COTAS as (
 ### Vagas, inscritos e matriculados
 
 ```sql
-CREATE OR REPLACE VIEW V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS AS
-(
-select pdv.ID_CONCURSO,
-       pdv.ID_CONC_EDICAO,
-       pdv.ID_OPCAO,
-       pdv.ID_CURSO,
+CREATE OR REPLACE VIEW V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS AS (
+select pdv.ID_CONCURSO, pdv.ID_CONC_EDICAO, pdv.ID_OPCAO, pdv.ID_CURSO,
        case
            when cotas.CODIGO_COTA is null then 'AC'
            else cotas.CODIGO_COTA
-           end as CODIGO_COTA,
+       end as CODIGO_COTA,
        pdv.VAGAS_OFERECIDAS,
        count(*)   INSCRITOS,
        '?'     as APROVADOS,
        case
            when sum(matr.MATRICULOU) > 0 then sum(MATRICULOU)
            else 0
-           end as MATRICULADOS
+       end as MATRICULADOS
 from POS_DADOS_VAGAS pdv
-         inner join
-     POS_DADOS_INSCRICAO pdi on pdv.ID_CONCURSO = pdi.ID_CONCURSO and
-                                pdv.ID_CONC_EDICAO = pdi.ID_CONC_EDICAO and
-                                pdv.ID_OPCAO = pdi.ID_OPCAO and
-                                pdv.ID_CURSO = pdi.ID_CURSO
-         LEFT JOIN V_PRPGP_TIPOS_COTAS cotas
-                   ON cotas.ID_CONC_EDICAO = pdv.ID_CONC_EDICAO AND cotas.CODIGO_COTA = pdv.COD_COTA
-         left join (select id_candidato, 1 MATRICULOU
-                    from CURSOS_ALUNOS_ATZ) matr on matr.ID_CANDIDATO = pdi.ID_CANDIDATO
-group by pdv.ID_CONCURSO, pdv.ID_CONC_EDICAO, pdv.ID_OPCAO, pdv.ID_CURSO,
-         case
-             when cotas.CODIGO_COTA is null then 'AC'
-             else cotas.CODIGO_COTA
-             end,
-         pdv.VAGAS_OFERECIDAS
+inner join POS_DADOS_INSCRICAO pdi 
+    on pdv.ID_CONCURSO = pdi.ID_CONCURSO and
+    pdv.ID_CONC_EDICAO = pdi.ID_CONC_EDICAO and
+    pdv.ID_OPCAO = pdi.ID_OPCAO and
+    pdv.ID_CURSO = pdi.ID_CURSO
+    LEFT JOIN V_PRPGP_TIPOS_COTAS cotas 
+        ON cotas.ID_CONC_EDICAO = pdv.ID_CONC_EDICAO AND cotas.CODIGO_COTA = pdv.COD_COTA
+    left join (
+        select id_candidato, 1 MATRICULOU
+    from CURSOS_ALUNOS_ATZ) matr on matr.ID_CANDIDATO = pdi.ID_CANDIDATO
+group by 
+    pdv.ID_CONCURSO, pdv.ID_CONC_EDICAO, pdv.ID_OPCAO, pdv.ID_CURSO,
+    case
+        when cotas.CODIGO_COTA is null then 'AC'
+        else cotas.CODIGO_COTA
+    end,
+    pdv.VAGAS_OFERECIDAS
 );
 ```
 
 ### Concursos (i.e. processos seletivos)
 
 ```sql
-create or replace view v_prpgp_concursos as (
+create or replace view V_PRPGP_CONCURSOS as (
     select conc.ID_CONCURSO, conc.DESCR_CONCURSO, conc.ANO, conc_ed.ID_CONC_EDICAO, conc_ed.DESCR_CONC_EDICAO
     from bee.CONCURSOS conc
     inner JOIN bee.CONC_EDICOES conc_ed ON conc_ed.ID_CONCURSO = conc.ID_CONCURSO
@@ -92,27 +90,31 @@ create or replace view v_prpgp_concursos as (
 
 ```sql
 create or replace view V_PRPGP_DOCENTES_POS AS (
-    select distinct gsu.ID_CONTRATO_RH,
-                    iserv.MATR_EXTERNA SIAPE,
-                    iserv.NOME_FUNCIONARIO,
-                    iserv.SEXO,
-                    CARGOS_RH.DESCR_CARGO,
-                    gsu.DT_ADMISSAO_CARGO,
-                    gsu.DT_DESLIGAMENTO,
-                    iserv.NACIONALIDADE --, ac.NOME_CURSO
-    from ISERV_GERAL iserv
-             inner join GERAL_SERVIDORES_UFSM gsu on iserv.ID_CONTRATO_RH = gsu.ID_CONTRATO_RH
-             inner join CARGOS_RH on gsu.ID_CARGO = CARGOS_RH.ID_CARGO
-             inner join TURMAS_DOCENTES td on iserv.ID_CONTRATO_RH = td.ID_DOCENTE
-             inner join CURRICULO_ALUNO ca on ca.ID_TURMA = td.ID_TURMA
-             inner join cursos_alunos_atz caa on ca.ID_CURSO_ALUNO = caa.ID_CURSO_ALUNO
-             inner join acad_cursos ac on caa.ID_CURSO = ac.ID_CURSO
-             inner join ACAD_NIVEL_CURSOS anc on ac.ID_NIVEL = anc.ID_NIVEL
-             inner join ACAD_MODALIDADE am on ac.ID_MODALIDADE = am.ID_MODALIDADE
-    where anc.DESCRICAO = 'Pós-Graduação'
-      and am.DESCRICAO in ('Mestrado', 'Doutorado')
-      and ((year(current_date) - ca.ANO) <= 15)
-      and ((iserv.DT_DESLIGAMENTO is null) or (year(iserv.DT_DESLIGAMENTO) >= year(current_date)))
+    select
+        gsu.ID_CONTRATO_RH,
+        iserv.MATR_EXTERNA SIAPE,
+        iserv.NOME_FUNCIONARIO,
+        iserv.SEXO,
+        CARGOS_RH.DESCR_CARGO,
+        gsu.DT_ADMISSAO_CARGO,
+        gsu.DT_DESLIGAMENTO,
+        iserv.NACIONALIDADE
+    from iserv_geral iserv
+    inner join GERAL_SERVIDORES_UFSM gsu on iserv.ID_CONTRATO_RH = gsu.ID_CONTRATO_RH
+    inner join CARGOS_RH on gsu.ID_CARGO = CARGOS_RH.ID_CARGO
+    where gsu.ID_CONTRATO_RH in (
+        select gsu_inner.ID_CONTRATO_RH
+        from GERAL_SERVIDORES_UFSM gsu_inner
+        inner join TURMAS_DOCENTES td on gsu_inner.ID_CONTRATO_RH = td.ID_DOCENTE
+        inner join turmas_vagas tv on td.ID_TURMA = tv.ID_TURMA
+        inner join ACAD_CURSOS ac on tv.ID_CURSO = ac.ID_CURSO
+        inner join ACAD_NIVEL_CURSOS anc on ac.ID_NIVEL = anc.ID_NIVEL
+        inner join ACAD_MODALIDADE am on ac.ID_MODALIDADE = am.ID_MODALIDADE
+        where anc.DESCRICAO = 'Pós-Graduação'
+        and am.DESCRICAO in ('Mestrado', 'Doutorado')
+        and ((year(current_date) - tv.ANO) <= 15)
+    )
+    and ((iserv.DT_DESLIGAMENTO is null) or (year(iserv.DT_DESLIGAMENTO) >= year(current_date)))
 );
 ```
 
@@ -229,6 +231,8 @@ INNER JOIN ORG_INSTITUICAO oinst ON oinst.ID_UNIDADE = proj_orgaos.ID_UNIDADE;
 ```
 
 ### Participantes (CPF)
+
+ver PM_PROJETOS_ORGAOS e participantes_proj
 
 ```sql
 select *
