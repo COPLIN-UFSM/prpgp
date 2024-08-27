@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.131.1203.0 (24.07)"
+        "value": "2.132.1053.0 (24.08)"
       },
       {
         "name": "PBI_ProTooling",
@@ -673,6 +673,22 @@
             "lineageTag": "81a6c5bf-baf8-465d-a9b5-de6517e6c9d9",
             "sourceColumn": "SITUACAO_DEFESA",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Contagem de Defesa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "CALCULATE(COUNTROWS(V_PRPGP_DEFESAS), ALLEXCEPT(V_PRPGP_DEFESAS, V_PRPGP_DEFESAS[SITUACAO_DEFESA]))",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "9d275bf6-75b3-4d7e-a78e-4a483da381de",
+            "summarizeBy": "sum",
+            "type": "calculated"
           }
         ],
         "lineageTag": "2f1fedb7-dace-478f-8610-18ad19029bda",
