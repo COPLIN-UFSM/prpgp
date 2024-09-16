@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 324.76451032272229,
+        "x": 1674.888772175357,
         "y": 0
       },
       "nodes": [
@@ -19,7 +19,7 @@
             "height": 207.56018051632554,
             "width": 265.75275816856742
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
@@ -29,23 +29,23 @@
           "nodeIndex": "V_PRPGP_CURSOS_POS",
           "nodeLineageTag": "7f424f93-fe10-4152-8ee3-899949d932f9",
           "size": {
-            "height": 224,
+            "height": 240.54525382847999,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 4
         },
         {
           "location": {
             "x": 2169.2860563714366,
-            "y": 112.99480108672975
+            "y": 62.086327768329852
           },
           "nodeIndex": "V_PRPGP_DEFESAS",
           "nodeLineageTag": "2f1fedb7-dace-478f-8610-18ad19029bda",
           "size": {
-            "height": 216.63239713591616,
+            "height": 267.54087045431606,
             "width": 238.53610830979528
           },
-          "zIndex": 13
+          "zIndex": 14
         },
         {
           "location": {
@@ -58,7 +58,7 @@
             "height": 371.06569685346017,
             "width": 300.52958854366477
           },
-          "zIndex": 3
+          "zIndex": 5
         },
         {
           "location": {
@@ -71,7 +71,7 @@
             "height": 212.28886647836265,
             "width": 279.36108309795327
           },
-          "zIndex": 4
+          "zIndex": 6
         },
         {
           "location": {
@@ -84,7 +84,7 @@
             "height": 326.43329971754395,
             "width": 276.33701089142323
           },
-          "zIndex": 5
+          "zIndex": 15
         },
         {
           "location": {
@@ -97,7 +97,7 @@
             "height": 263.1203610326512,
             "width": 297.50551633713508
           },
-          "zIndex": 14
+          "zIndex": 13
         },
         {
           "location": {
@@ -110,7 +110,7 @@
             "height": 297.92635712683375,
             "width": 371.88078055858432
           },
-          "zIndex": 6
+          "zIndex": 7
         },
         {
           "location": {
@@ -123,7 +123,7 @@
             "height": 342.33701089142312,
             "width": 294.4814441306039
           },
-          "zIndex": 7
+          "zIndex": 8
         },
         {
           "location": {
@@ -136,7 +136,7 @@
             "height": 162.78899336086738,
             "width": 262.3211075722769
           },
-          "zIndex": 8
+          "zIndex": 9
         },
         {
           "location": {
@@ -149,7 +149,7 @@
             "height": 251.4092275110138,
             "width": 295.99348023386938
           },
-          "zIndex": 9
+          "zIndex": 10
         },
         {
           "location": {
@@ -162,7 +162,7 @@
             "height": 341.36108309795327,
             "width": 398.81193525589708
           },
-          "zIndex": 10
+          "zIndex": 11
         },
         {
           "location": {
@@ -175,7 +175,7 @@
             "height": 222.53034226206626,
             "width": 318.75700184301058
           },
-          "zIndex": 11
+          "zIndex": 12
         },
         {
           "location": {
@@ -188,39 +188,50 @@
             "height": 257.54981671837572,
             "width": 345.05097754764211
           },
-          "zIndex": 12
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 2430.9006678403234,
+            "y": 388.53295423036451
+          },
+          "nodeIndex": "CREDENCIAMENTO_DOCENTES",
+          "nodeLineageTag": "23e4bd8d-5d94-45de-88d3-628f436d72f8",
+          "size": {
+            "height": 447.18391600832723,
+            "width": 333.18916078822076
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 2677.2807762183897,
+            "y": 29.724562809057147
+          },
+          "nodeIndex": "NAV_UNIDADES",
+          "nodeLineageTag": "3482d8a9-69e4-4c1c-b1f6-bdacc4b2e630",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 3035.7418880795944,
+            "y": 50.9977841543372
+          },
+          "nodeIndex": "NAV_CENTROS",
+          "nodeLineageTag": "e0637774-7e97-43b6-a3e5-563ab2f576e2",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 1
         }
       ],
       "name": "All tables",
-      "zoomValue": 62.506829886762119,
-      "pinKeyFieldsToTop": false,
-      "showExtraHeaderInfo": false,
-      "hideKeyFieldsWhenCollapsed": false,
-      "tablesLocked": false
-    },
-    {
-      "ordinal": 1,
-      "scrollPosition": {
-        "x": 0,
-        "y": 0
-      },
-      "nodes": [],
-      "name": "projetos",
-      "zoomValue": 100,
-      "pinKeyFieldsToTop": false,
-      "showExtraHeaderInfo": false,
-      "hideKeyFieldsWhenCollapsed": false,
-      "tablesLocked": false
-    },
-    {
-      "ordinal": 2,
-      "scrollPosition": {
-        "x": 0,
-        "y": 0
-      },
-      "nodes": [],
-      "name": "cursos, docentes e discentes",
-      "zoomValue": 51.963190184049083,
+      "zoomValue": 78.5723817522981,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

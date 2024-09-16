@@ -1,10 +1,10 @@
 {
-  "compatibilityLevel": 1550,
+  "compatibilityLevel": 1567,
   "model": {
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_CONCURSOS\",\"V_PRPGP_CURSOS_POS\",\"V_PRPGP_DEFESAS\",\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DISCIPLINAS_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_MEMBROS_EXTERNOS_BANCAS\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_TIPOS_COTAS\",\"V_PRPGP_TURMAS_POS\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\"]"
+        "value": "[\"V_PRPGP_CONCURSOS\",\"V_PRPGP_CURSOS_POS\",\"V_PRPGP_DEFESAS\",\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DISCIPLINAS_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_MEMBROS_EXTERNOS_BANCAS\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_TIPOS_COTAS\",\"V_PRPGP_TURMAS_POS\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\",\"CREDENCIAMENTO_DOCENTES\",\"NAV_UNIDADES\",\"NAV_CENTROS\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -40,7 +40,7 @@
     "relationships": [
       {
         "name": "9ae5ac53-ca79-4e7a-886b-5c9db1d6d9a8",
-        "fromColumn": "DH_DEFESA",
+        "fromColumn": "Data defesa",
         "fromTable": "V_PRPGP_DEFESAS",
         "joinOnDateBehavior": "datePartOnly",
         "toColumn": "Date",
@@ -48,7 +48,7 @@
       },
       {
         "name": "2ea7bf1a-3305-44e5-bb8a-9739326ad863",
-        "fromColumn": "DT_ADMISSAO_CARGO",
+        "fromColumn": "Data ingresso",
         "fromTable": "V_PRPGP_DOCENTES_POS",
         "joinOnDateBehavior": "datePartOnly",
         "toColumn": "Date",
@@ -56,7 +56,7 @@
       },
       {
         "name": "dbe7e696-971d-40c9-8cc6-add71fc456d2",
-        "fromColumn": "DT_DESLIGAMENTO",
+        "fromColumn": "Data desligamento",
         "fromTable": "V_PRPGP_DOCENTES_POS",
         "joinOnDateBehavior": "datePartOnly",
         "toColumn": "Date",
@@ -64,7 +64,7 @@
       },
       {
         "name": "947a2d1d-d9c4-4787-ace1-ebb94e0f1ea7",
-        "fromColumn": "DT_INICIAL",
+        "fromColumn": "Data início",
         "fromTable": "V_PRPGP_PROJETOS_POS",
         "joinOnDateBehavior": "datePartOnly",
         "toColumn": "Date",
@@ -72,7 +72,7 @@
       },
       {
         "name": "37c5d120-397a-4c63-a24f-ef417392a3a3",
-        "fromColumn": "DT_CONCLUSAO",
+        "fromColumn": "Data fim",
         "fromTable": "V_PRPGP_PROJETOS_POS",
         "joinOnDateBehavior": "datePartOnly",
         "toColumn": "Date",
@@ -143,7 +143,7 @@
       },
       {
         "name": "f8181591-1c9b-45aa-aabb-6e2312d6cb54",
-        "fromColumn": "DT_FINAL",
+        "fromColumn": "Data fim participação",
         "fromTable": "PM_PROJETOS_PARTICIPANTES",
         "joinOnDateBehavior": "datePartOnly",
         "toColumn": "Date",
@@ -190,6 +190,66 @@
         "fromTable": "V_PRPGP_MEMBROS_BANCA",
         "toColumn": "ID_CONTRATO_RH",
         "toTable": "V_PRPGP_DOCENTES_POS"
+      },
+      {
+        "name": "690f8323-3196-4754-9689-b8a60090bbda",
+        "fromColumn": "Data fim atuação programa",
+        "fromTable": "CREDENCIAMENTO_DOCENTES",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_adf819e3-6842-4ca8-aef3-f6b49b0fd0c3"
+      },
+      {
+        "name": "cf129f7b-50ef-4615-94b3-f82fd70de96b",
+        "fromColumn": "Data início atuação programa",
+        "fromTable": "CREDENCIAMENTO_DOCENTES",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_80750216-b5ec-4ee0-afe1-32baf7826e9d"
+      },
+      {
+        "name": "AutoDetected_19faa936-23d2-4a0c-b251-d4cc20545a6b",
+        "fromColumn": "ID_CONTRATO_RH",
+        "fromTable": "CREDENCIAMENTO_DOCENTES",
+        "toColumn": "ID_CONTRATO_RH",
+        "toTable": "V_PRPGP_DOCENTES_POS"
+      },
+      {
+        "name": "89da67bb-9c41-4cd1-aa2c-fb944fae84df",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "ID_CENTRO",
+        "fromTable": "NAV_UNIDADES",
+        "toColumn": "ID_CENTRO",
+        "toTable": "NAV_CENTROS"
+      },
+      {
+        "name": "f80e7c8f-d69b-08e8-266b-6bf04ad35835",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "ID_UNIDADE",
+        "fromTable": "V_PRPGP_CURSOS_POS",
+        "toColumn": "ID_UNIDADE",
+        "toTable": "NAV_UNIDADES"
+      },
+      {
+        "name": "0c65c586-904d-4fa2-896d-fe6d166d0e4e",
+        "fromColumn": "Data início participação",
+        "fromTable": "PM_PROJETOS_PARTICIPANTES",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_1727a338-012d-44ce-a8dc-3da0e0cddf81"
+      },
+      {
+        "name": "cec0c355-600b-3fe7-85d1-ae9c90f1047d",
+        "fromColumn": "ID_UNIDADE",
+        "fromTable": "V_PRPGP_PROJETOS_POS_ORGAOS",
+        "toColumn": "ID_UNIDADE",
+        "toTable": "NAV_UNIDADES"
       }
     ],
     "sourceQueryCulture": "pt-BR",
@@ -401,6 +461,16 @@
       },
       {
         "name": "V_PRPGP_CONCURSOS",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
         "columns": [
           {
             "name": "ID_CONCURSO",
@@ -410,14 +480,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "9178df64-d416-45ea-9b8e-eb78c33eedf4",
             "sourceColumn": "ID_CONCURSO",
             "summarizeBy": "sum"
           },
           {
-            "name": "DESCR_CONCURSO",
+            "name": "Concurso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -426,22 +502,22 @@
             ],
             "dataType": "string",
             "lineageTag": "5317f253-d81f-4011-8d29-68884731e1b5",
-            "sourceColumn": "DESCR_CONCURSO",
+            "sourceColumn": "Concurso",
             "summarizeBy": "none"
           },
           {
-            "name": "ANO",
+            "name": "Ano",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "7ee9f0f0-71d1-4803-ae49-9fa5ba30332c",
-            "sourceColumn": "ANO",
-            "summarizeBy": "sum"
+            "sourceColumn": "Ano",
+            "summarizeBy": "none"
           },
           {
             "name": "ID_CONC_EDICAO",
@@ -451,14 +527,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "aa84dec6-f13e-47b6-9d1a-058cc8847e93",
             "sourceColumn": "ID_CONC_EDICAO",
             "summarizeBy": "none"
           },
           {
-            "name": "DESCR_CONC_EDICAO",
+            "name": "Edição concurso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -467,7 +549,7 @@
             ],
             "dataType": "string",
             "lineageTag": "afe4130c-be59-4473-8ca8-841bcae7d000",
-            "sourceColumn": "DESCR_CONC_EDICAO",
+            "sourceColumn": "Edição concurso",
             "summarizeBy": "none"
           }
         ],
@@ -481,9 +563,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_CONCURSOS1 = BEE{[Name=\"V_PRPGP_CONCURSOS\"]}[Data]",
+                "    V_PRPGP_CONCURSOS1 = BEE{[Name=\"V_PRPGP_CONCURSOS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_CONCURSOS1,{{\"DESCR_CONC_EDICAO\", \"Edição concurso\"}, {\"DESCR_CONCURSO\", \"Concurso\"}, {\"ANO\", \"Ano\"}})",
                 "in",
-                "    V_PRPGP_CONCURSOS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -501,14 +584,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "1c212997-5966-4c49-9f0d-eb084fe16c81",
             "sourceColumn": "ID_CURSO",
             "summarizeBy": "none"
           },
           {
-            "name": "COD_CURSO",
+            "name": "Código curso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -517,11 +606,11 @@
             ],
             "dataType": "string",
             "lineageTag": "e5a56728-37d0-4645-82dd-83e8b9009c45",
-            "sourceColumn": "COD_CURSO",
+            "sourceColumn": "Código curso",
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_CURSO",
+            "name": "Nome curso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -530,11 +619,11 @@
             ],
             "dataType": "string",
             "lineageTag": "a344cffe-1f4c-41f4-be48-ad27c3a13c45",
-            "sourceColumn": "NOME_CURSO",
+            "sourceColumn": "Nome curso",
             "summarizeBy": "none"
           },
           {
-            "name": "NIVEL_CURSO",
+            "name": "Nível curso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -543,11 +632,11 @@
             ],
             "dataType": "string",
             "lineageTag": "279c7aaf-10d2-46ec-b950-68261f807990",
-            "sourceColumn": "NIVEL_CURSO",
+            "sourceColumn": "Nível curso",
             "summarizeBy": "none"
           },
           {
-            "name": "MODALIDADE_CURSO",
+            "name": "Modalidade curso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -556,11 +645,11 @@
             ],
             "dataType": "string",
             "lineageTag": "acbec8b8-ae81-464d-b67f-3acb54d7b93f",
-            "sourceColumn": "MODALIDADE_CURSO",
+            "sourceColumn": "Modalidade curso",
             "summarizeBy": "none"
           },
           {
-            "name": "CLASSIFICACAO_CURSO",
+            "name": "Classificação curso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -569,7 +658,27 @@
             ],
             "dataType": "string",
             "lineageTag": "80f3a514-e371-4d05-8abd-1d028365663a",
-            "sourceColumn": "CLASSIFICACAO_CURSO",
+            "sourceColumn": "Classificação curso",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_UNIDADE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "99f49a10-65d1-4198-85d2-254ef6e24108",
+            "sourceColumn": "ID_UNIDADE",
             "summarizeBy": "none"
           }
         ],
@@ -583,9 +692,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_CURSOS_POS1 = BEE{[Name=\"V_PRPGP_CURSOS_POS\"]}[Data]",
+                "    V_PRPGP_CURSOS_POS1 = BEE{[Name=\"V_PRPGP_CURSOS_POS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_CURSOS_POS1,{{\"COD_CURSO\", \"Código curso\"}, {\"MODALIDADE_CURSO\", \"Modalidade curso\"}, {\"CLASSIFICACAO_CURSO\", \"Classificação curso\"}, {\"NIVEL_CURSO\", \"Nível curso\"}, {\"NOME_CURSO\", \"Nome curso\"}})",
                 "in",
-                "    V_PRPGP_CURSOS_POS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -603,8 +713,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "1abf5ad2-3dcb-4411-b416-aa78eebc295e",
             "sourceColumn": "ID_PLANO_ESTUDO",
             "summarizeBy": "none"
@@ -617,14 +733,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "585535c8-c66c-4a07-90a4-02511eb430fa",
             "sourceColumn": "ID_PROJETO",
             "summarizeBy": "sum"
           },
           {
-            "name": "DH_DEFESA",
+            "name": "Data defesa",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -634,7 +756,7 @@
             "dataType": "dateTime",
             "formatString": "General Date",
             "lineageTag": "a3cc67cb-804a-46e1-af44-17d1cea7e349",
-            "sourceColumn": "DH_DEFESA",
+            "sourceColumn": "Data defesa",
             "summarizeBy": "none",
             "variations": [
               {
@@ -649,7 +771,7 @@
             ]
           },
           {
-            "name": "SITUACAO_PLANO",
+            "name": "Situação plano",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -658,11 +780,11 @@
             ],
             "dataType": "string",
             "lineageTag": "6e13cf5e-6716-4302-840f-3e901b031d3d",
-            "sourceColumn": "SITUACAO_PLANO",
+            "sourceColumn": "Situação plano",
             "summarizeBy": "none"
           },
           {
-            "name": "SITUACAO_DEFESA",
+            "name": "Situação defesa",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -671,7 +793,7 @@
             ],
             "dataType": "string",
             "lineageTag": "81a6c5bf-baf8-465d-a9b5-de6517e6c9d9",
-            "sourceColumn": "SITUACAO_DEFESA",
+            "sourceColumn": "Situação defesa",
             "summarizeBy": "none"
           },
           {
@@ -683,7 +805,7 @@
               }
             ],
             "dataType": "int64",
-            "expression": "CALCULATE(COUNTROWS(V_PRPGP_DEFESAS), ALLEXCEPT(V_PRPGP_DEFESAS, V_PRPGP_DEFESAS[SITUACAO_DEFESA]))",
+            "expression": "CALCULATE(COUNTROWS(V_PRPGP_DEFESAS), ALLEXCEPT(V_PRPGP_DEFESAS, V_PRPGP_DEFESAS[Situação defesa]))",
             "formatString": "0",
             "isDataTypeInferred": true,
             "lineageTag": "9d275bf6-75b3-4d7e-a78e-4a483da381de",
@@ -701,9 +823,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_DEFESAS1 = BEE{[Name=\"V_PRPGP_DEFESAS\"]}[Data]",
+                "    V_PRPGP_DEFESAS1 = BEE{[Name=\"V_PRPGP_DEFESAS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DEFESAS1,{{\"DH_DEFESA\", \"Data defesa\"}, {\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano\"}})",
                 "in",
-                "    V_PRPGP_DEFESAS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -904,7 +1027,7 @@
             "name": "LocalDateTable_e2ddb877-4123-4bfc-ae90-ba1f3167c4de",
             "mode": "import",
             "source": {
-              "expression": "Calendar(Date(Year(MIN('V_PRPGP_DEFESAS'[DH_DEFESA])), 1, 1), Date(Year(MAX('V_PRPGP_DEFESAS'[DH_DEFESA])), 12, 31))",
+              "expression": "Calendar(Date(Year(MIN('V_PRPGP_DEFESAS'[Data defesa])), 1, 1), Date(Year(MAX('V_PRPGP_DEFESAS'[Data defesa])), 12, 31))",
               "type": "calculated"
             }
           }
@@ -922,14 +1045,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "8fc61f1e-182f-4a49-9d96-c9bf45265f8b",
             "sourceColumn": "ID_CURSO_ALUNO",
             "summarizeBy": "none"
           },
           {
-            "name": "MATRICULA",
+            "name": "Matrícula",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -938,11 +1067,11 @@
             ],
             "dataType": "string",
             "lineageTag": "69e9d438-3452-4a42-aa72-6311088b2728",
-            "sourceColumn": "MATRICULA",
+            "sourceColumn": "Matrícula",
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_ALUNO",
+            "name": "Nome aluno",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -951,11 +1080,11 @@
             ],
             "dataType": "string",
             "lineageTag": "a5f4b775-a258-4311-85c4-ab20c721b5a0",
-            "sourceColumn": "NOME_ALUNO",
+            "sourceColumn": "Nome aluno",
             "summarizeBy": "none"
           },
           {
-            "name": "ANO_INGRESSO",
+            "name": "Ano ingresso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -965,11 +1094,11 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "b3103874-35f6-4f66-a93c-b1b07371309e",
-            "sourceColumn": "ANO_INGRESSO",
+            "sourceColumn": "Ano ingresso",
             "summarizeBy": "sum"
           },
           {
-            "name": "ANO_EVASAO",
+            "name": "Ano saída",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -979,11 +1108,11 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "98457c3d-3952-4741-98ba-0192f19d354c",
-            "sourceColumn": "ANO_EVASAO",
+            "sourceColumn": "Ano saída",
             "summarizeBy": "sum"
           },
           {
-            "name": "FORMA_EVASAO",
+            "name": "Forma saída",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -992,7 +1121,7 @@
             ],
             "dataType": "string",
             "lineageTag": "44d55b86-2e12-47ac-8d3f-8e56efa72293",
-            "sourceColumn": "FORMA_EVASAO",
+            "sourceColumn": "Forma saída",
             "summarizeBy": "none"
           },
           {
@@ -1003,53 +1132,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "e50fe787-0b41-4d4e-9e7d-cc1b35d057f7",
             "sourceColumn": "ID_CURSO",
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_CURSO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "ad5c1641-67ee-4a19-954a-1d55c755c2f0",
-            "sourceColumn": "NOME_CURSO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "NIVEL_CURSO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "8ac3f5e1-8041-4e9c-8af4-97e4330dfcb9",
-            "sourceColumn": "NIVEL_CURSO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "MODALIDADE_CURSO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "9bc2890c-f362-416e-b525-f75145445bf6",
-            "sourceColumn": "MODALIDADE_CURSO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "NACIONALIDADE",
+            "name": "Nacionalidade",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1057,20 +1153,20 @@
               },
               {
                 "name": "__PBI_SemanticLinks",
-                "value": "[{\"LinkTarget\":{\"TableName\":\"V_PRPGP_DISCENTES_POS\",\"TableItemName\":\"NACIONALIDADE_AGRUPADA\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+                "value": "[{\"LinkTarget\":{\"TableName\":\"V_PRPGP_DISCENTES_POS\",\"TableItemName\":\"Nacionalidade (agrupada)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
               }
             ],
             "dataType": "string",
             "lineageTag": "cadf0df1-88b0-4a21-8518-5edc582e972a",
-            "sourceColumn": "NACIONALIDADE",
+            "sourceColumn": "Nacionalidade",
             "summarizeBy": "none"
           },
           {
-            "name": "NACIONALIDADE_AGRUPADA",
+            "name": "Nacionalidade (agrupada)",
             "annotations": [
               {
                 "name": "GroupingDesignState",
-                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"v\",\"Entity\":\"V_PRPGP_DISCENTES_POS\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"NACIONALIDADE\"}}],\"GroupItems\":[{\"DisplayName\":\"(Em branco)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"Alemã(ão) & Angolano(a) & Argentino(a) & Boliviano(a) & ...\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"NACIONALIDADE\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Alemã(ão)'\"}}],[{\"Literal\":{\"Value\":\"'Angolano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Argentino(a)'\"}}],[{\"Literal\":{\"Value\":\"'Boliviano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cabo-verdiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Camaronês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Chileno(a)'\"}}],[{\"Literal\":{\"Value\":\"'Colombiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cubano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Equatoriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Espanhol(a)'\"}}],[{\"Literal\":{\"Value\":\"'Ganês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guatemalteco(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guianês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Guineense'\"}}],[{\"Literal\":{\"Value\":\"'Haitiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Hondurenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'Indiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Italiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Mexicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Moçambicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Nicaraguense'\"}}],[{\"Literal\":{\"Value\":\"'Nigeriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Norte Americano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paquistanês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Peruano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Português(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Salvadorenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'São-tomense'\"}}],[{\"Literal\":{\"Value\":\"'Senegalês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Surinamês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Timorense'\"}}],[{\"Literal\":{\"Value\":\"'Tunisiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a) Naturalizado(a)'\"}}]]}}},{\"DisplayName\":\"Brasileiro(a) & Brasileiro(a) Naturalizado(a)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"NACIONALIDADE\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Brasileiro(a)'\"}}],[{\"Literal\":{\"Value\":\"'Brasileiro(a) Naturalizado(a)'\"}}]]}}}]}"
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"v\",\"Entity\":\"V_PRPGP_DISCENTES_POS\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Nacionalidade\"}}],\"GroupItems\":[{\"DisplayName\":\"(Em branco)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"Alemã(ão) & Angolano(a) & Argentino(a) & Boliviano(a) & ...\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Nacionalidade\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Alemã(ão)'\"}}],[{\"Literal\":{\"Value\":\"'Angolano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Argentino(a)'\"}}],[{\"Literal\":{\"Value\":\"'Boliviano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cabo-verdiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Camaronês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Chileno(a)'\"}}],[{\"Literal\":{\"Value\":\"'Colombiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cubano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Equatoriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Espanhol(a)'\"}}],[{\"Literal\":{\"Value\":\"'Ganês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guatemalteco(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guianês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Guineense'\"}}],[{\"Literal\":{\"Value\":\"'Haitiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Hondurenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'Indiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Italiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Mexicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Moçambicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Nicaraguense'\"}}],[{\"Literal\":{\"Value\":\"'Nigeriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Norte Americano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paquistanês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Peruano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Português(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Salvadorenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'São-tomense'\"}}],[{\"Literal\":{\"Value\":\"'Senegalês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Surinamês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Timorense'\"}}],[{\"Literal\":{\"Value\":\"'Tunisiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a) Naturalizado(a)'\"}}]]}}},{\"DisplayName\":\"Brasileiro(a) & Brasileiro(a) Naturalizado(a)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Nacionalidade\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Brasileiro(a)'\"}}],[{\"Literal\":{\"Value\":\"'Brasileiro(a) Naturalizado(a)'\"}}]]}}}]}"
               },
               {
                 "name": "SummarizationSetBy",
@@ -1082,9 +1178,9 @@
             "expression": [
               "SWITCH(",
               "\tTRUE,",
-              "\tISBLANK('V_PRPGP_DISCENTES_POS'[NACIONALIDADE]),",
+              "\tISBLANK('V_PRPGP_DISCENTES_POS'[Nacionalidade]),",
               "\t\"(Em branco)\",",
-              "\t'V_PRPGP_DISCENTES_POS'[NACIONALIDADE] IN {\"Alemã(ão)\",",
+              "\t'V_PRPGP_DISCENTES_POS'[Nacionalidade] IN {\"Alemã(ão)\",",
               "\t\t\"Angolano(a)\",",
               "\t\t\"Argentino(a)\",",
               "\t\t\"Boliviano(a)\",",
@@ -1124,10 +1220,10 @@
               "\t\t\"Venezuelano(a)\",",
               "\t\t\"Venezuelano(a) Naturalizado(a)\"},",
               "\t\"Alemã(ão) & Angolano(a) & Argentino(a) & Boliviano(a) & ...\",",
-              "\t'V_PRPGP_DISCENTES_POS'[NACIONALIDADE] IN {\"Brasileiro(a)\",",
+              "\t'V_PRPGP_DISCENTES_POS'[Nacionalidade] IN {\"Brasileiro(a)\",",
               "\t\t\"Brasileiro(a) Naturalizado(a)\"},",
               "\t\"Brasileiro(a) & Brasileiro(a) Naturalizado(a)\",",
-              "\t'V_PRPGP_DISCENTES_POS'[NACIONALIDADE]",
+              "\t'V_PRPGP_DISCENTES_POS'[Nacionalidade]",
               ")"
             ],
             "extendedProperties": [
@@ -1143,7 +1239,7 @@
                             "Entity": "V_PRPGP_DISCENTES_POS"
                           }
                         },
-                        "Property": "NACIONALIDADE"
+                        "Property": "Nacionalidade"
                       }
                     }
                   ],
@@ -1167,9 +1263,12 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_DISCENTES_POS1 = BEE{[Name=\"V_PRPGP_DISCENTES_POS\"]}[Data]",
+                "    V_PRPGP_DISCENTES_POS1 = BEE{[Name=\"V_PRPGP_DISCENTES_POS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{\"ANO_EVASAO\", \"Ano saída\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}, {\"FORMA_EVASAO\", \"Forma saída\"}, {\"MATRICULA\", \"Matrícula\"}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"MODALIDADE_CURSO\", \"NIVEL_CURSO\", \"NOME_CURSO\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Removed Columns\",{{\"NACIONALIDADE\", \"Nacionalidade\"}, {\"NOME_ALUNO\", \"Nome aluno\"}})",
                 "in",
-                "    V_PRPGP_DISCENTES_POS1"
+                "    #\"Renamed Columns1\""
               ],
               "type": "m"
             }
@@ -1187,14 +1286,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "62c9349d-bcbb-4bc3-9503-6bb265dce41b",
             "sourceColumn": "ID_DISCIPLINA",
             "summarizeBy": "none"
           },
           {
-            "name": "COD_DISCIPLINA",
+            "name": "Código disciplina",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1203,11 +1308,11 @@
             ],
             "dataType": "string",
             "lineageTag": "fe4d78da-eb56-45e3-8d88-2186dd9261ad",
-            "sourceColumn": "COD_DISCIPLINA",
+            "sourceColumn": "Código disciplina",
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_DISCIPLINA",
+            "name": "Nome disciplina",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1216,11 +1321,11 @@
             ],
             "dataType": "string",
             "lineageTag": "583c5033-ffa4-4efd-9a1c-3209943c491e",
-            "sourceColumn": "NOME_DISCIPLINA",
+            "sourceColumn": "Nome disciplina",
             "summarizeBy": "none"
           },
           {
-            "name": "CH_TOTAL",
+            "name": "Carga horária",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1230,7 +1335,7 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "d915a991-25be-47b3-9a13-8df9a8cc448b",
-            "sourceColumn": "CH_TOTAL",
+            "sourceColumn": "Carga horária",
             "summarizeBy": "none"
           }
         ],
@@ -1244,9 +1349,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_DISCIPLINAS_POS1 = BEE{[Name=\"V_PRPGP_DISCIPLINAS_POS\"]}[Data]",
+                "    V_PRPGP_DISCIPLINAS_POS1 = BEE{[Name=\"V_PRPGP_DISCIPLINAS_POS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DISCIPLINAS_POS1,{{\"CH_TOTAL\", \"Carga horária\"}, {\"COD_DISCIPLINA\", \"Código disciplina\"}, {\"NOME_DISCIPLINA\", \"Nome disciplina\"}})",
                 "in",
-                "    V_PRPGP_DISCIPLINAS_POS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -1264,8 +1370,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "bc343852-689d-4e74-ac7a-5c392b2da020",
             "sourceColumn": "ID_CONTRATO_RH",
             "summarizeBy": "none"
@@ -1275,17 +1387,17 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "0229dd6c-d0aa-4a7a-8bd1-8b7fd0efc6fb",
             "sourceColumn": "SIAPE",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
-            "name": "NOME_FUNCIONARIO",
+            "name": "Nome",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1294,11 +1406,11 @@
             ],
             "dataType": "string",
             "lineageTag": "3e8d8289-a64e-410c-a26f-34c0fde8d157",
-            "sourceColumn": "NOME_FUNCIONARIO",
+            "sourceColumn": "Nome",
             "summarizeBy": "none"
           },
           {
-            "name": "SEXO",
+            "name": "Gênero",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1307,11 +1419,11 @@
             ],
             "dataType": "string",
             "lineageTag": "90f79339-a3f8-46fd-8a85-d2a7060c6bbf",
-            "sourceColumn": "SEXO",
+            "sourceColumn": "Gênero",
             "summarizeBy": "none"
           },
           {
-            "name": "DESCR_CARGO",
+            "name": "Cargo",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1320,11 +1432,11 @@
             ],
             "dataType": "string",
             "lineageTag": "6b63ca3d-6a5d-44ce-8e2e-b1b5f6a8ef50",
-            "sourceColumn": "DESCR_CARGO",
+            "sourceColumn": "Cargo",
             "summarizeBy": "none"
           },
           {
-            "name": "DT_ADMISSAO_CARGO",
+            "name": "Data ingresso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1338,7 +1450,7 @@
             "dataType": "dateTime",
             "formatString": "Long Date",
             "lineageTag": "93c3ad4e-e2bb-4098-9db6-4c621141a5c0",
-            "sourceColumn": "DT_ADMISSAO_CARGO",
+            "sourceColumn": "Data ingresso",
             "summarizeBy": "none",
             "variations": [
               {
@@ -1353,7 +1465,7 @@
             ]
           },
           {
-            "name": "DT_DESLIGAMENTO",
+            "name": "Data desligamento",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1367,7 +1479,7 @@
             "dataType": "dateTime",
             "formatString": "Long Date",
             "lineageTag": "4787d5f2-fecb-4e35-acb7-e672eb9e794e",
-            "sourceColumn": "DT_DESLIGAMENTO",
+            "sourceColumn": "Data desligamento",
             "summarizeBy": "none",
             "variations": [
               {
@@ -1382,7 +1494,7 @@
             ]
           },
           {
-            "name": "NACIONALIDADE",
+            "name": "Nacionalidade",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1391,7 +1503,7 @@
             ],
             "dataType": "string",
             "lineageTag": "e7b8ec4c-597a-4506-bf00-ec3296d276bb",
-            "sourceColumn": "NACIONALIDADE",
+            "sourceColumn": "Nacionalidade",
             "summarizeBy": "none"
           }
         ],
@@ -1405,9 +1517,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_DOCENTES_POS1 = BEE{[Name=\"V_PRPGP_DOCENTES_POS\"]}[Data]",
+                "    V_PRPGP_DOCENTES_POS1 = BEE{[Name=\"V_PRPGP_DOCENTES_POS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DOCENTES_POS1,{{\"DESCR_CARGO\", \"Cargo\"}, {\"DT_ADMISSAO_CARGO\", \"Data ingresso\"}, {\"DT_DESLIGAMENTO\", \"Data desligamento\"}, {\"NACIONALIDADE\", \"Nacionalidade\"}, {\"SEXO\", \"Gênero\"}, {\"NOME_FUNCIONARIO\", \"Nome\"}})",
                 "in",
-                "    V_PRPGP_DOCENTES_POS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -1608,7 +1721,7 @@
             "name": "LocalDateTable_78d1081d-2983-4240-b7e8-2d69e045838f",
             "mode": "import",
             "source": {
-              "expression": "Calendar(Date(Year(MIN('V_PRPGP_DOCENTES_POS'[DT_ADMISSAO_CARGO])), 1, 1), Date(Year(MAX('V_PRPGP_DOCENTES_POS'[DT_ADMISSAO_CARGO])), 12, 31))",
+              "expression": "Calendar(Date(Year(MIN('V_PRPGP_DOCENTES_POS'[Data ingresso])), 1, 1), Date(Year(MAX('V_PRPGP_DOCENTES_POS'[Data ingresso])), 12, 31))",
               "type": "calculated"
             }
           }
@@ -1809,7 +1922,7 @@
             "name": "LocalDateTable_b6e4c7ec-07b2-43a4-ad00-0f28d4746a35",
             "mode": "import",
             "source": {
-              "expression": "Calendar(Date(Year(MIN('V_PRPGP_DOCENTES_POS'[DT_DESLIGAMENTO])), 1, 1), Date(Year(MAX('V_PRPGP_DOCENTES_POS'[DT_DESLIGAMENTO])), 12, 31))",
+              "expression": "Calendar(Date(Year(MIN('V_PRPGP_DOCENTES_POS'[Data desligamento])), 1, 1), Date(Year(MAX('V_PRPGP_DOCENTES_POS'[Data desligamento])), 12, 31))",
               "type": "calculated"
             }
           }
@@ -1833,8 +1946,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "961548d3-a0c8-4721-90e3-509e39d70db4",
             "sourceColumn": "ID_PLANO_ESTUDO",
             "summarizeBy": "none"
@@ -1847,8 +1966,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "90890454-23c1-4ee0-a9c3-c9ee4d632da5",
             "sourceColumn": "ID_PARTICIP_PLANO",
             "summarizeBy": "none"
@@ -1861,8 +1986,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "6529b173-77dc-434e-87a3-7d8011295df1",
             "sourceColumn": "ID_CONTRATO_RH",
             "summarizeBy": "none"
@@ -1875,14 +2006,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "bb08ae62-2b32-417d-9b45-5508062d8795",
             "sourceColumn": "ID_CURSO_ALUNO",
             "summarizeBy": "none"
           },
           {
-            "name": "TIPO_VINCULO",
+            "name": "Tipo vínculo",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1891,11 +2028,11 @@
             ],
             "dataType": "string",
             "lineageTag": "0b5a8b9b-79fa-4f2d-ba5b-6672a0a1c8c7",
-            "sourceColumn": "TIPO_VINCULO",
+            "sourceColumn": "Tipo vínculo",
             "summarizeBy": "none"
           },
           {
-            "name": "SITUACAO",
+            "name": "Situação",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1904,11 +2041,11 @@
             ],
             "dataType": "string",
             "lineageTag": "1a09e5a2-7aa8-45af-8094-4ed6f5172ac9",
-            "sourceColumn": "SITUACAO",
+            "sourceColumn": "Situação",
             "summarizeBy": "none"
           },
           {
-            "name": "TIPO_PARTICIPANTE",
+            "name": "Tipo participante",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1917,7 +2054,7 @@
             ],
             "dataType": "string",
             "lineageTag": "f1cedcd9-0f37-4899-a1de-935edde69c81",
-            "sourceColumn": "TIPO_PARTICIPANTE",
+            "sourceColumn": "Tipo participante",
             "summarizeBy": "none"
           }
         ],
@@ -1931,9 +2068,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_MEMBROS_BANCA1 = BEE{[Name=\"V_PRPGP_MEMBROS_BANCA\"]}[Data]",
+                "    V_PRPGP_MEMBROS_BANCA1 = BEE{[Name=\"V_PRPGP_MEMBROS_BANCA\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_MEMBROS_BANCA1,{{\"SITUACAO\", \"Situação\"}, {\"TIPO_PARTICIPANTE\", \"Tipo participante\"}, {\"TIPO_VINCULO\", \"Tipo vínculo\"}})",
                 "in",
-                "    V_PRPGP_MEMBROS_BANCA1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -1957,14 +2095,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "a4e2011a-03dd-4da4-8d5a-722757439128",
             "sourceColumn": "ID_PARTICIP_PLANO",
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_PART_EXTERNO",
+            "name": "Nome participante",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1973,11 +2117,11 @@
             ],
             "dataType": "string",
             "lineageTag": "72ff7a30-9e86-47bf-9d4f-3c8761e74f50",
-            "sourceColumn": "NOME_PART_EXTERNO",
+            "sourceColumn": "Nome participante",
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_INST_ORIGEM",
+            "name": "Nome Instituição origem",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1986,11 +2130,11 @@
             ],
             "dataType": "string",
             "lineageTag": "f06a73f2-f2f0-4bd8-83e5-0f589f51ba10",
-            "sourceColumn": "NOME_INST_ORIGEM",
+            "sourceColumn": "Nome Instituição origem",
             "summarizeBy": "none"
           },
           {
-            "name": "SIGLA_INST_ORIGEM",
+            "name": "Sigla Instituição origem",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1999,24 +2143,11 @@
             ],
             "dataType": "string",
             "lineageTag": "ca47dccb-3f1d-4be4-868a-fc7ac2830a3f",
-            "sourceColumn": "SIGLA_INST_ORIGEM",
+            "sourceColumn": "Sigla Instituição origem",
             "summarizeBy": "none"
           },
           {
-            "name": "CPF",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "837862e6-123d-41b6-b666-023ec5a00ef8",
-            "sourceColumn": "CPF",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "TITULACAO",
+            "name": "Titulação",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2025,7 +2156,7 @@
             ],
             "dataType": "string",
             "lineageTag": "09d462ad-99d6-4f51-85bd-d77b80a35f01",
-            "sourceColumn": "TITULACAO",
+            "sourceColumn": "Titulação",
             "summarizeBy": "none"
           }
         ],
@@ -2039,9 +2170,11 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_MEMBROS_EXTERNOS_BANCAS1 = BEE{[Name=\"V_PRPGP_MEMBROS_EXTERNOS_BANCAS\"]}[Data]",
+                "    V_PRPGP_MEMBROS_EXTERNOS_BANCAS1 = BEE{[Name=\"V_PRPGP_MEMBROS_EXTERNOS_BANCAS\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(V_PRPGP_MEMBROS_EXTERNOS_BANCAS1,{\"CPF\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\",{{\"TITULACAO\", \"Titulação\"}, {\"SIGLA_INST_ORIGEM\", \"Sigla Instituição origem\"}, {\"NOME_INST_ORIGEM\", \"Nome Instituição origem\"}, {\"NOME_PART_EXTERNO\", \"Nome participante\"}})",
                 "in",
-                "    V_PRPGP_MEMBROS_EXTERNOS_BANCAS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -2065,14 +2198,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "ab4d6cdf-94d3-43d2-95e7-eed770e68f31",
             "sourceColumn": "ID_PROJETO",
             "summarizeBy": "none"
           },
           {
-            "name": "NUM_PROCESSO",
+            "name": "Número processo PEN-SIE",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2081,11 +2220,11 @@
             ],
             "dataType": "string",
             "lineageTag": "4b6ef86c-0379-4d73-bbbb-728677061193",
-            "sourceColumn": "NUM_PROCESSO",
+            "sourceColumn": "Número processo PEN-SIE",
             "summarizeBy": "none"
           },
           {
-            "name": "TITULO",
+            "name": "Título",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2094,11 +2233,11 @@
             ],
             "dataType": "string",
             "lineageTag": "73dc54c1-fb37-41e9-9dca-914d5285b4c8",
-            "sourceColumn": "TITULO",
+            "sourceColumn": "Título",
             "summarizeBy": "none"
           },
           {
-            "name": "CLASSIFICACAO",
+            "name": "Classificação projeto",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2107,11 +2246,11 @@
             ],
             "dataType": "string",
             "lineageTag": "e3a65ce7-c925-406a-8d84-82d5bfe73f1a",
-            "sourceColumn": "CLASSIFICACAO",
+            "sourceColumn": "Classificação projeto",
             "summarizeBy": "none"
           },
           {
-            "name": "SITUACAO",
+            "name": "Situação",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2120,11 +2259,11 @@
             ],
             "dataType": "string",
             "lineageTag": "7b391e1e-b0af-4d46-80d0-b3fbe8320417",
-            "sourceColumn": "SITUACAO",
+            "sourceColumn": "Situação",
             "summarizeBy": "none"
           },
           {
-            "name": "DT_INICIAL",
+            "name": "Data início",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2138,7 +2277,7 @@
             "dataType": "dateTime",
             "formatString": "Long Date",
             "lineageTag": "83776a89-c68d-46f0-beb8-87f707faf7c1",
-            "sourceColumn": "DT_INICIAL",
+            "sourceColumn": "Data início",
             "summarizeBy": "none",
             "variations": [
               {
@@ -2153,7 +2292,7 @@
             ]
           },
           {
-            "name": "DT_CONCLUSAO",
+            "name": "Data fim",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2167,7 +2306,7 @@
             "dataType": "dateTime",
             "formatString": "Long Date",
             "lineageTag": "60769411-8234-4a76-a5c8-2fee20147a57",
-            "sourceColumn": "DT_CONCLUSAO",
+            "sourceColumn": "Data fim",
             "summarizeBy": "none",
             "variations": [
               {
@@ -2192,9 +2331,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_PROJETOS_POS1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS\"]}[Data]",
+                "    V_PRPGP_PROJETOS_POS1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_PROJETOS_POS1,{{\"CLASSIFICACAO\", \"Classificação projeto\"}, {\"DT_INICIAL\", \"Data início\"}, {\"DT_CONCLUSAO\", \"Data fim\"}, {\"NUM_PROCESSO\", \"Número processo PEN-SIE\"}, {\"SITUACAO\", \"Situação\"}, {\"TITULO\", \"Título\"}})",
                 "in",
-                "    V_PRPGP_PROJETOS_POS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -2395,7 +2535,7 @@
             "name": "LocalDateTable_5cafaadf-62a2-46ac-964a-951db594eab0",
             "mode": "import",
             "source": {
-              "expression": "Calendar(Date(Year(MIN('V_PRPGP_PROJETOS_POS'[DT_INICIAL])), 1, 1), Date(Year(MAX('V_PRPGP_PROJETOS_POS'[DT_INICIAL])), 12, 31))",
+              "expression": "Calendar(Date(Year(MIN('V_PRPGP_PROJETOS_POS'[Data início])), 1, 1), Date(Year(MAX('V_PRPGP_PROJETOS_POS'[Data início])), 12, 31))",
               "type": "calculated"
             }
           }
@@ -2596,7 +2736,7 @@
             "name": "LocalDateTable_33034433-a6c7-4857-919a-bebeb3fbb368",
             "mode": "import",
             "source": {
-              "expression": "Calendar(Date(Year(MIN('V_PRPGP_PROJETOS_POS'[DT_CONCLUSAO])), 1, 1), Date(Year(MAX('V_PRPGP_PROJETOS_POS'[DT_CONCLUSAO])), 12, 31))",
+              "expression": "Calendar(Date(Year(MIN('V_PRPGP_PROJETOS_POS'[Data fim])), 1, 1), Date(Year(MAX('V_PRPGP_PROJETOS_POS'[Data fim])), 12, 31))",
               "type": "calculated"
             }
           }
@@ -2620,14 +2760,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "c72fadf8-b81b-41bb-8882-5cd9b9e8044c",
             "sourceColumn": "ID_CONC_EDICAO",
             "summarizeBy": "none"
           },
           {
-            "name": "CODIGO_COTA",
+            "name": "Código cota",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2636,11 +2782,11 @@
             ],
             "dataType": "string",
             "lineageTag": "e7838b1d-d43e-4c7e-a077-d8ffd809dc17",
-            "sourceColumn": "CODIGO_COTA",
+            "sourceColumn": "Código cota",
             "summarizeBy": "none"
           },
           {
-            "name": "TIPO_COTA",
+            "name": "Tipo cota",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2649,7 +2795,7 @@
             ],
             "dataType": "string",
             "lineageTag": "cb4aed60-3371-4968-a5a5-bef044833ad4",
-            "sourceColumn": "TIPO_COTA",
+            "sourceColumn": "Tipo cota",
             "summarizeBy": "none"
           }
         ],
@@ -2663,9 +2809,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_TIPOS_COTAS1 = BEE{[Name=\"V_PRPGP_TIPOS_COTAS\"]}[Data]",
+                "    V_PRPGP_TIPOS_COTAS1 = BEE{[Name=\"V_PRPGP_TIPOS_COTAS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_TIPOS_COTAS1,{{\"TIPO_COTA\", \"Tipo cota\"}, {\"CODIGO_COTA\", \"Código cota\"}})",
                 "in",
-                "    V_PRPGP_TIPOS_COTAS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -2677,7 +2824,11 @@
         "annotations": [
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -2689,8 +2840,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "62427937-0e32-4eef-91cd-d933334390e7",
             "sourceColumn": "ID_DOCENTE",
             "summarizeBy": "none"
@@ -2703,8 +2860,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "ff0c7a44-91a6-445e-a414-0067d9458e2e",
             "sourceColumn": "ID_CURSO_ALUNO",
             "summarizeBy": "none"
@@ -2717,28 +2880,34 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "f7919938-d861-42f2-bac7-f5469569c97c",
             "sourceColumn": "ID_DISCIPLINA",
             "summarizeBy": "none"
           },
           {
-            "name": "ANO_TURMA",
+            "name": "Ano turma",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "c99e4412-90db-4944-bea7-a1ebe7a35635",
-            "sourceColumn": "ANO_TURMA",
-            "summarizeBy": "sum"
+            "sourceColumn": "Ano turma",
+            "summarizeBy": "none"
           },
           {
-            "name": "ENCARGO_DIDATICO_DOCENTE",
+            "name": "Encargo didático docente",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2751,7 +2920,7 @@
             ],
             "dataType": "double",
             "lineageTag": "5c0f09f4-4d89-4bd9-b6bc-23be3e42f4b7",
-            "sourceColumn": "ENCARGO_DIDATICO_DOCENTE",
+            "sourceColumn": "Encargo didático docente",
             "summarizeBy": "sum"
           }
         ],
@@ -2765,9 +2934,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_TURMAS_POS1 = BEE{[Name=\"V_PRPGP_TURMAS_POS\"]}[Data]",
+                "    V_PRPGP_TURMAS_POS1 = BEE{[Name=\"V_PRPGP_TURMAS_POS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_TURMAS_POS1,{{\"ANO_TURMA\", \"Ano turma\"}, {\"ENCARGO_DIDATICO_DOCENTE\", \"Encargo didático docente\"}})",
                 "in",
-                "    V_PRPGP_TURMAS_POS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -2791,8 +2961,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "999a4e54-0630-4ffa-b226-b82abdc62ef7",
             "sourceColumn": "ID_CONCURSO",
             "summarizeBy": "sum"
@@ -2805,8 +2981,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "dc9f12ed-569a-434b-a11e-263c048cdedf",
             "sourceColumn": "ID_CONC_EDICAO",
             "summarizeBy": "none"
@@ -2819,8 +3001,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "51ccba1d-a3fe-4077-96a7-736bd972632e",
             "sourceColumn": "ID_OPCAO",
             "summarizeBy": "sum"
@@ -2833,14 +3021,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "1933250d-bb99-4ab8-a103-79bf371082f5",
             "sourceColumn": "ID_CURSO",
             "summarizeBy": "none"
           },
           {
-            "name": "CODIGO_COTA",
+            "name": "Código cota",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2849,11 +3043,11 @@
             ],
             "dataType": "string",
             "lineageTag": "39792e6b-8a85-46c2-8296-1e2fc8acf3b1",
-            "sourceColumn": "CODIGO_COTA",
+            "sourceColumn": "Código cota",
             "summarizeBy": "none"
           },
           {
-            "name": "VAGAS_OFERECIDAS",
+            "name": "Quantidade Vagas Oferecidas",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2863,11 +3057,11 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "84090a51-01f7-4d76-aece-bedd3ce1c8c8",
-            "sourceColumn": "VAGAS_OFERECIDAS",
+            "sourceColumn": "Quantidade Vagas Oferecidas",
             "summarizeBy": "sum"
           },
           {
-            "name": "INSCRITOS",
+            "name": "Quantidade Inscritos",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2877,11 +3071,11 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "dfc4d95a-9415-42f6-8877-00fc644e2972",
-            "sourceColumn": "INSCRITOS",
+            "sourceColumn": "Quantidade Inscritos",
             "summarizeBy": "sum"
           },
           {
-            "name": "APROVADOS",
+            "name": "Quantidade aprovados",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2890,11 +3084,11 @@
             ],
             "dataType": "string",
             "lineageTag": "82f26675-f168-411b-934e-edca2a45e4c6",
-            "sourceColumn": "APROVADOS",
+            "sourceColumn": "Quantidade aprovados",
             "summarizeBy": "none"
           },
           {
-            "name": "MATRICULADOS",
+            "name": "Quantidade  Matriculados",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2904,7 +3098,7 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "e934c982-4cdc-4d29-8ffb-e61576a5ba2a",
-            "sourceColumn": "MATRICULADOS",
+            "sourceColumn": "Quantidade  Matriculados",
             "summarizeBy": "sum"
           }
         ],
@@ -2918,9 +3112,10 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1 = BEE{[Name=\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]}[Data]",
+                "    V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1 = BEE{[Name=\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1,{{\"INSCRITOS\", \"Quantidade Inscritos\"}, {\"MATRICULADOS\", \"Quantidade  Matriculados\"}, {\"VAGAS_OFERECIDAS\", \"Quantidade Vagas Oferecidas\"}, {\"APROVADOS\", \"Quantidade aprovados\"}, {\"CODIGO_COTA\", \"Código cota\"}})",
                 "in",
-                "    V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -2944,27 +3139,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "b9abdf51-d520-4b43-b23c-3fff83cae5e5",
             "sourceColumn": "ID_PROJETO",
             "summarizeBy": "none"
           },
           {
-            "name": "COD_ESTRUTURADO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "a816f018-7fff-41f0-9337-d0d3fde81a64",
-            "sourceColumn": "COD_ESTRUTURADO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "NOME_UNIDADE",
+            "name": "Nome unidade",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2973,11 +3161,11 @@
             ],
             "dataType": "string",
             "lineageTag": "bc68303a-3289-41e8-9b22-af4ba15c8475",
-            "sourceColumn": "NOME_UNIDADE",
+            "sourceColumn": "Nome unidade",
             "summarizeBy": "none"
           },
           {
-            "name": "FUNCAO",
+            "name": "Função",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -2986,7 +3174,27 @@
             ],
             "dataType": "string",
             "lineageTag": "ae66889f-0683-4789-810e-deceefd97a1f",
-            "sourceColumn": "FUNCAO",
+            "sourceColumn": "Função",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_UNIDADE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "f40769b1-e522-479b-a20a-ca349c9dc048",
+            "sourceColumn": "ID_UNIDADE",
             "summarizeBy": "none"
           }
         ],
@@ -3000,9 +3208,11 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_PROJETOS_POS_ORGAOS1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS_ORGAOS\"]}[Data]",
+                "    V_PRPGP_PROJETOS_POS_ORGAOS1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS_ORGAOS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_PROJETOS_POS_ORGAOS1,{{\"COD_ESTRUTURADO\", \"Código estruturado\"}, {\"FUNCAO\", \"Função\"}, {\"NOME_UNIDADE\", \"Nome unidade\"}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"Código estruturado\"})",
                 "in",
-                "    V_PRPGP_PROJETOS_POS_ORGAOS1"
+                "    #\"Removed Columns\""
               ],
               "type": "m"
             }
@@ -3015,6 +3225,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -3026,8 +3240,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "03609f5b-6723-42f2-b576-2e9869142312",
             "sourceColumn": "ID_PROJETO",
             "summarizeBy": "none"
@@ -3040,8 +3260,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "f8659a22-8d5d-4439-a76a-5a1cf74a3fa8",
             "sourceColumn": "ID_CURSO_ALUNO",
             "summarizeBy": "none"
@@ -3054,14 +3280,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "aed58778-1b04-44ae-a0d4-2c2f089bdd7a",
             "sourceColumn": "ID_CONTRATO_RH",
             "summarizeBy": "none"
           },
           {
-            "name": "DT_FINAL",
+            "name": "Data fim participação",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -3075,7 +3307,7 @@
             "dataType": "dateTime",
             "formatString": "Long Date",
             "lineageTag": "b028f736-2d18-4ece-827c-eec0f853c1b1",
-            "sourceColumn": "DT_FINAL",
+            "sourceColumn": "Data fim participação",
             "summarizeBy": "none",
             "variations": [
               {
@@ -3086,6 +3318,35 @@
                 },
                 "isDefault": true,
                 "relationship": "f8181591-1c9b-45aa-aabb-6e2312d6cb54"
+              }
+            ]
+          },
+          {
+            "name": "Data início participação",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "e055cf4c-9108-4dd3-891a-593e3001920b",
+            "sourceColumn": "Data início participação",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_1727a338-012d-44ce-a8dc-3da0e0cddf81"
+                },
+                "isDefault": true,
+                "relationship": "0c65c586-904d-4fa2-896d-fe6d166d0e4e"
               }
             ]
           }
@@ -3101,9 +3362,9 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    PM_PROJETOS_PARTICIPANTES1 = BEE{[Name=\"PM_PROJETOS_PARTICIPANTES\"]}[Data],",
-                "    #\"Colunas Removidas\" = Table.RemoveColumns(PM_PROJETOS_PARTICIPANTES1,{\"DT_INICIAL\"})",
+                "    #\"Renamed Columns\" = Table.RenameColumns(PM_PROJETOS_PARTICIPANTES1,{{\"DT_FINAL\", \"Data fim participação\"}, {\"DT_INICIAL\", \"Data início participação\"}})",
                 "in",
-                "    #\"Colunas Removidas\""
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -3304,7 +3565,1062 @@
             "name": "LocalDateTable_80b1c078-b91c-4491-a47d-6e8aca5ec8d5",
             "mode": "import",
             "source": {
-              "expression": "Calendar(Date(Year(MIN('PM_PROJETOS_PARTICIPANTES'[DT_FINAL])), 1, 1), Date(Year(MAX('PM_PROJETOS_PARTICIPANTES'[DT_FINAL])), 12, 31))",
+              "expression": "Calendar(Date(Year(MIN('PM_PROJETOS_PARTICIPANTES'[Data fim participação])), 1, 1), Date(Year(MAX('PM_PROJETOS_PARTICIPANTES'[Data fim participação])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "CREDENCIAMENTO_DOCENTES",
+        "columns": [
+          {
+            "name": "ID_CREDENCIAMENTO_DOCENTE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "418ba751-b5c1-4bd3-93d1-8ec22eb13f1f",
+            "sourceColumn": "ID_CREDENCIAMENTO_DOCENTE",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ID_UNIDADE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "4a15d962-f439-45d8-b550-3d566c3566d9",
+            "sourceColumn": "ID_UNIDADE",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Nome programa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "82bdbc9a-3f43-4326-bc0b-48dc00e90e5e",
+            "sourceColumn": "Nome programa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Vínculo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "958ed362-ac34-4af7-b694-04a17591ecd9",
+            "sourceColumn": "Vínculo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Data fim atuação programa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "723f412b-3619-4af4-83c4-a231cea63da7",
+            "sourceColumn": "Data fim atuação programa",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_adf819e3-6842-4ca8-aef3-f6b49b0fd0c3"
+                },
+                "isDefault": true,
+                "relationship": "690f8323-3196-4754-9689-b8a60090bbda"
+              }
+            ]
+          },
+          {
+            "name": "Data início atuação programa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "f81ab1d2-d706-4b2d-a792-ddc5642de13d",
+            "sourceColumn": "Data início atuação programa",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_80750216-b5ec-4ee0-afe1-32baf7826e9d"
+                },
+                "isDefault": true,
+                "relationship": "cf129f7b-50ef-4615-94b3-f82fd70de96b"
+              }
+            ]
+          },
+          {
+            "name": "ID_PESSOA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "13728343-5f2d-4692-9af6-9e92a10e9ad6",
+            "sourceColumn": "ID_PESSOA",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ID_CONTRATO_RH",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "7dc92c8e-3f4e-4ad0-a53c-7cad0f53712c",
+            "sourceColumn": "ID_CONTRATO_RH",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SIAPE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e84024e1-9e58-40e3-83ed-5cdb047a97dc",
+            "sourceColumn": "SIAPE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nome docente",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ea19faa5-6f25-45ba-bc85-f9585dc0f62d",
+            "sourceColumn": "Nome docente",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Titulação",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ef29f7f9-f0f7-49ef-bf4c-78b1495d99ab",
+            "sourceColumn": "Titulação",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "23e4bd8d-5d94-45de-88d3-628f436d72f8",
+        "partitions": [
+          {
+            "name": "CREDENCIAMENTO_DOCENTES",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    CREDENCIAMENTO_DOCENTES1 = BEE{[Name=\"CREDENCIAMENTO_DOCENTES\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(CREDENCIAMENTO_DOCENTES1,{\"CH_SEMANAL\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\",{{\"NOME_PESSOA\", \"Nome docente\"}, {\"PROGRAMA\", \"Nome programa\"}, {\"TITULACAO\", \"Titulação\"}, {\"DT_FIM\", \"Data início atuação programa\"}, {\"DT_INICIO\", \"Data fim atuação programa\"}}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Renamed Columns\",{\"EDITAL\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Removed Columns1\",{{\"MATR_EXTERNA\", \"SIAPE\"}, {\"TIPO_CREDENCIAMENTO\", \"Vínculo\"}}),",
+                "    #\"Removed Columns2\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"COD_ESTRUTURADO\"})",
+                "in",
+                "    #\"Removed Columns2\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_adf819e3-6842-4ca8-aef3-f6b49b0fd0c3",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "c0ebea0c-5e89-4cb8-b105-3a16a3dffec0",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "2f4dda0a-c80e-4def-bb25-93db44c9e9ed",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "7258021e-cef0-491b-bf37-e0aff8c1c470",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "0275627f-2d91-4e7b-ba2a-49136b702c8c",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "df295822-7e5b-4385-9085-7ee18b429dc9",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "1d197c46-29a3-401d-810f-2dd468681a6f",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "d1b6fe56-c7a4-4ff3-a5e8-589fe5690d9f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "0f5dc2d1-5ceb-4717-ad5e-c64c4b8d2eab",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "73356ae6-fc6a-44e5-922a-b1d14ac2e5dc",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "f3ba7760-9715-4284-9cbb-afba4108dc11",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "42f285ce-f49a-47d2-a2db-d67a02b40351",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "3ed74380-78c0-468e-bc2d-8178f9754ed8"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "797e9c90-5c49-486d-8eb6-d719ee6d6464",
+        "partitions": [
+          {
+            "name": "LocalDateTable_adf819e3-6842-4ca8-aef3-f6b49b0fd0c3",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('CREDENCIAMENTO_DOCENTES'[Data fim atuação programa])), 1, 1), Date(Year(MAX('CREDENCIAMENTO_DOCENTES'[Data fim atuação programa])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "LocalDateTable_80750216-b5ec-4ee0-afe1-32baf7826e9d",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "8d3fcb82-76d7-423d-8f1b-4eeaa78b6a56",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "4da87af9-ad70-4bb0-a758-42e577bb6fa4",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "87640eb9-5355-4c6d-82e4-ef0e6b16821f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "189fe0b3-c3e3-442a-a65b-954b81382b15",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "7385a102-b2b6-435c-84d3-2ef279723ace",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "a9418cac-6c23-4881-b40c-59503f66a741",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "39e9bb64-f773-42c4-aad6-20afe98f4f42",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "27237635-0285-49ae-97b4-652b34b837a1",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "a3701561-4915-4558-81cd-ac937c70f1f6",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "d566d8de-c778-4c2a-bd6c-28ef4b6bb7ff",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "213ef148-3cee-4451-9ba4-1c36342de7cd",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "7ec207c7-3df0-4542-bfe5-723b4ae3f512"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "91fa4658-1541-4dde-b872-3a2bfcaf8639",
+        "partitions": [
+          {
+            "name": "LocalDateTable_80750216-b5ec-4ee0-afe1-32baf7826e9d",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('CREDENCIAMENTO_DOCENTES'[Data início atuação programa])), 1, 1), Date(Year(MAX('CREDENCIAMENTO_DOCENTES'[Data início atuação programa])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "NAV_UNIDADES",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID_UNIDADE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "14d82178-c87e-4415-8dfb-763f117a0eaf",
+            "sourceColumn": "ID_UNIDADE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Código unidade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9b26fc2d-e7fc-4043-a88d-fb3e89fc3652",
+            "sourceColumn": "Código unidade",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nome Unidade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d7f0bf11-b3b0-442e-9cbc-a5fab55d236a",
+            "sourceColumn": "Nome Unidade",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_CENTRO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "24ff070d-d4ce-4f84-87ee-ec08a78a07d6",
+            "sourceColumn": "ID_CENTRO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Situação",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "186fcef7-8e9d-458d-8db4-8432ec7ce270",
+            "sourceColumn": "Situação",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Tipo Unidade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c311a3a8-37a3-458b-80e9-c3030a03eaf7",
+            "sourceColumn": "Tipo Unidade",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3482d8a9-69e4-4c1c-b1f6-bdacc4b2e630",
+        "partitions": [
+          {
+            "name": "NAV_UNIDADES",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    NAV_UNIDADES1 = BEE{[Name=\"NAV_UNIDADES\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(NAV_UNIDADES1,{\"ID_PREDIO\", \"ID_PROGRAMA\", \"ID_NIVEL_ENSINO\", \"DT_ADESAO_PGD\", \"BEE.NAV_CENTROS\", \"BEE.NAV_GRUPOS_UNIDADES\", \"ID_UNIDADE_SUP\", \"ID_GRUPO_UNIDADE\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\",{{\"COD_ESTRUTURADO\", \"Código unidade\"}, {\"NOME_UNIDADE\", \"Nome Unidade\"}, {\"SITUACAO\", \"Situação\"}, {\"TIPO_UNIDADE\", \"Tipo Unidade\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "NAV_CENTROS",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID_CENTRO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "d75bd2a4-9bc3-45f7-adfe-84442692ec04",
+            "sourceColumn": "ID_CENTRO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Código centro",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fae36ac5-81f5-43cf-a315-1772194b6b26",
+            "sourceColumn": "Código centro",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nome Centro",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "64caa6df-2bf1-4866-907b-ecdd720f44d3",
+            "sourceColumn": "Nome Centro",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sigla Centro",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "444c67eb-5ab1-4c72-a833-0e2ee5fd85f0",
+            "sourceColumn": "Sigla Centro",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e0637774-7e97-43b6-a3e5-563ab2f576e2",
+        "partitions": [
+          {
+            "name": "NAV_CENTROS",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    NAV_CENTROS1 = BEE{[Name=\"NAV_CENTROS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(NAV_CENTROS1,{{\"SIGLA_CENTRO\", \"Sigla Centro\"}, {\"NOME_CENTRO\", \"Nome Centro\"}, {\"COD_ESTRUTURADO\", \"Código centro\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_1727a338-012d-44ce-a8dc-3da0e0cddf81",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "52506917-4b21-47d0-aebe-208307003099",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "dcb91b47-4f06-4722-9016-849bd7e3a433",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "b164bf9f-584e-4c21-8983-2a308ba2e255",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "a8f89eca-ef30-483b-86f7-a8e57a03d9ac",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "7f49627a-65b3-4a43-add8-80eac2fc0394",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "f532437b-7979-46fd-abfb-190b458c83f3",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "ea5550e3-7733-4be4-963d-38b2e9938b8c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "54953355-c015-4d39-b2e3-ef773360fde7",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "9cb1d45d-f566-4632-94e1-04640bd9e64f",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "5114c5b9-cd03-4e5a-90c4-7422a3e01206",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "4010bc13-4699-4c63-a9a9-686896347549",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "ee11ba05-0f00-4499-ac06-db82ba00b332"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "5fed4bda-ac0e-436e-8393-4991591f4918",
+        "partitions": [
+          {
+            "name": "LocalDateTable_1727a338-012d-44ce-a8dc-3da0e0cddf81",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('PM_PROJETOS_PARTICIPANTES'[Data início participação])), 1, 1), Date(Year(MAX('PM_PROJETOS_PARTICIPANTES'[Data início participação])), 12, 31))",
               "type": "calculated"
             }
           }
