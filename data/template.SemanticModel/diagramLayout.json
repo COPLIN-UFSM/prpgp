@@ -4,23 +4,10 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 716.58635179615487,
-        "y": 586.03418244058
+        "x": 899.36904738968917,
+        "y": 487.90364234522013
       },
       "nodes": [
-        {
-          "location": {
-            "x": 1663.0983101613353,
-            "y": 2053.7099996112365
-          },
-          "nodeIndex": "V_PRPGP_DEFESAS",
-          "nodeLineageTag": "2f1fedb7-dace-478f-8610-18ad19029bda",
-          "size": {
-            "height": 267.54087045431606,
-            "width": 238.53610830979528
-          },
-          "zIndex": 5
-        },
         {
           "location": {
             "x": 1297.1382634381353,
@@ -205,7 +192,7 @@
         }
       ],
       "name": "All tables",
-      "zoomValue": 68.9379582463115,
+      "zoomValue": 61.487550811873746,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
@@ -220,8 +207,8 @@
       "nodes": [
         {
           "location": {
-            "x": 757.00439065679723,
-            "y": 38.967643035710722
+            "x": 0,
+            "y": 250.07717939605669
           },
           "nodeIndex": "V_PRPGP_PROJETOS_POS",
           "nodeLineageTag": "677f56a3-689a-42ce-9af8-a01945892b3e",
@@ -229,118 +216,38 @@
             "height": 270.62637337557408,
             "width": 280.50976749423546
           },
-          "zIndex": 0
+          "zIndex": 6
         },
         {
           "location": {
-            "x": 373.36560660325983,
-            "y": 713.51464219268553
+            "x": 772.755056586888,
+            "y": 892.80812397103193
           },
           "nodeIndex": "PM_PROJETOS_PARTICIPANTES",
           "nodeLineageTag": "950b6f7d-ac16-480e-8d4f-f2b182be4411",
           "size": {
-            "height": 217,
-            "width": 313
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1075.0131264202273,
-            "y": 406.18674921560637
-          },
-          "nodeIndex": "V_PRPGP_PROJETOS_POS_ORGAOS",
-          "nodeLineageTag": "439e653b-5712-4f50-8465-497c0273734e",
-          "size": {
-            "height": 201,
-            "width": 338
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1103.9228847139989,
-            "y": 3.6023613593748749
-          },
-          "nodeIndex": "dCalendario",
-          "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
-          "size": {
-            "height": 128,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 34.188325209834687,
-            "y": 27.654456347923748
-          },
-          "nodeIndex": "V_PRPGP_DOCENTES_POS",
-          "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
-          "size": {
-            "height": 403.4774105299461,
-            "width": 279.11233188939912
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 363.22282880757149,
-            "y": 28.588572445770527
-          },
-          "nodeIndex": "V_PRPGP_DISCENTES_POS",
-          "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
-          "size": {
-            "height": 477.23992477532948,
-            "width": 324.50549350229585
-          },
-          "zIndex": 0
-        }
-      ],
-      "name": "projetos",
-      "zoomValue": 79.553182037699784,
-      "pinKeyFieldsToTop": false,
-      "showExtraHeaderInfo": false,
-      "hideKeyFieldsWhenCollapsed": false,
-      "tablesLocked": false
-    },
-    {
-      "ordinal": 2,
-      "scrollPosition": {
-        "x": 0,
-        "y": 146.68416038775305
-      },
-      "nodes": [
-        {
-          "location": {
-            "x": 642.81745038381212,
-            "y": 853.35768151966317
-          },
-          "nodeIndex": "V_PRPGP_DEFESAS",
-          "nodeLineageTag": "2f1fedb7-dace-478f-8610-18ad19029bda",
-          "size": {
-            "height": 287.3743008333912,
-            "width": 271.29037248064697
+            "height": 250.82399553373352,
+            "width": 322.86533203067233
           },
           "zIndex": 7
         },
         {
           "location": {
-            "x": 389.56195811351063,
-            "y": 1305.3966292413809
+            "x": 304.53822756272791,
+            "y": 718.50571614942942
           },
-          "nodeIndex": "V_PRPGP_MEMBROS_BANCA",
-          "nodeLineageTag": "8250c80c-b9e1-44ac-a53b-6480f45db6e8",
+          "nodeIndex": "V_PRPGP_PROJETOS_POS_ORGAOS",
+          "nodeLineageTag": "439e653b-5712-4f50-8465-497c0273734e",
           "size": {
-            "height": 335.16785670548848,
-            "width": 299.88385100774121
+            "height": 219.32133091410572,
+            "width": 338
           },
           "zIndex": 5
         },
         {
           "location": {
-            "x": 695.48524321779473,
-            "y": 367.97491959341488
+            "x": 1208.2556063902566,
+            "y": 70.224460743009388
           },
           "nodeIndex": "dCalendario",
           "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
@@ -352,21 +259,101 @@
         },
         {
           "location": {
-            "x": 1143.9871286031575,
-            "y": 469.45289516066515
+            "x": 793.04186530054017,
+            "y": 307.09295550603872
           },
-          "nodeIndex": "V_PRPGP_DISCENTES_POS",
-          "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
+          "nodeIndex": "V_PRPGP_DOCENTES_POS",
+          "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
           "size": {
-            "height": 486,
-            "width": 330
+            "height": 403.4774105299461,
+            "width": 279.11233188939912
           },
           "zIndex": 2
         },
         {
           "location": {
-            "x": 115.26993653936407,
-            "y": 800.92113117224267
+            "x": 1356.7172848823468,
+            "y": 288.37522419764457
+          },
+          "nodeIndex": "V_PRPGP_DISCENTES_POS",
+          "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
+          "size": {
+            "height": 477.23992477532948,
+            "width": 324.50549350229585
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 324.44469149491169,
+            "y": 0
+          },
+          "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
+          "nodeLineageTag": "c804e6fc-e8b7-4cd5-a570-f57eedc4184a",
+          "size": {
+            "height": 246.39316161289685,
+            "width": 325.76251424538327
+          },
+          "zIndex": 4
+        }
+      ],
+      "name": "projetos",
+      "zoomValue": 70.955543900968792,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 53.109782209358869,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 726.98396902628292,
+            "y": 865.897360513292
+          },
+          "nodeIndex": "V_PRPGP_MEMBROS_BANCA",
+          "nodeLineageTag": "8250c80c-b9e1-44ac-a53b-6480f45db6e8",
+          "size": {
+            "height": 335.16785670548848,
+            "width": 299.88385100774121
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1697.8538623856152,
+            "y": 37.5003735333089
+          },
+          "nodeIndex": "dCalendario",
+          "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1238.0158168901944,
+            "y": 70.724675053342182
+          },
+          "nodeIndex": "V_PRPGP_DISCENTES_POS",
+          "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
+          "size": {
+            "height": 530.2581518411323,
+            "width": 330
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 103.92802020616165,
+            "y": 209.72374230406598
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -374,37 +361,37 @@
             "height": 370,
             "width": 310
           },
-          "zIndex": 3
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 1182.5575890356963,
-            "y": 30.272019551261117
+            "x": 743.0583311241021,
+            "y": 0
           },
           "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
           "nodeLineageTag": "c804e6fc-e8b7-4cd5-a570-f57eedc4184a",
           "size": {
-            "height": 227,
-            "width": 267
+            "height": 251.10157220805513,
+            "width": 296.7725303746563
           },
           "zIndex": 4
         },
         {
           "location": {
-            "x": 97.574764903409,
-            "y": 341.25892529116209
+            "x": 677.4302374383833,
+            "y": 552.50211699705756
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
           "nodeLineageTag": "4a4accbb-4761-4deb-9dc9-b1f1aadf5c6e",
           "size": {
-            "height": 269.65155302322347,
-            "width": 351.6002320350089
+            "height": 263.98059485662219,
+            "width": 384.2082414929659
           },
-          "zIndex": 6
+          "zIndex": 3
         }
       ],
-      "name": "bancas",
-      "zoomValue": 79.081476618442764,
+      "name": "defesas",
+      "zoomValue": 79.08147661844275,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
@@ -465,6 +452,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "projetos",
+  "selectedDiagram": "defesas",
   "defaultDiagram": "All tables"
 }
