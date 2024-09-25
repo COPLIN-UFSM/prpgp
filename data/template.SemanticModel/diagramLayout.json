@@ -4,27 +4,27 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 899.36904738968917,
-        "y": 487.90364234522013
+        "x": 619.734786845659,
+        "y": 1094.5629011929593
       },
       "nodes": [
         {
           "location": {
             "x": 1297.1382634381353,
-            "y": 1293.234414707915
+            "y": 1352.9859616055664
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
           "size": {
-            "height": 371.06569685346017,
+            "height": 458.7683499152613,
             "width": 300.52958854366477
           },
-          "zIndex": 3
+          "zIndex": 4
         },
         {
           "location": {
             "x": 2442.8914642796008,
-            "y": 365.94700293795324
+            "y": 425.69854983560469
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 1632.8979405860975,
-            "y": 2399.5635054955565
+            "y": 2459.3150523932077
           },
           "nodeIndex": "V_PRPGP_MEMBROS_BANCA",
           "nodeLineageTag": "8250c80c-b9e1-44ac-a53b-6480f45db6e8",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 318.52521404140577,
-            "y": 1320.8216756858562
+            "y": 1380.5732225835077
           },
           "nodeIndex": "V_PRPGP_PROJETOS_POS",
           "nodeLineageTag": "677f56a3-689a-42ce-9af8-a01945892b3e",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 693.96439288634,
-            "y": 1900.4354080228741
+            "y": 1960.1869549205255
           },
           "nodeIndex": "PM_PROJETOS_PARTICIPANTES",
           "nodeLineageTag": "950b6f7d-ac16-480e-8d4f-f2b182be4411",
@@ -71,12 +71,12 @@
             "height": 222.53034226206626,
             "width": 318.75700184301058
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
             "x": 772.89114232991517,
-            "y": 1401.1762567189585
+            "y": 1460.92780361661
           },
           "nodeIndex": "V_PRPGP_PROJETOS_POS_ORGAOS",
           "nodeLineageTag": "439e653b-5712-4f50-8465-497c0273734e",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 2246.8396345553474,
-            "y": 104.3165997424548
+            "y": 164.06814664010625
           },
           "nodeIndex": "Medidas",
           "nodeLineageTag": "611794bc-dc79-429c-a42e-e7b76b4fb602",
@@ -97,12 +97,12 @@
             "height": 145,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 3
         },
         {
           "location": {
             "x": 816.76639974525813,
-            "y": 47.801237518121063
+            "y": 107.55278441577252
           },
           "nodeIndex": "dCalendario",
           "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
@@ -115,7 +115,7 @@
         {
           "location": {
             "x": 714.90416093244323,
-            "y": 877.79519031532607
+            "y": 937.54673721297752
           },
           "nodeIndex": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
           "nodeLineageTag": "8bd13327-4213-43e5-962e-92172731b58a",
@@ -128,7 +128,7 @@
         {
           "location": {
             "x": 3079.70257449443,
-            "y": 562.83178429614225
+            "y": 622.5833311937937
           },
           "nodeIndex": "SCIVAL_METRICAS",
           "nodeLineageTag": "8b86b1f7-9c9a-4768-ac73-9b65e0577733",
@@ -141,7 +141,7 @@
         {
           "location": {
             "x": 2634.7881695448291,
-            "y": 1203.6445041804643
+            "y": 1263.3960510781158
           },
           "nodeIndex": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
           "nodeLineageTag": "15eb4ce0-bf05-4d9f-ab26-18b9918c9d31",
@@ -154,7 +154,7 @@
         {
           "location": {
             "x": 1293.1060243482023,
-            "y": 416.70018059200635
+            "y": 476.4517274896578
           },
           "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
           "nodeLineageTag": "c804e6fc-e8b7-4cd5-a570-f57eedc4184a",
@@ -167,7 +167,7 @@
         {
           "location": {
             "x": 1878.2121909623327,
-            "y": 783.40621177506785
+            "y": 843.1577586727193
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
           "nodeLineageTag": "4a4accbb-4761-4deb-9dc9-b1f1aadf5c6e",
@@ -175,12 +175,12 @@
             "height": 487.60238850233918,
             "width": 412.54572147119188
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
             "x": 1946.4168031937238,
-            "y": 1504.4756900759514
+            "y": 1564.2272369736029
           },
           "nodeIndex": "V_PRPGP_ENCARGO_DIDATICO_POS",
           "nodeLineageTag": "09ce9bdf-531d-41c7-9f5e-7828f8951882",
@@ -189,10 +189,36 @@
             "width": 361.63861050501691
           },
           "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 3061.751751010825,
+            "y": 1453.2118271724898
+          },
+          "nodeIndex": "V_PRPGP_DEFESAS",
+          "nodeLineageTag": "2bb6932b-b9a1-4f2e-a03f-a30f6e8f3db6",
+          "size": {
+            "height": 387.42491168292895,
+            "width": 282.79036423452226
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1643.0643892399107,
+            "y": 1860.004738573376
+          },
+          "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
+          "nodeLineageTag": "df164516-1168-42e0-9b04-8d5e9c31338c",
+          "size": {
+            "height": 172.36841731544496,
+            "width": 295.46859213178868
+          },
+          "zIndex": 16
         }
       ],
       "name": "All tables",
-      "zoomValue": 61.487550811873746,
+      "zoomValue": 77.291126812168429,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
@@ -307,7 +333,7 @@
     {
       "ordinal": 2,
       "scrollPosition": {
-        "x": 53.109782209358869,
+        "x": 126.4518624032354,
         "y": 0
       },
       "nodes": [
@@ -352,8 +378,8 @@
         },
         {
           "location": {
-            "x": 103.92802020616165,
-            "y": 209.72374230406598
+            "x": 157.03780241552053,
+            "y": 171.78818358309536
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -388,6 +414,19 @@
             "width": 384.2082414929659
           },
           "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1295.0739018620482,
+            "y": 887.53097087313927
+          },
+          "nodeIndex": "V_PRPGP_DEFESAS",
+          "nodeLineageTag": "2bb6932b-b9a1-4f2e-a03f-a30f6e8f3db6",
+          "size": {
+            "height": 261.98726643420014,
+            "width": 234.00000000000023
+          },
+          "zIndex": 7
         }
       ],
       "name": "defesas",
@@ -450,8 +489,129 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 460.1847511806298,
+            "y": 401
+          },
+          "nodeIndex": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+          "nodeLineageTag": "8bd13327-4213-43e5-962e-92172731b58a",
+          "size": {
+            "height": 404,
+            "width": 250
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 831.36163941535983,
+            "y": 112.3249926324349
+          },
+          "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
+          "nodeLineageTag": "c804e6fc-e8b7-4cd5-a570-f57eedc4184a",
+          "size": {
+            "height": 207,
+            "width": 285
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 57.065109177342208
+          },
+          "nodeIndex": "dCalendario",
+          "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "ingresso",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 5,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 504.9973580453219,
+            "y": 175.73702877438245
+          },
+          "nodeIndex": "V_PRPGP_DISCENTES_POS",
+          "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
+          "size": {
+            "height": 415,
+            "width": 253
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 796.04030755047165,
+            "y": 0
+          },
+          "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
+          "nodeLineageTag": "c804e6fc-e8b7-4cd5-a570-f57eedc4184a",
+          "size": {
+            "height": 194,
+            "width": 262
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 482.94395721264272,
+            "y": 702.97319131615757
+          },
+          "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
+          "nodeLineageTag": "df164516-1168-42e0-9b04-8d5e9c31338c",
+          "size": {
+            "height": 190.5752017338279,
+            "width": 296.78548439187375
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 105.10988149725961,
+            "y": 0
+          },
+          "nodeIndex": "dCalendario",
+          "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        }
+      ],
+      "name": "fluxo discente",
+      "zoomValue": 89.192590520569468,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "defesas",
+  "selectedDiagram": "fluxo discente",
   "defaultDiagram": "All tables"
 }

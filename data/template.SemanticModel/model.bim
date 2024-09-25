@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DEFESAS\",\"V_PRPGP_DISCENTES_FLUXO\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -1695,35 +1695,6 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.nacionalidade_agrupada": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Nacionalidade (agrupada)"
-                  }
-                },
-                "SemanticType": "Location",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "nacionalidade (agrupada)": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "country": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "nacionalidade": {
-                      "State": "Generated",
-                      "Weight": 0.75
-                    }
-                  }
-                ]
-              },
               "v_prpgp_discentes_pos.nome_aluno": {
                 "Definition": {
                   "Binding": {
@@ -2724,7 +2695,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA",
-                    "ConceptualProperty": "NOME_INSTITUICAO"
+                    "ConceptualProperty": "Nome instituição"
                   }
                 },
                 "State": "Generated",
@@ -2747,7 +2718,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA",
-                    "ConceptualProperty": "NOME_PARTICIPANTE"
+                    "ConceptualProperty": "Nome participante"
                   }
                 },
                 "State": "Generated",
@@ -2770,7 +2741,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA",
-                    "ConceptualProperty": "SIGLA_INSTITUICAO"
+                    "ConceptualProperty": "Sigla instituição"
                   }
                 },
                 "State": "Generated",
@@ -2841,7 +2812,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA",
-                    "ConceptualProperty": "TITULACAO"
+                    "ConceptualProperty": "Titulação"
                   }
                 },
                 "State": "Generated",
@@ -8365,16 +8336,42 @@
         "toTable": "dCalendario"
       },
       {
-        "name": "e95b82b7-230f-0845-1b52-e67e1852b773",
+        "name": "AutoDetected_e7575468-d8d4-4071-94e8-e97c48811fd3",
+        "crossFilteringBehavior": "bothDirections",
         "fromColumn": "ID_PLANO_ESTUDO",
         "fromTable": "V_PRPGP_MEMBROS_BANCA",
         "toColumn": "ID_PLANO_ESTUDO",
+        "toTable": "V_PRPGP_DEFESAS"
+      },
+      {
+        "name": "AutoDetected_76b15f6b-3eae-4472-b8fb-1a6ae52a928d",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "ID_CURSO_ALUNO",
+        "fromTable": "V_PRPGP_DISCENTES_POS",
+        "toColumn": "ID_CURSO_ALUNO",
+        "toTable": "V_PRPGP_DEFESAS"
+      },
+      {
+        "name": "fafdf529-9247-10bc-553f-f548b7b56b62",
+        "fromColumn": "Data defesa",
+        "fromTable": "V_PRPGP_DEFESAS",
+        "toColumn": "Data",
+        "toTable": "dCalendario"
+      },
+      {
+        "name": "617217ec-aa57-e3cc-00db-7eed2fb3b529",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "Matrícula",
+        "fromTable": "V_PRPGP_DISCENTES_FLUXO",
+        "toColumn": "Matrícula",
         "toTable": "V_PRPGP_DISCENTES_POS"
       },
       {
-        "name": "f85dd12d-079b-ae8c-fcac-b590a0a55783",
-        "fromColumn": "Data ingresso",
-        "fromTable": "V_PRPGP_DISCENTES_POS",
+        "name": "b7a80079-9cfa-4757-4a8c-a50b36266b51",
+        "fromColumn": "Data referência",
+        "fromTable": "V_PRPGP_DISCENTES_FLUXO",
+        "isActive": false,
         "toColumn": "Data",
         "toTable": "dCalendario"
       }
@@ -8487,107 +8484,12 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "__PBI_SemanticLinks",
-                "value": "[{\"LinkTarget\":{\"TableName\":\"V_PRPGP_DISCENTES_POS\",\"TableItemName\":\"Nacionalidade (agrupada)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
               }
             ],
             "dataType": "string",
             "lineageTag": "cadf0df1-88b0-4a21-8518-5edc582e972a",
             "sourceColumn": "Nacionalidade",
             "summarizeBy": "none"
-          },
-          {
-            "name": "Nacionalidade (agrupada)",
-            "annotations": [
-              {
-                "name": "GroupingDesignState",
-                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"v\",\"Entity\":\"V_PRPGP_DISCENTES_POS\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Nacionalidade\"}}],\"GroupItems\":[{\"DisplayName\":\"(Em branco)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"Alemã(ão) & Angolano(a) & Argentino(a) & Boliviano(a) & ...\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Nacionalidade\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Alemã(ão)'\"}}],[{\"Literal\":{\"Value\":\"'Angolano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Argentino(a)'\"}}],[{\"Literal\":{\"Value\":\"'Boliviano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cabo-verdiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Camaronês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Chileno(a)'\"}}],[{\"Literal\":{\"Value\":\"'Colombiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Cubano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Equatoriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Espanhol(a)'\"}}],[{\"Literal\":{\"Value\":\"'Ganês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guatemalteco(a)'\"}}],[{\"Literal\":{\"Value\":\"'Guianês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Guineense'\"}}],[{\"Literal\":{\"Value\":\"'Haitiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Hondurenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'Indiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Italiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Mexicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Moçambicano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Nicaraguense'\"}}],[{\"Literal\":{\"Value\":\"'Nigeriano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Norte Americano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paquistanês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Paraguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Peruano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Português(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Salvadorenho(a)'\"}}],[{\"Literal\":{\"Value\":\"'São-tomense'\"}}],[{\"Literal\":{\"Value\":\"'Senegalês(esa)'\"}}],[{\"Literal\":{\"Value\":\"'Surinamês(a)'\"}}],[{\"Literal\":{\"Value\":\"'Timorense'\"}}],[{\"Literal\":{\"Value\":\"'Tunisiano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a)'\"}}],[{\"Literal\":{\"Value\":\"'Uruguaio(a) Naturalizado(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a)'\"}}],[{\"Literal\":{\"Value\":\"'Venezuelano(a) Naturalizado(a)'\"}}]]}}},{\"DisplayName\":\"Brasileiro(a) & Brasileiro(a) Naturalizado(a)\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Nacionalidade\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Brasileiro(a)'\"}}],[{\"Literal\":{\"Value\":\"'Brasileiro(a) Naturalizado(a)'\"}}]]}}}]}"
-              },
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataCategory": "Country",
-            "dataType": "string",
-            "expression": [
-              "SWITCH(",
-              "\tTRUE,",
-              "\tISBLANK('V_PRPGP_DISCENTES_POS'[Nacionalidade]),",
-              "\t\"(Em branco)\",",
-              "\t'V_PRPGP_DISCENTES_POS'[Nacionalidade] IN {\"Alemã(ão)\",",
-              "\t\t\"Angolano(a)\",",
-              "\t\t\"Argentino(a)\",",
-              "\t\t\"Boliviano(a)\",",
-              "\t\t\"Cabo-verdiano(a)\",",
-              "\t\t\"Camaronês(esa)\",",
-              "\t\t\"Chileno(a)\",",
-              "\t\t\"Colombiano(a)\",",
-              "\t\t\"Cubano(a)\",",
-              "\t\t\"Equatoriano(a)\",",
-              "\t\t\"Espanhol(a)\",",
-              "\t\t\"Ganês(a)\",",
-              "\t\t\"Guatemalteco(a)\",",
-              "\t\t\"Guianês(esa)\",",
-              "\t\t\"Guineense\",",
-              "\t\t\"Haitiano(a)\",",
-              "\t\t\"Hondurenho(a)\",",
-              "\t\t\"Indiano(a)\",",
-              "\t\t\"Italiano(a)\",",
-              "\t\t\"Mexicano(a)\",",
-              "\t\t\"Moçambicano(a)\",",
-              "\t\t\"Nicaraguense\",",
-              "\t\t\"Nigeriano(a)\",",
-              "\t\t\"Norte Americano(a)\",",
-              "\t\t\"Paquistanês(a)\",",
-              "\t\t\"Paraguaio(a)\",",
-              "\t\t\"Paraguaio(a) Naturalizado(a)\",",
-              "\t\t\"Peruano(a)\",",
-              "\t\t\"Português(esa)\",",
-              "\t\t\"Salvadorenho(a)\",",
-              "\t\t\"São-tomense\",",
-              "\t\t\"Senegalês(esa)\",",
-              "\t\t\"Surinamês(a)\",",
-              "\t\t\"Timorense\",",
-              "\t\t\"Tunisiano(a)\",",
-              "\t\t\"Uruguaio(a)\",",
-              "\t\t\"Uruguaio(a) Naturalizado(a)\",",
-              "\t\t\"Venezuelano(a)\",",
-              "\t\t\"Venezuelano(a) Naturalizado(a)\"},",
-              "\t\"Alemã(ão) & Angolano(a) & Argentino(a) & Boliviano(a) & ...\",",
-              "\t'V_PRPGP_DISCENTES_POS'[Nacionalidade] IN {\"Brasileiro(a)\",",
-              "\t\t\"Brasileiro(a) Naturalizado(a)\"},",
-              "\t\"Brasileiro(a) & Brasileiro(a) Naturalizado(a)\",",
-              "\t'V_PRPGP_DISCENTES_POS'[Nacionalidade]",
-              ")"
-            ],
-            "extendedProperties": [
-              {
-                "name": "GroupingMetadata",
-                "type": "json",
-                "value": {
-                  "groupedColumns": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "V_PRPGP_DISCENTES_POS"
-                          }
-                        },
-                        "Property": "Nacionalidade"
-                      }
-                    }
-                  ],
-                  "version": 0
-                }
-              }
-            ],
-            "isDataTypeInferred": true,
-            "lineageTag": "ce12d12c-9ac8-4377-b60f-28ed6081b14c",
-            "summarizeBy": "none",
-            "type": "calculated"
           },
           {
             "name": "ID_PESSOA",
@@ -8656,52 +8558,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "ID_PLANO_ESTUDO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "48e51ae9-9039-4195-880f-3439892b22eb",
-            "sourceColumn": "ID_PLANO_ESTUDO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "SITUACAO_PLANO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "52a3f549-305d-471d-8ec4-535f133bea85",
-            "sourceColumn": "SITUACAO_PLANO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "SITUACAO_DEFESA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "f5ef4479-bed8-46ce-a6f3-aa3dea8a8905",
-            "sourceColumn": "SITUACAO_DEFESA",
-            "summarizeBy": "none"
-          },
-          {
             "name": "Data ingresso",
             "annotations": [
               {
@@ -8754,10 +8610,9 @@
                 "    V_PRPGP_DISCENTES_POS1 = BEE{[Name=\"V_PRPGP_DISCENTES_POS\"]}[Data],",
                 "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{\"ANO_EVASAO\", \"Ano saída\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}, {\"FORMA_EVASAO\", \"Forma saída\"}, {\"MATRICULA\", \"Matrícula\"},{\"NACIONALIDADE\", \"Nacionalidade\"}, {\"NOME_ALUNO\", \"Nome aluno\"}}),",
                 "    #\"Inserted Date\" = Table.AddColumn(#\"Renamed Columns\", \"Data ingresso\", each Date.From(Text.From([Ano ingresso], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Date\",{{\"MODALIDADE_CURSO\", \"Modalidade curso\"}, {\"COD_CURSO\", \"Código curso\"}}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"ID_PROJETO\"})",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Date\",{{\"MODALIDADE_CURSO\", \"Modalidade curso\"}, {\"COD_CURSO\", \"Código curso\"}})",
                 "in",
-                "    #\"Removed Columns\""
+                "    #\"Renamed Columns1\""
               ],
               "type": "m"
             }
@@ -9105,7 +8960,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_PARTICIPANTE",
+            "name": "Nome participante",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -9114,11 +8969,11 @@
             ],
             "dataType": "string",
             "lineageTag": "5b008c72-e5b4-41c0-9850-87d90d51ccb2",
-            "sourceColumn": "NOME_PARTICIPANTE",
+            "sourceColumn": "Nome participante",
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_INSTITUICAO",
+            "name": "Nome instituição",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -9127,11 +8982,11 @@
             ],
             "dataType": "string",
             "lineageTag": "20b3a7a7-64e5-4d00-855a-4d0e5a16dbd9",
-            "sourceColumn": "NOME_INSTITUICAO",
+            "sourceColumn": "Nome instituição",
             "summarizeBy": "none"
           },
           {
-            "name": "SIGLA_INSTITUICAO",
+            "name": "Sigla instituição",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -9140,11 +8995,11 @@
             ],
             "dataType": "string",
             "lineageTag": "aec2c442-b603-43c1-8ab6-4ab79407d500",
-            "sourceColumn": "SIGLA_INSTITUICAO",
+            "sourceColumn": "Sigla instituição",
             "summarizeBy": "none"
           },
           {
-            "name": "TITULACAO",
+            "name": "Titulação",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -9153,7 +9008,20 @@
             ],
             "dataType": "string",
             "lineageTag": "7bd59786-0ac5-40cf-b2fe-0a60721d6e3a",
-            "sourceColumn": "TITULACAO",
+            "sourceColumn": "Titulação",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CPF",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7cc2249b-42e1-4114-a9e2-4dc568d4c5f5",
+            "sourceColumn": "CPF",
             "summarizeBy": "none"
           }
         ],
@@ -9168,7 +9036,7 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_MEMBROS_BANCA1 = BEE{[Name=\"V_PRPGP_MEMBROS_BANCA\"]}[Data],",
-                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_MEMBROS_BANCA1,{{\"SITUACAO\", \"Situação\"}, {\"TIPO_PARTICIPANTE\", \"Tipo participante\"}, {\"TIPO_VINCULO\", \"Tipo vínculo\"}})",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_MEMBROS_BANCA1,{{\"SITUACAO\", \"Situação\"}, {\"TIPO_PARTICIPANTE\", \"Tipo participante\"}, {\"TIPO_VINCULO\", \"Tipo vínculo\"}, {\"NOME_INSTITUICAO\", \"Nome instituição\"}, {\"NOME_PARTICIPANTE\", \"Nome participante\"}, {\"SIGLA_INSTITUICAO\", \"Sigla instituição\"}, {\"TITULACAO\", \"Titulação\"}})",
                 "in",
                 "    #\"Renamed Columns\""
               ],
@@ -9775,6 +9643,7 @@
             "dataType": "dateTime",
             "formatString": "General Date",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "isNameInferred": false,
             "lineageTag": "c25614ce-9cfb-44de-af38-bab886d2e0bc",
             "sourceColumn": "[Date]",
@@ -10016,6 +9885,19 @@
             "formatString": "Long Date",
             "lineageTag": "02795879-0443-4b9a-addc-530ea39cc821",
             "sourceColumn": "Data concurso",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CONC_EDITAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "29475326-65e2-40c5-99a9-f5b6c91ec561",
+            "sourceColumn": "CONC_EDITAL",
             "summarizeBy": "none"
           }
         ],
@@ -10655,6 +10537,271 @@
                 "    V_PRPGP_ENCARGO_DIDATICO_POS1 = BEE{[Name=\"V_PRPGP_ENCARGO_DIDATICO_POS\"]}[Data],",
                 "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_ENCARGO_DIDATICO_POS1, \"Data encargo\", each Date.From(Text.From([ANO_TURMA], \"pt-BR\")), type date),",
                 "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_TURMA\", \"Ano encargos\"}, {\"ENCARGO_DIDATICO_DOCENTE\", \"Soma encargo didático ano\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "V_PRPGP_DEFESAS",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID_PROJETO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "7841c396-27cc-41de-9f40-905ce670032c",
+            "sourceColumn": "ID_PROJETO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_PLANO_ESTUDO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "5c486023-37f3-41da-9143-63332d3d61a5",
+            "sourceColumn": "ID_PLANO_ESTUDO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Situação plano de estudos",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fa0ccffe-6d1f-435a-85e7-ab5e81da2a39",
+            "sourceColumn": "Situação plano de estudos",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Situação defesa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0e4bf885-1232-432d-afac-08a0f14e24fb",
+            "sourceColumn": "Situação defesa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_CURSO_ALUNO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "432d43fa-f2e7-4ebe-bc00-38cea04006aa",
+            "sourceColumn": "ID_CURSO_ALUNO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano defesa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a82642a6-71a5-4a82-a50d-dc6196b6a692",
+            "sourceColumn": "Ano defesa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Data defesa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isHidden": true,
+            "lineageTag": "7d721a03-64eb-4d67-8921-e371890a3738",
+            "sourceColumn": "Data defesa",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2bb6932b-b9a1-4f2e-a03f-a30f6e8f3db6",
+        "partitions": [
+          {
+            "name": "V_PRPGP_DEFESAS",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    V_PRPGP_DEFESAS1 = BEE{[Name=\"V_PRPGP_DEFESAS\"]}[Data],",
+                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_DEFESAS1, \"Data defesa\", each Date.From(Text.From([ANO_DEFESA], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano de estudos\"}, {\"ANO_DEFESA\", \"Ano defesa\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "V_PRPGP_DISCENTES_FLUXO",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Matrícula",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6b2cf681-1d83-4a01-8241-ef9ffbc11d57",
+            "sourceColumn": "Matrícula",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano acompanhamento",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9226d1c4-a0ce-480e-a012-cdebf681668a",
+            "sourceColumn": "Ano acompanhamento",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_TIPO_SITUACAO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "e2e54b58-556a-4180-8127-d542ea124433",
+            "sourceColumn": "ID_TIPO_SITUACAO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Data referência",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isHidden": true,
+            "lineageTag": "39281dc8-f125-4f65-b0b1-7adb58e6fa54",
+            "sourceColumn": "Data referência",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "df164516-1168-42e0-9b04-8d5e9c31338c",
+        "partitions": [
+          {
+            "name": "V_PRPGP_DISCENTES_FLUXO",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    V_PRPGP_DISCENTES_FLUXO1 = BEE{[Name=\"V_PRPGP_DISCENTES_FLUXO\"]}[Data],",
+                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_DISCENTES_FLUXO1, \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"MATRICULA\", \"Matrícula\"}, {\"ANO_REFERENCIA\", \"Ano acompanhamento\"}})",
                 "in",
                 "    #\"Renamed Columns\""
               ],
