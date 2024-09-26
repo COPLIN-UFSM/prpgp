@@ -202,19 +202,6 @@
             "width": 282.79036423452226
           },
           "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 1643.0643892399107,
-            "y": 1860.004738573376
-          },
-          "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
-          "nodeLineageTag": "df164516-1168-42e0-9b04-8d5e9c31338c",
-          "size": {
-            "height": 172.36841731544496,
-            "width": 295.46859213178868
-          },
-          "zIndex": 16
         }
       ],
       "name": "All tables",
@@ -576,19 +563,6 @@
             "width": 262
           },
           "zIndex": 2
-        },
-        {
-          "location": {
-            "x": 482.94395721264272,
-            "y": 702.97319131615757
-          },
-          "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
-          "nodeLineageTag": "df164516-1168-42e0-9b04-8d5e9c31338c",
-          "size": {
-            "height": 190.5752017338279,
-            "width": 296.78548439187375
-          },
-          "zIndex": 4
         },
         {
           "location": {

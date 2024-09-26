@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DEFESAS\",\"V_PRPGP_DISCENTES_FLUXO\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DEFESAS\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -8358,22 +8358,6 @@
         "fromTable": "V_PRPGP_DEFESAS",
         "toColumn": "Data",
         "toTable": "dCalendario"
-      },
-      {
-        "name": "617217ec-aa57-e3cc-00db-7eed2fb3b529",
-        "crossFilteringBehavior": "bothDirections",
-        "fromColumn": "Matrícula",
-        "fromTable": "V_PRPGP_DISCENTES_FLUXO",
-        "toColumn": "Matrícula",
-        "toTable": "V_PRPGP_DISCENTES_POS"
-      },
-      {
-        "name": "b7a80079-9cfa-4757-4a8c-a50b36266b51",
-        "fromColumn": "Data referência",
-        "fromTable": "V_PRPGP_DISCENTES_FLUXO",
-        "isActive": false,
-        "toColumn": "Data",
-        "toTable": "dCalendario"
       }
     ],
     "sourceQueryCulture": "pt-BR",
@@ -8588,11 +8572,15 @@
             "name": "Aluno ativo no intervalo",
             "expression": [
               "",
-              "    VAR SelectedYears = VALUES(dCalendario[Ano])  -- Get the selected years from dCalendario",
-              "    VAR ano_ingresso = YEAR(MIN(V_PRPGP_DISCENTES_POS[Ano ingresso]))  -- Project start year",
-              "    VAR ano_evasao = YEAR(MAX(V_PRPGP_DISCENTES_POS[Ano saída]))  -- Project end year",
-              "    VAR YearsInRange = FILTER(SelectedYears, [Ano] >= ano_ingresso && [Ano] <= ano_evasao)  -- Check overlap",
-              "    RETURN IF(COUNTROWS(YearsInRange) > 0, 1, 0)  -- Return 1 if there is any overlap, otherwise 0"
+              "CALCULATE(",
+              "    COUNTROWS(V_PRPGP_DISCENTES_POS),",
+              "    FILTER (",
+              "        V_PRPGP_DISCENTES_POS,",
+              "        V_PRPGP_DISCENTES_POS[Ano ingresso] >= min(dCalendario[Ano]) &&",
+              "        COALESCE(V_PRPGP_DISCENTES_POS[Ano saída], year(today())) <= MAX(dCalendario[Ano])",
+              "    )",
+              ")",
+              ""
             ],
             "formatString": "0",
             "lineageTag": "62b46690-00eb-49ce-92ca-b5deb48a4ab3"
@@ -9899,6 +9887,19 @@
             "lineageTag": "29475326-65e2-40c5-99a9-f5b6c91ec561",
             "sourceColumn": "CONC_EDITAL",
             "summarizeBy": "none"
+          },
+          {
+            "name": "CLASSIFICACAO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3e1a1bde-24f5-4a32-8d37-09a0a1d764d7",
+            "sourceColumn": "CLASSIFICACAO",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "8bd13327-4213-43e5-962e-92172731b58a",
@@ -10696,112 +10697,6 @@
                 "    V_PRPGP_DEFESAS1 = BEE{[Name=\"V_PRPGP_DEFESAS\"]}[Data],",
                 "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_DEFESAS1, \"Data defesa\", each Date.From(Text.From([ANO_DEFESA], \"pt-BR\")), type date),",
                 "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano de estudos\"}, {\"ANO_DEFESA\", \"Ano defesa\"}})",
-                "in",
-                "    #\"Renamed Columns\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "V_PRPGP_DISCENTES_FLUXO",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Matrícula",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "6b2cf681-1d83-4a01-8241-ef9ffbc11d57",
-            "sourceColumn": "Matrícula",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ano acompanhamento",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "9226d1c4-a0ce-480e-a012-cdebf681668a",
-            "sourceColumn": "Ano acompanhamento",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_TIPO_SITUACAO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "e2e54b58-556a-4180-8127-d542ea124433",
-            "sourceColumn": "ID_TIPO_SITUACAO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data referência",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "isHidden": true,
-            "lineageTag": "39281dc8-f125-4f65-b0b1-7adb58e6fa54",
-            "sourceColumn": "Data referência",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "df164516-1168-42e0-9b04-8d5e9c31338c",
-        "partitions": [
-          {
-            "name": "V_PRPGP_DISCENTES_FLUXO",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
-                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_DISCENTES_FLUXO1 = BEE{[Name=\"V_PRPGP_DISCENTES_FLUXO\"]}[Data],",
-                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_DISCENTES_FLUXO1, \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"MATRICULA\", \"Matrícula\"}, {\"ANO_REFERENCIA\", \"Ano acompanhamento\"}})",
                 "in",
                 "    #\"Renamed Columns\""
               ],
