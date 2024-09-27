@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DEFESAS\",\"V_PRPGP_DISCENTES_FLUXO\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"V_PRPGP_PROJETOS_POS_ORGAOS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -8336,40 +8336,31 @@
         "toTable": "dCalendario"
       },
       {
-        "name": "AutoDetected_e7575468-d8d4-4071-94e8-e97c48811fd3",
-        "crossFilteringBehavior": "bothDirections",
-        "fromColumn": "ID_PLANO_ESTUDO",
-        "fromTable": "V_PRPGP_MEMBROS_BANCA",
-        "toColumn": "ID_PLANO_ESTUDO",
-        "toTable": "V_PRPGP_DEFESAS"
-      },
-      {
-        "name": "AutoDetected_76b15f6b-3eae-4472-b8fb-1a6ae52a928d",
-        "crossFilteringBehavior": "bothDirections",
-        "fromCardinality": "one",
-        "fromColumn": "ID_CURSO_ALUNO",
-        "fromTable": "V_PRPGP_DISCENTES_POS",
-        "toColumn": "ID_CURSO_ALUNO",
-        "toTable": "V_PRPGP_DEFESAS"
-      },
-      {
-        "name": "fafdf529-9247-10bc-553f-f548b7b56b62",
-        "fromColumn": "Data defesa",
-        "fromTable": "V_PRPGP_DEFESAS",
-        "toColumn": "Data",
-        "toTable": "dCalendario"
-      },
-      {
         "name": "0b42614a-4fec-d881-81f9-210cbcae5f3e",
+        "crossFilteringBehavior": "bothDirections",
         "fromColumn": "Matrícula",
         "fromTable": "V_PRPGP_DISCENTES_FLUXO",
         "toColumn": "Matrícula",
         "toTable": "V_PRPGP_DISCENTES_POS"
       },
       {
-        "name": "809941a0-986b-a86b-f65c-24cdebf6941d",
+        "name": "4d01a716-7ecb-fc01-4e37-347370733837",
+        "fromColumn": "ID_CURSO_ALUNO",
+        "fromTable": "V_PRPGP_MEMBROS_BANCA",
+        "toColumn": "ID_CURSO_ALUNO",
+        "toTable": "V_PRPGP_DISCENTES_POS"
+      },
+      {
+        "name": "a0115485-d4d3-6730-0e38-344460d5b8c8",
         "fromColumn": "Data referência",
         "fromTable": "V_PRPGP_DISCENTES_FLUXO",
+        "toColumn": "Data",
+        "toTable": "dCalendario"
+      },
+      {
+        "name": "48af1bc5-532a-c727-7938-ee1522309509",
+        "fromColumn": "Data defesa",
+        "fromTable": "V_PRPGP_DISCENTES_POS",
         "isActive": false,
         "toColumn": "Data",
         "toTable": "dCalendario"
@@ -8568,10 +8559,87 @@
                 "value": "{\"isDecimal\":true}"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "double",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "817e5c22-c7d1-45cb-b5b2-481cac1fd80e",
             "sourceColumn": "Ano saída corrigido",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano defesa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9fef4d46-0418-4731-b5c3-f31a91248ffe",
+            "sourceColumn": "Ano defesa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Situação plano estudos",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "894936b9-1839-4040-a329-b58aeac9a69a",
+            "sourceColumn": "Situação plano estudos",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Situação defesa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a31957a4-f51f-48a9-badc-36de137c90fe",
+            "sourceColumn": "Situação defesa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Data defesa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "19027145-4cfe-495c-a3e2-5e7606869c85",
+            "sourceColumn": "Data defesa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Gênero",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dcc0bb8f-11b4-498d-86d8-c0b83eb4f095",
+            "sourceColumn": "Gênero",
             "summarizeBy": "none"
           }
         ],
@@ -8607,9 +8675,11 @@
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Date\",{{\"MODALIDADE_CURSO\", \"Modalidade curso\"}, {\"COD_CURSO\", \"Código curso\"}}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Data ingresso\"}),",
                 "    #\"Added Custom\" = Table.AddColumn(#\"Removed Columns\", \"Ano saída corrigido\", each if [Ano saída] is null then Date.Year(DateTime.LocalNow()) else [Ano saída]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Ano saída corrigido\", type number}})",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Ano saída corrigido\", type number}}),",
+                "    #\"Inserted Date1\" = Table.AddColumn(#\"Changed Type\", \"Data defesa\", each Date.From(Text.From([ANO_DEFESA], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Inserted Date1\",{{\"ANO_DEFESA\", \"Ano defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano estudos\"}, {\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"GENERO\", \"Gênero\"}})",
                 "in",
-                "    #\"Changed Type\""
+                "    #\"Renamed Columns2\""
               ],
               "type": "m"
             }
@@ -9035,6 +9105,20 @@
             "dataType": "string",
             "lineageTag": "7cc2249b-42e1-4114-a9e2-4dc568d4c5f5",
             "sourceColumn": "CPF",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_CURSO_ALUNO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ec25bb49-2651-4236-afb6-3487ff330b24",
+            "sourceColumn": "ID_CURSO_ALUNO",
             "summarizeBy": "none"
           }
         ],
@@ -10551,165 +10635,6 @@
                 "    V_PRPGP_ENCARGO_DIDATICO_POS1 = BEE{[Name=\"V_PRPGP_ENCARGO_DIDATICO_POS\"]}[Data],",
                 "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_ENCARGO_DIDATICO_POS1, \"Data encargo\", each Date.From(Text.From([ANO_TURMA], \"pt-BR\")), type date),",
                 "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_TURMA\", \"Ano encargos\"}, {\"ENCARGO_DIDATICO_DOCENTE\", \"Soma encargo didático ano\"}})",
-                "in",
-                "    #\"Renamed Columns\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "V_PRPGP_DEFESAS",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "ID_PROJETO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "7841c396-27cc-41de-9f40-905ce670032c",
-            "sourceColumn": "ID_PROJETO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_PLANO_ESTUDO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "5c486023-37f3-41da-9143-63332d3d61a5",
-            "sourceColumn": "ID_PLANO_ESTUDO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Situação plano de estudos",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "fa0ccffe-6d1f-435a-85e7-ab5e81da2a39",
-            "sourceColumn": "Situação plano de estudos",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Situação defesa",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "0e4bf885-1232-432d-afac-08a0f14e24fb",
-            "sourceColumn": "Situação defesa",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_CURSO_ALUNO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "432d43fa-f2e7-4ebe-bc00-38cea04006aa",
-            "sourceColumn": "ID_CURSO_ALUNO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ano defesa",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "a82642a6-71a5-4a82-a50d-dc6196b6a692",
-            "sourceColumn": "Ano defesa",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data defesa",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "isHidden": true,
-            "lineageTag": "7d721a03-64eb-4d67-8921-e371890a3738",
-            "sourceColumn": "Data defesa",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "2bb6932b-b9a1-4f2e-a03f-a30f6e8f3db6",
-        "partitions": [
-          {
-            "name": "V_PRPGP_DEFESAS",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
-                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_DEFESAS1 = BEE{[Name=\"V_PRPGP_DEFESAS\"]}[Data],",
-                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_DEFESAS1, \"Data defesa\", each Date.From(Text.From([ANO_DEFESA], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano de estudos\"}, {\"ANO_DEFESA\", \"Ano defesa\"}})",
                 "in",
                 "    #\"Renamed Columns\""
               ],
