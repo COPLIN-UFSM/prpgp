@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 881.47924717036437,
-        "y": 1086.3987769553569
+        "x": 1466.9636179846286,
+        "y": 437.48693263621408
       },
       "nodes": [
         {
           "location": {
             "x": 1297.1382634381353,
-            "y": 1406.7623538134526
+            "y": 1487.426942125282
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 2442.8914642796008,
-            "y": 479.47494204349084
+            "y": 560.13953035532029
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 1632.8979405860975,
-            "y": 2513.0914446010938
+            "y": 2593.7560329129233
           },
           "nodeIndex": "V_PRPGP_MEMBROS_BANCA",
           "nodeLineageTag": "8250c80c-b9e1-44ac-a53b-6480f45db6e8",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 318.52521404140577,
-            "y": 1434.3496147913938
+            "y": 1515.0142031032233
           },
           "nodeIndex": "V_PRPGP_PROJETOS_POS",
           "nodeLineageTag": "677f56a3-689a-42ce-9af8-a01945892b3e",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 693.96439288634,
-            "y": 2013.9633471284117
+            "y": 2094.6279354402413
           },
           "nodeIndex": "PM_PROJETOS_PARTICIPANTES",
           "nodeLineageTag": "950b6f7d-ac16-480e-8d4f-f2b182be4411",
@@ -75,21 +75,8 @@
         },
         {
           "location": {
-            "x": 772.89114232991517,
-            "y": 1514.7041958244961
-          },
-          "nodeIndex": "V_PRPGP_PROJETOS_POS_ORGAOS",
-          "nodeLineageTag": "439e653b-5712-4f50-8465-497c0273734e",
-          "size": {
-            "height": 186.07684331725341,
-            "width": 331.12056492202646
-          },
-          "zIndex": 10
-        },
-        {
-          "location": {
             "x": 2246.8396345553474,
-            "y": 217.8445388479924
+            "y": 298.50912715982184
           },
           "nodeIndex": "Medidas",
           "nodeLineageTag": "611794bc-dc79-429c-a42e-e7b76b4fb602",
@@ -102,7 +89,7 @@
         {
           "location": {
             "x": 816.76639974525813,
-            "y": 161.32917662365867
+            "y": 241.99376493548812
           },
           "nodeIndex": "dCalendario",
           "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
@@ -115,7 +102,7 @@
         {
           "location": {
             "x": 714.90416093244323,
-            "y": 991.32312942086367
+            "y": 1071.987717732693
           },
           "nodeIndex": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
           "nodeLineageTag": "8bd13327-4213-43e5-962e-92172731b58a",
@@ -128,7 +115,7 @@
         {
           "location": {
             "x": 3079.70257449443,
-            "y": 676.35972340167984
+            "y": 757.02431171350929
           },
           "nodeIndex": "SCIVAL_METRICAS",
           "nodeLineageTag": "8b86b1f7-9c9a-4768-ac73-9b65e0577733",
@@ -141,7 +128,7 @@
         {
           "location": {
             "x": 2634.7881695448291,
-            "y": 1317.1724432860019
+            "y": 1397.8370315978314
           },
           "nodeIndex": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
           "nodeLineageTag": "15eb4ce0-bf05-4d9f-ab26-18b9918c9d31",
@@ -154,7 +141,7 @@
         {
           "location": {
             "x": 1293.1060243482023,
-            "y": 530.22811969754389
+            "y": 610.89270800937334
           },
           "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
           "nodeLineageTag": "c804e6fc-e8b7-4cd5-a570-f57eedc4184a",
@@ -167,7 +154,7 @@
         {
           "location": {
             "x": 1878.2121909623327,
-            "y": 896.93415088060544
+            "y": 977.59873919243489
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
           "nodeLineageTag": "4a4accbb-4761-4deb-9dc9-b1f1aadf5c6e",
@@ -180,7 +167,7 @@
         {
           "location": {
             "x": 1946.4168031937238,
-            "y": 1618.003629181489
+            "y": 1698.6682174933185
           },
           "nodeIndex": "V_PRPGP_ENCARGO_DIDATICO_POS",
           "nodeLineageTag": "09ce9bdf-531d-41c7-9f5e-7828f8951882",
@@ -193,13 +180,26 @@
         {
           "location": {
             "x": 1725.8284418521296,
-            "y": 1909.9691270050166
+            "y": 1990.6337153168461
           },
           "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
           "nodeLineageTag": "8074a767-b605-475b-9a3c-4803970216f8",
           "size": {
             "height": 200.7903642345218,
             "width": 310.4382373007511
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3058.4990600618567,
+            "y": 1098.8342460981091
+          },
+          "nodeIndex": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
+          "nodeLineageTag": "94e4e9ae-0e6c-47eb-868b-fef9ff06447b",
+          "size": {
+            "height": 266.2849823365857,
+            "width": 375.49205628011396
           },
           "zIndex": 0
         }
@@ -215,26 +215,26 @@
       "ordinal": 1,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 225.49330355822346
       },
       "nodes": [
         {
           "location": {
             "x": 0,
-            "y": 250.07717939605669
+            "y": 217.66251700956207
           },
           "nodeIndex": "V_PRPGP_PROJETOS_POS",
           "nodeLineageTag": "677f56a3-689a-42ce-9af8-a01945892b3e",
           "size": {
-            "height": 270.62637337557408,
-            "width": 280.50976749423546
+            "height": 401.69435606879142,
+            "width": 327.01776135311906
           },
-          "zIndex": 5
+          "zIndex": 7
         },
         {
           "location": {
-            "x": 772.755056586888,
-            "y": 892.80812397103193
+            "x": 724.83772958076554,
+            "y": 906.9014554434209
           },
           "nodeIndex": "PM_PROJETOS_PARTICIPANTES",
           "nodeLineageTag": "950b6f7d-ac16-480e-8d4f-f2b182be4411",
@@ -242,25 +242,12 @@
             "height": 250.82399553373352,
             "width": 322.86533203067233
           },
-          "zIndex": 6
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 304.53822756272791,
-            "y": 718.50571614942942
-          },
-          "nodeIndex": "V_PRPGP_PROJETOS_POS_ORGAOS",
-          "nodeLineageTag": "439e653b-5712-4f50-8465-497c0273734e",
-          "size": {
-            "height": 219.32133091410572,
-            "width": 338
-          },
-          "zIndex": 7
-        },
-        {
-          "location": {
-            "x": 1208.2556063902566,
-            "y": 70.224460743009388
+            "x": 1184.2969428871954,
+            "y": 13.851134853453544
           },
           "nodeIndex": "dCalendario",
           "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
@@ -272,8 +259,8 @@
         },
         {
           "location": {
-            "x": 793.04186530054017,
-            "y": 307.09295550603872
+            "x": 749.35253773613431,
+            "y": 298.63695662260534
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -285,8 +272,8 @@
         },
         {
           "location": {
-            "x": 1356.7172848823468,
-            "y": 288.37522419764457
+            "x": 1384.9039478271247,
+            "y": 272.87255957801671
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -298,7 +285,7 @@
         },
         {
           "location": {
-            "x": 324.44469149491169,
+            "x": 406.18601403476771,
             "y": 0
           },
           "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
@@ -308,10 +295,23 @@
             "width": 325.76251424538327
           },
           "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 295.62926894465812,
+            "y": 684.36123042310953
+          },
+          "nodeIndex": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
+          "nodeLineageTag": "94e4e9ae-0e6c-47eb-868b-fef9ff06447b",
+          "size": {
+            "height": 270.50799385888365,
+            "width": 372.11464842941177
+          },
+          "zIndex": 6
         }
       ],
       "name": "projetos",
-      "zoomValue": 70.955543900968792,
+      "zoomValue": 70.955543900968763,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
@@ -320,8 +320,8 @@
     {
       "ordinal": 2,
       "scrollPosition": {
-        "x": 397.05884794615918,
-        "y": 0
+        "x": 144.15512313968836,
+        "y": 42.99363321710004
       },
       "nodes": [
         {
@@ -414,7 +414,7 @@
       "ordinal": 3,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 40.224663778798174
       },
       "nodes": [
         {
@@ -599,6 +599,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "defesas",
+  "selectedDiagram": "projetos",
   "defaultDiagram": "All tables"
 }
