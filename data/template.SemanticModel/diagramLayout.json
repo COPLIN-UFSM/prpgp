@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 1466.9636179846286,
+        "x": 979.05997563940844,
         "y": 437.48693263621408
       },
       "nodes": [
@@ -320,14 +320,14 @@
     {
       "ordinal": 2,
       "scrollPosition": {
-        "x": 144.15512313968836,
-        "y": 42.99363321710004
+        "x": 1.4177395416503038,
+        "y": 406.89124845363722
       },
       "nodes": [
         {
           "location": {
-            "x": 726.98396902628292,
-            "y": 865.897360513292
+            "x": 690.122740943375,
+            "y": 949.54399347066
           },
           "nodeIndex": "V_PRPGP_MEMBROS_BANCA",
           "nodeLineageTag": "8250c80c-b9e1-44ac-a53b-6480f45db6e8",
@@ -404,7 +404,7 @@
         }
       ],
       "name": "defesas",
-      "zoomValue": 79.08147661844275,
+      "zoomValue": 70.534817617907535,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
@@ -599,6 +599,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "produção docente",
+  "selectedDiagram": "defesas",
   "defaultDiagram": "All tables"
 }

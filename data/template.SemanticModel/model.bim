@@ -233,6 +233,22 @@
                   "Value": "Hidden"
                 }
               },
+              "medida.número_orientandos": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Medidas",
+                    "ConceptualProperty": "Número orientandos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "número orientandos": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "medida.pertence_ao_programa": {
                 "Definition": {
                   "Binding": {
@@ -1841,6 +1857,72 @@
                   "Value": "Hidden"
                 }
               },
+              "v_prpgp_discentes_pos.id_orientador": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "ID_ORIENTADOR"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "id orientador": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "ID_ORIENTADOR": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "identification orientador": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.6
+                    }
+                  },
+                  {
+                    "identity orientador": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.6
+                    }
+                  },
+                  {
+                    "identifier orientador": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.6
+                    }
+                  },
+                  {
+                    "credential orientador": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.582
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
               "v_prpgp_discentes_pos.id_pessoa": {
                 "Definition": {
                   "Binding": {
@@ -3241,6 +3323,16 @@
                   {
                     "nome participante": {
                       "State": "Generated"
+                    }
+                  },
+                  {
+                    "Docente": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -4951,6 +5043,29 @@
                   }
                 ]
               },
+              "v_prpgp_vagas_inscritos_matriculado.ano_ingresso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "ANO_INGRESSO"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "ano ingresso": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "ANO_INGRESSO": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
               "v_prpgp_vagas_inscritos_matriculado.candidatos_inscrito": {
                 "Definition": {
                   "Binding": {
@@ -6500,6 +6615,39 @@
                   "v_prpgp_discentes_pos.matrícula": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.matrícula"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_medida_número_orientandos": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "medida.número_orientandos"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_número_orientandos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "medida.número_orientandos": {
+                    "Target": {
+                      "Entity": "medida.número_orientandos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
                     }
                   }
                 },
@@ -8549,6 +8697,39 @@
                 },
                 "State": "Generated"
               },
+              "v_prpgp_vagas_inscritos_matriculado_has_ano_ingresso": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.ano_ingresso"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_vagas_inscritos_matriculado"
+                      }
+                    },
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_ano_ingressos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_vagas_inscritos_matriculado": {
+                    "Target": {
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado"
+                    }
+                  },
+                  "v_prpgp_vagas_inscritos_matriculado.ano_ingresso": {
+                    "Target": {
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.ano_ingresso"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_prpgp_vagas_inscritos_matriculado_has_candidatos_inscrito": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
@@ -9460,8 +9641,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "formatString": "Long Date",
+            "isHidden": true,
             "lineageTag": "19027145-4cfe-495c-a3e2-5e7606869c85",
             "sourceColumn": "Data defesa",
             "summarizeBy": "none"
@@ -9478,6 +9665,26 @@
             "lineageTag": "dcc0bb8f-11b4-498d-86d8-c0b83eb4f095",
             "sourceColumn": "Gênero",
             "summarizeBy": "none"
+          },
+          {
+            "name": "ID_ORIENTADOR",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "4022a4ef-0045-4d2c-b441-0eca0dbdb110",
+            "sourceColumn": "ID_ORIENTADOR",
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -9952,8 +10159,14 @@
                 "value": "User"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "ec25bb49-2651-4236-afb6-3487ff330b24",
             "sourceColumn": "ID_CURSO_ALUNO",
             "summarizeBy": "none"
@@ -10416,6 +10629,23 @@
             "expression": "DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[SIAPE])",
             "formatString": "0",
             "lineageTag": "e4ca23fd-494f-4f8e-b0f2-33a030f91b57"
+          },
+          {
+            "name": "Número orientandos",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]), ",
+              "    V_PRPGP_MEMBROS_BANCA[Tipo participante] = \"Presidente\",",
+              "    FILTER(",
+              "        V_PRPGP_DISCENTES_POS, ",
+              "        V_PRPGP_DISCENTES_POS[Ano defesa] = SELECTEDVALUE(dCalendario[Ano])",
+              "    )",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "ce652f51-9eb0-4b23-8154-a9316427745b"
           }
         ],
         "partitions": [
@@ -10711,6 +10941,20 @@
             "lineageTag": "29475326-65e2-40c5-99a9-f5b6c91ec561",
             "sourceColumn": "CONC_EDITAL",
             "summarizeBy": "none"
+          },
+          {
+            "name": "ANO_INGRESSO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7f70839f-b685-4b72-b0c7-cbc96b38942d",
+            "sourceColumn": "ANO_INGRESSO",
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "8bd13327-4213-43e5-962e-92172731b58a",
