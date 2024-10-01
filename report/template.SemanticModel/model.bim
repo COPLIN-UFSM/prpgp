@@ -12080,8 +12080,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "formatString": "Long Date",
+            "isHidden": true,
             "lineageTag": "335212e1-cb80-4fd1-b6d3-e73ecb84a162",
             "sourceColumn": "Data referência",
             "summarizeBy": "none"
