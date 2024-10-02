@@ -1,0 +1,155 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.1.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU06",
+      "reportVersionAtImport": "5.56",
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "UFSM29498035678784507.json",
+      "reportVersionAtImport": "5.57",
+      "type": "RegisteredResources"
+    }
+  },
+  "layoutOptimization": "None",
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "advanceCardE03760C5AB684758B56AA29F9E6C257B",
+    "ChicletSlicer1448559807354",
+    "Exportfile40F9J395H1047D67DH73H25C4E835F00",
+    "imagepro72F4F4C66B5C47EDB72C8CA5F4BFCD1A",
+    "PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1",
+    "htmlContent443BE3AD55E043BF878BED274D3A6855"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU06",
+          "path": "BaseThemes/CY24SU06.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "UFSM29498035678784507.json",
+          "path": "UFSM29498035678784507.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "PRPGP_-_Atratividade7715864676733362.png",
+          "path": "PRPGP_-_Atratividade7715864676733362.png",
+          "type": "Image"
+        },
+        {
+          "name": "001_Bot_o_menu_principal021679525228684327.png",
+          "path": "001_Bot_o_menu_principal021679525228684327.png",
+          "type": "Image"
+        },
+        {
+          "name": "002_Bot_o_menu_principal7747043807036316.png",
+          "path": "002_Bot_o_menu_principal7747043807036316.png",
+          "type": "Image"
+        },
+        {
+          "name": "003_Bot_o_menu_principal08489438971249852.png",
+          "path": "003_Bot_o_menu_principal08489438971249852.png",
+          "type": "Image"
+        },
+        {
+          "name": "001_Padr_o47674029959002207.png",
+          "path": "001_Padr_o47674029959002207.png",
+          "type": "Image"
+        },
+        {
+          "name": "004_Bot_o_menu_principal5644679180533616.png",
+          "path": "004_Bot_o_menu_principal5644679180533616.png",
+          "type": "Image"
+        },
+        {
+          "name": "Produ__o_docente9436596370024335.png",
+          "path": "Produ__o_docente9436596370024335.png",
+          "type": "Image"
+        },
+        {
+          "name": "Projetos9483737749740311.png",
+          "path": "Projetos9483737749740311.png",
+          "type": "Image"
+        },
+        {
+          "name": "Defesas7881484560420249.png",
+          "path": "Defesas7881484560420249.png",
+          "type": "Image"
+        },
+        {
+          "name": "Fluxo_discente09181124498329818.png",
+          "path": "Fluxo_discente09181124498329818.png",
+          "type": "Image"
+        },
+        {
+          "name": "Visitantes4559620661794288.png",
+          "path": "Visitantes4559620661794288.png",
+          "type": "Image"
+        },
+        {
+          "name": "Bolsas19760085978020436.png",
+          "path": "Bolsas19760085978020436.png",
+          "type": "Image"
+        },
+        {
+          "name": "A__es_institucionais6311577597766171.png",
+          "path": "A__es_institucionais6311577597766171.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

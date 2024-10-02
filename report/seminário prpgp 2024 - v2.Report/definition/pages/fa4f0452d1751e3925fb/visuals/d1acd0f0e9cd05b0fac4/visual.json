@@ -1,0 +1,222 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "d1acd0f0e9cd05b0fac4",
+  "position": {
+    "x": 533.33333333333337,
+    "y": 341.65839536807277,
+    "z": 0,
+    "height": 629.94210090984279,
+    "width": 1280,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "NU_CPF"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.NU_CPF",
+              "nativeQueryRef": "NU_CPF"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "BENEFICIARIO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.BENEFICIARIO",
+              "nativeQueryRef": "BENEFICIARIO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "SIGLA_INSTITUICAO_DESTINO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.SIGLA_INSTITUICAO_DESTINO",
+              "nativeQueryRef": "SIGLA_INSTITUICAO_DESTINO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "VALOR_PAGO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.VALOR_PAGO",
+              "nativeQueryRef": "VALOR_PAGO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "MODALIDADE"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.MODALIDADE",
+              "nativeQueryRef": "MODALIDADE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "LINHA_FOMENTO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.LINHA_FOMENTO",
+              "nativeQueryRef": "LINHA_FOMENTO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "TITULO_PROJETO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.TITULO_PROJETO",
+              "nativeQueryRef": "TITULO_PROJETO"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "BOLSAS_CNPQ_2023"
+                  }
+                },
+                "Property": "BENEFICIARIO"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "BOLSAS_CNPQ_2023"
+                  }
+                },
+                "Property": "NU_CPF"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75d598de633a55070de3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "BOLSAS_CNPQ_2023"
+              }
+            },
+            "Property": "SIGLA_INSTITUICAO_DESTINO"
+          }
+        },
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "BOLSAS_CNPQ_2023",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "SIGLA_INSTITUICAO_DESTINO"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'UFSM'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'UFSM/Palmeira'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

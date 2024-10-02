@@ -1,0 +1,259 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "dae1d13ce0acccfdf42d",
+  "position": {
+    "x": 298.33333333333337,
+    "y": 265,
+    "z": 2000,
+    "height": 353.33333333333337,
+    "width": 911.66666666666674,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Matrícula"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Matrícula",
+              "nativeQueryRef": "Matrícula"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Nome aluno"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Nome aluno",
+              "nativeQueryRef": "Nome aluno"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Gênero"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Gênero",
+              "nativeQueryRef": "Gênero"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Nacionalidade"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Nacionalidade",
+              "nativeQueryRef": "Nacionalidade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Ano ingresso"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Ano ingresso",
+              "nativeQueryRef": "Ano ingresso"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Ano saída"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Ano saída",
+              "nativeQueryRef": "Ano saída"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Forma saída"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Forma saída",
+              "nativeQueryRef": "Forma saída"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "293.7837181919316D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DISCENTES_POS.Nome aluno"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Alunos ativos no período'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "af8c530f4f6f79b28dd3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "V_PRPGP_DISCENTES_POS"
+              }
+            },
+            "Property": "Forma saída"
+          }
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "448eb8b06d45f4977c73",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "V_PRPGP_DISCENTES_POS"
+              }
+            },
+            "Property": "Nome aluno"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "V_PRPGP_DISCENTES_POS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "v"
+                            }
+                          },
+                          "Property": "Nome aluno"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

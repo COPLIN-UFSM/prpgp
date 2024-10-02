@@ -1,0 +1,273 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "1630fbacb7e326e459ff",
+  "position": {
+    "x": 303.33333333333337,
+    "y": 613.33333333333337,
+    "z": 0,
+    "height": 166.66666666666669,
+    "width": 760,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Matrícula"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Matrícula",
+              "nativeQueryRef": "Matrícula"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Nome aluno"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Nome aluno",
+              "nativeQueryRef": "Nome aluno"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Nacionalidade"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Nacionalidade",
+              "nativeQueryRef": "Nacionalidade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Modalidade curso"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Modalidade curso",
+              "nativeQueryRef": "Modalidade curso"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Situação defesa"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Situação defesa",
+              "nativeQueryRef": "Situação defesa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DISCENTES_POS"
+                    }
+                  },
+                  "Property": "Situação plano estudos"
+                }
+              },
+              "queryRef": "V_PRPGP_DISCENTES_POS.Situação plano estudos",
+              "nativeQueryRef": "Situação plano estudos"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "V_PRPGP_DISCENTES_POS"
+                  }
+                },
+                "Property": "Nome aluno"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.36910569872904D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DISCENTES_POS.Nome aluno"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Defesas aprovadas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ac3982f98486ab6ea9be",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "V_PRPGP_DISCENTES_POS"
+              }
+            },
+            "Property": "Matrícula"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v1",
+              "Entity": "V_PRPGP_DISCENTES_POS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "v1"
+                            }
+                          },
+                          "Property": "Matrícula"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "0ddc26244bae3ac6577c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "V_PRPGP_DISCENTES_POS"
+              }
+            },
+            "Property": "Situação defesa"
+          }
+        },
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "V_PRPGP_DISCENTES_POS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "v"
+                          }
+                        },
+                        "Property": "Situação defesa"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Defendida com aprovação'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "477fc57f6e6941c7993e",
+  "position": {
+    "x": 303.33333333333337,
+    "y": 285,
+    "z": 5000,
+    "height": 255,
+    "width": 760,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_MEMBROS_BANCA"
+                    }
+                  },
+                  "Property": "CPF"
+                }
+              },
+              "queryRef": "V_PRPGP_MEMBROS_BANCA.CPF",
+              "nativeQueryRef": "CPF"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DOCENTES_POS"
+                    }
+                  },
+                  "Property": "Nome docente"
+                }
+              },
+              "queryRef": "V_PRPGP_DOCENTES_POS.Nome docente",
+              "nativeQueryRef": "Nome docente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_DOCENTES_POS"
+                    }
+                  },
+                  "Property": "Nacionalidade"
+                }
+              },
+              "queryRef": "V_PRPGP_DOCENTES_POS.Nacionalidade",
+              "nativeQueryRef": "Nacionalidade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_MEMBROS_BANCA"
+                    }
+                  },
+                  "Property": "Tipo vínculo"
+                }
+              },
+              "queryRef": "V_PRPGP_MEMBROS_BANCA.Tipo vínculo",
+              "nativeQueryRef": "Tipo vínculo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_MEMBROS_BANCA"
+                    }
+                  },
+                  "Property": "Sigla instituição"
+                }
+              },
+              "queryRef": "V_PRPGP_MEMBROS_BANCA.Sigla instituição",
+              "nativeQueryRef": "Sigla instituição"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_MEMBROS_BANCA"
+                    }
+                  },
+                  "Property": "Tipo participante"
+                }
+              },
+              "queryRef": "V_PRPGP_MEMBROS_BANCA.Tipo participante",
+              "nativeQueryRef": "Tipo participante"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_MEMBROS_BANCA"
+                    }
+                  },
+                  "Property": "Titulação"
+                }
+              },
+              "queryRef": "V_PRPGP_MEMBROS_BANCA.Titulação",
+              "nativeQueryRef": "Titulação"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "180.0620164161272D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DOCENTES_POS.Nome docente"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Membros banca'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f56c9d69f4568777fe0a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "V_PRPGP_DOCENTES_POS"
+              }
+            },
+            "Property": "Nome docente"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v1",
+              "Entity": "V_PRPGP_DOCENTES_POS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "v1"
+                            }
+                          },
+                          "Property": "Nome docente"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

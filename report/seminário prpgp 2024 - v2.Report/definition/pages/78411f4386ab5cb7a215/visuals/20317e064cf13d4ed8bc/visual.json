@@ -1,0 +1,238 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "20317e064cf13d4ed8bc",
+  "position": {
+    "x": 296.66666666666669,
+    "y": 266.66666666666669,
+    "z": 2000,
+    "height": 218.33333333333334,
+    "width": 1575,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_PROJETOS_POS"
+                    }
+                  },
+                  "Property": "Número processo"
+                }
+              },
+              "queryRef": "V_PRPGP_PROJETOS_POS.Número processo PEN-SIE",
+              "nativeQueryRef": "Número processo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_PROJETOS_POS"
+                    }
+                  },
+                  "Property": "Situação"
+                }
+              },
+              "queryRef": "V_PRPGP_PROJETOS_POS.Situação",
+              "nativeQueryRef": "Situação"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_PROJETOS_POS"
+                    }
+                  },
+                  "Property": "Data início"
+                }
+              },
+              "queryRef": "V_PRPGP_PROJETOS_POS.Data início",
+              "nativeQueryRef": "Data início"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_PROJETOS_POS"
+                    }
+                  },
+                  "Property": "Data fim"
+                }
+              },
+              "queryRef": "V_PRPGP_PROJETOS_POS.Data fim",
+              "nativeQueryRef": "Data fim"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_PROJETOS_POS"
+                    }
+                  },
+                  "Property": "Classificação projeto"
+                }
+              },
+              "queryRef": "V_PRPGP_PROJETOS_POS.Classificação projeto",
+              "nativeQueryRef": "Classificação projeto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_PROJETOS_POS"
+                    }
+                  },
+                  "Property": "Título"
+                }
+              },
+              "queryRef": "V_PRPGP_PROJETOS_POS.Título",
+              "nativeQueryRef": "Título"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "V_PRPGP_PROJETOS_POS"
+                  }
+                },
+                "Property": "Situação"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "197.3333361957326D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Situação"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.6666723180715D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Data início"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88.0000026083407D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Data fim"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "152.3333416839182D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Classificação projeto"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "276137475d39712a1407",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "V_PRPGP_PROJETOS_POS"
+              }
+            },
+            "Property": "Ano projeto dentro do intervalo"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "V_PRPGP_PROJETOS_POS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 1,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "v"
+                        }
+                      },
+                      "Property": "Ano projeto dentro do intervalo"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "0L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

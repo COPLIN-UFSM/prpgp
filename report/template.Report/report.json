@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.56\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.56\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "advanceCardE03760C5AB684758B56AA29F9E6C257B",
@@ -82,12 +82,12 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"459db21267ccc911df3b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":227.5987841945289,\"y\":234.40729483282675,\"z\":1000,\"width\":559.2705167173252,\"height\":485.34954407294833,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"menu de navegação aqui embaixo (vários botões coloridos)\"}]}]}}]}}}",
+          "config": "{\"name\":\"459db21267ccc911df3b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":422.0689655172414,\"y\":123.2512315270936,\"z\":1000,\"width\":648.1773399014778,\"height\":81.57635467980296,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"menu de navegação aqui embaixo (vários botões coloridos)\"}]}]}}]}}}",
           "filters": "[]",
-          "height": 485.35,
-          "width": 559.27,
-          "x": 227.60,
-          "y": 234.41,
+          "height": 81.58,
+          "width": 648.18,
+          "x": 422.07,
+          "y": 123.25,
           "z": 1000.00
         },
         {
@@ -98,6 +98,33 @@
           "x": 0.00,
           "y": 0.00,
           "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"d515e859323949a2f40f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":228.51674836101972,\"y\":411.3336348486514,\"z\":2001,\"width\":443.6062861869313,\"height\":112.22497932175351,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Bolsas CAPES:\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Disponíveis em https://transparencia.capes.gov.br/transparencia/xhtml/index.faces \"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 112.22,
+          "width": 443.61,
+          "x": 228.52,
+          "y": 411.33,
+          "z": 2001.00
+        },
+        {
+          "config": "{\"name\":\"e0463eff2ba0e2602161\",\"layouts\":[{\"id\":0,\"position\":{\"x\":228.76847290640387,\"y\":524.039408866995,\"z\":2002,\"width\":647.2906403940887,\"height\":164.92610837438423,\"tabOrder\":2002}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Bolsas produtividade CNPq:\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"http://plsql1.cnpq.br/divulg/RESULTADO_PQ_102003.curso?f_inst_uf=RS#BUSCA\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Busca pela Sigla da Instituição:\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Primeiro, selecione a UF (Unidade Federativa) da UFSM (RS), e depois escolha a opção \\\"Universidade Federal de Santa Maria/UFSM-RS\\\" da lista ao lado. \"},{\"value\":\"Clique em \\\"Busca\\\" para enviar a solicitação. \",\"textStyle\":{\"fontSize\":\"13.3333px\"}},{\"value\":\"Isto retornará a lista de todos os docentes de produtividade CNPq vinculados a UFSM. \"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 164.93,
+          "width": 647.29,
+          "x": 228.77,
+          "y": 524.04,
+          "z": 2002.00
+        },
+        {
+          "config": "{\"name\":\"ffb0586978b1b2bd6580\",\"layouts\":[{\"id\":0,\"position\":{\"x\":228.76847290640393,\"y\":344.9261083743842,\"z\":2003,\"width\":904.4334975369458,\"height\":51.42857142857143,\"tabOrder\":2003}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Informações sobre outras bolsas\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 51.43,
+          "width": 904.43,
+          "x": 228.77,
+          "y": 344.93,
+          "z": 2003.00
         }
       ],
       "width": 1280.00
@@ -112,15 +139,6 @@
       "ordinal": 8,
       "visualContainers": [
         {
-          "config": "{\"name\":\"22f077c5217a631f7908\",\"layouts\":[{\"id\":0,\"position\":{\"x\":56.112489660876754,\"y\":17.998345740281223,\"z\":3000,\"width\":904.1521918941273,\"height\":50.81885856079404,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Informações sobre outras bolsas\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}}]}]}}]}}}",
-          "filters": "[]",
-          "height": 50.82,
-          "width": 904.15,
-          "x": 56.11,
-          "y": 18.00,
-          "z": 3000.00
-        },
-        {
           "config": "{\"name\":\"631c046334790964819e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":23.291976840363937,\"z\":2000,\"width\":56.112489660876754,\"height\":40.231596360628615,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
           "height": 40.23,
@@ -128,24 +146,6 @@
           "x": 0.00,
           "y": 23.29,
           "z": 2000.00
-        },
-        {
-          "config": "{\"name\":\"8b939abf30511bd14470\",\"layouts\":[{\"id\":0,\"position\":{\"x\":633.1182795698925,\"y\":194.80562448304383,\"z\":1000,\"width\":646.8817204301075,\"height\":165.16129032258064,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Bolsas produtividade CNPq:\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"http://plsql1.cnpq.br/divulg/RESULTADO_PQ_102003.curso?f_inst_uf=RS#BUSCA\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Busca pela Sigla da Instituição:\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Primeiro, selecione a UF (Unidade Federativa) da UFSM (RS), e depois escolha a opção \\\"Universidade Federal de Santa Maria/UFSM-RS\\\" da lista ao lado. \"},{\"value\":\"Clique em \\\"Busca\\\" para enviar a solicitação. \",\"textStyle\":{\"fontSize\":\"13.3333px\"}},{\"value\":\"Isto retornará a lista de todos os docentes de produtividade CNPq vinculados a UFSM. \"}]}]}}]}}}",
-          "filters": "[]",
-          "height": 165.16,
-          "width": 646.88,
-          "x": 633.12,
-          "y": 194.81,
-          "z": 1000.00
-        },
-        {
-          "config": "{\"name\":\"ecba9614700682700328\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.822167080231596,\"y\":124.92969396195203,\"z\":0,\"width\":443.6062861869313,\"height\":112.22497932175351,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Bolsas CAPES:\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Disponíveis em https://transparencia.capes.gov.br/transparencia/xhtml/index.faces \"}]}]}}]}}}",
-          "filters": "[]",
-          "height": 112.22,
-          "width": 443.61,
-          "x": 14.82,
-          "y": 124.93,
-          "z": 0.00
         }
       ],
       "width": 1280.00
@@ -289,13 +289,13 @@
           "z": 3000.00
         },
         {
-          "config": "{\"name\":\"728da0753033f8dc4dd8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":926.8321167883212,\"y\":187.79562043795622,\"z\":8001,\"width\":192.46715328467153,\"height\":209.28467153284672,\"tabOrder\":8001}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"MaxValue\":[{\"queryRef\":\"Medidas.Candidatos inscritos\"}],\"Y\":[{\"queryRef\":\"Medidas.classificados\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Inscritos\"},\"Name\":\"Medidas.Candidatos inscritos\",\"NativeReferenceName\":\"Inscritos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Classificados\"},\"Name\":\"Medidas.classificados\",\"NativeReferenceName\":\"Classificados\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Classificados\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Classificados vs Inscritos'\"}}}}}]}}}",
+          "config": "{\"name\":\"728da0753033f8dc4dd8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":926.8321167883212,\"y\":187.79562043795622,\"z\":9000,\"width\":192.46715328467153,\"height\":209.28467153284672,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"MaxValue\":[{\"queryRef\":\"Medidas.Candidatos inscritos\"}],\"Y\":[{\"queryRef\":\"Medidas.classificados\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Inscritos\"},\"Name\":\"Medidas.Candidatos inscritos\",\"NativeReferenceName\":\"Inscritos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Classificados\"},\"Name\":\"Medidas.classificados\",\"NativeReferenceName\":\"Classificados\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Classificados\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Classificados vs Inscritos'\"}}}}}]}}}",
           "filters": "[]",
           "height": 209.28,
           "width": 192.47,
           "x": 926.83,
           "y": 187.80,
-          "z": 8001.00
+          "z": 9000.00
         },
         {
           "config": "{\"name\":\"7c6b971ba8d609e00d28\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.145985401459853,\"y\":187.79562043795622,\"z\":0,\"width\":720.3503649635037,\"height\":209.28467153284672,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Cota\"},{\"queryRef\":\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Curso vaga\"},{\"queryRef\":\"Medidas.Vagas ofertadas\"},{\"queryRef\":\"Medidas.Candidatos inscritos\"},{\"queryRef\":\"Medidas.Candidatos classificados\"},{\"queryRef\":\"Medidas.Candidatos matriculados\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Medidas\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Inscritos\"},\"Name\":\"Medidas.Candidatos inscritos\",\"NativeReferenceName\":\"Inscritos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Matriculados\"},\"Name\":\"Medidas.Candidatos matriculados\",\"NativeReferenceName\":\"Matriculados\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Vagas ofertadas\"},\"Name\":\"Medidas.Vagas ofertadas\",\"NativeReferenceName\":\"Vagas ofertadas\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Cota\"},\"Name\":\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Cota\",\"NativeReferenceName\":\"Cota1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Curso vaga\"},\"Name\":\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Curso vaga\",\"NativeReferenceName\":\"Curso vaga\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Classificados\"},\"Name\":\"Medidas.Candidatos classificados\",\"NativeReferenceName\":\"Classificados\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Vagas ofertadas\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"266.21834481620215D\"}}}},\"selector\":{\"metadata\":\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Cota\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"81.76791375789668D\"}}}},\"selector\":{\"metadata\":\"Medidas.Candidatos inscritos\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"81.60583941605839D\"}}}},\"selector\":{\"metadata\":\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Curso vaga\"}}]}}}",

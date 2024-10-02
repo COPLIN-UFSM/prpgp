@@ -1,0 +1,128 @@
+table V_PRPGP_MEMBROS_BANCA
+	lineageTag: 8250c80c-b9e1-44ac-a53b-6480f45db6e8
+
+	column ID_PLANO_ESTUDO
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 961548d3-a0c8-4721-90e3-509e39d70db4
+		summarizeBy: none
+		sourceColumn: ID_PLANO_ESTUDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column ID_PARTICIP_PLANO
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 90890454-23c1-4ee0-a9c3-c9ee4d632da5
+		summarizeBy: none
+		sourceColumn: ID_PARTICIP_PLANO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column ID_CONTRATO_RH
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6529b173-77dc-434e-87a3-7d8011295df1
+		summarizeBy: none
+		sourceColumn: ID_CONTRATO_RH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo vínculo'
+		dataType: string
+		lineageTag: 0b5a8b9b-79fa-4f2d-ba5b-6672a0a1c8c7
+		summarizeBy: none
+		sourceColumn: Tipo vínculo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Situação
+		dataType: string
+		lineageTag: 1a09e5a2-7aa8-45af-8094-4ed6f5172ac9
+		summarizeBy: none
+		sourceColumn: Situação
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo participante'
+		dataType: string
+		lineageTag: f1cedcd9-0f37-4899-a1de-935edde69c81
+		summarizeBy: none
+		sourceColumn: Tipo participante
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome participante'
+		dataType: string
+		lineageTag: 5b008c72-e5b4-41c0-9850-87d90d51ccb2
+		summarizeBy: none
+		sourceColumn: Nome participante
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome instituição'
+		dataType: string
+		lineageTag: 20b3a7a7-64e5-4d00-855a-4d0e5a16dbd9
+		summarizeBy: none
+		sourceColumn: Nome instituição
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sigla instituição'
+		dataType: string
+		lineageTag: aec2c442-b603-43c1-8ab6-4ab79407d500
+		summarizeBy: none
+		sourceColumn: Sigla instituição
+
+		annotation SummarizationSetBy = Automatic
+
+	column Titulação
+		dataType: string
+		lineageTag: 7bd59786-0ac5-40cf-b2fe-0a60721d6e3a
+		summarizeBy: none
+		sourceColumn: Titulação
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPF
+		dataType: string
+		lineageTag: 7cc2249b-42e1-4114-a9e2-4dc568d4c5f5
+		summarizeBy: none
+		sourceColumn: CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CURSO_ALUNO
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ec25bb49-2651-4236-afb6-3487ff330b24
+		summarizeBy: none
+		sourceColumn: ID_CURSO_ALUNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	partition V_PRPGP_MEMBROS_BANCA = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    V_PRPGP_MEMBROS_BANCA1 = BEE{[Name="V_PRPGP_MEMBROS_BANCA"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_MEMBROS_BANCA1,{{"SITUACAO", "Situação"}, {"TIPO_PARTICIPANTE", "Tipo participante"}, {"TIPO_VINCULO", "Tipo vínculo"}, {"NOME_INSTITUICAO", "Nome instituição"}, {"NOME_PARTICIPANTE", "Nome participante"}, {"SIGLA_INSTITUICAO", "Sigla instituição"}, {"TITULACAO", "Titulação"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

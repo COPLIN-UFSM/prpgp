@@ -1,0 +1,85 @@
+table V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO
+	lineageTag: 94e4e9ae-0e6c-47eb-868b-fef9ff06447b
+
+	column ID_PROJETO
+		dataType: int64
+		formatString: 0
+		lineageTag: 90153ea3-e085-45a0-a7ab-0a8f72f4bfc9
+		summarizeBy: none
+		sourceColumn: ID_PROJETO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_UNIDADE_SUP
+		dataType: int64
+		formatString: 0
+		lineageTag: bb28481c-fcf4-4054-8259-515b22fcd8b5
+		summarizeBy: none
+		sourceColumn: ID_UNIDADE_SUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column FUNCAO
+		dataType: string
+		lineageTag: ad045642-44d6-4129-88ff-334d99af382b
+		summarizeBy: none
+		sourceColumn: FUNCAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANO_INICIAL
+		dataType: int64
+		formatString: 0
+		lineageTag: c8f850b3-e7a1-41a3-a139-953cd60959bc
+		summarizeBy: none
+		sourceColumn: ANO_INICIAL
+
+		annotation SummarizationSetBy = User
+
+	column ANO_FINAL
+		dataType: int64
+		formatString: 0
+		lineageTag: 5dfd3913-89c5-438e-971b-10e6053c0fe7
+		summarizeBy: none
+		sourceColumn: ANO_FINAL
+
+		annotation SummarizationSetBy = User
+
+	column ANO_REFERENCIA
+		dataType: int64
+		formatString: 0
+		lineageTag: 76e15492-efcd-4eeb-9019-b5d8c1475e6f
+		summarizeBy: none
+		sourceColumn: ANO_REFERENCIA
+
+		annotation SummarizationSetBy = User
+
+	column 'Data referência'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 938a3950-2a5f-401e-be0e-fb79ca119f7d
+		summarizeBy: none
+		sourceColumn: Data referência
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO1 = BEE{[Name="V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"]}[Data],
+				    #"Inserted Date" = Table.AddColumn(V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO1, "Data referência", each Date.From(Text.From([ANO_REFERENCIA], "pt-BR")), type date)
+				in
+				    #"Inserted Date"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

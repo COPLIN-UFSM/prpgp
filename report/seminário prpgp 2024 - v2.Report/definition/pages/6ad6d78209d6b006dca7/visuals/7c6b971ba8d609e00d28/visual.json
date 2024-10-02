@@ -1,0 +1,199 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "7c6b971ba8d609e00d28",
+  "position": {
+    "x": 256.66666666666669,
+    "y": 268.33333333333337,
+    "z": 0,
+    "height": 255,
+    "width": 798.33333333333337,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                    }
+                  },
+                  "Property": "Cota"
+                }
+              },
+              "queryRef": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Cota",
+              "nativeQueryRef": "Cota1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                    }
+                  },
+                  "Property": "Curso vaga"
+                }
+              },
+              "queryRef": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Curso vaga",
+              "nativeQueryRef": "Curso vaga"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Vagas ofertadas"
+                }
+              },
+              "queryRef": "Medidas.Vagas ofertadas",
+              "nativeQueryRef": "Vagas ofertadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Inscritos"
+                }
+              },
+              "queryRef": "Medidas.Candidatos inscritos",
+              "nativeQueryRef": "Inscritos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Classificados"
+                }
+              },
+              "queryRef": "Medidas.Candidatos classificados",
+              "nativeQueryRef": "Classificados"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Matriculados"
+                }
+              },
+              "queryRef": "Medidas.Candidatos matriculados",
+              "nativeQueryRef": "Matriculados"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                  }
+                },
+                "Property": "Cota"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "297.86084475935974D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Cota"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80.76162824210782D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Candidatos inscritos"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "100.03044633826691D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Curso vaga"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93.56708352632393D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Candidatos classificados"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.55905620456116D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Vagas ofertadas"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

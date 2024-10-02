@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "459db21267ccc911df3b",
+  "position": {
+    "x": 228.76847290640393,
+    "y": 234.08866995073893,
+    "z": 1000,
+    "height": 81.576354679802961,
+    "width": 648.17733990147781,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "menu de navegação aqui embaixo (vários botões coloridos)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
