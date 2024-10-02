@@ -179,7 +179,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "Medidas",
-                    "ConceptualProperty": "Candidatos inscritos"
+                    "ConceptualProperty": "Inscritos"
                   }
                 },
                 "State": "Generated",
@@ -195,7 +195,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "Medidas",
-                    "ConceptualProperty": "Candidatos matriculados"
+                    "ConceptualProperty": "Matriculados"
                   }
                 },
                 "State": "Generated",
@@ -5013,7 +5013,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-                    "ConceptualProperty": "CONC_EDITAL"
+                    "ConceptualProperty": "Concurso edital"
                   }
                 },
                 "State": "Generated",
@@ -10582,13 +10582,13 @@
             "lineageTag": "722ec88a-7913-47ba-8343-092b9a8546d7"
           },
           {
-            "name": "Candidatos inscritos",
+            "name": "Inscritos",
             "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Inscritos])",
             "formatString": "0",
             "lineageTag": "93ab957e-fccc-43eb-8ac5-ac4ea7b2244b"
           },
           {
-            "name": "Candidatos matriculados",
+            "name": "Matriculados",
             "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Matriculados])",
             "formatString": "0",
             "lineageTag": "9151ce3d-f36c-4b1d-a28e-de71f8d6bde5"
@@ -10636,6 +10636,12 @@
             ],
             "formatString": "0",
             "lineageTag": "ce652f51-9eb0-4b23-8154-a9316427745b"
+          },
+          {
+            "name": "Classificados",
+            "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Classificados])",
+            "formatString": "0",
+            "lineageTag": "4122d63c-460e-451e-af64-733555179e3a"
           }
         ],
         "partitions": [
@@ -10920,7 +10926,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "CONC_EDITAL",
+            "name": "Concurso edital",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -10929,7 +10935,35 @@
             ],
             "dataType": "string",
             "lineageTag": "29475326-65e2-40c5-99a9-f5b6c91ec561",
-            "sourceColumn": "CONC_EDITAL",
+            "sourceColumn": "Concurso edital",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano ingresso",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "74a94dcd-8568-49fc-a651-63fc263cb0d8",
+            "sourceColumn": "Ano ingresso",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Classificados",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6cdb2b49-1ae5-4b3e-852d-d01561523218",
+            "sourceColumn": "Classificados",
             "summarizeBy": "none"
           }
         ],
@@ -10945,9 +10979,10 @@
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1 = BEE{[Name=\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]}[Data],",
                 "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1, \"Data concurso\", each Date.From(Text.From([ANO_CONCURSO], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_CONCURSO\", \"Ano concurso\"}, {\"CANDIDATOS_INSCRITOS\", \"Inscritos\"}, {\"CANDIDATOS_MATRICULADOS\", \"Matriculados\"}, {\"DESCR_CONC_EDICAO\", \"Edição concurso\"}, {\"DESCR_CONCURSO\", \"Concurso\"}, {\"DESCR_COTA\", \"Cota\"}, {\"VAGAS_OFERECIDAS\", \"Vagas ofertadas\"}, {\"CURSO_VAGA\", \"Curso vaga\"}})",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_CONCURSO\", \"Ano concurso\"}, {\"CANDIDATOS_INSCRITOS\", \"Inscritos\"}, {\"CANDIDATOS_MATRICULADOS\", \"Matriculados\"}, {\"DESCR_CONC_EDICAO\", \"Edição concurso\"}, {\"DESCR_CONCURSO\", \"Concurso\"}, {\"DESCR_COTA\", \"Cota\"}, {\"VAGAS_OFERECIDAS\", \"Vagas ofertadas\"}, {\"CURSO_VAGA\", \"Curso vaga\"}, {\"CANDIDATOS_CLASSIFICADOS\", \"Classificados\"}, {\"CONC_EDITAL\", \"Concurso edital\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"CANDIDATOS_CLASSIFICADOS_PCD\", \"CANDIDATOS_CLASSIFICADOS_PPI\", \"CANDIDATOS_INSCRITOS_PCD\", \"CANDIDATOS_INSCRITOS_PPI\", \"CANDIDATOS_MATRICULADOS_PCD\", \"CANDIDATOS_MATRICULADOS_PPI\"})",
                 "in",
-                "    #\"Renamed Columns\""
+                "    #\"Removed Columns\""
               ],
               "type": "m"
             }
@@ -11834,11 +11869,6 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
-          }
-        ],
-        "changedProperties": [
-          {
-            "property": "Name"
           }
         ],
         "columns": [
