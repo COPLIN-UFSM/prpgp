@@ -14,7 +14,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Projetos.png'"
+                    "Value": "'PRPGP Projetos.png'"
                   }
                 }
               },
@@ -23,7 +23,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "Projetos9483737749740311.png"
+                    "ItemName": "PRPGP_Projetos3066944243041181.png"
                   }
                 }
               },

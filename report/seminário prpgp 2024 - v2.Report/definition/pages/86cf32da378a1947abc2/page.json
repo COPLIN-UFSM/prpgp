@@ -14,7 +14,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Defesas.png'"
+                    "Value": "'PRPGP Defesas.png'"
                   }
                 }
               },
@@ -23,7 +23,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "Defesas7881484560420249.png"
+                    "ItemName": "PRPGP_Defesas5755071964467648.png"
                   }
                 }
               },

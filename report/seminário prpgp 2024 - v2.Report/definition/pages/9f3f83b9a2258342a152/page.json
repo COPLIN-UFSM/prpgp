@@ -34,7 +34,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Visitantes.png'"
+                    "Value": "'PRPGP Visitantes.png'"
                   }
                 }
               },
@@ -43,7 +43,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "Visitantes4559620661794288.png"
+                    "ItemName": "PRPGP_Visitantes6723025889390413.png"
                   }
                 }
               },

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
   "name": "5fec92e91441cccbbd46",
   "position": {
-    "x": 1286.1750516884906,
-    "y": 109.8277050310131,
+    "x": 1495.8333333333335,
+    "y": 114.16666666666667,
     "z": 1000,
-    "height": 80.716747070985519,
-    "width": 586.18883528600963,
+    "height": 55.833333333333336,
+    "width": 355,
     "tabOrder": 0
   },
   "visual": {
@@ -216,6 +216,38 @@
             }
           }
         }
+      ],
+      "items": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -225,7 +257,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -233,6 +265,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Filtrar por ano e concurso'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

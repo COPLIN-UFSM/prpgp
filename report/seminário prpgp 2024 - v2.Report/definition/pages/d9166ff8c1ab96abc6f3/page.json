@@ -21,7 +21,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Fluxo discente.png'"
+                    "Value": "'PRPGP Fluxo discente.png'"
                   }
                 }
               },
@@ -30,7 +30,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "Fluxo_discente09181124498329818.png"
+                    "ItemName": "PRPGP_Fluxo_discente3033645159617566.png"
                   }
                 }
               },
