@@ -1,0 +1,165 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.1.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU06",
+      "reportVersionAtImport": "5.56",
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "UFSM29498035678784507.json",
+      "reportVersionAtImport": "5.57",
+      "type": "RegisteredResources"
+    }
+  },
+  "layoutOptimization": "None",
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "advanceCardE03760C5AB684758B56AA29F9E6C257B",
+    "ChicletSlicer1448559807354",
+    "Exportfile40F9J395H1047D67DH73H25C4E835F00",
+    "imagepro72F4F4C66B5C47EDB72C8CA5F4BFCD1A",
+    "PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1",
+    "htmlContent443BE3AD55E043BF878BED274D3A6855"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU06",
+          "path": "BaseThemes/CY24SU06.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "UFSM29498035678784507.json",
+          "path": "UFSM29498035678784507.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "001_Bot_o_menu_principal021679525228684327.png",
+          "path": "001_Bot_o_menu_principal021679525228684327.png",
+          "type": "Image"
+        },
+        {
+          "name": "002_Bot_o_menu_principal7747043807036316.png",
+          "path": "002_Bot_o_menu_principal7747043807036316.png",
+          "type": "Image"
+        },
+        {
+          "name": "003_Bot_o_menu_principal08489438971249852.png",
+          "path": "003_Bot_o_menu_principal08489438971249852.png",
+          "type": "Image"
+        },
+        {
+          "name": "001_Padr_o47674029959002207.png",
+          "path": "001_Padr_o47674029959002207.png",
+          "type": "Image"
+        },
+        {
+          "name": "004_Bot_o_menu_principal5644679180533616.png",
+          "path": "004_Bot_o_menu_principal5644679180533616.png",
+          "type": "Image"
+        },
+        {
+          "name": "A__es_institucionais6311577597766171.png",
+          "path": "A__es_institucionais6311577597766171.png",
+          "type": "Image"
+        },
+        {
+          "name": "PRPGP_-_Atratividade761544786020206.png",
+          "path": "PRPGP_-_Atratividade761544786020206.png",
+          "type": "Image"
+        },
+        {
+          "name": "PRPGP_Produ__o_docente020565857640819196.png",
+          "path": "PRPGP_Produ__o_docente020565857640819196.png",
+          "type": "Image"
+        },
+        {
+          "name": "PRPGP_Projetos3066944243041181.png",
+          "path": "PRPGP_Projetos3066944243041181.png",
+          "type": "Image"
+        },
+        {
+          "name": "PRPGP_Defesas5755071964467648.png",
+          "path": "PRPGP_Defesas5755071964467648.png",
+          "type": "Image"
+        },
+        {
+          "name": "PRPGP_Fluxo_discente3033645159617566.png",
+          "path": "PRPGP_Fluxo_discente3033645159617566.png",
+          "type": "Image"
+        },
+        {
+          "name": "PRPGP_Visitantes6723025889390413.png",
+          "path": "PRPGP_Visitantes6723025889390413.png",
+          "type": "Image"
+        },
+        {
+          "name": "PRPGP_Bolsas_CNPq7873235111292638.png",
+          "path": "PRPGP_Bolsas_CNPq7873235111292638.png",
+          "type": "Image"
+        },
+        {
+          "name": "Capa_relat_rio4552376710882.png",
+          "path": "Capa_relat_rio4552376710882.png",
+          "type": "Image"
+        },
+        {
+          "name": "000_Bot_o_padr_o_PRPGP11647654865043133.png",
+          "path": "000_Bot_o_padr_o_PRPGP11647654865043133.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

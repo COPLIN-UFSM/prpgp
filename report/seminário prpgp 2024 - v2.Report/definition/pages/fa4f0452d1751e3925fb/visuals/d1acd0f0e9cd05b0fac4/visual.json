@@ -1,0 +1,621 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "d1acd0f0e9cd05b0fac4",
+  "position": {
+    "x": 293.33333333333337,
+    "y": 340,
+    "z": 0,
+    "height": 663.33333333333337,
+    "width": 1590,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "NU_CPF"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.NU_CPF",
+              "nativeQueryRef": "CPF",
+              "displayName": "CPF"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "BENEFICIARIO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.BENEFICIARIO",
+              "nativeQueryRef": "Beneficiário",
+              "displayName": "Beneficiário"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "SIGLA_INSTITUICAO_DESTINO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.SIGLA_INSTITUICAO_DESTINO",
+              "nativeQueryRef": "Sigla instituição destino",
+              "displayName": "Sigla instituição destino"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "VALOR_PAGO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.VALOR_PAGO",
+              "nativeQueryRef": "Valor pago",
+              "displayName": "Valor pago"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "MODALIDADE"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.MODALIDADE",
+              "nativeQueryRef": "Modalidade",
+              "displayName": "Modalidade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "LINHA_FOMENTO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.LINHA_FOMENTO",
+              "nativeQueryRef": "Linha de fomento",
+              "displayName": "Linha de fomento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BOLSAS_CNPQ_2023"
+                    }
+                  },
+                  "Property": "TITULO_PROJETO"
+                }
+              },
+              "queryRef": "BOLSAS_CNPQ_2023.TITULO_PROJETO",
+              "nativeQueryRef": "Título do projeto",
+              "displayName": "Título do projeto"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "BOLSAS_CNPQ_2023"
+                  }
+                },
+                "Property": "BENEFICIARIO"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "374.0972924520446D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DOCENTES_POS.Nome docente"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "317.31890481287144D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DISCENTES_POS.Nome aluno"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "172.43682312283005D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(V_PRPGP_ENCARGO_DIDATICO_POS.Soma encargo didático ano)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "97.99791997921692D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Número processo PEN-SIE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134.95246258535207D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Situação"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.03410494340943D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Classificação projeto"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "201.66666666666666D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DISCENTES_POS.Situação plano estudos"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "387.5849746413286D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DOCENTES_POS.Cargo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123.28571491375577D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DOCENTES_POS.Nacionalidade"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.85714285714286D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DOCENTES_POS.Gênero"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "448.2857152710188D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROGRAMAS_POS.Nome unidade"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "171.33332763443872D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "BOLSAS_CNPQ_2023.SIGLA_INSTITUICAO_DESTINO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116.34260346885222D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "BOLSAS_CNPQ_2023.VALOR_PAGO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "277.0000064984192D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "BOLSAS_CNPQ_2023.MODALIDADE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "371.0000011271498D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "BOLSAS_CNPQ_2023.LINHA_FOMENTO"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75d598de633a55070de3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "BOLSAS_CNPQ_2023"
+              }
+            },
+            "Property": "SIGLA_INSTITUICAO_DESTINO"
+          }
+        },
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "BOLSAS_CNPQ_2023",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "SIGLA_INSTITUICAO_DESTINO"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'UFSM'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'UFSM/Palmeira'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

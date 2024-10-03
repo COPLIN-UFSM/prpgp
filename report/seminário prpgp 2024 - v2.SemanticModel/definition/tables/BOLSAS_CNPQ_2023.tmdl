@@ -1,0 +1,174 @@
+table BOLSAS_CNPQ_2023
+	lineageTag: 62cf5eab-6b7e-476f-b8c7-6f546cb05133
+
+	column ANO_REFERENCIA
+		dataType: int64
+		formatString: 0
+		lineageTag: 685b5d1e-292f-48df-84e9-6ddd7c71ea7d
+		summarizeBy: none
+		sourceColumn: ANO_REFERENCIA
+
+		annotation SummarizationSetBy = User
+
+	column PROCESSO
+		dataType: string
+		lineageTag: e6c38ff8-4dbb-44a4-9f7e-84537322e5d3
+		summarizeBy: none
+		sourceColumn: PROCESSO
+
+		annotation SummarizationSetBy = Automatic
+
+	column BENEFICIARIO
+		dataType: string
+		lineageTag: e48c1d28-0048-4295-8843-787042750e34
+		summarizeBy: none
+		sourceColumn: BENEFICIARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NU_CPF
+		dataType: string
+		lineageTag: 6a4328fc-42cb-4a95-91a4-a45081de8670
+		summarizeBy: none
+		sourceColumn: NU_CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINHA_FOMENTO
+		dataType: string
+		lineageTag: 32d4772e-de7f-4c15-af09-c3691342b3f7
+		summarizeBy: none
+		sourceColumn: LINHA_FOMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MODALIDADE
+		dataType: string
+		lineageTag: 178ab5e3-de37-49f6-b672-9452d3580d17
+		summarizeBy: none
+		sourceColumn: MODALIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA_NIVEL
+		dataType: string
+		lineageTag: 4c7e2a1e-a407-47e1-aaa1-3c20000ed594
+		summarizeBy: none
+		sourceColumn: CATEGORIA_NIVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_CHAMADA
+		dataType: string
+		lineageTag: 9262c9da-33e2-42d7-99ee-4cf603f85755
+		summarizeBy: none
+		sourceColumn: NOME_CHAMADA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROGRAMA_CNPQ
+		dataType: string
+		lineageTag: 1e99fcc7-c425-4ba0-8c8c-328d1dab280c
+		summarizeBy: none
+		sourceColumn: PROGRAMA_CNPQ
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRANDE_AREA
+		dataType: string
+		lineageTag: 642fb35f-89db-4945-a8bf-204cc63b2471
+		summarizeBy: none
+		sourceColumn: GRANDE_AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA
+		dataType: string
+		lineageTag: 094c6a7b-4dd0-474d-810d-b8a968a2ff99
+		summarizeBy: none
+		sourceColumn: AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBAREA
+		dataType: string
+		lineageTag: a18bccb5-45e5-42b6-974c-1b6a12e54c4d
+		summarizeBy: none
+		sourceColumn: SUBAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSTITUICAO_DESTINO
+		dataType: string
+		lineageTag: fbcc1b2d-28fb-4733-95f6-faf4c4f44059
+		summarizeBy: none
+		sourceColumn: INSTITUICAO_DESTINO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SIGLA_INSTITUICAO_DESTINO
+		dataType: string
+		lineageTag: 40529cbd-1551-411a-bc3f-3537cec64eab
+		summarizeBy: none
+		sourceColumn: SIGLA_INSTITUICAO_DESTINO
+
+		annotation SummarizationSetBy = Automatic
+
+	column REGIAO
+		dataType: string
+		lineageTag: 72242c0b-7de3-46df-8725-00820a4377ca
+		summarizeBy: none
+		sourceColumn: REGIAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TITULO_PROJETO
+		dataType: string
+		lineageTag: 18cd3761-1a95-43f9-bd6a-b05b19c2e93d
+		summarizeBy: none
+		sourceColumn: TITULO_PROJETO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALOR_PAGO
+		dataType: double
+		lineageTag: 9cd4423d-4290-4a93-b6a7-f54a7b8a2f58
+		summarizeBy: none
+		sourceColumn: VALOR_PAGO
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Data referência'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 335212e1-cb80-4fd1-b6d3-e73ecb84a162
+		summarizeBy: none
+		sourceColumn: Data referência
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition BOLSAS_CNPQ_2023 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nathale\OneDrive - Universidade Federal de Santa Maria\Documentos\GitHub\prpgp\data\cnpq_bolsas_2023.xlsx"), null, true),
+				    #"Dados de Pagamento 2023_Sheet" = Source{[Item="Dados de Pagamento 2023",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Dados de Pagamento 2023_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ANO_REFERENCIA", Int64.Type}, {"PROCESSO", type text}, {"DATA_INICIO_PROCESSO", Int64.Type}, {"DATA_TERMINO_PROCESSO", Int64.Type}, {"BENEFICIARIO", type text}, {"NU_CPF", type text}, {"LINHA_FOMENTO", type text}, {"MODALIDADE", type text}, {"CATEGORIA_NIVEL", type text}, {"NOME_CHAMADA", type text}, {"PROGRAMA_CNPQ", type text}, {"GRANDE_AREA", type text}, {"AREA", type text}, {"SUBAREA", type text}, {"INSTITUICAO_ORIGEM", type text}, {"SIGLA_UF_ORIGEM", type text}, {"PAIS_ORIGEM", type text}, {"INSTITUICAO_DESTINO", type text}, {"SIGLA_INSTITUICAO_DESTINO", type text}, {"SIGLA_INSTITUICAO_MACRO", type text}, {"CIDADE_DESTINO", type text}, {"SIGLA_UF_DESTINO", type text}, {"REGIAO", type text}, {"PAIS_DESTINO", type text}, {"TITULO_PROJETO", type text}, {"PALAVRA_CHAVE", type text}, {"VALOR_PAGO", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([SIGLA_INSTITUICAO_MACRO] = "UFSM")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"DATA_INICIO_PROCESSO", "DATA_TERMINO_PROCESSO", "INSTITUICAO_ORIGEM", "SIGLA_UF_ORIGEM", "PAIS_ORIGEM", "SIGLA_INSTITUICAO_MACRO", "CIDADE_DESTINO", "SIGLA_UF_DESTINO", "PAIS_DESTINO", "PALAVRA_CHAVE"}),
+				    #"Inserted Date" = Table.AddColumn(#"Removed Columns", "Data referência", each Date.From(Text.From([ANO_REFERENCIA], "pt-BR")), type date)
+				in
+				    #"Inserted Date"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

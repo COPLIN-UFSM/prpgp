@@ -1,0 +1,460 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "7c6b971ba8d609e00d28",
+  "position": {
+    "x": 257.14285714285717,
+    "y": 268.57142857142861,
+    "z": 0,
+    "height": 254.28571428571431,
+    "width": 797.14285714285722,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                    }
+                  },
+                  "Property": "Cota"
+                }
+              },
+              "queryRef": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Cota",
+              "nativeQueryRef": "Cota1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                    }
+                  },
+                  "Property": "Curso vaga"
+                }
+              },
+              "queryRef": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Curso vaga",
+              "nativeQueryRef": "Curso vaga"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Vagas ofertadas"
+                }
+              },
+              "queryRef": "Medidas.Vagas ofertadas",
+              "nativeQueryRef": "Vagas ofertadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Inscritos"
+                }
+              },
+              "queryRef": "Medidas.Candidatos inscritos",
+              "nativeQueryRef": "Inscritos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Classificados"
+                }
+              },
+              "queryRef": "Medidas.Candidatos classificados",
+              "nativeQueryRef": "Classificados"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Matriculados"
+                }
+              },
+              "queryRef": "Medidas.Candidatos matriculados",
+              "nativeQueryRef": "Matriculados"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas"
+                  }
+                },
+                "Property": "Vagas ofertadas"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "377.95607146135916D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_DOCENTES_POS.Nome docente"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "172.43682312283005D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(V_PRPGP_ENCARGO_DIDATICO_POS.Soma encargo didático ano)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "97.99791997921692D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Número processo PEN-SIE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134.95246258535207D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Situação"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.03410494340943D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_PROJETOS_POS.Classificação projeto"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.66666666666667D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_MEMBROS_BANCA.Titulação"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139.33333592176317D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_MEMBROS_BANCA.Sigla instituição"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "263.47858648217175D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Cota"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.34858088360527D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.Curso vaga"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "100.9999940096345D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Vagas ofertadas"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

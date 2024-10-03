@@ -1,0 +1,53 @@
+table SCIVAL_METRICAS
+	lineageTag: 8b86b1f7-9c9a-4768-ac73-9b65e0577733
+
+	column ID_METRICA
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6f66aeac-1d63-4869-a221-a426086957b2
+		summarizeBy: none
+		sourceColumn: ID_METRICA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome métrica'
+		dataType: string
+		lineageTag: 258b8d69-e6c2-4f5a-bc45-fe4b1b5fa73b
+		summarizeBy: none
+		sourceColumn: Nome métrica
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome métrica (Scival)'
+		dataType: string
+		isHidden
+		lineageTag: d5431f58-fc05-45c9-94a8-e6bf6be10483
+		summarizeBy: none
+		sourceColumn: Nome métrica (Scival)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descrição
+		dataType: string
+		lineageTag: bf037958-bf20-49bd-bafa-dc290ffbefae
+		summarizeBy: none
+		sourceColumn: Descrição
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SCIVAL_METRICAS = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    SCIVAL_METRICAS1 = BEE{[Name="SCIVAL_METRICAS"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(SCIVAL_METRICAS1,{{"NOME_SCIVAL", "Nome métrica (Scival)"}, {"METRICA", "Nome métrica"}, {"DESCRICAO", "Descrição"}})
+				in
+				    #"Renamed Columns"
+

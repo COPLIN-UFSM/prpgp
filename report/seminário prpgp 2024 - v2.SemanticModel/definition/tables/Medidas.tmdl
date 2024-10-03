@@ -1,0 +1,249 @@
+table Medidas
+	lineageTag: 611794bc-dc79-429c-a42e-e7b76b4fb602
+
+	measure 'Vagas ofertadas' = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Vagas ofertadas])
+		formatString: 0
+		lineageTag: 722ec88a-7913-47ba-8343-092b9a8546d7
+
+	measure Inscritos = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Inscritos])
+		formatString: 0
+		lineageTag: 93ab957e-fccc-43eb-8ac5-ac4ea7b2244b
+
+	measure Matriculados = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Matriculados])
+		formatString: 0
+		lineageTag: 9151ce3d-f36c-4b1d-a28e-de71f8d6bde5
+
+	measure 'Docente pertence ao programa' =
+			COUNTROWS(
+			    FILTER(
+			        V_PRPGP_DOCENTES_POS,
+			        COUNTROWS(
+			            RELATEDTABLE(V_PRPGP_CREDENCIAMENTO_DOCENTE)
+			        ) > 0
+			    )
+			)
+		formatString: 0
+		lineageTag: 3616584a-58bc-4534-ae97-07f259e1f411
+
+	measure 'Quantidade alunos' = DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula])
+		formatString: 0
+		lineageTag: 29b81d79-61d2-4b67-acc9-7d3e05e2d1c4
+
+	measure 'Quantidade docentes' = DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[SIAPE])
+		formatString: 0
+		lineageTag: e4ca23fd-494f-4f8e-b0f2-33a030f91b57
+
+	measure 'Número orientandos' = ```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]), 
+			    V_PRPGP_MEMBROS_BANCA[Tipo participante] = "Presidente",
+			    FILTER(
+			        V_PRPGP_DISCENTES_POS, 
+			        V_PRPGP_DISCENTES_POS[Ano defesa] = SELECTEDVALUE(dCalendario[Ano])
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: ce652f51-9eb0-4b23-8154-a9316427745b
+
+	measure Classificados = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Classificados])
+		formatString: 0
+		lineageTag: 4122d63c-460e-451e-af64-733555179e3a
+
+	measure HTML = ```
+			"<div class='slider'>
+			<input type='radio' name='testimonial' id='t-1'>
+			<input type='radio' name='testimonial' id='t-2'>
+			<input type='radio' name='testimonial' id='t-3' checked>
+			<input type='radio' name='testimonial' id='t-4'>
+			<input type='radio' name='testimonial' id='t-5'>
+			<div class='testimonials'>
+			    <label class='item' for='t-1'>
+			        <img src='https://www.dropbox.com/scl/fi/zdr07j7mupr3z0enl0riv/Planejamento-estrat-gico.png?rlkey=p66hzggouwlva3790op67gqad&st=n9q91zfz&raw=1'>
+			        </label>
+			    <label class='item' for='t-2'>
+			        <img src='https://dummyimage.com/150' alt='picture'>
+			        
+			        </label>
+			    <label class='item' for='t-3'>
+			        <img src='https://dummyimage.com/150' alt='picture'>
+			        
+			        </label>
+			    <label class='item' for='t-4'>
+			        <img src='https://dummyimage.com/150' alt='picture'>
+			        
+			        </label>
+			    <label class='item' for='t-5'>
+			        <img src='https://dummyimage.com/150' alt='picture'>
+			        <p>'Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.'</p>
+			        
+			    </label>
+			</div>
+			<div class='dots'>
+			    <label for='t-1'></label>
+			    <label for='t-2'></label>
+			    <label for='t-3'></label>
+			    <label for='t-4'></label>
+			    <label for='t-5'></label>
+			</div>
+			</div>
+			<style>
+			body {
+				margin: 0;
+				background-image: fff;
+				color: #fff;
+				font-family: sans-serif;
+				display: flex;
+				align-items: center;
+				min-height: 100vh;
+			}
+			.slider {
+				width: 100%;
+			}
+			.slider input {
+				display: none;
+			}
+			.testimonials {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				min-height: 650px;
+				perspective: 1000px;
+				overflow: hidden;
+			}
+			.testimonials .item {
+				width: 904 px;
+			    padding: 230px;
+				border-radius: 10px;
+				background-color: #ffffff;
+				position: absolute;
+				top: 0;
+				box-sizing: content-box;
+				text-align: center;
+				transition: transform 0.4s;
+				box-shadow: 0 0 10px rgba(0,0,0,0.3);
+				user-select: none;
+				cursor: pointer;
+			}
+			.testimonials .item img {
+				width: fit-content;
+				height: fit-content;
+				object-fit: cover;
+				}
+			.testimonials .item p {
+				color: #ddd;
+			}
+			.testimonials .item h2 {
+				font-size: 25px;
+			}
+			.dots {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.dots label {
+				height: 5px;
+				width: 5px;
+				border-radius: 50%;
+				cursor: pointer;
+				background-color: #413B52;
+				margin: 7px;
+				transition-duration: 0.2s;
+			}
+			
+			#t-1:checked ~ .dots label[for='t-1'],
+			#t-2:checked ~ .dots label[for='t-2'],
+			#t-3:checked ~ .dots label[for='t-3'],
+			#t-4:checked ~ .dots label[for='t-4'],
+			#t-5:checked ~ .dots label[for='t-5'] {
+				transform: scale(2);
+				background-color: #fff;
+			}
+			#t-1:checked ~ .dots label[for='t-2'],
+			#t-2:checked ~ .dots label[for='t-1'],
+			#t-2:checked ~ .dots label[for='t-3'],
+			#t-3:checked ~ .dots label[for='t-2'],
+			#t-3:checked ~ .dots label[for='t-4'],
+			#t-4:checked ~ .dots label[for='t-3'],
+			#t-4:checked ~ .dots label[for='t-5'],
+			#t-5:checked ~ .dots label[for='t-4'] {
+				transform: scale(1.5);
+			}
+			#t-1:checked ~ .testimonials label[for='t-5'] {
+				transform: translate3d(1200px, 0, -360px) rotateY(-45deg);
+			}
+			#t-1:checked ~ .testimonials label[for='t-4'],
+			#t-2:checked ~ .testimonials label[for='t-5'] {
+				transform: translate3d(900px, 0, -270px) rotateY(-35deg);
+				z-index: 1;
+			}
+			#t-1:checked ~ .testimonials label[for='t-3'],
+			#t-2:checked ~ .testimonials label[for='t-4'],
+			#t-3:checked ~ .testimonials label[for='t-5'] {
+				transform: translate3d(600px, 0, -180px) rotateY(-25deg);
+				z-index: 2;
+			}
+			#t-1:checked ~ .testimonials label[for='t-2'],
+			#t-2:checked ~ .testimonials label[for='t-3'],
+			#t-3:checked ~ .testimonials label[for='t-4'],
+			#t-4:checked ~ .testimonials label[for='t-5'] {
+				transform: translate3d(300px, 0, -90px) rotateY(-15deg);
+				z-index: 3;
+			}
+			#t-2:checked ~ .testimonials label[for='t-1'],
+			#t-3:checked ~ .testimonials label[for='t-2'],
+			#t-4:checked ~ .testimonials label[for='t-3'],
+			#t-5:checked ~ .testimonials label[for='t-4'] {
+				transform: translate3d(-300px, 0, -90px) rotateY(15deg);
+				z-index: 3;
+			}
+			#t-3:checked ~ .testimonials label[for='t-1'],
+			#t-4:checked ~ .testimonials label[for='t-2'],
+			#t-5:checked ~ .testimonials label[for='t-3'] {
+				transform: translate3d(-600px, 0, -180px) rotateY(25deg);
+			}
+			#t-5:checked ~ .testimonials label[for='t-2'],
+			#t-4:checked ~ .testimonials label[for='t-1'] {
+				transform: translate3d(-900px, 0, -270px) rotateY(35deg);
+			}
+			#t-5:checked ~ .testimonials label[for='t-1'] {
+				transform: translate3d(-1200px, 0, -360px) rotateY(45deg);
+			}
+			#t-1:checked ~ .testimonials label[for='t-1'],
+			#t-2:checked ~ .testimonials label[for='t-2'],
+			#t-3:checked ~ .testimonials label[for='t-3'],
+			#t-4:checked ~ .testimonials label[for='t-4'],
+			#t-5:checked ~ .testimonials label[for='t-4'],
+			#t-5:checked ~ .testimonials label[for='t-5'] {
+				z-index: 4;
+			}
+			</style>"
+			```
+		lineageTag: 7ce839ae-473e-403c-85fc-ce29b7d5d6c1
+
+	column Column1
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 56645be1-c13c-46a5-9672-e762c3a9e0d3
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

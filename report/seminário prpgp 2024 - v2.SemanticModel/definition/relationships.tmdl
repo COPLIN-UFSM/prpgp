@@ -1,0 +1,89 @@
+relationship 68437775-5129-0fc8-a259-4ccdcac9f152
+	fromColumn: PM_PROJETOS_PARTICIPANTES.ID_PROJETO
+	toColumn: V_PRPGP_PROJETOS_POS.ID_PROJETO
+
+relationship 6da48ca3-16f6-232a-44e4-5752fadf7461
+	fromColumn: PM_PROJETOS_PARTICIPANTES.ID_CONTRATO_RH
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+
+relationship 67551456-b0b8-61d5-4ead-1612acdf30ea
+	fromColumn: PM_PROJETOS_PARTICIPANTES.ID_CURSO_ALUNO
+	toColumn: V_PRPGP_DISCENTES_POS.ID_CURSO_ALUNO
+
+relationship 1112f5ab-f756-8bb5-c47d-69e03ad65564
+	fromColumn: V_PRPGP_MEMBROS_BANCA.ID_CONTRATO_RH
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+
+relationship 9052b34e-a3d0-9b63-e755-a3124c1f336b
+	fromColumn: V_PRPGP_SCIVAL_AUTORES_METRICAS.ID_METRICA
+	toColumn: SCIVAL_METRICAS.ID_METRICA
+
+relationship a4d533e4-7a9f-e991-bd50-fcbb64ed6997
+	fromColumn: V_PRPGP_SCIVAL_AUTORES_METRICAS.ID_CONTRATO_RH
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+
+relationship AutoDetected_8e4c56f0-89c2-49ab-bc13-7a0f29a148ac
+	crossFilteringBehavior: bothDirections
+	fromColumn: V_PRPGP_DISCENTES_POS.ID_UNIDADE_SUP
+	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
+
+relationship AutoDetected_d9a4c154-801f-465f-9e19-a99850cd16b0
+	fromColumn: V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.ID_UNIDADE_SUP
+	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
+
+relationship AutoDetected_9196ff38-6c9c-4ad3-b3b1-36c170da7801
+	fromColumn: V_PRPGP_CREDENCIAMENTO_DOCENTE.ID_UNIDADE_SUP
+	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
+
+relationship AutoDetected_8e1e1610-7867-4954-ac20-94c8d368998f
+	fromColumn: V_PRPGP_CREDENCIAMENTO_DOCENTE.ID_CONTRATO_RH
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+
+relationship 95fe8422-1537-643f-f6e2-c72ca0f2f6ad
+	fromColumn: V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.'Data concurso'
+	toColumn: dCalendario.Data
+
+relationship f710cfcd-04c5-5411-2802-ad349820e601
+	fromColumn: V_PRPGP_ENCARGO_DIDATICO_POS.ID_CONTRATO_RH
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+
+relationship 4e931833-18ce-6c72-2f20-2b131c5b103d
+	fromColumn: V_PRPGP_ENCARGO_DIDATICO_POS.'Data encargo'
+	toColumn: dCalendario.Data
+
+relationship f0422672-2730-28b7-da43-ee31b74b8fa6
+	fromColumn: V_PRPGP_SCIVAL_AUTORES_METRICAS.'Data métrica'
+	toColumn: dCalendario.Data
+
+relationship 0b42614a-4fec-d881-81f9-210cbcae5f3e
+	crossFilteringBehavior: bothDirections
+	fromColumn: V_PRPGP_DISCENTES_FLUXO.Matrícula
+	toColumn: V_PRPGP_DISCENTES_POS.Matrícula
+
+relationship 4d01a716-7ecb-fc01-4e37-347370733837
+	fromColumn: V_PRPGP_MEMBROS_BANCA.ID_CURSO_ALUNO
+	toColumn: V_PRPGP_DISCENTES_POS.ID_CURSO_ALUNO
+
+relationship a0115485-d4d3-6730-0e38-344460d5b8c8
+	fromColumn: V_PRPGP_DISCENTES_FLUXO.'Data referência'
+	toColumn: dCalendario.Data
+
+relationship 48af1bc5-532a-c727-7938-ee1522309509
+	isActive: false
+	fromColumn: V_PRPGP_DISCENTES_POS.'Data defesa'
+	toColumn: dCalendario.Data
+
+relationship AutoDetected_2042678f-7c53-41a8-89be-4145d118a3a9
+	fromColumn: V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO.ID_UNIDADE_SUP
+	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
+
+relationship AutoDetected_0a4583f4-c9be-4e63-bae8-78ba9f8b22bb
+	crossFilteringBehavior: bothDirections
+	fromColumn: V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO.ID_PROJETO
+	toColumn: V_PRPGP_PROJETOS_POS.ID_PROJETO
+
+relationship 259436b9-de84-96d3-84e1-4b613cc80ae7
+	isActive: false
+	fromColumn: V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO.'Data referência'
+	toColumn: dCalendario.Data
+
