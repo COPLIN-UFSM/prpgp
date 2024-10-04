@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO\",\"BOLSAS_CNPQ\",\"Errors in Dados de Pagamento 2023\",\"BOLSAS_CNPQ_2023\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO\",\"BOLSAS_CNPQ\",\"Errors in Dados de Pagamento 2023\",\"BOLSAS_CNPQ_2023\",\"Erros em V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"Links Imagens\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -5062,7 +5062,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-                    "ConceptualProperty": "Data concurso"
+                    "ConceptualProperty": "Data ingresso"
                   }
                 },
                 "SemanticType": "Time",
@@ -9200,6 +9200,39 @@
         ],
         "kind": "m",
         "lineageTag": "fa65aac0-ebd0-43a3-aeeb-622fe75028a1"
+      },
+      {
+        "name": "Erros em V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegação"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "Fonte = V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS,",
+          "  #\"Incompatibilidades de Tipo Detectadas\" = let",
+          "    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Fonte, Table.ColumnsOfType(Fonte, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),",
+          "    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),",
+          "    fieldNames = Record.FieldNames(recordTypeFields),",
+          "    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),",
+          "    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = \"O tipo do valor não corresponde ao tipo da coluna.\", Detail = v], fieldTypes{i}})",
+          "in",
+          "    Table.TransformColumns(Fonte, pairs),",
+          "  #\"Índice Adicionado\" = Table.AddIndexColumn(#\"Incompatibilidades de Tipo Detectadas\", \"Número da Linha\" ,1),",
+          "  #\"Erros Mantidos\" = Table.SelectRowsWithErrors(#\"Índice Adicionado\", {\"Ano concurso\", \"Ano ingresso\", \"ID_CONCURSO\", \"Concurso\", \"ID_CONC_EDICAO\", \"Edição concurso\", \"Concurso edital\", \"Curso vaga\", \"ID_UNIDADE_SUP\", \"Cota\", \"Vagas ofertadas\", \"Inscritos\", \"Classificados\", \"Matriculados\", \"Data ingresso\"}),",
+          "  #\"Colunas Reordenadas\" = Table.ReorderColumns(#\"Erros Mantidos\", {\"Número da Linha\", \"Ano concurso\", \"Ano ingresso\", \"ID_CONCURSO\", \"Concurso\", \"ID_CONC_EDICAO\", \"Edição concurso\", \"Concurso edital\", \"Curso vaga\", \"ID_UNIDADE_SUP\", \"Cota\", \"Vagas ofertadas\", \"Inscritos\", \"Classificados\", \"Matriculados\", \"Data ingresso\"})",
+          "in",
+          "  #\"Colunas Reordenadas\""
+        ],
+        "kind": "m",
+        "lineageTag": "e13e7385-293e-4f54-abb1-6e6123d24485",
+        "queryGroup": "Erros na Consulta - 04/10/2024 10:44:42"
       }
     ],
     "queryGroups": [
@@ -9212,6 +9245,16 @@
         ],
         "description": "Errors in queries that were loaded on 01/10/2024 07:54:13.",
         "folder": "Query Errors - 01/10/2024 07:54:13"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "1"
+          }
+        ],
+        "description": "Erros nas consultas que foram carregadas em 04/10/2024 10:44:42.",
+        "folder": "Erros na Consulta - 04/10/2024 10:44:42"
       }
     ],
     "relationships": [
@@ -9288,7 +9331,7 @@
       },
       {
         "name": "95fe8422-1537-643f-f6e2-c72ca0f2f6ad",
-        "fromColumn": "Data concurso",
+        "fromColumn": "Data ingresso",
         "fromTable": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
         "toColumn": "Data",
         "toTable": "dCalendario"
@@ -10642,6 +10685,186 @@
             "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Classificados])",
             "formatString": "0",
             "lineageTag": "4122d63c-460e-451e-af64-733555179e3a"
+          },
+          {
+            "name": "HTML",
+            "expression": [
+              "\"<ul class='slides'>",
+              "  <input type='radio' id='control-1' name='control' checked>",
+              "  <input type='radio' id='control-2' name='control'>",
+              "  <input type='radio' id='control-3' name='control'>",
+              "  ",
+              "  <!--  Left/Right Button  -->",
+              "  <div class='navigator slide-1'>",
+              "    <label for='control-3'>",
+              "      <i class='fas fa-chevron-left'></i>",
+              "    </label>",
+              "    <label for='control-2'>",
+              "      <i class='fas fa-chevron-right'></i>",
+              "    </label>",
+              "  </div>",
+              "  ",
+              "  <div class='navigator slide-2'>",
+              "    <label for='control-1'>",
+              "      <i class='fas fa-chevron-left'></i>",
+              "    </label>",
+              "    <label for='control-3'>",
+              "      <i class='fas fa-chevron-right'></i>",
+              "    </label>",
+              "  </div>",
+              "  ",
+              "  <div class='navigator slide-3'>",
+              "    <label for='control-2'>",
+              "      <i class='fas fa-chevron-left'></i>",
+              "    </label>",
+              "    <label for='control-1'>",
+              "      <i class='fas fa-chevron-right'></i>",
+              "    </label>",
+              "  </div>",
+              "  <!--  /Left/Right Button  -->",
+              "  ",
+              "  <li class='slide'>1</li>",
+              "  <li class='slide'>2</li>",
+              "  <li class='slide'>3</li>",
+              "  ",
+              "  <div class='controls-visible'>",
+              "    <label for='control-1'></label>",
+              "    <label for='control-2'></label>",
+              "    <label for='control-3'></label>",
+              "  </div>",
+              "</ul>",
+              "<style> ",
+              "body {",
+              "  display: flex;",
+              "  justify-content: center;",
+              "  align-items: center;",
+              "  min-height: 100vh;",
+              "}",
+              "",
+              "ul.slides {",
+              "  position: relative;",
+              "  width: 600px;",
+              "  height: 280px;",
+              "  list-style: none;",
+              "  margin: 0;",
+              "  padding: 0;",
+              "  background-color: #eee;",
+              "  overflow: hidden;",
+              "}",
+              "",
+              "li.slide {",
+              "  margin: 0;",
+              "  padding: 0;",
+              "  width: inherit;",
+              "  height: inherit;",
+              "  position: absolute;",
+              "  top: 0;",
+              "  left: 0;",
+              "  display: flex;",
+              "  justify-content: center;",
+              "  align-items: center;",
+              "  font-family: Helvetica;",
+              "  font-size: 120px;",
+              "  color: #fff;",
+              "  transition: .5s transform ease-in-out;",
+              "}",
+              "",
+              ".slide:nth-of-type(1) {",
+              "  background-color: #F2E205;",
+              "}",
+              "",
+              ".slide:nth-of-type(2) {",
+              "  background-color: #F25C05;",
+              "  left: 100%;",
+              "}",
+              "",
+              ".slide:nth-of-type(3) {",
+              "  background-color: #495F8C;",
+              "  left: 200%;",
+              "}",
+              "",
+              "input[type='radio'] {",
+              "  position: relative;",
+              "  z-index: 100;",
+              "  display: none;",
+              "}",
+              "",
+              ".controls-visible {",
+              "  position: absolute;",
+              "  width: 100%;",
+              "  bottom: 12px;",
+              "  text-align: center;",
+              "}",
+              "",
+              ".controls-visible label {",
+              "  display: inline-block;",
+              "  width: 10px;",
+              "  height: 10px;",
+              "  background-color: #fff;",
+              "  border-radius: 50%;",
+              "  margin: 0 3px;",
+              "  border: 2px solid #fff;",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(1):checked ~ .controls-visible label:nth-of-type(1) {",
+              "  background-color: #333;",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(2):checked ~ .controls-visible label:nth-of-type(2) {",
+              "  background-color: #333;",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(3):checked ~ .controls-visible label:nth-of-type(3) {",
+              "  background-color: #333;",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(1):checked ~ .slide {",
+              "  transform: translatex(0%);",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(2):checked ~ .slide {",
+              "  transform: translatex(-100%);",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(3):checked ~ .slide {",
+              "  transform: translatex(-200%);",
+              "}",
+              "",
+              "",
+              "/* Left/Right Button Classes Below */",
+              "",
+              ".navigator {",
+              "  position: absolute;",
+              "  top: 50%;",
+              "  transform: translatey(-50%);",
+              "  width: 100%;",
+              "  z-index: 100;",
+              "  padding: 0 20px;",
+              "  display: flex;",
+              "  justify-content: space-between;",
+              "  box-sizing: border-box;",
+              "  display: none;",
+              "}",
+              "",
+              ".navigator i {",
+              "  font-size: 32px;",
+              "  color #333;",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(1):checked ~ .navigator:nth-of-type(1) {",
+              "  display: flex;",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(2):checked ~ .navigator:nth-of-type(2) {",
+              "  display: flex;",
+              "}",
+              "",
+              ".slides input[type='radio']:nth-of-type(3):checked ~ .navigator:nth-of-type(3) {",
+              "  display: flex;",
+              "}",
+              "</style>\""
+            ],
+            "lineageTag": "6969c31d-1bb8-4d8e-b5ad-3e67a63bf3b0"
           }
         ],
         "partitions": [
@@ -10908,7 +11131,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Data concurso",
+            "name": "Data ingresso",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -10922,7 +11145,7 @@
             "dataType": "dateTime",
             "formatString": "Long Date",
             "lineageTag": "02795879-0443-4b9a-addc-530ea39cc821",
-            "sourceColumn": "Data concurso",
+            "sourceColumn": "Data ingresso",
             "summarizeBy": "none"
           },
           {
@@ -10978,11 +11201,12 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1 = BEE{[Name=\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]}[Data],",
-                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1, \"Data concurso\", each Date.From(Text.From([ANO_CONCURSO], \"pt-BR\")), type date),",
+                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1, \"Data concurso\", each Date.From(Text.From([ANO_INGRESSO], \"pt-BR\")), type date),",
                 "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_CONCURSO\", \"Ano concurso\"}, {\"CANDIDATOS_INSCRITOS\", \"Inscritos\"}, {\"CANDIDATOS_MATRICULADOS\", \"Matriculados\"}, {\"DESCR_CONC_EDICAO\", \"Edição concurso\"}, {\"DESCR_CONCURSO\", \"Concurso\"}, {\"DESCR_COTA\", \"Cota\"}, {\"VAGAS_OFERECIDAS\", \"Vagas ofertadas\"}, {\"CURSO_VAGA\", \"Curso vaga\"}, {\"CANDIDATOS_CLASSIFICADOS\", \"Classificados\"}, {\"CONC_EDITAL\", \"Concurso edital\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"CANDIDATOS_CLASSIFICADOS_PCD\", \"CANDIDATOS_CLASSIFICADOS_PPI\", \"CANDIDATOS_INSCRITOS_PCD\", \"CANDIDATOS_INSCRITOS_PPI\", \"CANDIDATOS_MATRICULADOS_PCD\", \"CANDIDATOS_MATRICULADOS_PPI\"})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"CANDIDATOS_CLASSIFICADOS_PCD\", \"CANDIDATOS_CLASSIFICADOS_PPI\", \"CANDIDATOS_INSCRITOS_PCD\", \"CANDIDATOS_INSCRITOS_PPI\", \"CANDIDATOS_MATRICULADOS_PCD\", \"CANDIDATOS_MATRICULADOS_PPI\"}),",
+                "    #\"Colunas Renomeadas\" = Table.RenameColumns(#\"Removed Columns\",{{\"Data concurso\", \"Data ingresso\"}})",
                 "in",
-                "    #\"Removed Columns\""
+                "    #\"Colunas Renomeadas\""
               ],
               "type": "m"
             }
@@ -12140,6 +12364,66 @@
                 "    #\"Inserted Date\" = Table.AddColumn(#\"Removed Columns\", \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date)",
                 "in",
                 "    #\"Inserted Date\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Links Imagens",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3e072818-52e6-48ef-8d3d-74b31db396c4",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4ae10269-ff79-4542-a0d8-f6a1992d11e7",
+            "sourceColumn": "Column2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b4ceb20e-e94e-4a29-b4fe-27a382f5784a",
+        "partitions": [
+          {
+            "name": "Links Imagens",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Fonte = Excel.Workbook(File.Contents(\"C:\\Users\\Nathale\\OneDrive - Universidade Federal de Santa Maria\\Área de Trabalho\\Trabalhos diversos\\BI PRPGP\\Links Cartões.xlsx\"), null, true),",
+                "    Planilha1_Sheet = Fonte{[Item=\"Planilha1\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Planilha1_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}})",
+                "in",
+                "    #\"Tipo Alterado\""
               ],
               "type": "m"
             }
