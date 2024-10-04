@@ -4,26 +4,304 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seminário de Acompanhamento da Pós-Graduação</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+        body, html {
+            height: 100%;
             margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow-x: hidden;
         }
+
         iframe {
-            width: 1680px;
-            height: 1050px;
+            width: 100%;
+            height: 100vh; /* O iframe ocupa toda a altura da tela */
             border: none;
+        }
+
+        .content-section {
+            padding: 40px;
+        }
+
+        h1, h2 {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <iframe title="seminário prpgp 2024"
+
+<!-- Power BI Iframe ocupa a tela inteira -->
+<iframe title="seminário prpgp 2024"
         src="https://app.powerbi.com/view?r=eyJrIjoiZjk4NGYyOTYtNTkwNC00YTAxLThjMDktZDE5YTc0NjZhOTYzIiwidCI6Ijk3OTAyMGQ1LTQ5NTAtNGY0My1hOTk0LTg4ZDY4M2VhYjQ3MyJ9"
         allowFullScreen="true">
-    </iframe>
-    <!-- Bootstrap JS -->
+</iframe>
+
+<!-- Seção de conteúdo que será exibida ao rolar a página -->
+<div class="container content-section">
+    <h1 id="acoes-institucionais">Ações Institucionais</h1>
+    <h2>Planejamento estratégico da instituição</h2>
+    <p>
+        O planejamento estratégico da instituição, conforme delineado no Plano de Desenvolvimento Institucional (PDI)
+        2016-2026 e ajustado conforme o último Plano de Metas, está diretamente relacionado à gestão do desenvolvimento
+        futuro da universidade, focando em adequações e melhorias de infraestrutura e na formação de seus alunos. Um dos
+        objetivos fundamentais do PDI é o fortalecimento da inovação, geração de conhecimento e transferência de
+        tecnologia
+        para a sociedade, com ênfase em pesquisas científicas, produção intelectual e internacionalização.
+    </p>
+
+    <p>
+        A preocupação com a infraestrutura é um elemento central no planejamento estratégico, com investimentos
+        contínuos em
+        laboratórios, bibliotecas e ambientes de inovação, como incubadoras e centros de pesquisa. Essas melhorias
+        garantem
+        que a instituição esteja preparada para oferecer uma formação de excelência e desenvolver soluções aplicadas aos
+        desafios sociais e tecnológicos contemporâneos. A adequação da infraestrutura está diretamente ligada aos
+        indicadores do Desafio 5, que visam aumentar a captação de recursos externos e reduzir encargos operacionais,
+        promovendo uma gestão financeira mais eficiente. Investimentos em infraestrutura moderna são essenciais para
+        atrair
+        financiamento de agências de fomento e parcerias privadas, ampliando as oportunidades de pesquisa e inovação.
+        Simultaneamente, o indicador que visa a redução de encargos, como despesas com energia e serviços, permite o
+        redirecionamento desses recursos para áreas estratégicas, melhorando a sustentabilidade financeira. Assim, a
+        modernização e otimização dos custos fortalecem a competitividade da universidade e a sua capacidade de oferecer
+        uma
+        formação de alta qualidade, alinhada aos seus objetivos de desenvolvimento e inovação.
+    </p>
+
+    <p>
+        Adicionalmente, o PDI destaca a importância de promover a produção intelectual de alto impacto — bibliográfica,
+        técnica e artística — conectando-a às demandas globais e regionais. O acompanhamento de indicadores como o
+        Índice
+        Geral de Cursos (IGC) e a presença em rankings internacionais, como o QS América Latina, reforça o compromisso
+        da
+        instituição com a excelência acadêmica. Para isso, há metas claras para expandir a pós-graduação, aumentar a
+        inserção científica internacional e melhorar o número de citações das pesquisas. Essa estratégia garante à
+        universidade não apenas formar profissionais de alta qualificação, mas também ampliar seu reconhecimento global,
+        consolidando-se como um polo de geração de conhecimento inovador e impactante.
+    </p>
+
+
+    <h2>Processos de auto-avaliação institucional</h2>
+
+    <p>
+        O processo de autoavaliação da Instituição envolve uma metodologia estruturada para avaliar diferentes aspectos
+        institucionais, com foco na melhoria contínua da qualidade acadêmica e administrativa. A Comissão Própria de
+        Avaliação (CPA), juntamente com as Comissões Setoriais de Avaliação (CSAs), coordena as etapas que englobam três
+        avaliações principais: a Avaliação Geral, a Avaliação do Processo de Ensino-Aprendizagem e a Pesquisa de
+        Acompanhamento de Egressos. Semestralmente a avaliação Ensino-Aprendizagem, com foco na formação discente, capta
+        a
+        percepção do aluno sobre sua satisfação em relação ao conteúdo da disciplina, a atuação do professor e sobre as
+        estratégias de ensino adotadas para o atingimento dos objetivos de aprendizagem, além de comentários dos alunos
+        que
+        desejarem inserir. Os resultados são apresentados, observado os critérios para cada segmento, via portal para os
+        respectivos docentes, seus chefes bem como disponibilizadas neste <a
+            href="https://www.ufsm.br/reitoria/avaliacao/ensino-aprendizagem">link</a>, via painel Power BI para toda
+        comunidade.
+    </p>
+
+    <p>
+        Já a Avaliação Geral, considerando a realização do processo contínuo de autoavaliação institucional, inclui
+        questões
+        abrangentes sobre a formação integral dos discentes, com ênfase na percepção dos alunos sobre a cultura de
+        inovação
+        e empreendedorismo fomentada ao longo do curso. Além disso, a autoavaliação examina as oportunidades oferecidas
+        para
+        participação em eventos acadêmicos e científicos, como congressos e workshops, essenciais para a ampliação do
+        networking e da disseminação de conhecimentos. Esses aspectos são fundamentais para garantir que os estudantes
+        não
+        apenas adquiram competências técnicas e teóricas, mas também estejam preparados para atuar de forma inovadora e
+        empreendedora no mercado. O feedback coletado por meio das autoavaliações contribui diretamente para o
+        aperfeiçoamento das estratégias de ensino e para o fortalecimento de uma cultura de pesquisa e inovação no
+        programa.
+        <a href="https://www.ufsm.br/reitoria/avaliacao/avaliacao-geral-ufsm">Link da avaliação geral.</a>
+    </p>
+
+    <p>
+        A autoavaliação do programa sobre a produção intelectual está atrelada a diversos sistemas institucionais e
+        iniciativas de monitoramento, garantindo uma visão abrangente do desempenho acadêmico. Um dos principais
+        elementos é
+        o Repositório Institucional, uma plataforma digital onde todas as dissertações, teses, artigos, livros e
+        produções
+        técnicas são depositados, permitindo o acompanhamento contínuo da produção acadêmica. Além disso, a Produção
+        Técnica
+        e Inovação é monitorada em áreas como patentes, registros de software e participação em projetos de inovação e
+        empreendedorismo, especialmente em cursos com foco em tecnologia. Editais internos institucionais voltados à
+        criação
+        de spin-offs, registro de novas empresas e produtos derivados das pesquisas também são parte fundamental de
+        fortalecimento desse processo e são oferecidos de forma institucional por parte da Pró-reitoria de inovação e
+        empreendedorismo.
+    </p>
+
+    <p>
+        O programa também monitora a participação de docentes e discentes em congressos nacionais e internacionais, seja
+        como apresentadores, membros de comitês organizadores ou conferencistas convidados, destacando a relevância
+        acadêmica em eventos de destaque. As colaborações internacionais são outro ponto-chave, com ênfase na coautoria
+        de
+        artigos com pesquisadores estrangeiros e projetos de pesquisa financiados internacionalmente. Além disso, a
+        participação institucional em rankings mundiais como o QS e o Times Higher Education é acompanhada, uma vez que
+        esses rankings consideram critérios relacionados à pesquisa, inovação e impacto científico. A autoavaliação
+        constante permite ajustar e intensificar parcerias internacionais, fortalecendo a rede de pesquisa e melhorando
+        o
+        desempenho em indicadores de internacionalização. Finalmente, a Pesquisa de Acompanhamento de Egressos,
+        realizada
+        pela CPA, é utilizada para monitorar a inserção profissional e acadêmica dos ex-alunos, avaliando o impacto da
+        formação recebida e oferecendo insights valiosos para o aprimoramento do programa. Explore os resultados neste
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiZTA4ZDMzNjQtNTY0NS00NTg1LTgzZTYtMWFhOTAwNTUwMWRlIiwidCI6Ijk3OTAyMGQ1LTQ5NTAtNGY0My1hOTk0LTg4ZDY4M2VhYjQ3MyJ9&pageName=02de4786ac15f3e8f69c">link.</a>
+    </p>
+
+    <h2>Políticas afirmativas de inclusão, permanência e acessibilidade a nível institucional</h2>
+
+    <p>
+        As políticas afirmativas de inclusão, permanência e acessibilidade são instrumentos fundamentais para a promoção
+        da
+        equidade em instituições públicas de ensino e na Universidade Federal de Santa Maria (UFSM) está contemplada
+        pela Resolução N. 068, DE 29 DE NOVEMBRO DE 2021. Ao adotar cotas de ingresso nos programas de pós-graduação, a
+        UFSM
+        busca garantir oportunidades para grupos historicamente marginalizados, como pessoas pretas, pardas, indígenas e
+        com deficiência. A reserva de vagas, variando entre 20% e 50% do total ofertado por ano, é uma forma concreta de
+        combater as desigualdades de acesso à educação de nível superior. A política também inclui medidas de
+        acompanhamento
+        e apoio contínuo aos discentes que ingressam por meio das cotas, assegurando que não apenas tenham acesso à
+        universidade, mas também condições de permanecer e concluir seus estudos com sucesso.
+    </p>
+
+    <p>
+        Além disso, a UFSM tem investido em infraestrutura acessível, priorizando reformas e adequações que visam
+        garantir a
+        acessibilidade física no campus. Desde 2010, a instituição tem implementado banheiros acessíveis, rampas de
+        acesso e
+        calçadas com pavimentação adequada, incluindo pisos táteis e travessias seguras para pessoas com deficiência. A
+        Pró-Reitoria de Infraestrutura (PROINFRA) tem atuado para garantir o mínimo de acessibilidade nos pontos mais
+        críticos do campus, muitas vezes utilizando recursos próprios devido à limitação de repasses federais. Esse
+        esforço
+        demonstra o compromisso da UFSM com a inclusão, assegurando que os espaços universitários possam ser acessíveis
+        a
+        todos, independentemente de suas condições físicas.
+    </p>
+
+    <p>
+        A articulação entre políticas afirmativas e infraestrutura acessível é essencial para que a UFSM cumpra seu
+        papel de
+        instituição plural e inclusiva. Ao implementar políticas de cotas na pós-graduação e realizar diagnósticos de
+        acessibilidade física no campus, a universidade evidencia sua compreensão de que inclusão vai além do acesso
+        inicial. Ela envolve também a criação de um ambiente propício à permanência, onde estudantes de diferentes
+        origens e
+        com diferentes necessidades possam se desenvolver academicamente e pessoalmente. O compromisso da instituição
+        com
+        essas ações é uma resposta à necessidade de combater iniquidades e construir uma universidade verdadeiramente
+        diversa e acessível.
+    </p>
+
+    <p>
+        Contudo, apesar dos avanços, ainda há desafios a serem enfrentados, especialmente no que tange à plena
+        implementação
+        das reformas de acessibilidade, que dependem de um maior fluxo de recursos federais. A UFSM, entretanto, segue
+        se
+        adaptando e avançando com as reformas, mostrando que inclusão e acessibilidade são prioridades institucionais.
+        Isso
+        é fundamental para que a universidade continue sendo um espaço de pluralidade e conexão de experiências
+        diversas,
+        contribuindo para a formação de uma comunidade acadêmica mais rica e representativa.
+    </p>
+
+    <h2>Impacto do COVID na UFSM</h2>
+
+    <p>
+        Durante a pandemia de COVID-19, a Universidade Federal de Santa Maria (UFSM) implementou uma série de medidas
+        para
+        adaptar suas atividades acadêmicas e administrativas às restrições sanitárias, garantindo a continuidade do
+        ensino e
+        da pesquisa em um cenário de crise global. A primeira ação significativa ocorreu em 16 de março de 2020, quando
+        a
+        UFSM suspendeu as atividades presenciais por meio da Portaria Nº 97.935, em resposta à emergência de saúde
+        pública.
+        Posteriormente, a Instrução Normativa N. 001/2020/PRPGP, publicada em 20 de março de 2020, estabeleceu
+        diretrizes
+        para flexibilizar o calendário acadêmico da pós-graduação, permitindo ajustes nas atividades e nas disciplinas
+        para
+        garantir a progressão dos alunos durante o período de isolamento.
+    </p>
+
+    <p>
+        A UFSM também implementou uma série de Notas Informativas e orientações relacionadas à prorrogação de prazos de
+        defesa de teses e dissertações, além de permitir defesas de trabalho de forma online. Essas medidas foram
+        complementadas pela Instrução Normativa 02/2020/PRPGP, que estabeleceu normas para o funcionamento dos
+        laboratórios
+        de pesquisa, garantindo que as atividades científicas essenciais continuassem de forma segura e planejada.
+    </p>
+
+    <p>
+        Com o passar do tempo e o avanço da vacinação, a UFSM começou a planejar o retorno gradual às atividades
+        presenciais. Em fevereiro de 2022, a Resolução UFSM Nº 079 revogou o Regime de Exercícios Domiciliares Especiais
+        (REDE), que havia permitido o ensino remoto emergencial, e estabeleceu um novo calendário para o retorno
+        presencial.
+        O Centro de Operações de Emergência em Saúde para Educação (COE-E UFSM) desempenhou um papel fundamental ao
+        emitir a
+        Instrução Normativa 04/2022, que orientou a comunidade acadêmica sobre os protocolos a serem seguidos em casos
+        suspeitos ou confirmados de COVID-19, além de fornecer diretrizes para a recuperação de disciplinas e
+        prorrogações
+        de prazos por motivos de saúde.
+    </p>
+
+    <p>
+        No retorno presencial, o COE-E recomendou fortemente o uso de máscaras em ambientes fechados, como salas de
+        aula, e
+        destacou a importância da notificação imediata de casos positivos à universidade. Além disso, foram mantidas
+        instruções específicas para a emissão e retirada de diplomas, com a implementação de um sistema de agendamento,
+        garantindo que os processos administrativos continuassem a fluir de maneira organizada e segura.
+    </p>
+
+    <p>
+        Ao longo de toda a pandemia, a UFSM demonstrou uma abordagem ágil e proativa, conciliando a preservação da saúde
+        pública com a continuidade acadêmica e científica. As orientações, instruções normativas e adaptações foram
+        fundamentais para que a universidade mantivesse sua missão de formar profissionais e gerar conhecimento, mesmo
+        diante de uma crise sem precedentes.
+    </p>
+
+    <h2>Impacto das inundações no Rio Grande do Sul</h2>
+
+    <p>
+        A Universidade Federal de Santa Maria (UFSM) desempenhou um papel proativo durante a crise climática que assolou
+        o
+        Rio Grande do Sul em 2024, mobilizando diversos setores da instituição, com destaque para a pós-graduação. A
+        atuação
+        da UFSM foi marcada por iniciativas integradas entre pesquisa, extensão e ação direta, buscando mitigar os
+        impactos
+        da tragédia e contribuir para a reconstrução do estado.
+    </p>
+
+    <p>
+        No âmbito da pós-graduação, a instituição desenvolveu importantes pesquisas e ferramentas para lidar com os
+        desafios
+        impostos pela crise. Um dos destaques foi o lançamento de um Mapa da Extensão, que mapeou mais de 130 ações
+        realizadas pela comunidade acadêmica em resposta à calamidade pública. Essa ferramenta possibilitou a
+        coordenação
+        eficiente das atividades de reconstrução e o engajamento de diferentes setores sociais, com foco em áreas
+        fortemente
+        afetadas.
+    </p>
+
+    <p>
+        Outro avanço importante foi o desenvolvimento de um sistema de alerta para riscos climáticos, vinculado ao
+        CARE/UFSM, com o objetivo de prever e mitigar futuros desastres naturais, baseando-se em dados históricos e
+        previsão
+        climática. Além disso, a pesquisa acadêmica teve um papel fundamental, como exemplificado pelo estudo sobre os
+        riscos de desastres hidrológicos, que mapeou as regiões mais vulneráveis do estado. Tal estudo, disponibilizado
+        em
+        formato de e-book, oferece uma análise detalhada das áreas de maior risco, contribuindo para a formulação de
+        políticas públicas mais eficazes para a prevenção de novos desastres.
+    </p>
+
+    <p>
+        Essas ações e tantas outras, dos mais diversos setores, demonstram que a UFSM, especialmente no âmbito da
+        pós-graduação, não apenas gerou conhecimento e soluções para os desafios imediatos da crise climática, mas
+        também
+        promoveu a integração entre pesquisa científica, educação e engajamento comunitário. A instituição não só
+        respondeu
+        à emergência, mas também preparou o caminho para um futuro mais resiliente e sustentável no estado.
+    </p>
+</div>
+
+<!-- Bootstrap JS (Optional for any interactivity or JS components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
