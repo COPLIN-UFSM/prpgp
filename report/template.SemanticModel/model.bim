@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO\",\"BOLSAS_CNPQ\",\"Errors in Dados de Pagamento 2023\",\"BOLSAS_CNPQ_2023\",\"Erros em V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"Links Imagens\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO\",\"BOLSAS_CNPQ_2023\",\"Links Imagens\",\"Errors in V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -2726,22 +2726,6 @@
                   }
                 ]
               },
-              "v_prpgp_encargo_didatico_pos.ano_encargo": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
-                    "ConceptualProperty": "Ano encargos"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ano encargo": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
               "v_prpgp_encargo_didatico_pos.data_encargo": {
                 "Definition": {
                   "Binding": {
@@ -2903,22 +2887,6 @@
                 "Visibility": {
                   "Value": "Hidden"
                 }
-              },
-              "v_prpgp_encargo_didatico_pos.soma_encargo_didático_ano": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
-                    "ConceptualProperty": "Soma encargo didático ano"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "soma encargo didático ano": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
               },
               "v_prpgp_membros_banca": {
                 "Definition": {
@@ -5054,99 +5022,6 @@
                       },
                       "State": "Suggested",
                       "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_vagas_inscritos_matriculado.data_concurso": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-                    "ConceptualProperty": "Data ingresso"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data concurso": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information concurso": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "fact concurso": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "info concurso": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "statistic concurso": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "document concurso": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "figure concurso": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "record concurso": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
                     }
                   }
                 ]
@@ -9143,70 +9018,11 @@
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
     "expressions": [
       {
-        "name": "Errors in Dados de Pagamento 2023",
+        "name": "Errors in V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
             "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "expression": [
-          "let\r",
-          "Source = BOLSAS_CNPQ,\r",
-          "  #\"Detected Type Mismatches\" = let\r",
-          "    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),\r",
-          "    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),\r",
-          "    fieldNames = Record.FieldNames(recordTypeFields),\r",
-          "    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),\r",
-          "    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = \"The type of the value does not match the type of the column.\", Detail = v], fieldTypes{i}})\r",
-          "in\r",
-          "    Table.TransformColumns(Source, pairs),\r",
-          "  #\"Added Index\" = Table.AddIndexColumn(#\"Detected Type Mismatches\", \"Row Number\" ,1),\r",
-          "    #\"Filtered Rows\" = Table.SelectRows(#\"Added Index\", each ([INSTITUICAO_ORIGEM] = \"Universidade Federal de Santa Maria\"))\r",
-          "in\r",
-          "    #\"Filtered Rows\""
-        ],
-        "kind": "m",
-        "lineageTag": "97a30a61-9540-412d-9416-5208bc4e7654",
-        "queryGroup": "Query Errors - 01/10/2024 07:54:13"
-      },
-      {
-        "name": "BOLSAS_CNPQ",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "expression": [
-          "let\r",
-          "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\henry\\Projects\\prpgp\\data\\cnpq_bolsas_2023.xlsx\"), null, true),\r",
-          "    #\"Dados de Pagamento 2023_Sheet\" = Source{[Item=\"Dados de Pagamento 2023\",Kind=\"Sheet\"]}[Data],\r",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Dados de Pagamento 2023_Sheet\", [PromoteAllScalars=true]),\r",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ANO_REFERENCIA\", Int64.Type}, {\"PROCESSO\", type text}, {\"DATA_INICIO_PROCESSO\", Int64.Type}, {\"DATA_TERMINO_PROCESSO\", Int64.Type}, {\"BENEFICIARIO\", type text}, {\"NU_CPF\", type text}, {\"LINHA_FOMENTO\", type text}, {\"MODALIDADE\", type text}, {\"CATEGORIA_NIVEL\", type text}, {\"NOME_CHAMADA\", type text}, {\"PROGRAMA_CNPQ\", type text}, {\"GRANDE_AREA\", type text}, {\"AREA\", type text}, {\"SUBAREA\", type text}, {\"INSTITUICAO_ORIGEM\", type text}, {\"SIGLA_UF_ORIGEM\", type text}, {\"PAIS_ORIGEM\", type text}, {\"INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_MACRO\", type text}, {\"CIDADE_DESTINO\", type text}, {\"SIGLA_UF_DESTINO\", type text}, {\"REGIAO\", type text}, {\"PAIS_DESTINO\", type text}, {\"TITULO_PROJETO\", type text}, {\"PALAVRA_CHAVE\", type text}, {\"VALOR_PAGO\", type number}}),\r",
-          "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type\",{{\"NU_CPF\", \"CPF\"}}),\r",
-          "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"DATA_INICIO_PROCESSO\", \"DATA_TERMINO_PROCESSO\"}),\r",
-          "    #\"Inserted Date\" = Table.AddColumn(#\"Removed Columns\", \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date)\r",
-          "in\r",
-          "    #\"Inserted Date\""
-        ],
-        "kind": "m",
-        "lineageTag": "fa65aac0-ebd0-43a3-aeeb-622fe75028a1"
-      },
-      {
-        "name": "Erros em V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navegação"
           },
           {
             "name": "PBI_ResultType",
@@ -9215,24 +9031,24 @@
         ],
         "expression": [
           "let",
-          "Fonte = V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS,",
-          "  #\"Incompatibilidades de Tipo Detectadas\" = let",
-          "    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Fonte, Table.ColumnsOfType(Fonte, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),",
+          "Source = V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS,",
+          "  #\"Detected Type Mismatches\" = let",
+          "    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),",
           "    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),",
           "    fieldNames = Record.FieldNames(recordTypeFields),",
           "    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),",
-          "    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = \"O tipo do valor não corresponde ao tipo da coluna.\", Detail = v], fieldTypes{i}})",
+          "    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = \"The type of the value does not match the type of the column.\", Detail = v], fieldTypes{i}})",
           "in",
-          "    Table.TransformColumns(Fonte, pairs),",
-          "  #\"Índice Adicionado\" = Table.AddIndexColumn(#\"Incompatibilidades de Tipo Detectadas\", \"Número da Linha\" ,1),",
-          "  #\"Erros Mantidos\" = Table.SelectRowsWithErrors(#\"Índice Adicionado\", {\"Ano concurso\", \"Ano ingresso\", \"ID_CONCURSO\", \"Concurso\", \"ID_CONC_EDICAO\", \"Edição concurso\", \"Concurso edital\", \"Curso vaga\", \"ID_UNIDADE_SUP\", \"Cota\", \"Vagas ofertadas\", \"Inscritos\", \"Classificados\", \"Matriculados\", \"Data ingresso\"}),",
-          "  #\"Colunas Reordenadas\" = Table.ReorderColumns(#\"Erros Mantidos\", {\"Número da Linha\", \"Ano concurso\", \"Ano ingresso\", \"ID_CONCURSO\", \"Concurso\", \"ID_CONC_EDICAO\", \"Edição concurso\", \"Concurso edital\", \"Curso vaga\", \"ID_UNIDADE_SUP\", \"Cota\", \"Vagas ofertadas\", \"Inscritos\", \"Classificados\", \"Matriculados\", \"Data ingresso\"})",
+          "    Table.TransformColumns(Source, pairs),",
+          "  #\"Added Index\" = Table.AddIndexColumn(#\"Detected Type Mismatches\", \"Row Number\" ,1),",
+          "  #\"Kept Errors\" = Table.SelectRowsWithErrors(#\"Added Index\", {\"Ano concurso\", \"Ano ingresso\", \"ID_CONCURSO\", \"Concurso\", \"ID_CONC_EDICAO\", \"Edição concurso\", \"Concurso edital\", \"Curso vaga\", \"ID_UNIDADE_SUP\", \"IND_INSCRICOES_CONCLUIDAS\", \"Cota\", \"Vagas ofertadas\", \"Inscritos\", \"Classificados\", \"Matriculados\", \"Data ingresso\"}),",
+          "  #\"Reordered Columns\" = Table.ReorderColumns(#\"Kept Errors\", {\"Row Number\", \"Ano concurso\", \"Ano ingresso\", \"ID_CONCURSO\", \"Concurso\", \"ID_CONC_EDICAO\", \"Edição concurso\", \"Concurso edital\", \"Curso vaga\", \"ID_UNIDADE_SUP\", \"IND_INSCRICOES_CONCLUIDAS\", \"Cota\", \"Vagas ofertadas\", \"Inscritos\", \"Classificados\", \"Matriculados\", \"Data ingresso\"})",
           "in",
-          "  #\"Colunas Reordenadas\""
+          "  #\"Reordered Columns\""
         ],
         "kind": "m",
-        "lineageTag": "e13e7385-293e-4f54-abb1-6e6123d24485",
-        "queryGroup": "Erros na Consulta - 04/10/2024 10:44:42"
+        "lineageTag": "8868737e-0f6b-4f27-b0df-44f50ae6b67d",
+        "queryGroup": "Query Errors - 14/10/2024 08:11:26"
       }
     ],
     "queryGroups": [
@@ -9243,18 +9059,8 @@
             "value": "0"
           }
         ],
-        "description": "Errors in queries that were loaded on 01/10/2024 07:54:13.",
-        "folder": "Query Errors - 01/10/2024 07:54:13"
-      },
-      {
-        "annotations": [
-          {
-            "name": "PBI_QueryGroupOrder",
-            "value": "1"
-          }
-        ],
-        "description": "Erros nas consultas que foram carregadas em 04/10/2024 10:44:42.",
-        "folder": "Erros na Consulta - 04/10/2024 10:44:42"
+        "description": "Errors in queries that were loaded on 14/10/2024 08:11:26.",
+        "folder": "Query Errors - 14/10/2024 08:11:26"
       }
     ],
     "relationships": [
@@ -9324,17 +9130,11 @@
       },
       {
         "name": "AutoDetected_8e1e1610-7867-4954-ac20-94c8d368998f",
+        "crossFilteringBehavior": "bothDirections",
         "fromColumn": "ID_CONTRATO_RH",
         "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
         "toColumn": "ID_CONTRATO_RH",
         "toTable": "V_PRPGP_DOCENTES_POS"
-      },
-      {
-        "name": "95fe8422-1537-643f-f6e2-c72ca0f2f6ad",
-        "fromColumn": "Data ingresso",
-        "fromTable": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-        "toColumn": "Data",
-        "toTable": "dCalendario"
       },
       {
         "name": "f710cfcd-04c5-5411-2802-ad349820e601",
@@ -9409,6 +9209,13 @@
         "isActive": false,
         "toColumn": "Data",
         "toTable": "dCalendario"
+      },
+      {
+        "name": "9aa63a5f-2607-e582-7a92-3cb937ccdbb0",
+        "fromColumn": "Data ingresso",
+        "fromTable": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+        "toColumn": "Data",
+        "toTable": "dCalendario"
       }
     ],
     "sourceQueryCulture": "pt-BR",
@@ -9422,7 +9229,7 @@
           },
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
           }
         ],
         "columns": [
@@ -10404,7 +10211,7 @@
             "expression": [
               "COUNTROWS(",
               "    FILTER(",
-              "        V_PRPGP_PROJETOS_POS_ORGAOS,",
+              "        V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO,",
               "        COUNTROWS(",
               "            RELATEDTABLE(V_PRPGP_PROGRAMAS_POS)",
               "        ) > 0",
@@ -11131,24 +10938,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Data ingresso",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "lineageTag": "02795879-0443-4b9a-addc-530ea39cc821",
-            "sourceColumn": "Data ingresso",
-            "summarizeBy": "none"
-          },
-          {
             "name": "Concurso edital",
             "annotations": [
               {
@@ -11188,6 +10977,43 @@
             "lineageTag": "6cdb2b49-1ae5-4b3e-852d-d01561523218",
             "sourceColumn": "Classificados",
             "summarizeBy": "none"
+          },
+          {
+            "name": "IND_INSCRICOES_CONCLUIDAS",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "009c8c03-4940-4e43-87c9-0a28de30bacb",
+            "sourceColumn": "IND_INSCRICOES_CONCLUIDAS",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Data ingresso",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "2d9ad3b6-4703-4956-9cda-ccd64f0792e6",
+            "sourceColumn": "Data ingresso",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "8bd13327-4213-43e5-962e-92172731b58a",
@@ -11201,12 +11027,11 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1 = BEE{[Name=\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]}[Data],",
-                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1, \"Data concurso\", each Date.From(Text.From([ANO_INGRESSO], \"pt-BR\")), type date),",
+                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1, \"Data ingresso\", each Date.From(Text.From([ANO_INGRESSO], \"pt-BR\")), type date),",
                 "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_CONCURSO\", \"Ano concurso\"}, {\"CANDIDATOS_INSCRITOS\", \"Inscritos\"}, {\"CANDIDATOS_MATRICULADOS\", \"Matriculados\"}, {\"DESCR_CONC_EDICAO\", \"Edição concurso\"}, {\"DESCR_CONCURSO\", \"Concurso\"}, {\"DESCR_COTA\", \"Cota\"}, {\"VAGAS_OFERECIDAS\", \"Vagas ofertadas\"}, {\"CURSO_VAGA\", \"Curso vaga\"}, {\"CANDIDATOS_CLASSIFICADOS\", \"Classificados\"}, {\"CONC_EDITAL\", \"Concurso edital\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"CANDIDATOS_CLASSIFICADOS_PCD\", \"CANDIDATOS_CLASSIFICADOS_PPI\", \"CANDIDATOS_INSCRITOS_PCD\", \"CANDIDATOS_INSCRITOS_PPI\", \"CANDIDATOS_MATRICULADOS_PCD\", \"CANDIDATOS_MATRICULADOS_PPI\"}),",
-                "    #\"Colunas Renomeadas\" = Table.RenameColumns(#\"Removed Columns\",{{\"Data concurso\", \"Data ingresso\"}})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"CANDIDATOS_CLASSIFICADOS_PCD\", \"CANDIDATOS_CLASSIFICADOS_PPI\", \"CANDIDATOS_INSCRITOS_PCD\", \"CANDIDATOS_INSCRITOS_PPI\", \"CANDIDATOS_MATRICULADOS_PCD\", \"CANDIDATOS_MATRICULADOS_PPI\", \"NOME_CURSO\"})",
                 "in",
-                "    #\"Colunas Renomeadas\""
+                "    #\"Removed Columns\""
               ],
               "type": "m"
             }
@@ -11215,6 +11040,16 @@
       },
       {
         "name": "SCIVAL_METRICAS",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
         "columns": [
           {
             "name": "ID_METRICA",
@@ -11740,37 +11575,6 @@
         ],
         "columns": [
           {
-            "name": "Ano encargos",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "72216b6a-3428-4d7e-84b1-6c0508440b96",
-            "sourceColumn": "Ano encargos",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Soma encargo didático ano",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "785cc7a5-5d67-4923-bc31-56d2bda84d33",
-            "sourceColumn": "Soma encargo didático ano",
-            "summarizeBy": "none"
-          },
-          {
             "name": "Data encargo",
             "annotations": [
               {
@@ -11813,9 +11617,92 @@
             "lineageTag": "bbdbea74-4e1d-48b0-ae36-b2e55eb46efc",
             "sourceColumn": "ID_CONTRATO_RH",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Ano encargo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6da5b8c5-a768-4331-a06d-f280b606ffe8",
+            "sourceColumn": "Ano encargo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Semestre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "902a948c-0062-40e7-8a6f-de4732bf1b27",
+            "sourceColumn": "Semestre",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Encargo didático",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "11f7febd-3d57-468a-bf64-e7d7d1ca9c2b",
+            "sourceColumn": "Encargo didático",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Tipo encargo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b5ab799e-53d8-4511-b674-218dcdc2e710",
+            "sourceColumn": "Tipo encargo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nível",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7c20e457-5836-440a-accf-d4ec31229027",
+            "sourceColumn": "Nível",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "09ce9bdf-531d-41c7-9f5e-7828f8951882",
+        "measures": [
+          {
+            "name": "Soma Encargos",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
+            "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
+          }
+        ],
         "partitions": [
           {
             "name": "V_PRPGP_ENCARGO_DIDATICO_POS",
@@ -11826,10 +11713,19 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_ENCARGO_DIDATICO_POS1 = BEE{[Name=\"V_PRPGP_ENCARGO_DIDATICO_POS\"]}[Data],",
-                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_ENCARGO_DIDATICO_POS1, \"Data encargo\", each Date.From(Text.From([ANO_TURMA], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_TURMA\", \"Ano encargos\"}, {\"ENCARGO_DIDATICO_DOCENTE\", \"Soma encargo didático ano\"}})",
+                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_ENCARGO_DIDATICO_POS1, \"Data encargo\", each Date.From(Text.From([ANO], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO\", \"Ano encargo\"}, {\"ENCARGO\", \"Encargo didático\"}, {\"NIVEL_TIPO\", \"Nível\"}, {\"TIPO_ENCARGO\", \"Tipo encargo\"}, {\"PERIODO\", \"Semestre\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\",{{\"Semestre\", type text}}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Changed Type\",\"1\",\"1º semestre\",Replacer.ReplaceText,{\"Semestre\"}),",
+                "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"2\",\"2º semestre\",Replacer.ReplaceText,{\"Semestre\"}),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value1\",{{\"Encargo didático\", type number}}),",
+                "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Changed Type1\",\"GRADUAÇÃO\",\"Graduação\",Replacer.ReplaceText,{\"Nível\"}),",
+                "    #\"Replaced Value3\" = Table.ReplaceValue(#\"Replaced Value2\",\"DOUTORADO\",\"Doutorado\",Replacer.ReplaceText,{\"Nível\"}),",
+                "    #\"Replaced Value4\" = Table.ReplaceValue(#\"Replaced Value3\",\"MESTRADO\",\"Mestrado\",Replacer.ReplaceText,{\"Nível\"}),",
+                "    #\"Replaced Value5\" = Table.ReplaceValue(#\"Replaced Value4\",\"OUTROS\",\"Outros\",Replacer.ReplaceText,{\"Nível\"}),",
+                "    #\"Replaced Value6\" = Table.ReplaceValue(#\"Replaced Value5\",\"ESPECIALIZAÇÃO/RESIDENCIA\",\"Especialização/Residência\",Replacer.ReplaceText,{\"Nível\"})",
                 "in",
-                "    #\"Renamed Columns\""
+                "    #\"Replaced Value6\""
               ],
               "type": "m"
             }
@@ -12092,7 +11988,7 @@
           },
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
           }
         ],
         "columns": [
@@ -12124,7 +12020,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "BENEFICIARIO",
+            "name": "Beneficiário",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12133,11 +12029,11 @@
             ],
             "dataType": "string",
             "lineageTag": "e48c1d28-0048-4295-8843-787042750e34",
-            "sourceColumn": "BENEFICIARIO",
+            "sourceColumn": "Beneficiário",
             "summarizeBy": "none"
           },
           {
-            "name": "NU_CPF",
+            "name": "CPF",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12146,11 +12042,11 @@
             ],
             "dataType": "string",
             "lineageTag": "6a4328fc-42cb-4a95-91a4-a45081de8670",
-            "sourceColumn": "NU_CPF",
+            "sourceColumn": "CPF",
             "summarizeBy": "none"
           },
           {
-            "name": "LINHA_FOMENTO",
+            "name": "Linha fomento",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12159,11 +12055,11 @@
             ],
             "dataType": "string",
             "lineageTag": "32d4772e-de7f-4c15-af09-c3691342b3f7",
-            "sourceColumn": "LINHA_FOMENTO",
+            "sourceColumn": "Linha fomento",
             "summarizeBy": "none"
           },
           {
-            "name": "MODALIDADE",
+            "name": "Modalidade",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12172,7 +12068,7 @@
             ],
             "dataType": "string",
             "lineageTag": "178ab5e3-de37-49f6-b672-9452d3580d17",
-            "sourceColumn": "MODALIDADE",
+            "sourceColumn": "Modalidade",
             "summarizeBy": "none"
           },
           {
@@ -12189,7 +12085,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "NOME_CHAMADA",
+            "name": "Chamada",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12198,7 +12094,7 @@
             ],
             "dataType": "string",
             "lineageTag": "9262c9da-33e2-42d7-99ee-4cf603f85755",
-            "sourceColumn": "NOME_CHAMADA",
+            "sourceColumn": "Chamada",
             "summarizeBy": "none"
           },
           {
@@ -12254,7 +12150,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "INSTITUICAO_DESTINO",
+            "name": "Instituição destino",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12263,11 +12159,11 @@
             ],
             "dataType": "string",
             "lineageTag": "fbcc1b2d-28fb-4733-95f6-faf4c4f44059",
-            "sourceColumn": "INSTITUICAO_DESTINO",
+            "sourceColumn": "Instituição destino",
             "summarizeBy": "none"
           },
           {
-            "name": "SIGLA_INSTITUICAO_DESTINO",
+            "name": "Instituição destino (sigla)",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12276,7 +12172,7 @@
             ],
             "dataType": "string",
             "lineageTag": "40529cbd-1551-411a-bc3f-3537cec64eab",
-            "sourceColumn": "SIGLA_INSTITUICAO_DESTINO",
+            "sourceColumn": "Instituição destino (sigla)",
             "summarizeBy": "none"
           },
           {
@@ -12293,7 +12189,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "TITULO_PROJETO",
+            "name": "Projeto",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12302,11 +12198,11 @@
             ],
             "dataType": "string",
             "lineageTag": "18cd3761-1a95-43f9-bd6a-b05b19c2e93d",
-            "sourceColumn": "TITULO_PROJETO",
+            "sourceColumn": "Projeto",
             "summarizeBy": "none"
           },
           {
-            "name": "VALOR_PAGO",
+            "name": "Auxílio",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -12319,7 +12215,7 @@
             ],
             "dataType": "double",
             "lineageTag": "9cd4423d-4290-4a93-b6a7-f54a7b8a2f58",
-            "sourceColumn": "VALOR_PAGO",
+            "sourceColumn": "Auxílio",
             "summarizeBy": "none"
           },
           {
@@ -12355,15 +12251,16 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\Nathale\\OneDrive - Universidade Federal de Santa Maria\\Documentos\\GitHub\\prpgp\\data\\cnpq_bolsas_2023.xlsx\"), null, true),",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\henry\\Projects\\COPLIN-UFSM\\prpgp\\data\\cnpq_bolsas_2023.xlsx\"), null, true),",
                 "    #\"Dados de Pagamento 2023_Sheet\" = Source{[Item=\"Dados de Pagamento 2023\",Kind=\"Sheet\"]}[Data],",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Dados de Pagamento 2023_Sheet\", [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ANO_REFERENCIA\", Int64.Type}, {\"PROCESSO\", type text}, {\"DATA_INICIO_PROCESSO\", Int64.Type}, {\"DATA_TERMINO_PROCESSO\", Int64.Type}, {\"BENEFICIARIO\", type text}, {\"NU_CPF\", type text}, {\"LINHA_FOMENTO\", type text}, {\"MODALIDADE\", type text}, {\"CATEGORIA_NIVEL\", type text}, {\"NOME_CHAMADA\", type text}, {\"PROGRAMA_CNPQ\", type text}, {\"GRANDE_AREA\", type text}, {\"AREA\", type text}, {\"SUBAREA\", type text}, {\"INSTITUICAO_ORIGEM\", type text}, {\"SIGLA_UF_ORIGEM\", type text}, {\"PAIS_ORIGEM\", type text}, {\"INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_MACRO\", type text}, {\"CIDADE_DESTINO\", type text}, {\"SIGLA_UF_DESTINO\", type text}, {\"REGIAO\", type text}, {\"PAIS_DESTINO\", type text}, {\"TITULO_PROJETO\", type text}, {\"PALAVRA_CHAVE\", type text}, {\"VALOR_PAGO\", type number}}),",
                 "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each ([SIGLA_INSTITUICAO_MACRO] = \"UFSM\")),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Filtered Rows\",{\"DATA_INICIO_PROCESSO\", \"DATA_TERMINO_PROCESSO\", \"INSTITUICAO_ORIGEM\", \"SIGLA_UF_ORIGEM\", \"PAIS_ORIGEM\", \"SIGLA_INSTITUICAO_MACRO\", \"CIDADE_DESTINO\", \"SIGLA_UF_DESTINO\", \"PAIS_DESTINO\", \"PALAVRA_CHAVE\"}),",
-                "    #\"Inserted Date\" = Table.AddColumn(#\"Removed Columns\", \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date)",
+                "    #\"Inserted Date\" = Table.AddColumn(#\"Removed Columns\", \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"NU_CPF\", \"CPF\"}, {\"BENEFICIARIO\", \"Beneficiário\"}, {\"INSTITUICAO_DESTINO\", \"Instituição destino\"}, {\"SIGLA_INSTITUICAO_DESTINO\", \"Instituição destino (sigla)\"}, {\"VALOR_PAGO\", \"Auxílio\"}, {\"MODALIDADE\", \"Modalidade\"}, {\"LINHA_FOMENTO\", \"Linha fomento\"}, {\"TITULO_PROJETO\", \"Projeto\"}, {\"NOME_CHAMADA\", \"Chamada\"}})",
                 "in",
-                "    #\"Inserted Date\""
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -12376,6 +12273,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -12414,7 +12315,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Fonte = Excel.Workbook(File.Contents(\"C:\\Users\\Nathale\\OneDrive - Universidade Federal de Santa Maria\\Área de Trabalho\\Trabalhos diversos\\BI PRPGP\\Links Cartões.xlsx\"), null, true),",
+                "    Fonte = Excel.Workbook(File.Contents(\"C:\\Users\\henry\\Projects\\COPLIN-UFSM\\prpgp\\report\\arte\\Links Cartões.xlsx\"), null, true),",
                 "    Planilha1_Sheet = Fonte{[Item=\"Planilha1\",Kind=\"Sheet\"]}[Data],",
                 "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Planilha1_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}})",
                 "in",
