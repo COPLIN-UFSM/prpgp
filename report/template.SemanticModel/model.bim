@@ -4026,7 +4026,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "ANO_FINAL"
+                    "ConceptualProperty": "Ano final participação"
                   }
                 },
                 "State": "Generated",
@@ -4059,7 +4059,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "ANO_INICIAL"
+                    "ConceptualProperty": "Ano inicial participação"
                   }
                 },
                 "State": "Generated",
@@ -4082,7 +4082,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "ANO_REFERENCIA"
+                    "ConceptualProperty": "Ano referência"
                   }
                 },
                 "State": "Generated",
@@ -4211,7 +4211,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "FUNCAO"
+                    "ConceptualProperty": "Função no projeto"
                   }
                 },
                 "State": "Generated",
@@ -11859,8 +11859,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "90153ea3-e085-45a0-a7ab-0a8f72f4bfc9",
             "sourceColumn": "ID_PROJETO",
             "summarizeBy": "none"
@@ -11873,14 +11879,20 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "bb28481c-fcf4-4054-8259-515b22fcd8b5",
             "sourceColumn": "ID_UNIDADE_SUP",
             "summarizeBy": "none"
           },
           {
-            "name": "FUNCAO",
+            "name": "Função no projeto",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -11889,11 +11901,11 @@
             ],
             "dataType": "string",
             "lineageTag": "ad045642-44d6-4129-88ff-334d99af382b",
-            "sourceColumn": "FUNCAO",
+            "sourceColumn": "Função no projeto",
             "summarizeBy": "none"
           },
           {
-            "name": "ANO_INICIAL",
+            "name": "Ano inicial participação",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -11903,11 +11915,11 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "c8f850b3-e7a1-41a3-a139-953cd60959bc",
-            "sourceColumn": "ANO_INICIAL",
+            "sourceColumn": "Ano inicial participação",
             "summarizeBy": "none"
           },
           {
-            "name": "ANO_FINAL",
+            "name": "Ano final participação",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -11917,11 +11929,11 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "5dfd3913-89c5-438e-971b-10e6053c0fe7",
-            "sourceColumn": "ANO_FINAL",
+            "sourceColumn": "Ano final participação",
             "summarizeBy": "none"
           },
           {
-            "name": "ANO_REFERENCIA",
+            "name": "Ano referência",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -11931,7 +11943,7 @@
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "76e15492-efcd-4eeb-9019-b5d8c1475e6f",
-            "sourceColumn": "ANO_REFERENCIA",
+            "sourceColumn": "Ano referência",
             "summarizeBy": "none"
           },
           {
@@ -11970,9 +11982,10 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO\"]}[Data],",
-                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO1, \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date)",
+                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO1, \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_FINAL\", \"Ano final participação\"}, {\"ANO_INICIAL\", \"Ano inicial participação\"}, {\"ANO_REFERENCIA\", \"Ano referência\"}, {\"FUNCAO\", \"Função no projeto\"}})",
                 "in",
-                "    #\"Inserted Date\""
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
