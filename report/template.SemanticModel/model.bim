@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"PM_PROJETOS_PARTICIPANTES\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO\",\"BOLSAS_CNPQ_2023\",\"Links Imagens\",\"Errors in V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"BOLSAS_CNPQ_2023\",\"Links Imagens\",\"Errors in V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -312,435 +312,6 @@
                     }
                   }
                 ]
-              },
-              "pm_projetos_participante": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "pm projetos participante": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "pm projeto participante": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.78
-                    }
-                  },
-                  {
-                    "PM_PROJETOS_PARTICIPANTES": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
-              "pm_projetos_participante.ano_participação_dentro_do_intervalo": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES",
-                    "ConceptualProperty": "Ano participação dentro do intervalo"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ano participação dentro do intervalo": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "pm_projetos_participante.data_fim_participação": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES",
-                    "ConceptualProperty": "Data fim participação"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data fim participação": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information fim participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "fact fim participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "info fim participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "statistic fim participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "document fim participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  },
-                  {
-                    "figure fim participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  },
-                  {
-                    "record fim participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ]
-              },
-              "pm_projetos_participante.data_início_participação": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES",
-                    "ConceptualProperty": "Data início participação"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data início participação": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information início participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "fact início participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "info início participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "statistic início participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "document início participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  },
-                  {
-                    "figure início participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  },
-                  {
-                    "record início participação": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ]
-              },
-              "pm_projetos_participante.id_contrato_rh": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES",
-                    "ConceptualProperty": "ID_CONTRATO_RH"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id contrato rh": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_CONTRATO_RH": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identity contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identifier contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "credential contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
-              },
-              "pm_projetos_participante.id_curso_aluno": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES",
-                    "ConceptualProperty": "ID_CURSO_ALUNO"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id curso aluno": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_CURSO_ALUNO": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification curso aluno": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identity curso aluno": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identifier curso aluno": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "credential curso aluno": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
-              },
-              "pm_projetos_participante.id_projeto": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES",
-                    "ConceptualProperty": "ID_PROJETO"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id projeto": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_PROJETO": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identity projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identifier projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "credential projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
               },
               "scival_metrica": {
                 "Definition": {
@@ -3645,22 +3216,6 @@
                   }
                 ]
               },
-              "v_prpgp_projetos_pos.ano_projeto_dentro_do_intervalo": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS",
-                    "ConceptualProperty": "Ano projeto dentro do intervalo"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ano projeto dentro do intervalo": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
               "v_prpgp_projetos_pos.classificação_projeto": {
                 "Definition": {
                   "Binding": {
@@ -3673,192 +3228,6 @@
                   {
                     "classificação projeto": {
                       "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_projetos_pos.data_fim": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS",
-                    "ConceptualProperty": "Data fim"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data fim": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information fim": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "fact fim": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "info fim": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "statistic fim": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "document fim": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "figure fim": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "record fim": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_projetos_pos.data_início": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS",
-                    "ConceptualProperty": "Data início"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data início": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information início": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "fact início": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "info início": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "statistic início": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "document início": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "figure início": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "record início": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
                     }
                   }
                 ]
@@ -3945,22 +3314,6 @@
                   }
                 ]
               },
-              "v_prpgp_projetos_pos.programa_participa_do_projeto": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS",
-                    "ConceptualProperty": "Programa participa do projeto"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "programa participa do projeto": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
               "v_prpgp_projetos_pos.situação": {
                 "Definition": {
                   "Binding": {
@@ -3992,428 +3345,6 @@
                     }
                   }
                 ]
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "v prpgp projetos pos orgaos fluxo": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "v prpgp projeto pos orgao fluxo": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.78
-                    }
-                  },
-                  {
-                    "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo.ano_final": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "Ano final participação"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ano final": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ANO_FINAL": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "ano decider": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.451
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo.ano_inicial": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "Ano inicial participação"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ano inicial": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ANO_INICIAL": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo.ano_referencia": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "Ano referência"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ano referencia": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ANO_REFERENCIA": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "Ano": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo.data_referência": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "Data referência"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data referência": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information referência": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "fact referência": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "info referência": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "statistic referência": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "document referência": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "figure referência": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "record referência": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo.funcao": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "Função no projeto"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "funcao": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo.id_projeto": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "ID_PROJETO"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id projeto": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_PROJETO": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identity projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identifier projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "credential projeto": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo.id_unidade_sup": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-                    "ConceptualProperty": "ID_UNIDADE_SUP"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id unidade sup": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_UNIDADE_SUP": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification unidade sup": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identity unidade sup": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identifier unidade sup": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "credential unidade sup": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  },
-                  {
-                    "id unidade mouthful": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "id unidade sip": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  },
-                  {
-                    "id unidade swallow": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  },
-                  {
-                    "id unidade drink": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  },
-                  {
-                    "id unidade draught": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  },
-                  {
-                    "id unidade draft": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
               },
               "v_prpgp_scival_autores_metrica": {
                 "Definition": {
@@ -5419,243 +4350,6 @@
                   "medida.pertence_ao_programa": {
                     "Target": {
                       "Entity": "medida.pertence_ao_programa"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "pm_projetos_participante_has_ano_participação_dentro_do_intervalo": {
-                "Binding": {
-                  "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "pm_projetos_participante.ano_participação_dentro_do_intervalo"
-                      },
-                      "Subject": {
-                        "Role": "pm_projetos_participante"
-                      }
-                    },
-                    "ID": "pm_projetos_participantes_have_ano_participação_dentro_do_intervalo",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "pm_projetos_participante": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante"
-                    }
-                  },
-                  "pm_projetos_participante.ano_participação_dentro_do_intervalo": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante.ano_participação_dentro_do_intervalo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "pm_projetos_participante_has_data_fim_participação": {
-                "Binding": {
-                  "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "pm_projetos_participante.data_fim_participação"
-                      },
-                      "Subject": {
-                        "Role": "pm_projetos_participante"
-                      }
-                    },
-                    "ID": "pm_projetos_participantes_have_data_fim_participaçãos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "pm_projetos_participante": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante"
-                    }
-                  },
-                  "pm_projetos_participante.data_fim_participação": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante.data_fim_participação"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "pm_projetos_participante_has_data_início_participação": {
-                "Binding": {
-                  "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "pm_projetos_participante.data_início_participação"
-                      },
-                      "Subject": {
-                        "Role": "pm_projetos_participante"
-                      }
-                    },
-                    "ID": "pm_projetos_participantes_have_data_início_participaçãos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "pm_projetos_participante": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante"
-                    }
-                  },
-                  "pm_projetos_participante.data_início_participação": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante.data_início_participação"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "pm_projetos_participante_has_v_prpgp_discentes_pos": {
-                "Binding": {
-                  "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos"
-                      },
-                      "Subject": {
-                        "Role": "pm_projetos_participante"
-                      }
-                    },
-                    "ID": "pm_projetos_participantes_have_v_prpgp_discentes_pos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "pm_projetos_participante"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_pm_projetos_participantes",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "pm_projetos_participante": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante"
-                    }
-                  },
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "pm_projetos_participante_has_v_prpgp_docentes_pos": {
-                "Binding": {
-                  "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos"
-                      },
-                      "Subject": {
-                        "Role": "pm_projetos_participante"
-                      }
-                    },
-                    "ID": "pm_projetos_participantes_have_v_prpgp_docentes_pos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "pm_projetos_participante"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_docentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_docentes_pos_have_pm_projetos_participantes",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "pm_projetos_participante": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante"
-                    }
-                  },
-                  "v_prpgp_docentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "pm_projetos_participante_has_v_prpgp_projetos_pos": {
-                "Binding": {
-                  "ConceptualEntity": "PM_PROJETOS_PARTICIPANTES"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos"
-                      },
-                      "Subject": {
-                        "Role": "pm_projetos_participante"
-                      }
-                    },
-                    "ID": "pm_projetos_participantes_have_v_prpgp_projetos_pos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "pm_projetos_participante"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_have_pm_projetos_participantes",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "pm_projetos_participante": {
-                    "Target": {
-                      "Entity": "pm_projetos_participante"
-                    }
-                  },
-                  "v_prpgp_projetos_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos"
                     }
                   }
                 },
@@ -7923,230 +6617,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_projetos_pos_orgaos_fluxo_has_ano_final": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo.ano_final"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_orgaos_fluxo_have_ano_finals",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos_orgaos_fluxo": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo"
-                    }
-                  },
-                  "v_prpgp_projetos_pos_orgaos_fluxo.ano_final": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo.ano_final"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo_has_ano_inicial": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo.ano_inicial"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_orgaos_fluxo_have_ano_inicials",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos_orgaos_fluxo": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo"
-                    }
-                  },
-                  "v_prpgp_projetos_pos_orgaos_fluxo.ano_inicial": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo.ano_inicial"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo_has_ano_referencia": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo.ano_referencia"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_orgaos_fluxo_have_ano_referencias",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos_orgaos_fluxo": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo"
-                    }
-                  },
-                  "v_prpgp_projetos_pos_orgaos_fluxo.ano_referencia": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo.ano_referencia"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo_has_funcao": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo.funcao"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_orgaos_fluxo_have_funcaos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos_orgaos_fluxo": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo"
-                    }
-                  },
-                  "v_prpgp_projetos_pos_orgaos_fluxo.funcao": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo.funcao"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo_has_v_prpgp_programas_pos": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_programas_pos"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_orgaos_fluxo_have_v_prpgp_programas_pos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_programas_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_programas_pos_have_v_prpgp_projetos_pos_orgaos_fluxo",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_programas_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_programas_pos"
-                    }
-                  },
-                  "v_prpgp_projetos_pos_orgaos_fluxo": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_orgaos_fluxo_has_v_prpgp_projetos_pos": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_orgaos_fluxo_have_v_prpgp_projetos_pos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos_orgaos_fluxo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_have_v_prpgp_projetos_pos_orgaos_fluxo",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos"
-                    }
-                  },
-                  "v_prpgp_projetos_pos_orgaos_fluxo": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos_orgaos_fluxo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_scival_autores_metrica_has_ID_scopus": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
@@ -9065,27 +7535,6 @@
     ],
     "relationships": [
       {
-        "name": "68437775-5129-0fc8-a259-4ccdcac9f152",
-        "fromColumn": "ID_PROJETO",
-        "fromTable": "PM_PROJETOS_PARTICIPANTES",
-        "toColumn": "ID_PROJETO",
-        "toTable": "V_PRPGP_PROJETOS_POS"
-      },
-      {
-        "name": "6da48ca3-16f6-232a-44e4-5752fadf7461",
-        "fromColumn": "ID_CONTRATO_RH",
-        "fromTable": "PM_PROJETOS_PARTICIPANTES",
-        "toColumn": "ID_CONTRATO_RH",
-        "toTable": "V_PRPGP_DOCENTES_POS"
-      },
-      {
-        "name": "67551456-b0b8-61d5-4ead-1612acdf30ea",
-        "fromColumn": "ID_CURSO_ALUNO",
-        "fromTable": "PM_PROJETOS_PARTICIPANTES",
-        "toColumn": "ID_CURSO_ALUNO",
-        "toTable": "V_PRPGP_DISCENTES_POS"
-      },
-      {
         "name": "1112f5ab-f756-8bb5-c47d-69e03ad65564",
         "fromColumn": "ID_CONTRATO_RH",
         "fromTable": "V_PRPGP_MEMBROS_BANCA",
@@ -9188,32 +7637,60 @@
         "toTable": "dCalendario"
       },
       {
-        "name": "AutoDetected_2042678f-7c53-41a8-89be-4145d118a3a9",
-        "fromColumn": "ID_UNIDADE_SUP",
-        "fromTable": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-        "toColumn": "ID_UNIDADE_SUP",
-        "toTable": "V_PRPGP_PROGRAMAS_POS"
-      },
-      {
-        "name": "AutoDetected_0a4583f4-c9be-4e63-bae8-78ba9f8b22bb",
-        "crossFilteringBehavior": "bothDirections",
-        "fromColumn": "ID_PROJETO",
-        "fromTable": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-        "toColumn": "ID_PROJETO",
-        "toTable": "V_PRPGP_PROJETOS_POS"
-      },
-      {
-        "name": "259436b9-de84-96d3-84e1-4b613cc80ae7",
-        "fromColumn": "Data referência",
-        "fromTable": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-        "isActive": false,
+        "name": "9aa63a5f-2607-e582-7a92-3cb937ccdbb0",
+        "fromColumn": "Data ingresso",
+        "fromTable": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
         "toColumn": "Data",
         "toTable": "dCalendario"
       },
       {
-        "name": "9aa63a5f-2607-e582-7a92-3cb937ccdbb0",
-        "fromColumn": "Data ingresso",
-        "fromTable": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+        "name": "42064d46-ed43-d772-4ea9-8520bd7095de",
+        "fromColumn": "ID_CURSO_ALUNO",
+        "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+        "isActive": false,
+        "toColumn": "ID_CURSO_ALUNO",
+        "toTable": "V_PRPGP_DISCENTES_POS"
+      },
+      {
+        "name": "7af95503-459d-dd1f-606a-8fc5e09b78a6",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "ID_PROJETO",
+        "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+        "toColumn": "ID_PROJETO",
+        "toTable": "V_PRPGP_PROJETOS_POS"
+      },
+      {
+        "name": "AutoDetected_1ea761ae-75ac-4a79-b55a-99a1616852ab",
+        "fromColumn": "ID_UNIDADE_SUP",
+        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+        "toColumn": "ID_UNIDADE_SUP",
+        "toTable": "V_PRPGP_PROGRAMAS_POS"
+      },
+      {
+        "name": "AutoDetected_a4ff7afb-3536-4322-bf18-aa984cc30fc9",
+        "fromColumn": "ID_CONTRATO_RH",
+        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+        "toColumn": "ID_CONTRATO_RH",
+        "toTable": "V_PRPGP_DOCENTES_POS"
+      },
+      {
+        "name": "7d1d3f37-b8a8-c591-1e06-0e87983378bd",
+        "fromColumn": "ID_UNIDADE_SUP",
+        "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+        "toColumn": "ID_UNIDADE_SUP",
+        "toTable": "V_PRPGP_PROGRAMAS_POS"
+      },
+      {
+        "name": "aea674f0-d6b3-401b-37c1-becfe0de6fab",
+        "fromColumn": "ID_CONTRATO_RH",
+        "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+        "toColumn": "ID_CONTRATO_RH",
+        "toTable": "V_PRPGP_DOCENTES_POS"
+      },
+      {
+        "name": "3ec21ba9-5fdd-9dbf-ff23-97b63356a33c",
+        "fromColumn": "Data referência",
+        "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
         "toColumn": "Data",
         "toTable": "dCalendario"
       }
@@ -10118,50 +8595,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Data início",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isDateTimeCustom\":true}"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "dd/mm/yyyy",
-            "lineageTag": "83776a89-c68d-46f0-beb8-87f707faf7c1",
-            "sourceColumn": "Data início",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data fim",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isDateTimeCustom\":true}"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "dd/mm/yyyy",
-            "lineageTag": "60769411-8234-4a76-a5c8-2fee20147a57",
-            "sourceColumn": "Data fim",
-            "summarizeBy": "none"
-          },
-          {
             "name": "Ano início",
             "annotations": [
               {
@@ -10191,37 +8624,6 @@
           }
         ],
         "lineageTag": "677f56a3-689a-42ce-9af8-a01945892b3e",
-        "measures": [
-          {
-            "name": "Ano projeto dentro do intervalo",
-            "expression": [
-              "",
-              "    VAR SelectedYears = VALUES(dCalendario[Ano])  -- Get the selected years from dCalendario",
-              "    VAR ProjectStartYear = YEAR(MIN(V_PRPGP_PROJETOS_POS[Data início]))  -- Project start year",
-              "    VAR ProjectEndYear = YEAR(MAX(V_PRPGP_PROJETOS_POS[Data fim]))  -- Project end year",
-              "    VAR YearsInRange = FILTER(SelectedYears, [Ano] >= ProjectStartYear && [Ano] <= ProjectEndYear)  ",
-              "    -- Check overlap",
-              "    RETURN IF(COUNTROWS(YearsInRange) > 0, 1, 0)  -- Return 1 if there is any overlap, otherwise 0"
-            ],
-            "formatString": "0",
-            "lineageTag": "afeddb9c-c20c-4806-8e44-a983594e7030"
-          },
-          {
-            "name": "Programa participa do projeto",
-            "expression": [
-              "COUNTROWS(",
-              "    FILTER(",
-              "        V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO,",
-              "        COUNTROWS(",
-              "            RELATEDTABLE(V_PRPGP_PROGRAMAS_POS)",
-              "        ) > 0",
-              "    )",
-              ")"
-            ],
-            "formatString": "0",
-            "lineageTag": "6829761f-1da5-448b-9f2d-349281638959"
-          }
-        ],
         "partitions": [
           {
             "name": "V_PRPGP_PROJETOS_POS",
@@ -10234,159 +8636,10 @@
                 "    V_PRPGP_PROJETOS_POS1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS\"]}[Data],",
                 "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_PROJETOS_POS1,{{\"CLASSIFICACAO\", \"Classificação projeto\"}, {\"DT_INICIAL\", \"Data início\"}, {\"DT_CONCLUSAO\", \"Data fim\"}, {\"NUM_PROCESSO\", \"Número processo\"}, {\"SITUACAO\", \"Situação\"}, {\"TITULO\", \"Título\"}}),",
                 "    #\"Inserted Year\" = Table.AddColumn(#\"Renamed Columns\", \"Ano início\", each Date.Year([Data início]), Int64.Type),",
-                "    #\"Inserted Year1\" = Table.AddColumn(#\"Inserted Year\", \"Ano fim\", each Date.Year([Data fim]), Int64.Type)",
+                "    #\"Inserted Year1\" = Table.AddColumn(#\"Inserted Year\", \"Ano fim\", each Date.Year([Data fim]), Int64.Type),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Inserted Year1\",{\"Data início\", \"Data fim\"})",
                 "in",
-                "    #\"Inserted Year1\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "PM_PROJETOS_PARTICIPANTES",
-        "annotations": [
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          }
-        ],
-        "columns": [
-          {
-            "name": "ID_PROJETO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "03609f5b-6723-42f2-b576-2e9869142312",
-            "sourceColumn": "ID_PROJETO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_CURSO_ALUNO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "f8659a22-8d5d-4439-a76a-5a1cf74a3fa8",
-            "sourceColumn": "ID_CURSO_ALUNO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_CONTRATO_RH",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "aed58778-1b04-44ae-a0d4-2c2f089bdd7a",
-            "sourceColumn": "ID_CONTRATO_RH",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data fim participação",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "lineageTag": "b028f736-2d18-4ece-827c-eec0f853c1b1",
-            "sourceColumn": "Data fim participação",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data início participação",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "lineageTag": "e055cf4c-9108-4dd3-891a-593e3001920b",
-            "sourceColumn": "Data início participação",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "950b6f7d-ac16-480e-8d4f-f2b182be4411",
-        "measures": [
-          {
-            "name": "Ano participação dentro do intervalo",
-            "expression": [
-              "",
-              "VAR YearToCheck = SELECTEDVALUE(dCalendario[Ano])  -- Get the year from the Calendar table",
-              "VAR StartYear = YEAR(MIN([Data início participação]))  -- Get the year of the start date",
-              "VAR EndYear = YEAR(MAX([Data fim participação]))  -- Get the year of the end date",
-              "RETURN ",
-              "IF(",
-              "    YearToCheck >= StartYear && YearToCheck <= EndYear, ",
-              "    1, ",
-              "    0",
-              ")",
-              ""
-            ],
-            "formatString": "0",
-            "lineageTag": "420f0c4f-44f2-451f-a883-6e8b2ef83ba2"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "PM_PROJETOS_PARTICIPANTES",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
-                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    PM_PROJETOS_PARTICIPANTES1 = BEE{[Name=\"PM_PROJETOS_PARTICIPANTES\"]}[Data],",
-                "    #\"Renamed Columns\" = Table.RenameColumns(PM_PROJETOS_PARTICIPANTES1,{{\"DT_FINAL\", \"Data fim participação\"}, {\"DT_INICIAL\", \"Data início participação\"}})",
-                "in",
-                "    #\"Renamed Columns\""
+                "    #\"Removed Columns\""
               ],
               "type": "m"
             }
@@ -11839,160 +10092,6 @@
         ]
       },
       {
-        "name": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "ID_PROJETO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "90153ea3-e085-45a0-a7ab-0a8f72f4bfc9",
-            "sourceColumn": "ID_PROJETO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_UNIDADE_SUP",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "bb28481c-fcf4-4054-8259-515b22fcd8b5",
-            "sourceColumn": "ID_UNIDADE_SUP",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Função no projeto",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "ad045642-44d6-4129-88ff-334d99af382b",
-            "sourceColumn": "Função no projeto",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ano inicial participação",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "c8f850b3-e7a1-41a3-a139-953cd60959bc",
-            "sourceColumn": "Ano inicial participação",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ano final participação",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "5dfd3913-89c5-438e-971b-10e6053c0fe7",
-            "sourceColumn": "Ano final participação",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ano referência",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "76e15492-efcd-4eeb-9019-b5d8c1475e6f",
-            "sourceColumn": "Ano referência",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data referência",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "isHidden": true,
-            "lineageTag": "938a3950-2a5f-401e-be0e-fb79ca119f7d",
-            "sourceColumn": "Data referência",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "94e4e9ae-0e6c-47eb-868b-fef9ff06447b",
-        "partitions": [
-          {
-            "name": "V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
-                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO\"]}[Data],",
-                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_PROJETOS_POS_ORGAOS_FLUXO1, \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_FINAL\", \"Ano final participação\"}, {\"ANO_INICIAL\", \"Ano inicial participação\"}, {\"ANO_REFERENCIA\", \"Ano referência\"}, {\"FUNCAO\", \"Função no projeto\"}})",
-                "in",
-                "    #\"Renamed Columns\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
         "name": "BOLSAS_CNPQ_2023",
         "annotations": [
           {
@@ -12333,6 +10432,320 @@
                 "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Planilha1_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}})",
                 "in",
                 "    #\"Tipo Alterado\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID_PROJETO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "0a24e418-7277-464c-8888-c3b7871ea998",
+            "sourceColumn": "ID_PROJETO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_CONTRATO_RH",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "80c5cb7b-1447-4061-92cb-677ceb2c5f6d",
+            "sourceColumn": "ID_CONTRATO_RH",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_CURSO_ALUNO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "0ec99814-6b85-46c6-9ff5-78e49d61e879",
+            "sourceColumn": "ID_CURSO_ALUNO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano inicial participação",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "134556cb-e30b-47e9-bfe5-1dace86850bf",
+            "sourceColumn": "Ano inicial participação",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano final participação",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b26533d2-6bd6-4083-8d71-9bcaa2425940",
+            "sourceColumn": "Ano final participação",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano referência",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e8bc2a21-e2bc-45aa-a1f5-75ac0af12ecb",
+            "sourceColumn": "Ano referência",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_UNIDADE_SUP",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "074a7b87-380e-482c-a4cc-cb4db9236b96",
+            "sourceColumn": "ID_UNIDADE_SUP",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Função",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e23a7f07-8b41-4239-8c0f-a6867ab59add",
+            "sourceColumn": "Função",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Data referência",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isHidden": true,
+            "lineageTag": "22582e70-3b7a-47c0-bc12-f58e6b73e4ea",
+            "sourceColumn": "Data referência",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "724ffb41-eefb-4bfc-b372-e3cfd58dc808",
+        "partitions": [
+          {
+            "name": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO1 = BEE{[Name=\"V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO1,{{\"ANO_REFERENCIA\", \"Ano referência\"}, {\"ANO_FINAL\", \"Ano final participação\"}, {\"ANO_INICIAL\", \"Ano inicial participação\"}, {\"FUNCAO\", \"Função\"}}),",
+                "    #\"Inserted Date\" = Table.AddColumn(#\"Renamed Columns\", \"Data referência\", each Date.From(Text.From([Ano referência], \"pt-BR\")), type date)",
+                "in",
+                "    #\"Inserted Date\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+        "columns": [
+          {
+            "name": "ID_CONTRATO_RH",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e1fb14ef-8b77-41a8-90bf-453de613a8f7",
+            "sourceColumn": "ID_CONTRATO_RH",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_UNIDADE_SUP",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "af38dd88-519e-4222-bb62-750cd58f389f",
+            "sourceColumn": "ID_UNIDADE_SUP",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ID_PESSOA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "45dc7560-67de-41fc-a16e-7a4244c19a20",
+            "sourceColumn": "ID_PESSOA",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "TIPO_VINCULO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5e99c832-45d2-470d-a142-d428c5428392",
+            "sourceColumn": "TIPO_VINCULO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ANO_INICIAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0a26d314-adce-4cc8-a8bf-60dc3e877ee9",
+            "sourceColumn": "ANO_INICIAL",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ANO_FINAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d0194b97-ba7f-4f14-8d5b-c0d77f994408",
+            "sourceColumn": "ANO_FINAL",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ANO_REFERENCIA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3cff4a2f-7813-4345-b50a-fb05379f8ae5",
+            "sourceColumn": "ANO_REFERENCIA",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "e0e41ed3-cfbf-4bb0-be75-974e4050791b",
+        "partitions": [
+          {
+            "name": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1 = BEE{[Name=\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]}[Data]",
+                "in",
+                "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1"
               ],
               "type": "m"
             }
