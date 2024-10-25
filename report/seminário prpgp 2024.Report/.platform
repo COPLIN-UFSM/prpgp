@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "seminário prpgp 2024"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c08554db-5685-4ea2-a2b1-c4626d3156be"
+  }
+}

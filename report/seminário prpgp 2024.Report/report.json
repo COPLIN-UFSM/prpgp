@@ -128,7 +128,7 @@
           {
             "name": "UFSM7504586235991428.json",
             "path": "UFSM7504586235991428.json",
-            "type": 201
+            "type": 100
           }
         ],
         "name": "RegisteredResources",
@@ -215,7 +215,7 @@
           "z": 6000.00
         },
         {
-          "config": "{\"name\":\"9a83327b62056c7fdd99\",\"layouts\":[{\"id\":0,\"position\":{\"x\":596.6666666666667,\"y\":223.33333333333334,\"z\":9000,\"width\":850,\"height\":850,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"ImageCarouselByMAQSoftware1448688110701\",\"projections\":{\"ImageData\":[{\"queryRef\":\"Links Imagens.Column2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Links Imagens\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Column2\"},\"Name\":\"Links Imagens.Column2\",\"NativeReferenceName\":\"Column2\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"carouselProperties\":[{\"properties\":{\"autoNavigationSettings\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"zoomOnHover\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"spaceBetweenImages\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "config": "{\"name\":\"9a83327b62056c7fdd99\",\"layouts\":[{\"id\":0,\"position\":{\"x\":596.6666666666667,\"y\":223.33333333333334,\"z\":9000,\"width\":850,\"height\":850,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"ImageCarouselByMAQSoftware1448688110701\",\"projections\":{\"ImageData\":[{\"queryRef\":\"Links Imagens.Link\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Links Imagens\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Link\"},\"Name\":\"Links Imagens.Link\",\"NativeReferenceName\":\"Link\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"carouselProperties\":[{\"properties\":{\"autoNavigationSettings\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"zoomOnHover\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"spaceBetweenImages\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
           "filters": "[]",
           "height": 850.00,
           "width": 850.00,

@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"BOLSAS_CNPQ_2023\",\"Links Imagens\",\"V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\",\"Links Imagens\",\"BOLSAS_CNPQ_2023\",\"SOURCE_BOLSAS_CNPQ_2023\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -7486,6 +7486,45 @@
       "returnErrorValuesAsNull": true
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "SOURCE_BOLSAS_CNPQ_2023",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://cpdufsm-my.sharepoint.com/personal/henry_cagnini_ufsm_br1/Documents/prpgp/cnpq_bolsas_2023.xlsx\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "a25afa09-2e60-4391-8370-49c141ac7e22",
+        "queryGroup": "Parameters"
+      }
+    ],
+    "queryGroups": [
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "Parameters"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "1"
+          }
+        ],
+        "folder": "Spreadsheets"
+      }
+    ],
     "relationships": [
       {
         "name": "1112f5ab-f756-8bb5-c47d-69e03ad65564",
@@ -8605,6 +8644,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -9235,9 +9278,10 @@
                 "    V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1 = BEE{[Name=\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\"]}[Data],",
                 "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS1, \"Data ingresso\", each Date.From(Text.From([ANO_INGRESSO], \"pt-BR\")), type date),",
                 "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"ANO_CONCURSO\", \"Ano concurso\"}, {\"CANDIDATOS_INSCRITOS\", \"Inscritos\"}, {\"CANDIDATOS_MATRICULADOS\", \"Matriculados\"}, {\"DESCR_CONC_EDICAO\", \"Edição concurso\"}, {\"DESCR_CONCURSO\", \"Concurso\"}, {\"DESCR_COTA\", \"Cota\"}, {\"VAGAS_OFERECIDAS\", \"Vagas ofertadas\"}, {\"CURSO_VAGA\", \"Curso vaga\"}, {\"CANDIDATOS_CLASSIFICADOS\", \"Classificados\"}, {\"CONC_EDITAL\", \"Concurso edital\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"CANDIDATOS_CLASSIFICADOS_PCD\", \"CANDIDATOS_CLASSIFICADOS_PPI\", \"CANDIDATOS_INSCRITOS_PCD\", \"CANDIDATOS_INSCRITOS_PPI\", \"CANDIDATOS_MATRICULADOS_PCD\", \"CANDIDATOS_MATRICULADOS_PPI\", \"NOME_CURSO\"})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"CANDIDATOS_CLASSIFICADOS_PCD\", \"CANDIDATOS_CLASSIFICADOS_PPI\", \"CANDIDATOS_INSCRITOS_PCD\", \"CANDIDATOS_INSCRITOS_PPI\", \"CANDIDATOS_MATRICULADOS_PCD\", \"CANDIDATOS_MATRICULADOS_PPI\", \"NOME_CURSO\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Columns\", each ([Ano ingresso] <> null and [Ano ingresso] <> 0))",
                 "in",
-                "    #\"Removed Columns\""
+                "    #\"Filtered Rows\""
               ],
               "type": "m"
             }
@@ -10045,355 +10089,6 @@
         ]
       },
       {
-        "name": "BOLSAS_CNPQ_2023",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "ANO_REFERENCIA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "685b5d1e-292f-48df-84e9-6ddd7c71ea7d",
-            "sourceColumn": "ANO_REFERENCIA",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "PROCESSO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "e6c38ff8-4dbb-44a4-9f7e-84537322e5d3",
-            "sourceColumn": "PROCESSO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Beneficiário",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "e48c1d28-0048-4295-8843-787042750e34",
-            "sourceColumn": "Beneficiário",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "CPF",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "6a4328fc-42cb-4a95-91a4-a45081de8670",
-            "sourceColumn": "CPF",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Linha fomento",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "32d4772e-de7f-4c15-af09-c3691342b3f7",
-            "sourceColumn": "Linha fomento",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Modalidade",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "178ab5e3-de37-49f6-b672-9452d3580d17",
-            "sourceColumn": "Modalidade",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "CATEGORIA_NIVEL",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "4c7e2a1e-a407-47e1-aaa1-3c20000ed594",
-            "sourceColumn": "CATEGORIA_NIVEL",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Chamada",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "9262c9da-33e2-42d7-99ee-4cf603f85755",
-            "sourceColumn": "Chamada",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "PROGRAMA_CNPQ",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "1e99fcc7-c425-4ba0-8c8c-328d1dab280c",
-            "sourceColumn": "PROGRAMA_CNPQ",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "GRANDE_AREA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "642fb35f-89db-4945-a8bf-204cc63b2471",
-            "sourceColumn": "GRANDE_AREA",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "AREA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "094c6a7b-4dd0-474d-810d-b8a968a2ff99",
-            "sourceColumn": "AREA",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "SUBAREA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "a18bccb5-45e5-42b6-974c-1b6a12e54c4d",
-            "sourceColumn": "SUBAREA",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Instituição destino",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "fbcc1b2d-28fb-4733-95f6-faf4c4f44059",
-            "sourceColumn": "Instituição destino",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Instituição destino (sigla)",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "40529cbd-1551-411a-bc3f-3537cec64eab",
-            "sourceColumn": "Instituição destino (sigla)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "REGIAO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "72242c0b-7de3-46df-8725-00820a4377ca",
-            "sourceColumn": "REGIAO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Projeto",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "18cd3761-1a95-43f9-bd6a-b05b19c2e93d",
-            "sourceColumn": "Projeto",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Auxílio",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "9cd4423d-4290-4a93-b6a7-f54a7b8a2f58",
-            "sourceColumn": "Auxílio",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data referência",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "isHidden": true,
-            "lineageTag": "335212e1-cb80-4fd1-b6d3-e73ecb84a162",
-            "sourceColumn": "Data referência",
-            "summarizeBy": "none"
-          }
-        ],
-        "excludeFromModelRefresh": true,
-        "lineageTag": "62cf5eab-6b7e-476f-b8c7-6f546cb05133",
-        "partitions": [
-          {
-            "name": "BOLSAS_CNPQ_2023",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\henry\\Projects\\COPLIN-UFSM\\prpgp\\data\\cnpq_bolsas_2023.xlsx\"), null, true),",
-                "    #\"Dados de Pagamento 2023_Sheet\" = Source{[Item=\"Dados de Pagamento 2023\",Kind=\"Sheet\"]}[Data],",
-                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Dados de Pagamento 2023_Sheet\", [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ANO_REFERENCIA\", Int64.Type}, {\"PROCESSO\", type text}, {\"DATA_INICIO_PROCESSO\", Int64.Type}, {\"DATA_TERMINO_PROCESSO\", Int64.Type}, {\"BENEFICIARIO\", type text}, {\"NU_CPF\", type text}, {\"LINHA_FOMENTO\", type text}, {\"MODALIDADE\", type text}, {\"CATEGORIA_NIVEL\", type text}, {\"NOME_CHAMADA\", type text}, {\"PROGRAMA_CNPQ\", type text}, {\"GRANDE_AREA\", type text}, {\"AREA\", type text}, {\"SUBAREA\", type text}, {\"INSTITUICAO_ORIGEM\", type text}, {\"SIGLA_UF_ORIGEM\", type text}, {\"PAIS_ORIGEM\", type text}, {\"INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_MACRO\", type text}, {\"CIDADE_DESTINO\", type text}, {\"SIGLA_UF_DESTINO\", type text}, {\"REGIAO\", type text}, {\"PAIS_DESTINO\", type text}, {\"TITULO_PROJETO\", type text}, {\"PALAVRA_CHAVE\", type text}, {\"VALOR_PAGO\", type number}}),",
-                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each ([SIGLA_INSTITUICAO_MACRO] = \"UFSM\")),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Filtered Rows\",{\"DATA_INICIO_PROCESSO\", \"DATA_TERMINO_PROCESSO\", \"INSTITUICAO_ORIGEM\", \"SIGLA_UF_ORIGEM\", \"PAIS_ORIGEM\", \"SIGLA_INSTITUICAO_MACRO\", \"CIDADE_DESTINO\", \"SIGLA_UF_DESTINO\", \"PAIS_DESTINO\", \"PALAVRA_CHAVE\"}),",
-                "    #\"Inserted Date\" = Table.AddColumn(#\"Removed Columns\", \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"NU_CPF\", \"CPF\"}, {\"BENEFICIARIO\", \"Beneficiário\"}, {\"INSTITUICAO_DESTINO\", \"Instituição destino\"}, {\"SIGLA_INSTITUICAO_DESTINO\", \"Instituição destino (sigla)\"}, {\"VALOR_PAGO\", \"Auxílio\"}, {\"MODALIDADE\", \"Modalidade\"}, {\"LINHA_FOMENTO\", \"Linha fomento\"}, {\"TITULO_PROJETO\", \"Projeto\"}, {\"NOME_CHAMADA\", \"Chamada\"}})",
-                "in",
-                "    #\"Renamed Columns\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Links Imagens",
-        "annotations": [
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Column1",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "3e072818-52e6-48ef-8d3d-74b31db396c4",
-            "sourceColumn": "Column1",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Column2",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "4ae10269-ff79-4542-a0d8-f6a1992d11e7",
-            "sourceColumn": "Column2",
-            "summarizeBy": "none"
-          }
-        ],
-        "excludeFromModelRefresh": true,
-        "lineageTag": "b4ceb20e-e94e-4a29-b4fe-27a382f5784a",
-        "partitions": [
-          {
-            "name": "Links Imagens",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Fonte = Excel.Workbook(File.Contents(\"C:\\Users\\henry\\Projects\\COPLIN-UFSM\\prpgp\\report\\arte\\Links Cartões.xlsx\"), null, true),",
-                "    Planilha1_Sheet = Fonte{[Item=\"Planilha1\",Kind=\"Sheet\"]}[Data],",
-                "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Planilha1_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}})",
-                "in",
-                "    #\"Tipo Alterado\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
         "name": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
         "annotations": [
           {
@@ -10701,6 +10396,348 @@
                 "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1 = BEE{[Name=\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]}[Data]",
                 "in",
                 "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Links Imagens",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Card",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b62a24d4-c064-4cf0-8d0f-1b73639f53c3",
+            "sourceColumn": "Card",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Link",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8c78d64a-62ae-4cf8-964a-1f48c7863b51",
+            "sourceColumn": "Link",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "63ca4866-327c-40d2-b1b8-5fd36bd8be9a",
+        "partitions": [
+          {
+            "name": "Links Imagens",
+            "mode": "import",
+            "queryGroup": "Spreadsheets",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WCshJzEvNSsxNzSvJV9JRyigpKSi20tfP1MvMTS8t0kvOz9WPqopILfUN0CvIS1eK1QFqyc85vLYkMzmxGIeG8ORsiyTXULgGz9yCxOSSfAXn/LLMFBx6CrLdw9yT3TH0uOYlZwDdlorLrmKjVBe30iyE44ryk1OLi/NxqS/yL8hzTfeDqI8FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Card = _t, Link = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Card\", type text}, {\"Link\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "BOLSAS_CNPQ_2023",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ANO_REFERENCIA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9a9e6e24-3298-4d22-ab52-a7d4fe004389",
+            "sourceColumn": "ANO_REFERENCIA",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "PROCESSO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c147eb4a-e96b-4ad1-a0e2-e7d42e6cb908",
+            "sourceColumn": "PROCESSO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Beneficiário",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "39ac0504-4eb1-4f63-a975-04c7c33b1a31",
+            "sourceColumn": "Beneficiário",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CPF",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8cc7e18a-d687-4b33-8b9b-5ed15cdcb698",
+            "sourceColumn": "CPF",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Linha fomento",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "72cbb2a1-d640-4c83-9796-e95b3361d85d",
+            "sourceColumn": "Linha fomento",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Modalidade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0047843e-30e5-42b0-86f9-2de7372517a3",
+            "sourceColumn": "Modalidade",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CATEGORIA_NIVEL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "310e16fb-d352-4f83-870d-1833d19b6a51",
+            "sourceColumn": "CATEGORIA_NIVEL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Chamada",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7791a717-a248-4adf-88e4-a6e123114759",
+            "sourceColumn": "Chamada",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PROGRAMA_CNPQ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ec64cde1-d538-462f-ba2d-7ad704f7dfd3",
+            "sourceColumn": "PROGRAMA_CNPQ",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "GRANDE_AREA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "26999d91-9e3b-46be-8d70-44946a438a6c",
+            "sourceColumn": "GRANDE_AREA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AREA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "134761f8-0006-4a1b-906a-43e4f1f8ccb6",
+            "sourceColumn": "AREA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SUBAREA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5c069fab-bfbc-4680-8d33-c7d2627d4300",
+            "sourceColumn": "SUBAREA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Instituição destino",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "38440dbe-5a90-4109-b0a6-eaa8efa97e1e",
+            "sourceColumn": "Instituição destino",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Instituição destino (sigla)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "97a8fe30-2a6b-4b34-844b-3721259d4cc7",
+            "sourceColumn": "Instituição destino (sigla)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "REGIAO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "acbfa3d0-6900-44c1-8c42-1428a7df4112",
+            "sourceColumn": "REGIAO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Projeto",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4021cbb5-1c22-466c-8130-d606ed80e260",
+            "sourceColumn": "Projeto",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Auxílio",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "fffe4a3f-ae85-4401-81f8-d54d435cdfed",
+            "sourceColumn": "Auxílio",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Data referência",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "aeb78346-5661-4a0d-aa55-d605163670ec",
+            "sourceColumn": "Data referência",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "34124e31-922b-4155-a7aa-1adf6421c4d1",
+        "partitions": [
+          {
+            "name": "BOLSAS_CNPQ_2023",
+            "mode": "import",
+            "queryGroup": "Spreadsheets",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(Web.Contents(SOURCE_BOLSAS_CNPQ_2023), null, true),",
+                "    #\"Dados de Pagamento 2023_Sheet\" = Source{[Item=\"Dados de Pagamento 2023\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Dados de Pagamento 2023_Sheet\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ANO_REFERENCIA\", Int64.Type}, {\"PROCESSO\", type text}, {\"DATA_INICIO_PROCESSO\", Int64.Type}, {\"DATA_TERMINO_PROCESSO\", Int64.Type}, {\"BENEFICIARIO\", type text}, {\"NU_CPF\", type text}, {\"LINHA_FOMENTO\", type text}, {\"MODALIDADE\", type text}, {\"CATEGORIA_NIVEL\", type text}, {\"NOME_CHAMADA\", type text}, {\"PROGRAMA_CNPQ\", type text}, {\"GRANDE_AREA\", type text}, {\"AREA\", type text}, {\"SUBAREA\", type text}, {\"INSTITUICAO_ORIGEM\", type text}, {\"SIGLA_UF_ORIGEM\", type text}, {\"PAIS_ORIGEM\", type text}, {\"INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_DESTINO\", type text}, {\"SIGLA_INSTITUICAO_MACRO\", type text}, {\"CIDADE_DESTINO\", type text}, {\"SIGLA_UF_DESTINO\", type text}, {\"REGIAO\", type text}, {\"PAIS_DESTINO\", type text}, {\"TITULO_PROJETO\", type text}, {\"PALAVRA_CHAVE\", type text}, {\"VALOR_PAGO\", type number}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each ([SIGLA_INSTITUICAO_MACRO] = \"UFSM\")),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Filtered Rows\",{\"DATA_INICIO_PROCESSO\", \"DATA_TERMINO_PROCESSO\", \"INSTITUICAO_ORIGEM\", \"SIGLA_UF_ORIGEM\", \"PAIS_ORIGEM\", \"SIGLA_INSTITUICAO_MACRO\", \"CIDADE_DESTINO\", \"SIGLA_UF_DESTINO\", \"PAIS_DESTINO\", \"PALAVRA_CHAVE\"}),",
+                "    #\"Inserted Date\" = Table.AddColumn(#\"Removed Columns\", \"Data referência\", each Date.From(Text.From([ANO_REFERENCIA], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"NU_CPF\", \"CPF\"}, {\"BENEFICIARIO\", \"Beneficiário\"}, {\"INSTITUICAO_DESTINO\", \"Instituição destino\"}, {\"SIGLA_INSTITUICAO_DESTINO\", \"Instituição destino (sigla)\"}, {\"VALOR_PAGO\", \"Auxílio\"}, {\"MODALIDADE\", \"Modalidade\"}, {\"LINHA_FOMENTO\", \"Linha fomento\"}, {\"TITULO_PROJETO\", \"Projeto\"}, {\"NOME_CHAMADA\", \"Chamada\"}})",
+                "in",
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
