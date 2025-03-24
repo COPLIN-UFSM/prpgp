@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1203.0 (24.11)"
+        "value": "2.140.1476.0 (25.02)+e8c6a85d1d09735c5c055c3244a60ff4076cd2cf"
       },
       {
         "name": "PBI_ProTooling",
@@ -7496,7 +7496,7 @@
           },
           {
             "name": "PBI_ResultType",
-            "value": "Text"
+            "value": "Exception"
           }
         ],
         "expression": "\"https://cpdufsm-my.sharepoint.com/personal/henry_cagnini_ufsm_br1/Documents/prpgp/cnpq_bolsas_2023.xlsx\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
@@ -8992,12 +8992,12 @@
             "mode": "import",
             "source": {
               "expression": [
-                "ADDCOLUMNS (",
-                "    CALENDAR(",
-                "        min(V_PRPGP_DOCENTES_POS[Data admissão]), ",
-                "        (TODAY())",
-                "    ),",
-                "    \"Ano\", YEAR ([Date])",
+                "ADDCOLUMNS (\r",
+                "    CALENDAR(\r",
+                "        min(V_PRPGP_DOCENTES_POS[Data admissão]), \r",
+                "        (TODAY())\r",
+                "    ),\r",
+                "    \"Ano\", YEAR ([Date])\r",
                 ")"
               ],
               "type": "calculated"
