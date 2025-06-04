@@ -25,6 +25,7 @@ def carrega_arquivo(credentials, *, arquivo):
                             )
             for index, row in tqdm(list(df.iterrows()), 'Carregando dados'):
                 data_objeto = get_data_ingresso(row['DT_MATRICULA_DISCENTE'])
+                codigo_emec = row['CD_ENTIDADE_EMEC']
 
                 db2_conn.insert('BEE.DISCENTES_POS_GRADUACAO_SUCUPIRA',
                                 {
@@ -32,7 +33,7 @@ def carrega_arquivo(credentials, *, arquivo):
                                     'COD_AREA_AVALIACAO': row['CD_AREA_AVALIACAO'],
                                     'NOME_AREA_AVALIACAO': row['NM_AREA_AVALIACAO'],
                                     'COD_CAPES_IES': row['CD_ENTIDADE_CAPES'],
-                                    'COD_EMEC_IES': row['CD_ENTIDADE_EMEC'],
+                                    'COD_EMEC_IES': None if (codigo_emec == "NI") else codigo_emec,
                                     'MODALIDADE': row['NM_MODALIDADE_PROGRAMA'],
                                     'COD_PROGRAMA': row['CD_PROGRAMA_IES'],
                                     'NOME_PROGRAMA': row['NM_PROGRAMA_IES'],
