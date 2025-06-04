@@ -5,6 +5,16 @@ from db2 import DB2Connection
 from tqdm import tqdm
 from datetime import datetime
 
+def get_data_ingresso(date_string):
+    #aceita ano com 2 ou 4 dígitos
+    formats = ['%d%b%Y:%H:%M:%S', '%d%b%y:%H:%M:%S']
+    for fmt in formats:
+        try:
+            return datetime.strptime(date_string, fmt)
+        except ValueError:
+            continue
+    raise ValueError(f"Unable to parse date: {date_string}")
+
 def carrega_arquivo(credentials, *, arquivo):
     with (DB2Connection(credentials) as db2_conn):
         with open('instance\\dados.csv', mode='rb') as f:
@@ -14,8 +24,7 @@ def carrega_arquivo(credentials, *, arquivo):
                             quotechar='"',
                             )
             for index, row in tqdm(list(df.iterrows()), 'Carregando dados'):
-                data_ingresso = row['DT_MATRICULA_DISCENTE']
-                data_objeto = datetime.strptime(data_ingresso, "%d%b%Y:%H:%M:%S")
+                data_objeto = get_data_ingresso(row['DT_MATRICULA_DISCENTE'])
 
                 db2_conn.insert('BEE.DISCENTES_POS_GRADUACAO_SUCUPIRA',
                                 {
