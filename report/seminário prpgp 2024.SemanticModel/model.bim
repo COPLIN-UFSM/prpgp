@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.140.1476.0 (25.02)+e8c6a85d1d09735c5c055c3244a60ff4076cd2cf"
+        "value": "2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4"
       },
       {
         "name": "PBI_ProTooling",
@@ -7496,7 +7496,7 @@
           },
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Text"
           }
         ],
         "expression": "\"https://cpdufsm-my.sharepoint.com/personal/henry_cagnini_ufsm_br1/Documents/prpgp/cnpq_bolsas_2023.xlsx\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
@@ -8992,12 +8992,12 @@
             "mode": "import",
             "source": {
               "expression": [
-                "ADDCOLUMNS (\r",
-                "    CALENDAR(\r",
-                "        min(V_PRPGP_DOCENTES_POS[Data admissão]), \r",
-                "        (TODAY())\r",
-                "    ),\r",
-                "    \"Ano\", YEAR ([Date])\r",
+                "ADDCOLUMNS (",
+                "    CALENDAR(",
+                "        min(V_PRPGP_DOCENTES_POS[Data admissão]), ",
+                "        (TODAY())",
+                "    ),",
+                "    \"Ano\", YEAR ([Date])",
                 ")"
               ],
               "type": "calculated"
@@ -9263,6 +9263,20 @@
             "lineageTag": "2d9ad3b6-4703-4956-9cda-ccd64f0792e6",
             "sourceColumn": "Data ingresso",
             "summarizeBy": "none"
+          },
+          {
+            "name": "APTOS_LISTA_ESPERA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "46bbcf80-e125-436b-b8e4-6c7fd211624f",
+            "sourceColumn": "APTOS_LISTA_ESPERA",
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "8bd13327-4213-43e5-962e-92172731b58a",
