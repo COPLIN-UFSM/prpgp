@@ -9268,8 +9268,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "46bbcf80-e125-436b-b8e4-6c7fd211624f",
             "sourceColumn": "APTOS_LISTA_ESPERA",
             "summarizeBy": "sum"
