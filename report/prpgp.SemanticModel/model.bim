@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_SCIVAL_AUTORES_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\",\"SOURCE_BOLSAS_CNPQ_2023\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"V_PRPGP_PROJETOS_POS\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\",\"SOURCE_BOLSAS_CNPQ_2023\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -21,6 +21,11 @@
         "name": "en-US",
         "linguisticMetadata": {
           "content": {
+            "Agents": {
+              "Internal": {
+                "Version": "1.1.0"
+              }
+            },
             "Entities": {
               "d_calendario": {
                 "Definition": {
@@ -171,33 +176,17 @@
                   }
                 ]
               },
-              "medida.candidatos_inscritos": {
+              "medida.classificados": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "Medidas",
-                    "ConceptualProperty": "Inscritos"
+                    "ConceptualProperty": "Classificados"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "candidatos inscritos": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "medida.candidatos_matriculados": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Medidas",
-                    "ConceptualProperty": "Matriculados"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "candidatos matriculados": {
+                    "classificados": {
                       "State": "Generated"
                     }
                   }
@@ -229,6 +218,70 @@
                   "Value": "Hidden"
                 }
               },
+              "medida.docente_pertence_ao_programa": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Medidas",
+                    "ConceptualProperty": "Docente pertence ao programa"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "docente pertence ao programa": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "medida.html": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Medidas",
+                    "ConceptualProperty": "HTML"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "html": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "medida.inscritos": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Medidas",
+                    "ConceptualProperty": "Inscritos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "inscritos": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "medida.matriculados": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Medidas",
+                    "ConceptualProperty": "Matriculados"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "matriculados": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "medida.número_orientandos": {
                 "Definition": {
                   "Binding": {
@@ -240,22 +293,6 @@
                 "Terms": [
                   {
                     "número orientandos": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "medida.pertence_ao_programa": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Medidas",
-                    "ConceptualProperty": "Docente pertence ao programa"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "docente pertence ao programa": {
                       "State": "Generated"
                     }
                   }
@@ -454,21 +491,21 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_credenciamento_docente": {
+              "v_prpgp_credenciamento_docente_fluxo": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
+                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "v prpgp credenciamento docente": {
+                    "v prpgp credenciamento docente fluxo": {
                       "State": "Generated"
                     }
                   },
                   {
-                    "V_PRPGP_CREDENCIAMENTO_DOCENTE": {
+                    "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO": {
                       "State": "Generated",
                       "Type": "Noun",
                       "Weight": 0.99
@@ -476,56 +513,122 @@
                   }
                 ]
               },
-              "v_prpgp_credenciamento_docente.ano_fim_atuacao_programa": {
+              "v_prpgp_credenciamento_docente_fluxo.ano": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-                    "ConceptualProperty": "ANO_FIM_ATUACAO_PROGRAMA"
+                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+                    "ConceptualProperty": "Ano"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "ano fim atuacao programa": {
+                    "ano": {
                       "State": "Generated"
-                    }
-                  },
-                  {
-                    "ANO_FIM_ATUACAO_PROGRAMA": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
                     }
                   }
                 ]
               },
-              "v_prpgp_credenciamento_docente.ano_inicio_atuacao_programa": {
+              "v_prpgp_credenciamento_docente_fluxo.data": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-                    "ConceptualProperty": "ANO_INICIO_ATUACAO_PROGRAMA"
+                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+                    "ConceptualProperty": "Data"
                   }
                 },
+                "SemanticType": "Time",
                 "State": "Generated",
                 "Terms": [
                   {
-                    "ano inicio atuacao programa": {
+                    "data": {
                       "State": "Generated"
                     }
                   },
                   {
-                    "ANO_INICIO_ATUACAO_PROGRAMA": {
+                    "date": {
                       "State": "Generated",
+                      "Weight": 0.7
+                    }
+                  },
+                  {
+                    "information": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
                       "Type": "Noun",
-                      "Weight": 0.99
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "fact": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "info": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "statistic": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "document": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.714
+                    }
+                  },
+                  {
+                    "figure": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.714
+                    }
+                  },
+                  {
+                    "record": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.714
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
-              "v_prpgp_credenciamento_docente.id_contrato_rh": {
+              "v_prpgp_credenciamento_docente_fluxo.id_contrato_rh": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
+                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
                     "ConceptualProperty": "ID_CONTRATO_RH"
                   }
                 },
@@ -588,73 +691,10 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_credenciamento_docente.id_credenciamento_docente": {
+              "v_prpgp_credenciamento_docente_fluxo.id_pessoa": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-                    "ConceptualProperty": "ID_CREDENCIAMENTO_DOCENTE"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id credenciamento docente": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_CREDENCIAMENTO_DOCENTE": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification credenciamento docente": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identity credenciamento docente": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identifier credenciamento docente": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "credential credenciamento docente": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_credenciamento_docente.id_pessoa": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
+                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
                     "ConceptualProperty": "ID_PESSOA"
                   }
                 },
@@ -718,12 +758,15 @@
                       "Weight": 0.582
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
-              "v_prpgp_credenciamento_docente.id_unidade_sup": {
+              "v_prpgp_credenciamento_docente_fluxo.id_unidade_sup": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
+                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
                     "ConceptualProperty": "ID_UNIDADE_SUP"
                   }
                 },
@@ -846,25 +889,18 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_credenciamento_docente.tipo_vinculo": {
+              "v_prpgp_credenciamento_docente_fluxo.tipo_de_vínculo": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-                    "ConceptualProperty": "TIPO_VINCULO"
+                    "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+                    "ConceptualProperty": "Tipo de Vínculo"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "tipo vinculo": {
+                    "tipo de vínculo": {
                       "State": "Generated"
-                    }
-                  },
-                  {
-                    "TIPO_VINCULO": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
                     }
                   }
                 ]
@@ -1217,7 +1253,23 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_discentes_pos.cod_curso": {
+              "v_prpgp_discentes_pos.cpf": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "CPF"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "cpf": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.código_curso": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
@@ -1324,7 +1376,10 @@
                       "Weight": 0.582
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_discentes_pos.forma_saída": {
                 "Definition": {
@@ -1686,6 +1741,38 @@
                   }
                 ]
               },
+              "v_prpgp_discentes_pos.quantidade_formados": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Quantidade Formados"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade formados": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.quantidade_matrículas": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Quantidade Matrículas"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade matrículas": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "v_prpgp_discentes_pos.situação_defesa": {
                 "Definition": {
                   "Binding": {
@@ -1779,6 +1866,22 @@
                   }
                 ]
               },
+              "v_prpgp_docentes_pos.anos_vinculado_ao_programa": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Anos vinculado ao programa"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "anos vinculado ao programa": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "v_prpgp_docentes_pos.cargo": {
                 "Definition": {
                   "Binding": {
@@ -1841,6 +1944,22 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.cpf": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "CPF"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "cpf": {
+                      "State": "Generated"
                     }
                   }
                 ]
@@ -2037,22 +2156,6 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_docentes_pos.docente_vinculado_dentro_do_intervalo": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-                    "ConceptualProperty": "Docente vinculado dentro do intervalo"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "docente vinculado dentro do intervalo": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
               "v_prpgp_docentes_pos.gênero": {
                 "Definition": {
                   "Binding": {
@@ -2239,6 +2342,136 @@
                   }
                 ]
               },
+              "v_prpgp_docentes_pos.professores_vinculados_5_anos": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Professores vinculados 5+ anos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "professores vinculados 5+ anos": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Professores 5 ou mais anos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.professores_vinculados_5_anos1": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Professores vinculados <5 anos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "professores vinculados <5 anos": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Professores até 5 anos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.quantidade_docentes_colaboradores": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Quantidade docentes colaboradores"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade docentes colaboradores": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Colaboradores": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.quantidade_docentes_permanentes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Quantidade docentes permanentes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade docentes permanentes": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Permanentes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.quantidade_docentes_visitantes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Quantidade docentes visitantes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade docentes visitantes": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Visitantes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "v_prpgp_docentes_pos.siape": {
                 "Definition": {
                   "Binding": {
@@ -2250,6 +2483,22 @@
                 "Terms": [
                   {
                     "siape": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.tempo_médio_de_permanência": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Tempo médio de permanência"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "tempo médio de permanência": {
                       "State": "Generated"
                     }
                   }
@@ -2289,6 +2538,22 @@
                       "State": "Generated",
                       "Type": "Noun",
                       "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_encargo_didatico_pos.ano_encargo": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Ano encargo"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "ano encargo": {
+                      "State": "Generated"
                     }
                   }
                 ]
@@ -2389,6 +2654,22 @@
                   "Value": "Hidden"
                 }
               },
+              "v_prpgp_encargo_didatico_pos.encargo_didático": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Encargo didático"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "encargo didático": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "v_prpgp_encargo_didatico_pos.id_contrato_rh": {
                 "Definition": {
                   "Binding": {
@@ -2454,6 +2735,70 @@
                 "Visibility": {
                   "Value": "Hidden"
                 }
+              },
+              "v_prpgp_encargo_didatico_pos.nível": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Nível"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "nível": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_encargo_didatico_pos.semestre": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Semestre"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "semestre": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_encargo_didatico_pos.soma_encargos": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Soma Encargos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "soma encargos": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_encargo_didatico_pos.tipo_encargo": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Tipo encargo"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "tipo encargo": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
               },
               "v_prpgp_membros_banca": {
                 "Definition": {
@@ -2764,7 +3109,7 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_membros_banca.nome_instituicao": {
+              "v_prpgp_membros_banca.nome_instituição": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA",
@@ -2793,20 +3138,10 @@
                     "nome participante": {
                       "State": "Generated"
                     }
-                  },
-                  {
-                    "Docente": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
                   }
                 ]
               },
-              "v_prpgp_membros_banca.sigla_instituicao": {
+              "v_prpgp_membros_banca.sigla_instituição": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA",
@@ -2870,7 +3205,7 @@
                   }
                 ]
               },
-              "v_prpgp_membros_banca.titulacao": {
+              "v_prpgp_membros_banca.titulação": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA",
@@ -3294,7 +3629,7 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_projetos_pos.número_processo_PENSIE": {
+              "v_prpgp_projetos_pos.número_processo": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_PROJETOS_POS",
@@ -3342,28 +3677,28 @@
                   }
                 ]
               },
-              "v_prpgp_scival_autores_metrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "v prpgp scival autores metrica": {
+                    "v prpgp projetos pos participantes fluxo": {
                       "State": "Generated"
                     }
                   },
                   {
-                    "v prpgp scival autore metrica": {
+                    "v prpgp projeto pos participante fluxo": {
                       "State": "Generated",
                       "Type": "Noun",
                       "Weight": 0.78
                     }
                   },
                   {
-                    "V_PRPGP_SCIVAL_AUTORES_METRICAS": {
+                    "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO": {
                       "State": "Generated",
                       "Type": "Noun",
                       "Weight": 0.99
@@ -3371,96 +3706,66 @@
                   }
                 ]
               },
-              "v_prpgp_scival_autores_metrica.ID_scopus": {
+              "v_prpgp_projetos_pos_participantes_fluxo.ano_final_participação": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "ID Scopus"
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "Ano final participação"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "ID scopus": {
+                    "ano final participação": {
                       "State": "Generated"
-                    }
-                  },
-                  {
-                    "scopus": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "identification scopus": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identity scopus": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identifier scopus": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "credential scopus": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
                     }
                   }
                 ]
               },
-              "v_prpgp_scival_autores_metrica.ano_métrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo.ano_inicial_participação": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "Ano Métrica"
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "Ano inicial participação"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "ano métrica": {
+                    "ano inicial participação": {
                       "State": "Generated"
                     }
                   }
                 ]
               },
-              "v_prpgp_scival_autores_metrica.data_coleta_métrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo.ano_referência": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "Data coleta métrica"
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "Ano referência"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "ano referência": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_projetos_pos_participantes_fluxo.data_referência": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "Data referência"
                   }
                 },
                 "SemanticType": "Time",
                 "State": "Generated",
                 "Terms": [
                   {
-                    "data coleta métrica": {
+                    "data referência": {
                       "State": "Generated"
                     }
                   },
@@ -3471,103 +3776,7 @@
                     }
                   },
                   {
-                    "information coleta métrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "fact coleta métrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "info coleta métrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "statistic coleta métrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "document coleta métrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  },
-                  {
-                    "figure coleta métrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  },
-                  {
-                    "record coleta métrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
-              },
-              "v_prpgp_scival_autores_metrica.data_métrica": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "Data métrica"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data métrica": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information métrica": {
+                    "information referência": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3577,7 +3786,7 @@
                     }
                   },
                   {
-                    "fact métrica": {
+                    "fact referência": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3587,7 +3796,7 @@
                     }
                   },
                   {
-                    "info métrica": {
+                    "info referência": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3597,7 +3806,7 @@
                     }
                   },
                   {
-                    "statistic métrica": {
+                    "statistic referência": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3607,7 +3816,7 @@
                     }
                   },
                   {
-                    "document métrica": {
+                    "document referência": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3617,7 +3826,7 @@
                     }
                   },
                   {
-                    "figure métrica": {
+                    "figure referência": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3627,7 +3836,7 @@
                     }
                   },
                   {
-                    "record métrica": {
+                    "record referência": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3641,10 +3850,26 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_scival_autores_metrica.id_contrato_rh": {
+              "v_prpgp_projetos_pos_participantes_fluxo.função": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "Função"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "função": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_projetos_pos_participantes_fluxo.id_contrato_rh": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
                     "ConceptualProperty": "ID_CONTRATO_RH"
                   }
                 },
@@ -3707,29 +3932,95 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_scival_autores_metrica.id_metrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo.id_curso_aluno": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "ID_METRICA"
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "ID_CURSO_ALUNO"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "id metrica": {
+                    "id curso aluno": {
                       "State": "Generated"
                     }
                   },
                   {
-                    "ID_METRICA": {
+                    "ID_CURSO_ALUNO": {
                       "State": "Generated",
                       "Type": "Noun",
                       "Weight": 0.99
                     }
                   },
                   {
-                    "identification metrica": {
+                    "identification curso aluno": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "identity curso aluno": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "identifier curso aluno": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "credential curso aluno": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.591
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_prpgp_projetos_pos_participantes_fluxo.id_projeto": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "ID_PROJETO"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "id projeto": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "ID_PROJETO": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "identification projeto": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3739,7 +4030,7 @@
                     }
                   },
                   {
-                    "identity metrica": {
+                    "identity projeto": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3749,7 +4040,7 @@
                     }
                   },
                   {
-                    "identifier metrica": {
+                    "identifier projeto": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3759,7 +4050,7 @@
                     }
                   },
                   {
-                    "credential metrica": {
+                    "credential projeto": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -3773,59 +4064,131 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_scival_autores_metrica.nome_métrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo.id_unidade_sup": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "Nome métrica"
+                    "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
+                    "ConceptualProperty": "ID_UNIDADE_SUP"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "nome métrica": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_scival_autores_metrica.nome_scopus": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "Nome Scopus"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "nome scopus": {
+                    "id unidade sup": {
                       "State": "Generated"
                     }
                   },
                   {
-                    "scopus": {
+                    "ID_UNIDADE_SUP": {
                       "State": "Generated",
-                      "Weight": 0.97
+                      "Type": "Noun",
+                      "Weight": 0.99
                     }
-                  }
-                ]
-              },
-              "v_prpgp_scival_autores_metrica.valor_métrica": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-                    "ConceptualProperty": "Valor métrica"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
+                  },
                   {
-                    "valor métrica": {
-                      "State": "Generated"
+                    "identification unidade sup": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "identity unidade sup": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "identifier unidade sup": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "credential unidade sup": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.591
+                    }
+                  },
+                  {
+                    "id unidade mouthful": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "id unidade sip": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "id unidade swallow": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "id unidade drink": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "id unidade draught": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "id unidade draft": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.492
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_vagas_inscritos_matriculado": {
                 "Definition": {
@@ -3872,39 +4235,88 @@
                   }
                 ]
               },
-              "v_prpgp_vagas_inscritos_matriculado.candidatos_inscrito": {
+              "v_prpgp_vagas_inscritos_matriculado.ano_ingresso": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-                    "ConceptualProperty": "Inscritos"
+                    "ConceptualProperty": "Ano ingresso"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "inscrito": {
+                    "ano ingresso": {
                       "State": "Generated"
                     }
                   }
                 ]
               },
-              "v_prpgp_vagas_inscritos_matriculado.candidatos_matriculado": {
+              "v_prpgp_vagas_inscritos_matriculado.aptos_lista_espera": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-                    "ConceptualProperty": "Matriculados"
+                    "ConceptualProperty": "APTOS_LISTA_ESPERA"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "matriculado": {
+                    "aptos lista espera": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "APTOS_LISTA_ESPERA": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_prpgp_vagas_inscritos_matriculado.classificados": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "Classificados"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "classificados": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "classificado": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.78
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_vagas_inscritos_matriculado.concurso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "Concurso"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "concurso": {
                       "State": "Generated"
                     }
                   }
                 ]
               },
-              "v_prpgp_vagas_inscritos_matriculado.conc_edital": {
+              "v_prpgp_vagas_inscritos_matriculado.concurso_edital": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
@@ -3914,15 +4326,24 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "conc edital": {
+                    "concurso edital": {
                       "State": "Generated"
                     }
-                  },
+                  }
+                ]
+              },
+              "v_prpgp_vagas_inscritos_matriculado.cota": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "Cota"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
                   {
-                    "CONC_EDITAL": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
+                    "cota": {
+                      "State": "Generated"
                     }
                   }
                 ]
@@ -3953,7 +4374,100 @@
                   }
                 ]
               },
-              "v_prpgp_vagas_inscritos_matriculado.descr_conc_edicao": {
+              "v_prpgp_vagas_inscritos_matriculado.data_ingresso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "Data ingresso"
+                  }
+                },
+                "SemanticType": "Time",
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "data ingresso": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "date": {
+                      "State": "Generated",
+                      "Weight": 0.7
+                    }
+                  },
+                  {
+                    "information ingresso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.6
+                    }
+                  },
+                  {
+                    "fact ingresso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.6
+                    }
+                  },
+                  {
+                    "info ingresso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.6
+                    }
+                  },
+                  {
+                    "statistic ingresso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.6
+                    }
+                  },
+                  {
+                    "document ingresso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.582
+                    }
+                  },
+                  {
+                    "figure ingresso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.582
+                    }
+                  },
+                  {
+                    "record ingresso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.582
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_vagas_inscritos_matriculado.edição_concurso": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
@@ -3964,38 +4478,6 @@
                 "Terms": [
                   {
                     "edição concurso": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_vagas_inscritos_matriculado.descr_concurso": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-                    "ConceptualProperty": "Concurso"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "concurso": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_vagas_inscritos_matriculado.descr_cota": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
-                    "ConceptualProperty": "Cota"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "cota": {
                       "State": "Generated"
                     }
                   }
@@ -4259,7 +4741,86 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_vagas_inscritos_matriculado.vagas_oferecida": {
+              "v_prpgp_vagas_inscritos_matriculado.ind_inscricoes_concluida": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "IND_INSCRICOES_CONCLUIDAS"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "ind inscricoes concluida": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "ind inscricoe concluida": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.78
+                    }
+                  },
+                  {
+                    "IND_INSCRICOES_CONCLUIDAS": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_prpgp_vagas_inscritos_matriculado.inscritos": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "Inscritos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "inscritos": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "inscrito": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.78
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_vagas_inscritos_matriculado.matriculados": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
+                    "ConceptualProperty": "Matriculados"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "matriculados": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "matriculado": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.78
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_vagas_inscritos_matriculado.vagas_ofertadas": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
@@ -4318,7 +4879,73 @@
                 },
                 "State": "Generated"
               },
-              "medida_has_pertence_ao_programa": {
+              "d_calendario_has_v_prpgp_discentes_pos_aluno_ativo_no_intervalo": {
+                "Binding": {
+                  "ConceptualEntity": "dCalendario"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.aluno_ativo_no_intervalo"
+                      },
+                      "Subject": {
+                        "Role": "d_calendario"
+                      }
+                    },
+                    "ID": "d_calendarios_have_aluno_ativo_no_intervalo",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "d_calendario": {
+                    "Target": {
+                      "Entity": "d_calendario"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.aluno_ativo_no_intervalo": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.aluno_ativo_no_intervalo"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "d_calendario_has_v_prpgp_docentes_pos_docente_vinculado_dentro_do_intervalo": {
+                "Binding": {
+                  "ConceptualEntity": "dCalendario"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.docente_vinculado_dentro_do_intervalo"
+                      },
+                      "Subject": {
+                        "Role": "d_calendario"
+                      }
+                    },
+                    "ID": "d_calendarios_have_docente_vinculado_dentro_do_intervalo",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "d_calendario": {
+                    "Target": {
+                      "Entity": "d_calendario"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.docente_vinculado_dentro_do_intervalo": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.docente_vinculado_dentro_do_intervalo"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "medida_has_docente_pertence_ao_programa": {
                 "Binding": {
                   "ConceptualEntity": "Medidas"
                 },
@@ -4326,7 +4953,7 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "medida.pertence_ao_programa"
+                        "Role": "medida.docente_pertence_ao_programa"
                       },
                       "Subject": {
                         "Role": "medida"
@@ -4343,9 +4970,42 @@
                       "Entity": "medida"
                     }
                   },
-                  "medida.pertence_ao_programa": {
+                  "medida.docente_pertence_ao_programa": {
                     "Target": {
-                      "Entity": "medida.pertence_ao_programa"
+                      "Entity": "medida.docente_pertence_ao_programa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "medida_has_html": {
+                "Binding": {
+                  "ConceptualEntity": "Medidas"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "medida.html"
+                      },
+                      "Subject": {
+                        "Role": "medida"
+                      }
+                    },
+                    "ID": "medidas_have_html",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "medida": {
+                    "Target": {
+                      "Entity": "medida"
+                    }
+                  },
+                  "medida.html": {
+                    "Target": {
+                      "Entity": "medida.html"
                     }
                   }
                 },
@@ -4417,174 +5077,128 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_credenciamento_docente_has_ano_fim_atuacao_programa": {
+              "v_prpgp_credenciamento_docente_fluxo_has_ano": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
                 },
                 "Phrasings": [
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_credenciamento_docente.ano_fim_atuacao_programa"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo.ano"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_credenciamento_docente_have_ano_fim_atuacao_programas",
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_anos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_credenciamento_docente": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente"
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
                     }
                   },
-                  "v_prpgp_credenciamento_docente.ano_fim_atuacao_programa": {
+                  "v_prpgp_credenciamento_docente_fluxo.ano": {
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente.ano_fim_atuacao_programa"
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo.ano"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_credenciamento_docente_has_ano_inicio_atuacao_programa": {
+              "v_prpgp_credenciamento_docente_fluxo_has_d_calendario": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
                 },
                 "Phrasings": [
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_credenciamento_docente.ano_inicio_atuacao_programa"
+                        "Role": "d_calendario"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_credenciamento_docente_have_ano_inicio_atuacao_programas",
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_d_calendarios",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
+                      },
+                      "Subject": {
+                        "Role": "d_calendario"
+                      }
+                    },
+                    "ID": "d_calendarios_have_v_prpgp_credenciamento_docente_fluxo",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_credenciamento_docente": {
+                  "d_calendario": {
+                    "Nouns": [
+                      {
+                        "data": {
+                          "State": "Generated"
+                        }
+                      }
+                    ],
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente"
+                      "Entity": "d_calendario"
                     }
                   },
-                  "v_prpgp_credenciamento_docente.ano_inicio_atuacao_programa": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente.ano_inicio_atuacao_programa"
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_credenciamento_docente_has_id_credenciamento_docente": {
+              "v_prpgp_credenciamento_docente_fluxo_has_tipo_de_vínculo": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
                 },
                 "Phrasings": [
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_credenciamento_docente.id_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo.tipo_de_vínculo"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_credenciamento_docente_have_id_credenciamento_docentes",
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_tipo_de_vínculos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_credenciamento_docente": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente"
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
                     }
                   },
-                  "v_prpgp_credenciamento_docente.id_credenciamento_docente": {
+                  "v_prpgp_credenciamento_docente_fluxo.tipo_de_vínculo": {
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente.id_credenciamento_docente"
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo.tipo_de_vínculo"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_credenciamento_docente_has_id_pessoa": {
+              "v_prpgp_credenciamento_docente_fluxo_has_v_prpgp_docentes_pos": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_credenciamento_docente.id_pessoa"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_credenciamento_docente"
-                      }
-                    },
-                    "ID": "v_prpgp_credenciamento_docente_have_id_pessoa",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_credenciamento_docente": {
-                    "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente"
-                    }
-                  },
-                  "v_prpgp_credenciamento_docente.id_pessoa": {
-                    "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente.id_pessoa"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_credenciamento_docente_has_tipo_vinculo": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_credenciamento_docente.tipo_vinculo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_credenciamento_docente"
-                      }
-                    },
-                    "ID": "v_prpgp_credenciamento_docente_have_tipo_vinculos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_credenciamento_docente": {
-                    "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente"
-                    }
-                  },
-                  "v_prpgp_credenciamento_docente.tipo_vinculo": {
-                    "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente.tipo_vinculo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_credenciamento_docente_has_v_prpgp_docentes_pos": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
                 },
                 "Phrasings": [
                   {
@@ -4593,31 +5207,31 @@
                         "Role": "v_prpgp_docentes_pos"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_credenciamento_docente_have_v_prpgp_docentes_pos",
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_v_prpgp_docentes_pos",
                     "State": "Generated",
                     "Weight": 0.99
                   },
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
                       },
                       "Subject": {
                         "Role": "v_prpgp_docentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_docentes_pos_have_v_prpgp_credenciamento_docente",
+                    "ID": "v_prpgp_docentes_pos_have_v_prpgp_credenciamento_docente_fluxo",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_credenciamento_docente": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente"
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
                     }
                   },
                   "v_prpgp_docentes_pos": {
@@ -4628,9 +5242,75 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_credenciamento_docente_has_v_prpgp_programas_pos": {
+              "v_prpgp_credenciamento_docente_fluxo_has_v_prpgp_docentes_pos_anos_vinculado_ao_programa": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE"
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.anos_vinculado_ao_programa"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_anos_vinculado_ao_programa",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.anos_vinculado_ao_programa": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.anos_vinculado_ao_programa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_credenciamento_docente_fluxo_has_v_prpgp_docentes_pos_tempo_médio_de_permanência": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.tempo_médio_de_permanência"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_tempo_médio_de_permanência",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.tempo_médio_de_permanência": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.tempo_médio_de_permanência"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_credenciamento_docente_fluxo_has_v_prpgp_programas_pos": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
                 },
                 "Phrasings": [
                   {
@@ -4639,31 +5319,31 @@
                         "Role": "v_prpgp_programas_pos"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_credenciamento_docente_have_v_prpgp_programas_pos",
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_v_prpgp_programas_pos",
                     "State": "Generated",
                     "Weight": 0.99
                   },
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_credenciamento_docente"
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
                       },
                       "Subject": {
                         "Role": "v_prpgp_programas_pos"
                       }
                     },
-                    "ID": "v_prpgp_programas_pos_have_v_prpgp_credenciamento_docente",
+                    "ID": "v_prpgp_programas_pos_have_v_prpgp_credenciamento_docente_fluxo",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_credenciamento_docente": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_credenciamento_docente"
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
                     }
                   },
                   "v_prpgp_programas_pos": {
@@ -4799,39 +5479,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_aluno_ativo_no_intervalo": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.aluno_ativo_no_intervalo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_aluno_ativo_no_intervalo",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.aluno_ativo_no_intervalo": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.aluno_ativo_no_intervalo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_discentes_pos_has_ano_defesa": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -4931,7 +5578,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_cod_curso": {
+              "v_prpgp_discentes_pos_has_cpf": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
                 },
@@ -4939,7 +5586,40 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_discentes_pos.cod_curso"
+                        "Role": "v_prpgp_discentes_pos.cpf"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_cpfs",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.cpf": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.cpf"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_código_curso": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.código_curso"
                       },
                       "Subject": {
                         "Role": "v_prpgp_discentes_pos"
@@ -4956,42 +5636,9 @@
                       "Entity": "v_prpgp_discentes_pos"
                     }
                   },
-                  "v_prpgp_discentes_pos.cod_curso": {
+                  "v_prpgp_discentes_pos.código_curso": {
                     "Target": {
-                      "Entity": "v_prpgp_discentes_pos.cod_curso"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_discentes_pos_has_data_defesa": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.data_defesa"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_data_defesas",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.data_defesa": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.data_defesa"
+                      "Entity": "v_prpgp_discentes_pos.código_curso"
                     }
                   }
                 },
@@ -5261,6 +5908,72 @@
                 },
                 "State": "Generated"
               },
+              "v_prpgp_discentes_pos_has_quantidade_formados": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.quantidade_formados"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_formados",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.quantidade_formados": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.quantidade_formados"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_quantidade_matrículas": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.quantidade_matrículas"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_matrículas",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.quantidade_matrículas": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.quantidade_matrículas"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_prpgp_discentes_pos_has_situação_defesa": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -5472,7 +6185,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_docentes_pos_has_docente_vinculado_dentro_do_intervalo": {
+              "v_prpgp_docentes_pos_has_cpf": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
                 },
@@ -5480,13 +6193,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_docentes_pos.docente_vinculado_dentro_do_intervalo"
+                        "Role": "v_prpgp_docentes_pos.cpf"
                       },
                       "Subject": {
                         "Role": "v_prpgp_docentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_docentes_pos_have_docente_vinculado_dentro_do_intervalo",
+                    "ID": "v_prpgp_docentes_pos_have_cpfs",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -5497,9 +6210,9 @@
                       "Entity": "v_prpgp_docentes_pos"
                     }
                   },
-                  "v_prpgp_docentes_pos.docente_vinculado_dentro_do_intervalo": {
+                  "v_prpgp_docentes_pos.cpf": {
                     "Target": {
-                      "Entity": "v_prpgp_docentes_pos.docente_vinculado_dentro_do_intervalo"
+                      "Entity": "v_prpgp_docentes_pos.cpf"
                     }
                   }
                 },
@@ -5632,6 +6345,171 @@
                   "v_prpgp_docentes_pos.nome_docente": {
                     "Target": {
                       "Entity": "v_prpgp_docentes_pos.nome_docente"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_docentes_pos_has_professores_vinculados_5_anos": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.professores_vinculados_5_anos"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_docentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_docentes_pos_have_professores_vinculados_5_anos1",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_docentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.professores_vinculados_5_anos": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.professores_vinculados_5_anos"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_docentes_pos_has_professores_vinculados_5_anos1": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.professores_vinculados_5_anos1"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_docentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_docentes_pos_have_professores_vinculados_5_anos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_docentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.professores_vinculados_5_anos1": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.professores_vinculados_5_anos1"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_docentes_pos_has_quantidade_docentes_colaboradores": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.quantidade_docentes_colaboradores"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_docentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_docentes_pos_have_quantidade_docentes_colaboradores",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_docentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.quantidade_docentes_colaboradores": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.quantidade_docentes_colaboradores"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_docentes_pos_has_quantidade_docentes_permanentes": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.quantidade_docentes_permanentes"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_docentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_docentes_pos_have_quantidade_docentes_permanentes",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_docentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.quantidade_docentes_permanentes": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.quantidade_docentes_permanentes"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_docentes_pos_has_quantidade_docentes_visitantes": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.quantidade_docentes_visitantes"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_docentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_docentes_pos_have_quantidade_docentes_visitantes",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_docentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.quantidade_docentes_visitantes": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.quantidade_docentes_visitantes"
                     }
                   }
                 },
@@ -5782,7 +6660,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_encargo_didatico_pos_has_soma_encargo_didático_ano": {
+              "v_prpgp_encargo_didatico_pos_has_encargo_didático": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
                 },
@@ -5790,13 +6668,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_encargo_didatico_pos.soma_encargo_didático_ano"
+                        "Role": "v_prpgp_encargo_didatico_pos.encargo_didático"
                       },
                       "Subject": {
                         "Role": "v_prpgp_encargo_didatico_pos"
                       }
                     },
-                    "ID": "v_prpgp_encargo_didatico_pos_have_soma_encargo_didático_anos",
+                    "ID": "v_prpgp_encargo_didatico_pos_have_encargo_didáticos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -5807,9 +6685,141 @@
                       "Entity": "v_prpgp_encargo_didatico_pos"
                     }
                   },
-                  "v_prpgp_encargo_didatico_pos.soma_encargo_didático_ano": {
+                  "v_prpgp_encargo_didatico_pos.encargo_didático": {
                     "Target": {
-                      "Entity": "v_prpgp_encargo_didatico_pos.soma_encargo_didático_ano"
+                      "Entity": "v_prpgp_encargo_didatico_pos.encargo_didático"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_encargo_didatico_pos_has_nível": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_encargo_didatico_pos.nível"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_encargo_didatico_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_encargo_didatico_pos_have_nívels",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_encargo_didatico_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos"
+                    }
+                  },
+                  "v_prpgp_encargo_didatico_pos.nível": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos.nível"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_encargo_didatico_pos_has_semestre": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_encargo_didatico_pos.semestre"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_encargo_didatico_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_encargo_didatico_pos_have_semestres",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_encargo_didatico_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos"
+                    }
+                  },
+                  "v_prpgp_encargo_didatico_pos.semestre": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos.semestre"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_encargo_didatico_pos_has_soma_encargos": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_encargo_didatico_pos.soma_encargos"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_encargo_didatico_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_encargo_didatico_pos_have_soma_encargos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_encargo_didatico_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos"
+                    }
+                  },
+                  "v_prpgp_encargo_didatico_pos.soma_encargos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos.soma_encargos"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_encargo_didatico_pos_has_tipo_encargo": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_encargo_didatico_pos.tipo_encargo"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_encargo_didatico_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_encargo_didatico_pos_have_tipo_encargos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_encargo_didatico_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos"
+                    }
+                  },
+                  "v_prpgp_encargo_didatico_pos.tipo_encargo": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos.tipo_encargo"
                     }
                   }
                 },
@@ -5894,7 +6904,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_membros_banca_has_nome_instituicao": {
+              "v_prpgp_membros_banca_has_nome_instituição": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
                 },
@@ -5902,7 +6912,7 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_membros_banca.nome_instituicao"
+                        "Role": "v_prpgp_membros_banca.nome_instituição"
                       },
                       "Subject": {
                         "Role": "v_prpgp_membros_banca"
@@ -5919,9 +6929,9 @@
                       "Entity": "v_prpgp_membros_banca"
                     }
                   },
-                  "v_prpgp_membros_banca.nome_instituicao": {
+                  "v_prpgp_membros_banca.nome_instituição": {
                     "Target": {
-                      "Entity": "v_prpgp_membros_banca.nome_instituicao"
+                      "Entity": "v_prpgp_membros_banca.nome_instituição"
                     }
                   }
                 },
@@ -5960,7 +6970,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_membros_banca_has_sigla_instituicao": {
+              "v_prpgp_membros_banca_has_sigla_instituição": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
                 },
@@ -5968,7 +6978,7 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_membros_banca.sigla_instituicao"
+                        "Role": "v_prpgp_membros_banca.sigla_instituição"
                       },
                       "Subject": {
                         "Role": "v_prpgp_membros_banca"
@@ -5985,9 +6995,9 @@
                       "Entity": "v_prpgp_membros_banca"
                     }
                   },
-                  "v_prpgp_membros_banca.sigla_instituicao": {
+                  "v_prpgp_membros_banca.sigla_instituição": {
                     "Target": {
-                      "Entity": "v_prpgp_membros_banca.sigla_instituicao"
+                      "Entity": "v_prpgp_membros_banca.sigla_instituição"
                     }
                   }
                 },
@@ -6092,7 +7102,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_membros_banca_has_titulacao": {
+              "v_prpgp_membros_banca_has_titulação": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
                 },
@@ -6100,7 +7110,7 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_membros_banca.titulacao"
+                        "Role": "v_prpgp_membros_banca.titulação"
                       },
                       "Subject": {
                         "Role": "v_prpgp_membros_banca"
@@ -6117,9 +7127,9 @@
                       "Entity": "v_prpgp_membros_banca"
                     }
                   },
-                  "v_prpgp_membros_banca.titulacao": {
+                  "v_prpgp_membros_banca.titulação": {
                     "Target": {
-                      "Entity": "v_prpgp_membros_banca.titulacao"
+                      "Entity": "v_prpgp_membros_banca.titulação"
                     }
                   }
                 },
@@ -6161,52 +7171,6 @@
                   "v_prpgp_discentes_pos": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_v_prpgp_docentes_pos": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_v_prpgp_docentes_pos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_docentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_docentes_pos_have_v_prpgp_membros_banca",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_docentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos"
                     }
                   },
                   "v_prpgp_membros_banca": {
@@ -6349,39 +7313,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_projetos_pos_has_ano_projeto_dentro_do_intervalo": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos.ano_projeto_dentro_do_intervalo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_have_ano_projeto_dentro_do_intervalo",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos"
-                    }
-                  },
-                  "v_prpgp_projetos_pos.ano_projeto_dentro_do_intervalo": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos.ano_projeto_dentro_do_intervalo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_projetos_pos_has_classificação_projeto": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_PROJETOS_POS"
@@ -6415,7 +7346,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_projetos_pos_has_data_fim": {
+              "v_prpgp_projetos_pos_has_número_processo": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_PROJETOS_POS"
                 },
@@ -6423,73 +7354,7 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_projetos_pos.data_fim"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_have_data_fims",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos"
-                    }
-                  },
-                  "v_prpgp_projetos_pos.data_fim": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos.data_fim"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_has_data_início": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos.data_início"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_have_data_inícios",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos"
-                    }
-                  },
-                  "v_prpgp_projetos_pos.data_início": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos.data_início"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_has_número_processo_PENSIE": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos.número_processo_PENSIE"
+                        "Role": "v_prpgp_projetos_pos.número_processo"
                       },
                       "Subject": {
                         "Role": "v_prpgp_projetos_pos"
@@ -6506,42 +7371,9 @@
                       "Entity": "v_prpgp_projetos_pos"
                     }
                   },
-                  "v_prpgp_projetos_pos.número_processo_PENSIE": {
+                  "v_prpgp_projetos_pos.número_processo": {
                     "Target": {
-                      "Entity": "v_prpgp_projetos_pos.número_processo_PENSIE"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_projetos_pos_has_programa_participa_do_projeto": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_projetos_pos.programa_participa_do_projeto"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_projetos_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_projetos_pos_have_programa_participa_do_projeto",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_projetos_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos"
-                    }
-                  },
-                  "v_prpgp_projetos_pos.programa_participa_do_projeto": {
-                    "Target": {
-                      "Entity": "v_prpgp_projetos_pos.programa_participa_do_projeto"
+                      "Entity": "v_prpgp_projetos_pos.número_processo"
                     }
                   }
                 },
@@ -6613,75 +7445,108 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_scival_autores_metrica_has_ID_scopus": {
+              "v_prpgp_projetos_pos_participantes_fluxo_has_ano_final_participação": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
                 },
                 "Phrasings": [
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica.ID_scopus"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo.ano_final_participação"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_scival_autores_metrica_have_ID_scopus",
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_ano_final_participaçãos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_scival_autores_metrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
                     }
                   },
-                  "v_prpgp_scival_autores_metrica.ID_scopus": {
+                  "v_prpgp_projetos_pos_participantes_fluxo.ano_final_participação": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica.ID_scopus"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo.ano_final_participação"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_scival_autores_metrica_has_ano_métrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo_has_ano_inicial_participação": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
                 },
                 "Phrasings": [
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica.ano_métrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo.ano_inicial_participação"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_scival_autores_metrica_have_ano_métricas",
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_ano_inicial_participaçãos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_scival_autores_metrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
                     }
                   },
-                  "v_prpgp_scival_autores_metrica.ano_métrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo.ano_inicial_participação": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica.ano_métrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo.ano_inicial_participação"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_scival_autores_metrica_has_d_calendario": {
+              "v_prpgp_projetos_pos_participantes_fluxo_has_ano_referência": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo.ano_referência"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_ano_referências",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
+                    }
+                  },
+                  "v_prpgp_projetos_pos_participantes_fluxo.ano_referência": {
+                    "Target": {
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo.ano_referência"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_projetos_pos_participantes_fluxo_has_d_calendario": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
                 },
                 "Phrasings": [
                   {
@@ -6690,23 +7555,23 @@
                         "Role": "d_calendario"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_scival_autores_metrica_have_d_calendarios",
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_d_calendarios",
                     "State": "Generated",
                     "Weight": 0.99
                   },
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       },
                       "Subject": {
                         "Role": "d_calendario"
                       }
                     },
-                    "ID": "d_calendarios_have_v_prpgp_scival_autores_metrica",
+                    "ID": "d_calendarios_have_v_prpgp_projetos_pos_participantes_fluxo",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -6717,129 +7582,50 @@
                       "Entity": "d_calendario"
                     }
                   },
-                  "v_prpgp_scival_autores_metrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_scival_autores_metrica_has_nome_métrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo_has_função": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
                 },
                 "Phrasings": [
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica.nome_métrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo.função"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_scival_autores_metrica_have_nome_métricas",
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_funçãos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_scival_autores_metrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
                     }
                   },
-                  "v_prpgp_scival_autores_metrica.nome_métrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo.função": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica.nome_métrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo.função"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_scival_autores_metrica_has_nome_scopus": {
+              "v_prpgp_projetos_pos_participantes_fluxo_has_v_prpgp_docentes_pos": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica.nome_scopus"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
-                      }
-                    },
-                    "ID": "v_prpgp_scival_autores_metrica_have_nome_scopus",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_scival_autores_metrica": {
-                    "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
-                    }
-                  },
-                  "v_prpgp_scival_autores_metrica.nome_scopus": {
-                    "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica.nome_scopus"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_scival_autores_metrica_has_scival_metrica": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "scival_metrica"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
-                      }
-                    },
-                    "ID": "v_prpgp_scival_autores_metrica_have_scival_metricas",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica"
-                      },
-                      "Subject": {
-                        "Role": "scival_metrica"
-                      }
-                    },
-                    "ID": "scival_metricas_have_v_prpgp_scival_autores_metrica",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "scival_metrica": {
-                    "Target": {
-                      "Entity": "scival_metrica"
-                    }
-                  },
-                  "v_prpgp_scival_autores_metrica": {
-                    "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_scival_autores_metrica_has_v_prpgp_docentes_pos": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
                 },
                 "Phrasings": [
                   {
@@ -6848,23 +7634,23 @@
                         "Role": "v_prpgp_docentes_pos"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_scival_autores_metrica_have_v_prpgp_docentes_pos",
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_v_prpgp_docentes_pos",
                     "State": "Generated",
                     "Weight": 0.99
                   },
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       },
                       "Subject": {
                         "Role": "v_prpgp_docentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_docentes_pos_have_v_prpgp_scival_autores_metrica",
+                    "ID": "v_prpgp_docentes_pos_have_v_prpgp_projetos_pos_participantes_fluxo",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -6875,42 +7661,101 @@
                       "Entity": "v_prpgp_docentes_pos"
                     }
                   },
-                  "v_prpgp_scival_autores_metrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_scival_autores_metrica_has_valor_métrica": {
+              "v_prpgp_projetos_pos_participantes_fluxo_has_v_prpgp_programas_pos": {
                 "Binding": {
-                  "ConceptualEntity": "V_PRPGP_SCIVAL_AUTORES_METRICAS"
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
                 },
                 "Phrasings": [
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_scival_autores_metrica.valor_métrica"
+                        "Role": "v_prpgp_programas_pos"
                       },
                       "Subject": {
-                        "Role": "v_prpgp_scival_autores_metrica"
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
                       }
                     },
-                    "ID": "v_prpgp_scival_autores_metrica_have_valor_métricas",
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_v_prpgp_programas_pos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_programas_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_programas_pos_have_v_prpgp_projetos_pos_participantes_fluxo",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "v_prpgp_scival_autores_metrica": {
+                  "v_prpgp_programas_pos": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica"
+                      "Entity": "v_prpgp_programas_pos"
                     }
                   },
-                  "v_prpgp_scival_autores_metrica.valor_métrica": {
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
                     "Target": {
-                      "Entity": "v_prpgp_scival_autores_metrica.valor_métrica"
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_projetos_pos_participantes_fluxo_has_v_prpgp_projetos_pos": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_projetos_pos"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_projetos_pos_participantes_fluxo_have_v_prpgp_projetos_pos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_projetos_pos_participantes_fluxo"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_projetos_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_projetos_pos_have_v_prpgp_projetos_pos_participantes_fluxo",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_projetos_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_projetos_pos"
+                    }
+                  },
+                  "v_prpgp_projetos_pos_participantes_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_projetos_pos_participantes_fluxo"
                     }
                   }
                 },
@@ -6982,7 +7827,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_candidatos_inscrito": {
+              "v_prpgp_vagas_inscritos_matriculado_has_classificados": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -6990,13 +7835,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.candidatos_inscrito"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.classificados"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_inscritos",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_classificados",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7007,15 +7852,15 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.candidatos_inscrito": {
+                  "v_prpgp_vagas_inscritos_matriculado.classificados": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.candidatos_inscrito"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.classificados"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_candidatos_matriculado": {
+              "v_prpgp_vagas_inscritos_matriculado_has_concurso": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7023,13 +7868,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.candidatos_matriculado"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.concurso"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_matriculados",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_concursos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7040,15 +7885,15 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.candidatos_matriculado": {
+                  "v_prpgp_vagas_inscritos_matriculado.concurso": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.candidatos_matriculado"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.concurso"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_conc_edital": {
+              "v_prpgp_vagas_inscritos_matriculado_has_concurso_edital": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7056,13 +7901,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.conc_edital"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.concurso_edital"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_conc_editals",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_concurso_editals",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7073,9 +7918,42 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.conc_edital": {
+                  "v_prpgp_vagas_inscritos_matriculado.concurso_edital": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.conc_edital"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.concurso_edital"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_vagas_inscritos_matriculado_has_cota": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.cota"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_vagas_inscritos_matriculado"
+                      }
+                    },
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_cotas",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_vagas_inscritos_matriculado": {
+                    "Target": {
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado"
+                    }
+                  },
+                  "v_prpgp_vagas_inscritos_matriculado.cota": {
+                    "Target": {
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.cota"
                     }
                   }
                 },
@@ -7160,7 +8038,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_data_concurso": {
+              "v_prpgp_vagas_inscritos_matriculado_has_data_ingresso": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7168,13 +8046,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.data_concurso"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.data_ingresso"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_data_concursos",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_data_ingressos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7185,15 +8063,15 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.data_concurso": {
+                  "v_prpgp_vagas_inscritos_matriculado.data_ingresso": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.data_concurso"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.data_ingresso"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_descr_conc_edicao": {
+              "v_prpgp_vagas_inscritos_matriculado_has_edição_concurso": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7201,7 +8079,7 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.descr_conc_edicao"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.edição_concurso"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
@@ -7218,15 +8096,15 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.descr_conc_edicao": {
+                  "v_prpgp_vagas_inscritos_matriculado.edição_concurso": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.descr_conc_edicao"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.edição_concurso"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_descr_concurso": {
+              "v_prpgp_vagas_inscritos_matriculado_has_inscritos": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7234,13 +8112,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.descr_concurso"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.inscritos"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_concursos",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_inscritos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7251,15 +8129,15 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.descr_concurso": {
+                  "v_prpgp_vagas_inscritos_matriculado.inscritos": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.descr_concurso"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.inscritos"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_descr_cota": {
+              "v_prpgp_vagas_inscritos_matriculado_has_matriculados": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7267,13 +8145,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.descr_cota"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.matriculados"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_cotas",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_matriculados",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7284,15 +8162,15 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.descr_cota": {
+                  "v_prpgp_vagas_inscritos_matriculado.matriculados": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.descr_cota"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.matriculados"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_medida_candidatos_inscritos": {
+              "v_prpgp_vagas_inscritos_matriculado_has_medida_classificados": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7300,21 +8178,21 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "medida.candidatos_inscritos"
+                        "Role": "medida.classificados"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_candidatos_inscritos",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_classificados1",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "medida.candidatos_inscritos": {
+                  "medida.classificados": {
                     "Target": {
-                      "Entity": "medida.candidatos_inscritos"
+                      "Entity": "medida.classificados"
                     }
                   },
                   "v_prpgp_vagas_inscritos_matriculado": {
@@ -7325,7 +8203,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_medida_candidatos_matriculados": {
+              "v_prpgp_vagas_inscritos_matriculado_has_medida_inscritos": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7333,21 +8211,54 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "medida.candidatos_matriculados"
+                        "Role": "medida.inscritos"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
                       }
                     },
-                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_candidatos_matriculados",
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_inscritos1",
                     "State": "Generated",
                     "Weight": 0.99
                   }
                 ],
                 "Roles": {
-                  "medida.candidatos_matriculados": {
+                  "medida.inscritos": {
                     "Target": {
-                      "Entity": "medida.candidatos_matriculados"
+                      "Entity": "medida.inscritos"
+                    }
+                  },
+                  "v_prpgp_vagas_inscritos_matriculado": {
+                    "Target": {
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_vagas_inscritos_matriculado_has_medida_matriculados": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "medida.matriculados"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_vagas_inscritos_matriculado"
+                      }
+                    },
+                    "ID": "v_prpgp_vagas_inscritos_matriculado_have_matriculados1",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "medida.matriculados": {
+                    "Target": {
+                      "Entity": "medida.matriculados"
                     }
                   },
                   "v_prpgp_vagas_inscritos_matriculado": {
@@ -7437,7 +8348,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_vagas_inscritos_matriculado_has_vagas_oferecida": {
+              "v_prpgp_vagas_inscritos_matriculado_has_vagas_ofertadas": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS"
                 },
@@ -7445,7 +8356,7 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_vagas_inscritos_matriculado.vagas_oferecida"
+                        "Role": "v_prpgp_vagas_inscritos_matriculado.vagas_ofertadas"
                       },
                       "Subject": {
                         "Role": "v_prpgp_vagas_inscritos_matriculado"
@@ -7462,16 +8373,16 @@
                       "Entity": "v_prpgp_vagas_inscritos_matriculado"
                     }
                   },
-                  "v_prpgp_vagas_inscritos_matriculado.vagas_oferecida": {
+                  "v_prpgp_vagas_inscritos_matriculado.vagas_ofertadas": {
                     "Target": {
-                      "Entity": "v_prpgp_vagas_inscritos_matriculado.vagas_oferecida"
+                      "Entity": "v_prpgp_vagas_inscritos_matriculado.vagas_ofertadas"
                     }
                   }
                 },
                 "State": "Generated"
               }
             },
-            "Version": "3.5.0"
+            "Version": "4.1.0"
           },
           "contentType": "json"
         }
@@ -7523,27 +8434,6 @@
     ],
     "relationships": [
       {
-        "name": "1112f5ab-f756-8bb5-c47d-69e03ad65564",
-        "fromColumn": "ID_CONTRATO_RH",
-        "fromTable": "V_PRPGP_MEMBROS_BANCA",
-        "toColumn": "ID_CONTRATO_RH",
-        "toTable": "V_PRPGP_DOCENTES_POS"
-      },
-      {
-        "name": "9052b34e-a3d0-9b63-e755-a3124c1f336b",
-        "fromColumn": "ID_METRICA",
-        "fromTable": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-        "toColumn": "ID_METRICA",
-        "toTable": "SCIVAL_METRICAS"
-      },
-      {
-        "name": "a4d533e4-7a9f-e991-bd50-fcbb64ed6997",
-        "fromColumn": "ID_CONTRATO_RH",
-        "fromTable": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-        "toColumn": "ID_CONTRATO_RH",
-        "toTable": "V_PRPGP_DOCENTES_POS"
-      },
-      {
         "name": "AutoDetected_8e4c56f0-89c2-49ab-bc13-7a0f29a148ac",
         "crossFilteringBehavior": "bothDirections",
         "fromColumn": "ID_UNIDADE_SUP",
@@ -7557,28 +8447,6 @@
         "fromTable": "V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS",
         "toColumn": "ID_UNIDADE_SUP",
         "toTable": "V_PRPGP_PROGRAMAS_POS"
-      },
-      {
-        "name": "AutoDetected_9196ff38-6c9c-4ad3-b3b1-36c170da7801",
-        "fromColumn": "ID_UNIDADE_SUP",
-        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-        "toColumn": "ID_UNIDADE_SUP",
-        "toTable": "V_PRPGP_PROGRAMAS_POS"
-      },
-      {
-        "name": "AutoDetected_8e1e1610-7867-4954-ac20-94c8d368998f",
-        "crossFilteringBehavior": "bothDirections",
-        "fromColumn": "ID_CONTRATO_RH",
-        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-        "toColumn": "ID_CONTRATO_RH",
-        "toTable": "V_PRPGP_DOCENTES_POS"
-      },
-      {
-        "name": "f710cfcd-04c5-5411-2802-ad349820e601",
-        "fromColumn": "ID_CONTRATO_RH",
-        "fromTable": "V_PRPGP_ENCARGO_DIDATICO_POS",
-        "toColumn": "ID_CONTRATO_RH",
-        "toTable": "V_PRPGP_DOCENTES_POS"
       },
       {
         "name": "0b42614a-4fec-d881-81f9-210cbcae5f3e",
@@ -7612,20 +8480,6 @@
         "toTable": "V_PRPGP_PROJETOS_POS"
       },
       {
-        "name": "AutoDetected_1ea761ae-75ac-4a79-b55a-99a1616852ab",
-        "fromColumn": "ID_UNIDADE_SUP",
-        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
-        "toColumn": "ID_UNIDADE_SUP",
-        "toTable": "V_PRPGP_PROGRAMAS_POS"
-      },
-      {
-        "name": "AutoDetected_a4ff7afb-3536-4322-bf18-aa984cc30fc9",
-        "fromColumn": "ID_CONTRATO_RH",
-        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
-        "toColumn": "ID_CONTRATO_RH",
-        "toTable": "V_PRPGP_DOCENTES_POS"
-      },
-      {
         "name": "7d1d3f37-b8a8-c591-1e06-0e87983378bd",
         "fromColumn": "ID_UNIDADE_SUP",
         "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
@@ -7638,20 +8492,6 @@
         "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
         "toColumn": "ID_CONTRATO_RH",
         "toTable": "V_PRPGP_DOCENTES_POS"
-      },
-      {
-        "name": "4e931833-18ce-6c72-2f20-2b131c5b103d",
-        "fromColumn": "Data encargo",
-        "fromTable": "V_PRPGP_ENCARGO_DIDATICO_POS",
-        "toColumn": "Data",
-        "toTable": "dCalendario"
-      },
-      {
-        "name": "f0422672-2730-28b7-da43-ee31b74b8fa6",
-        "fromColumn": "Data métrica",
-        "fromTable": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-        "toColumn": "Data",
-        "toTable": "dCalendario"
       },
       {
         "name": "a0115485-d4d3-6730-0e38-344460d5b8c8",
@@ -7681,6 +8521,42 @@
         "fromTable": "V_PRPGP_PROJETOS_POS_PARTICIPANTES_FLUXO",
         "toColumn": "Data",
         "toTable": "dCalendario"
+      },
+      {
+        "name": "8c84a495-26e4-ce3b-d7a2-0058c04fc781",
+        "fromColumn": "Data",
+        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+        "toColumn": "Data",
+        "toTable": "dCalendario"
+      },
+      {
+        "name": "095b32c3-fe8f-a667-88f3-b152b8c823c3",
+        "fromColumn": "ID_UNIDADE_SUP",
+        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+        "toColumn": "ID_UNIDADE_SUP",
+        "toTable": "V_PRPGP_PROGRAMAS_POS"
+      },
+      {
+        "name": "b65e81d5-c4a9-627a-c6b0-751b97850293",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "ID_CONTRATO_RH",
+        "fromTable": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+        "toColumn": "ID_CONTRATO_RH",
+        "toTable": "V_PRPGP_DOCENTES_POS"
+      },
+      {
+        "name": "e993e7da-20f8-4a4f-eea8-d800c554e9fa",
+        "fromColumn": "Data encargo",
+        "fromTable": "V_PRPGP_ENCARGO_DIDATICO_POS",
+        "toColumn": "Data",
+        "toTable": "dCalendario"
+      },
+      {
+        "name": "fee1b589-38cc-7161-8727-afe1f47ba179",
+        "fromColumn": "ID_CONTRATO_RH",
+        "fromTable": "V_PRPGP_ENCARGO_DIDATICO_POS",
+        "toColumn": "ID_CONTRATO_RH",
+        "toTable": "V_PRPGP_DOCENTES_POS"
       }
     ],
     "sourceQueryCulture": "pt-BR",
@@ -7994,6 +8870,23 @@
             ],
             "formatString": "0",
             "lineageTag": "7f0eb5e0-b0d0-4c65-8457-8e96fa8fa25e"
+          },
+          {
+            "name": "Quantidade Matrículas",
+            "expression": "Count([Matrícula])",
+            "formatString": "0",
+            "lineageTag": "48e2e493-2d9b-4b1d-8edb-6eb551c0bdf3"
+          },
+          {
+            "name": "Quantidade Formados",
+            "expression": [
+              "CALCULATE(",
+              "    count(V_PRPGP_DISCENTES_POS[Matrícula]),",
+              "    V_PRPGP_DISCENTES_POS[Forma saída] = \"Formado\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "b1c41e6d-28c5-4e68-b977-888b2137fd42"
           }
         ],
         "partitions": [
@@ -8013,9 +8906,13 @@
                 "    #\"Added Custom\" = Table.AddColumn(#\"Removed Columns\", \"Ano saída corrigido\", each if [Ano saída] is null then Date.Year(DateTime.LocalNow()) else [Ano saída]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Ano saída corrigido\", type number}}),",
                 "    #\"Inserted Date1\" = Table.AddColumn(#\"Changed Type\", \"Data defesa\", each Date.From(Text.From([ANO_DEFESA], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Inserted Date1\",{{\"ANO_DEFESA\", \"Ano defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano estudos\"}, {\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"GENERO\", \"Gênero\"}})",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Inserted Date1\",{{\"ANO_DEFESA\", \"Ano defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano estudos\"}, {\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"GENERO\", \"Gênero\"}}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Renamed Columns2\",\"F\",\"Feminino\",Replacer.ReplaceText,{\"Gênero\"}),",
+                "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"M\",\"Masculino\",Replacer.ReplaceText,{\"Gênero\"}),",
+                "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",null,\"Não especificado\",Replacer.ReplaceValue,{\"Gênero\"}),",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Replaced Value2\",{{\"Nome aluno\", Text.Proper, type text}})",
                 "in",
-                "    #\"Renamed Columns2\""
+                "    #\"Capitalized Each Word\""
               ],
               "type": "m"
             }
@@ -8247,18 +9144,116 @@
         "lineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
         "measures": [
           {
-            "name": "Docente vinculado dentro do intervalo",
+            "name": "Quantidade docentes permanentes",
             "expression": [
-              "",
-              "    VAR SelectedYears = VALUES(dCalendario[Ano])  -- Get the selected years from dCalendario",
-              "    VAR ProjectStartYear = MIN(V_PRPGP_DOCENTES_POS[Ano ingresso])  -- Project start year",
-              "    VAR ProjectEndYear = MAX(V_PRPGP_DOCENTES_POS[Ano desligamento])  -- Project end year",
-              "    VAR YearsInRange = FILTER(SelectedYears, [Ano] >= ProjectStartYear && [Ano] <= ProjectEndYear)  ",
-              "    -- Check overlap",
-              "    RETURN IF(COUNTROWS(YearsInRange) > 0, 1, 0)  -- Return 1 if there is any overlap, otherwise 0"
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),",
+              "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = \"Permanente\"",
+              ")"
             ],
             "formatString": "0",
-            "lineageTag": "a506be39-f0e1-4e25-a783-c6a8bd006eaa"
+            "lineageTag": "33c7c8fb-3c7d-4e6c-b151-b5c2333a5bcc"
+          },
+          {
+            "name": "Tempo médio de permanência",
+            "expression": [
+              "",
+              "AVERAGEX(",
+              "    VALUES(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_PESSOA]),",
+              "    VAR AnoMin = ",
+              "        CALCULATE(",
+              "            MIN(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),",
+              "            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),",
+              "            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Data]),",
+              "            REMOVEFILTERS(dCalendario)",
+              "        )",
+              "    VAR AnoMax = ",
+              "        CALCULATE(",
+              "            MAX(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),",
+              "            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),",
+              "            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Data]),",
+              "            REMOVEFILTERS(dCalendario)",
+              "        )",
+              "    RETURN ",
+              "        IF(",
+              "            ISBLANK(AnoMin) || ISBLANK(AnoMax),",
+              "            BLANK(),",
+              "            AnoMax - AnoMin + 1",
+              "        )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "5fa3a188-b1b9-45c5-9fe1-13b152d6f268"
+          },
+          {
+            "name": "Anos vinculado ao programa",
+            "expression": [
+              "",
+              "    VAR AnoReferencia = MAX(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano])",
+              "    VAR AnoIngresso = CALCULATE(",
+              "            MIN(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),",
+              "            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),",
+              "            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Data]),",
+              "            REMOVEFILTERS(dCalendario)",
+              "        )",
+              "    RETURN IF(",
+              "            ISBLANK(AnoIngresso) || ISBLANK(AnoReferencia),",
+              "            BLANK(),",
+              "            AnoReferencia - AnoIngresso",
+              "        )"
+            ],
+            "formatString": "0",
+            "lineageTag": "255d6be7-59fd-40df-a78b-42732a60f571"
+          },
+          {
+            "name": "Quantidade docentes colaboradores",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),",
+              "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = \"Colaborador\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "0fd8570e-2303-471d-9037-04174e32ea6a"
+          },
+          {
+            "name": "Quantidade docentes visitantes",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),",
+              "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = \"Visitante\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "8442c448-9045-421f-b42e-0c0b6cc3b407"
+          },
+          {
+            "name": "Professores vinculados 5+ anos",
+            "expression": [
+              "",
+              "COUNTROWS(",
+              "    FILTER(",
+              "        VALUES(V_PRPGP_DOCENTES_POS[CPF]),",
+              "        [Anos vinculado ao programa] >= 5",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "cb0d5d6b-0305-4f63-9f49-42f16c8628db"
+          },
+          {
+            "name": "Professores vinculados <5 anos",
+            "expression": [
+              "",
+              "COUNTROWS(",
+              "    FILTER(",
+              "        VALUES(V_PRPGP_DOCENTES_POS[CPF]),",
+              "        [Anos vinculado ao programa] < 5",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "73d4b1f8-2e1c-4989-9414-d41a32028d11"
           }
         ],
         "partitions": [
@@ -8274,9 +9269,10 @@
                 "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DOCENTES_POS1,{{\"DESCR_CARGO\", \"Cargo\"}, {\"DT_ADMISSAO_CARGO\", \"Data ingresso\"}, {\"DT_DESLIGAMENTO\", \"Data desligamento\"}, {\"NACIONALIDADE\", \"Nacionalidade\"}, {\"SEXO\", \"Gênero\"}, {\"NOME_FUNCIONARIO\", \"Nome\"}}),",
                 "    #\"Inserted Year\" = Table.AddColumn(#\"Renamed Columns\", \"Ano ingresso\", each Date.Year([Data ingresso]), Int64.Type),",
                 "    #\"Inserted Year1\" = Table.AddColumn(#\"Inserted Year\", \"Ano desligamento\", each Date.Year([Data desligamento]), Int64.Type),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Year1\",{{\"Data ingresso\", \"Data admissão\"}, {\"Nome\", \"Nome docente\"}, {\"TITULACAO\", \"Titulação\"}})",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Year1\",{{\"Data ingresso\", \"Data admissão\"}, {\"Nome\", \"Nome docente\"}, {\"TITULACAO\", \"Titulação\"}}),",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Renamed Columns1\",{{\"Nome docente\", Text.Proper, type text}, {\"Cargo\", Text.Proper, type text}})",
                 "in",
-                "    #\"Renamed Columns1\""
+                "    #\"Capitalized Each Word\""
               ],
               "type": "m"
             }
@@ -8337,7 +9333,7 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "changedProperties": [
@@ -9335,7 +10331,7 @@
             "isHidden": true,
             "lineageTag": "6f66aeac-1d63-4869-a221-a426086957b2",
             "sourceColumn": "ID_METRICA",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "Nome métrica",
@@ -9397,200 +10393,6 @@
                 "    #\"Renamed Columns\" = Table.RenameColumns(SCIVAL_METRICAS1,{{\"NOME_SCIVAL\", \"Nome métrica (Scival)\"}, {\"METRICA\", \"Nome métrica\"}, {\"DESCRICAO\", \"Descrição\"}})",
                 "in",
                 "    #\"Renamed Columns\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "ID_CONTRATO_RH",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "2e136a03-533a-4fd5-ac7f-8ae4e7f83bbd",
-            "sourceColumn": "ID_CONTRATO_RH",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID Scopus",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "51325042-2b58-4694-bb1a-7119f9ebd469",
-            "sourceColumn": "ID Scopus",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Nome Scopus",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "790cf527-dbe3-4c32-b5fc-c40d7ec2f2e2",
-            "sourceColumn": "Nome Scopus",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_METRICA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "5cdf5bc7-5864-4aa9-b297-7055d726e5e3",
-            "sourceColumn": "ID_METRICA",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ano Métrica",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "1d98e073-0c05-4668-a9eb-31403d71a7bd",
-            "sourceColumn": "Ano Métrica",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Valor métrica",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "9b99774c-c312-4299-897a-9808c508ae42",
-            "sourceColumn": "Valor métrica",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data coleta métrica",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "isHidden": true,
-            "lineageTag": "ae306b6f-908f-49c7-be71-be889d4085b7",
-            "sourceColumn": "Data coleta métrica",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data métrica",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "isHidden": true,
-            "lineageTag": "a1f2d030-fcd6-4eec-8a32-868df50b4bc6",
-            "sourceColumn": "Data métrica",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Nome métrica",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "6a1879f1-54c4-438b-bbdb-60eba150e568",
-            "sourceColumn": "Nome métrica",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "15eb4ce0-bf05-4d9f-ab26-18b9918c9d31",
-        "partitions": [
-          {
-            "name": "V_PRPGP_SCIVAL_AUTORES_METRICAS",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
-                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_SCIVAL_AUTORES_METRICAS1 = BEE{[Name=\"V_PRPGP_SCIVAL_AUTORES_METRICAS\"]}[Data],",
-                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_SCIVAL_AUTORES_METRICAS1,{{\"VALOR_METRICA\", \"Valor métrica\"}, {\"SCOPUS_NAME\", \"Nome Scopus\"}, {\"SCOPUS_ID\", \"ID Scopus\"}, {\"ANO_METRICA\", \"Ano Métrica\"}, {\"DATA_COLETA\", \"Data coleta métrica\"}}),",
-                "    #\"Inserted Date\" = Table.AddColumn(#\"Renamed Columns\", \"Data métrica\", each Date.From(Text.From([Ano Métrica], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Date\",{{\"NOME_METRICA\", \"Nome métrica\"}})",
-                "in",
-                "    #\"Renamed Columns1\""
               ],
               "type": "m"
             }
@@ -9709,136 +10511,6 @@
                 "    #\"Trimmed Text\" = Table.TransformColumns(#\"Capitalized Each Word\",{{\"Nome unidade\", Text.Trim, type text}})",
                 "in",
                 "    #\"Trimmed Text\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "ID_CREDENCIAMENTO_DOCENTE",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "7d316656-9439-4ed1-92ac-93de6594b25a",
-            "sourceColumn": "ID_CREDENCIAMENTO_DOCENTE",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_CONTRATO_RH",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "c8004478-316a-4ff7-807a-74672ca56b43",
-            "sourceColumn": "ID_CONTRATO_RH",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_PESSOA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "56f83d71-66c5-4c0c-bdf9-cc722cf3feeb",
-            "sourceColumn": "ID_PESSOA",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_UNIDADE_SUP",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "16b95885-c673-4f5e-9384-3fee99924729",
-            "sourceColumn": "ID_UNIDADE_SUP",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "TIPO_VINCULO",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "788fb110-9ddf-4d3e-a342-f771379ccaf3",
-            "sourceColumn": "TIPO_VINCULO",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ANO_INICIO_ATUACAO_PROGRAMA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "719569ae-dafd-4d67-bee0-46b8d72b9e88",
-            "sourceColumn": "ANO_INICIO_ATUACAO_PROGRAMA",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ANO_FIM_ATUACAO_PROGRAMA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "ae829f75-d583-45dd-8627-ba2b4fb00225",
-            "sourceColumn": "ANO_FIM_ATUACAO_PROGRAMA",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "4a4accbb-4761-4deb-9dc9-b1f1aadf5c6e",
-        "partitions": [
-          {
-            "name": "V_PRPGP_CREDENCIAMENTO_DOCENTE",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
-                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_CREDENCIAMENTO_DOCENTE1 = BEE{[Name=\"V_PRPGP_CREDENCIAMENTO_DOCENTE\"]}[Data]",
-                "in",
-                "    V_PRPGP_CREDENCIAMENTO_DOCENTE1"
               ],
               "type": "m"
             }
@@ -10007,9 +10679,10 @@
                 "    #\"Replaced Value3\" = Table.ReplaceValue(#\"Replaced Value2\",\"DOUTORADO\",\"Doutorado\",Replacer.ReplaceText,{\"Nível\"}),",
                 "    #\"Replaced Value4\" = Table.ReplaceValue(#\"Replaced Value3\",\"MESTRADO\",\"Mestrado\",Replacer.ReplaceText,{\"Nível\"}),",
                 "    #\"Replaced Value5\" = Table.ReplaceValue(#\"Replaced Value4\",\"OUTROS\",\"Outros\",Replacer.ReplaceText,{\"Nível\"}),",
-                "    #\"Replaced Value6\" = Table.ReplaceValue(#\"Replaced Value5\",\"ESPECIALIZAÇÃO/RESIDENCIA\",\"Especialização/Residência\",Replacer.ReplaceText,{\"Nível\"})",
+                "    #\"Replaced Value6\" = Table.ReplaceValue(#\"Replaced Value5\",\"ESPECIALIZAÇÃO/RESIDENCIA\",\"Especialização/Residência\",Replacer.ReplaceText,{\"Nível\"}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Replaced Value6\",{\"ID_CONTRATO_RH\", \"Data encargo\", \"Ano encargo\", \"Semestre\", \"Nível\", \"Tipo encargo\", \"Encargo didático\"})",
                 "in",
-                "    #\"Replaced Value6\""
+                "    #\"Reordered Columns\""
               ],
               "type": "m"
             }
@@ -10318,6 +10991,16 @@
       },
       {
         "name": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
         "columns": [
           {
             "name": "ID_CONTRATO_RH",
@@ -10327,8 +11010,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "e1fb14ef-8b77-41a8-90bf-453de613a8f7",
             "sourceColumn": "ID_CONTRATO_RH",
             "summarizeBy": "none"
@@ -10338,11 +11027,17 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "af38dd88-519e-4222-bb62-750cd58f389f",
             "sourceColumn": "ID_UNIDADE_SUP",
             "summarizeBy": "none"
@@ -10352,17 +11047,23 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "int64",
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "45dc7560-67de-41fc-a16e-7a4244c19a20",
             "sourceColumn": "ID_PESSOA",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
-            "name": "TIPO_VINCULO",
+            "name": "Tipo de Vínculo",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -10371,50 +11072,46 @@
             ],
             "dataType": "string",
             "lineageTag": "5e99c832-45d2-470d-a142-d428c5428392",
-            "sourceColumn": "TIPO_VINCULO",
+            "sourceColumn": "Tipo de Vínculo",
             "summarizeBy": "none"
           },
           {
-            "name": "ANO_INICIAL",
+            "name": "Ano",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "0a26d314-adce-4cc8-a8bf-60dc3e877ee9",
-            "sourceColumn": "ANO_INICIAL",
-            "summarizeBy": "sum"
+            "lineageTag": "32e45a4f-fa14-40f8-a375-cba0a3c3a6b8",
+            "sourceColumn": "Ano",
+            "summarizeBy": "none"
           },
           {
-            "name": "ANO_FINAL",
+            "name": "Data",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "d0194b97-ba7f-4f14-8d5b-c0d77f994408",
-            "sourceColumn": "ANO_FINAL",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "ANO_REFERENCIA",
-            "annotations": [
+              },
               {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
               }
             ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "3cff4a2f-7813-4345-b50a-fb05379f8ae5",
-            "sourceColumn": "ANO_REFERENCIA",
-            "summarizeBy": "sum"
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isHidden": true,
+            "lineageTag": "07a29e69-040a-4803-961f-d71bafbee227",
+            "sourceColumn": "Data",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "e0e41ed3-cfbf-4bb0-be75-974e4050791b",
@@ -10427,9 +11124,11 @@
                 "let",
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1 = BEE{[Name=\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]}[Data]",
+                "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1 = BEE{[Name=\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]}[Data],",
+                "    #\"Inserted Date\" = Table.AddColumn(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1, \"Data\", each Date.From(Text.From([ANO], \"pt-BR\")), type date),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"TIPO_VINCULO\", \"Tipo de Vínculo\"}, {\"ANO\", \"Ano\"}})",
                 "in",
-                "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
