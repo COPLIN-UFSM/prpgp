@@ -8525,6 +8525,53 @@
             "lineageTag": "a3c144d8-7d92-4b1d-bb61-5af6bc076f93",
             "sourceColumn": "ID_ORIENTADOR",
             "summarizeBy": "none"
+          },
+          {
+            "name": "País de origem",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7a2fe2b9-3026-4fd3-b75e-23e80f835a9b",
+            "sourceColumn": "País de origem",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LATITUDE_PAIS_ORIGEM",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "fe4e929d-bd6a-465c-82b3-f88414b31f0f",
+            "sourceColumn": "LATITUDE_PAIS_ORIGEM",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "LONGITUDE_PAIS_ORIGEM",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dc8837cb-1300-46ba-9228-e306ba0f04fd",
+            "sourceColumn": "LONGITUDE_PAIS_ORIGEM",
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -8785,9 +8832,10 @@
                 "    #\"Replaced Value\" = Table.ReplaceValue(#\"Renamed Columns2\",\"F\",\"Feminino\",Replacer.ReplaceText,{\"Gênero\"}),",
                 "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"M\",\"Masculino\",Replacer.ReplaceText,{\"Gênero\"}),",
                 "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",null,\"Não especificado\",Replacer.ReplaceValue,{\"Gênero\"}),",
-                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Replaced Value2\",{{\"Nome aluno\", Text.Proper, type text}})",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Replaced Value2\",{{\"Nome aluno\", Text.Proper, type text}}),",
+                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Capitalized Each Word\",{{\"NOME_PAIS_PORTUGUES\", \"País de origem\"}})",
                 "in",
-                "    #\"Capitalized Each Word\""
+                "    #\"Renamed Columns3\""
               ],
               "type": "m"
             }
@@ -9014,6 +9062,53 @@
             "lineageTag": "98b819bd-8845-4a9b-9c2b-ff2ad91b0f09",
             "sourceColumn": "CPF",
             "summarizeBy": "none"
+          },
+          {
+            "name": "País de origem",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c0524a15-92d3-4ac4-a468-0e721b6e0ec5",
+            "sourceColumn": "País de origem",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LATITUDE_PAIS_ORIGEM",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "e0b6b31c-4da2-45c4-a865-e4d4edfc485e",
+            "sourceColumn": "LATITUDE_PAIS_ORIGEM",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "LONGITUDE_PAIS_ORIGEM",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "633d7470-83e1-43b4-93cd-550717fbc82e",
+            "sourceColumn": "LONGITUDE_PAIS_ORIGEM",
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -9204,9 +9299,10 @@
                 "    #\"Inserted Year\" = Table.AddColumn(#\"Renamed Columns\", \"Ano ingresso\", each Date.Year([Data ingresso]), Int64.Type),",
                 "    #\"Inserted Year1\" = Table.AddColumn(#\"Inserted Year\", \"Ano desligamento\", each Date.Year([Data desligamento]), Int64.Type),",
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Year1\",{{\"Data ingresso\", \"Data admissão\"}, {\"Nome\", \"Nome docente\"}, {\"TITULACAO\", \"Titulação\"}}),",
-                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Renamed Columns1\",{{\"Nome docente\", Text.Proper, type text}, {\"Cargo\", Text.Proper, type text}})",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Renamed Columns1\",{{\"Nome docente\", Text.Proper, type text}, {\"Cargo\", Text.Proper, type text}}),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Capitalized Each Word\",{{\"NOME_PAIS_PORTUGUES\", \"País de origem\"}})",
                 "in",
-                "    #\"Capitalized Each Word\""
+                "    #\"Renamed Columns2\""
               ],
               "type": "m"
             }
