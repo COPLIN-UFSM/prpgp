@@ -216,7 +216,7 @@
     {
       "ordinal": 2,
       "scrollPosition": {
-        "x": 353.51060392972539,
+        "x": 0,
         "y": 0
       },
       "nodes": [
@@ -297,7 +297,7 @@
       "ordinal": 3,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 1.2570207430874425
       },
       "nodes": [
         {
@@ -354,13 +354,13 @@
         },
         {
           "location": {
-            "x": 494.33332572574415,
-            "y": 246.37606564513862
+            "x": 498.10438795500653,
+            "y": 222.49267152647718
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
           "nodeLineageTag": "e0e41ed3-cfbf-4bb0-be75-974e4050791b",
           "size": {
-            "height": 241.71489628456283,
+            "height": 323.4212445852466,
             "width": 416.26800774767912
           },
           "zIndex": 4
@@ -436,8 +436,8 @@
       "nodes": [
         {
           "location": {
-            "x": 1308.5168586407074,
-            "y": 489.64672251202626
+            "x": 1303.6175002671123,
+            "y": 393.29267449799073
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -475,8 +475,8 @@
         },
         {
           "location": {
-            "x": 1285.0363401991317,
-            "y": 60.695696998425376
+            "x": 1311.1662515249718,
+            "y": 8.43587434674511
           },
           "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
           "nodeLineageTag": "8074a767-b605-475b-9a3c-4803970216f8",
@@ -488,8 +488,8 @@
         },
         {
           "location": {
-            "x": 897.18797610006391,
-            "y": 471.19304465160997
+            "x": 889.02237881073893,
+            "y": 309.51421832297416
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -501,8 +501,8 @@
         },
         {
           "location": {
-            "x": 362.8684319370098,
-            "y": 302.43945819490131
+            "x": 346.53723735835973,
+            "y": 266.51083012187109
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
           "nodeLineageTag": "e0e41ed3-cfbf-4bb0-be75-974e4050791b",
@@ -514,7 +514,7 @@
         }
       ],
       "name": "discentes",
-      "zoomValue": 54.614859979178576,
+      "zoomValue": 61.232507835483695,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
