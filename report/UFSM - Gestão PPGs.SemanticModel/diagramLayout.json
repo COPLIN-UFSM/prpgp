@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 282.53159487685866,
-        "y": 409.56133302224862
+        "x": 692.64046141100948,
+        "y": 684.42733341008841
       },
       "nodes": [
         {
@@ -88,19 +88,6 @@
         },
         {
           "location": {
-            "x": 1969.151483392654,
-            "y": 75.724806355933424
-          },
-          "nodeIndex": "SCIVAL_METRICAS",
-          "nodeLineageTag": "8b86b1f7-9c9a-4768-ac73-9b65e0577733",
-          "size": {
-            "height": 190.6191926679362,
-            "width": 245.69535413434915
-          },
-          "zIndex": 10
-        },
-        {
-          "location": {
             "x": 1055.7999280144886,
             "y": 49.421719968750409
           },
@@ -136,7 +123,7 @@
             "height": 284.66716542353333,
             "width": 310.4382373007511
           },
-          "zIndex": 11
+          "zIndex": 10
         },
         {
           "location": {
@@ -161,60 +148,6 @@
     },
     {
       "ordinal": 1,
-      "scrollPosition": {
-        "x": 0,
-        "y": 0
-      },
-      "nodes": [
-        {
-          "location": {
-            "x": 363.92297665506931,
-            "y": 4.5105243417320828
-          },
-          "nodeIndex": "dCalendario",
-          "nodeLineageTag": "1160af50-9af5-4aea-aec8-e2ed241d0a86",
-          "size": {
-            "height": 145,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 1103.4088258314653,
-            "y": 2.2552621708660396
-          },
-          "nodeIndex": "V_PRPGP_DOCENTES_POS",
-          "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
-          "size": {
-            "height": 615.65395745901219,
-            "width": 299.40969142719348
-          },
-          "zIndex": 2
-        },
-        {
-          "location": {
-            "x": 683.86759997291733,
-            "y": 0
-          },
-          "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
-          "nodeLineageTag": "c804e6fc-e8b7-4cd5-a570-f57eedc4184a",
-          "size": {
-            "height": 246.39316161289685,
-            "width": 325.76251424538327
-          },
-          "zIndex": 3
-        }
-      ],
-      "name": "projetos",
-      "zoomValue": 62.924430531924635,
-      "pinKeyFieldsToTop": false,
-      "showExtraHeaderInfo": false,
-      "hideKeyFieldsWhenCollapsed": false,
-      "tablesLocked": false
-    },
-    {
-      "ordinal": 2,
       "scrollPosition": {
         "x": 0,
         "y": 0
@@ -294,7 +227,7 @@
       "tablesLocked": false
     },
     {
-      "ordinal": 3,
+      "ordinal": 2,
       "scrollPosition": {
         "x": 0,
         "y": 1.2570207430874425
@@ -374,7 +307,7 @@
       "tablesLocked": false
     },
     {
-      "ordinal": 4,
+      "ordinal": 3,
       "scrollPosition": {
         "x": 0,
         "y": 0
@@ -428,7 +361,7 @@
       "tablesLocked": false
     },
     {
-      "ordinal": 5,
+      "ordinal": 4,
       "scrollPosition": {
         "x": 0,
         "y": 0
@@ -521,6 +454,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "projetos",
+  "selectedDiagram": "All tables",
   "defaultDiagram": "All tables"
 }

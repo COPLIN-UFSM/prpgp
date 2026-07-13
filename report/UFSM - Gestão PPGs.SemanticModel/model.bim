@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"SCIVAL_METRICAS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -339,151 +339,6 @@
                     }
                   }
                 ]
-              },
-              "scival_metrica": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "SCIVAL_METRICAS"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "scival metrica": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "SCIVAL_METRICAS": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
-              "scival_metrica.descrição": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "SCIVAL_METRICAS",
-                    "ConceptualProperty": "Descrição"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "descrição": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "scival_metrica.id_metrica": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "SCIVAL_METRICAS",
-                    "ConceptualProperty": "ID_METRICA"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id metrica": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_METRICA": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification metrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identity metrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "identifier metrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "credential metrica": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
-              },
-              "scival_metrica.nome_métrica": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "SCIVAL_METRICAS",
-                    "ConceptualProperty": "Nome métrica"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "nome métrica": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "scival_metrica.nome_métrica_scival": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "SCIVAL_METRICAS",
-                    "ConceptualProperty": "Nome métrica (Scival)"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "nome métrica (scival)": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "nome métrica": {
-                      "State": "Generated",
-                      "Weight": 0.75
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
               },
               "v_prpgp_credenciamento_docente_fluxo": {
                 "Definition": {
@@ -1075,29 +930,6 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_fluxo.chave_unicum": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO",
-                    "ConceptualProperty": "CHAVE_UNICA"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "chave unicum": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "CHAVE_UNICA": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
               "v_prpgp_discentes_fluxo.data": {
                 "Definition": {
                   "Binding": {
@@ -1193,69 +1025,6 @@
                 "Visibility": {
                   "Value": "Hidden"
                 }
-              },
-              "v_prpgp_discentes_fluxo.id_contrato_rh": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO",
-                    "ConceptualProperty": "ID_CONTRATO_RH"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "id contrato rh": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ID_CONTRATO_RH": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  },
-                  {
-                    "identification contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identity contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "identifier contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.609
-                    }
-                  },
-                  {
-                    "credential contrato rh": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ]
               },
               "v_prpgp_discentes_fluxo.id_curso_aluno": {
                 "Definition": {
@@ -5023,72 +4792,6 @@
                   "medida.html": {
                     "Target": {
                       "Entity": "medida.html"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "scival_metrica_has_descrição": {
-                "Binding": {
-                  "ConceptualEntity": "SCIVAL_METRICAS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "scival_metrica.descrição"
-                      },
-                      "Subject": {
-                        "Role": "scival_metrica"
-                      }
-                    },
-                    "ID": "scival_metricas_have_descriçãos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "scival_metrica": {
-                    "Target": {
-                      "Entity": "scival_metrica"
-                    }
-                  },
-                  "scival_metrica.descrição": {
-                    "Target": {
-                      "Entity": "scival_metrica.descrição"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "scival_metrica_has_nome_métrica": {
-                "Binding": {
-                  "ConceptualEntity": "SCIVAL_METRICAS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "scival_metrica.nome_métrica"
-                      },
-                      "Subject": {
-                        "Role": "scival_metrica"
-                      }
-                    },
-                    "ID": "scival_metricas_have_nome_métricas",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "scival_metrica": {
-                    "Target": {
-                      "Entity": "scival_metrica"
-                    }
-                  },
-                  "scival_metrica.nome_métrica": {
-                    "Target": {
-                      "Entity": "scival_metrica.nome_métrica"
                     }
                   }
                 },
@@ -10699,105 +10402,6 @@
         ]
       },
       {
-        "name": "SCIVAL_METRICAS",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "ID_METRICA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "isHidden": true,
-            "lineageTag": "6f66aeac-1d63-4869-a221-a426086957b2",
-            "sourceColumn": "ID_METRICA",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "Nome métrica",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "258b8d69-e6c2-4f5a-bc45-fe4b1b5fa73b",
-            "sourceColumn": "Nome métrica",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Nome métrica (Scival)",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "string",
-            "isHidden": true,
-            "lineageTag": "d5431f58-fc05-45c9-94a8-e6bf6be10483",
-            "sourceColumn": "Nome métrica (Scival)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Descrição",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "bf037958-bf20-49bd-bafa-dc290ffbefae",
-            "sourceColumn": "Descrição",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "8b86b1f7-9c9a-4768-ac73-9b65e0577733",
-        "partitions": [
-          {
-            "name": "SCIVAL_METRICAS",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
-                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
-                "    SCIVAL_METRICAS1 = BEE{[Name=\"SCIVAL_METRICAS\"]}[Data],",
-                "    #\"Renamed Columns\" = Table.RenameColumns(SCIVAL_METRICAS1,{{\"NOME_SCIVAL\", \"Nome métrica (Scival)\"}, {\"METRICA\", \"Nome métrica\"}, {\"DESCRICAO\", \"Descrição\"}})",
-                "in",
-                "    #\"Renamed Columns\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
         "name": "V_PRPGP_PROGRAMAS_POS",
         "annotations": [
           {
@@ -11206,33 +10810,6 @@
             "isHidden": true,
             "lineageTag": "3c245bc4-8444-471f-be2b-78d435102053",
             "sourceColumn": "Data",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "ID_CONTRATO_RH",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "07ea08ac-17a7-48ee-af53-d34c88e4e80f",
-            "sourceColumn": "ID_CONTRATO_RH",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "CHAVE_UNICA",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "5bb06696-21b2-4a17-ba54-a9fb7ff68de4",
-            "sourceColumn": "CHAVE_UNICA",
             "summarizeBy": "none"
           }
         ],
