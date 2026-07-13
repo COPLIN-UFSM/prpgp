@@ -1,0 +1,118 @@
+table V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO
+	lineageTag: e0e41ed3-cfbf-4bb0-be75-974e4050791b
+
+	column ID_CONTRATO_RH
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e1fb14ef-8b77-41a8-90bf-453de613a8f7
+		summarizeBy: none
+		sourceColumn: ID_CONTRATO_RH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_UNIDADE_SUP
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: af38dd88-519e-4222-bb62-750cd58f389f
+		summarizeBy: none
+		sourceColumn: ID_UNIDADE_SUP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column ID_PESSOA
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 45dc7560-67de-41fc-a16e-7a4244c19a20
+		summarizeBy: none
+		sourceColumn: ID_PESSOA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Tipo de Vínculo'
+		dataType: string
+		lineageTag: 5e99c832-45d2-470d-a142-d428c5428392
+		summarizeBy: none
+		sourceColumn: Tipo de Vínculo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 32e45a4f-fa14-40f8-a375-cba0a3c3a6b8
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = User
+
+	column Data
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 07a29e69-040a-4803-961f-d71bafbee227
+		summarizeBy: none
+		sourceColumn: Data
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ANO_INICIAL
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bc69894e-3e91-4854-a318-af3c8daa6aec
+		summarizeBy: sum
+		sourceColumn: ANO_INICIAL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANO_FINAL
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6d522336-2816-4b9c-bd80-b7f593311470
+		summarizeBy: sum
+		sourceColumn: ANO_FINAL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHAVE_UNICA
+		dataType: string
+		lineageTag: a8ae490a-680f-4a72-952b-216a1913a3fd
+		summarizeBy: none
+		sourceColumn: CHAVE_UNICA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1 = BEE{[Name="V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"]}[Data],
+				    #"Inserted Date" = Table.AddColumn(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO1, "Data", each Date.From(Text.From([ANO], "pt-BR")), type date),
+				    #"Renamed Columns" = Table.RenameColumns(#"Inserted Date",{{"TIPO_VINCULO", "Tipo de Vínculo"}, {"ANO", "Ano"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

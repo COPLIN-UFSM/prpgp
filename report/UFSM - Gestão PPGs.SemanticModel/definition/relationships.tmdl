@@ -1,0 +1,50 @@
+relationship AutoDetected_d9a4c154-801f-465f-9e19-a99850cd16b0
+	fromColumn: V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.ID_UNIDADE_SUP
+	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
+
+relationship 4d01a716-7ecb-fc01-4e37-347370733837
+	fromColumn: V_PRPGP_MEMBROS_BANCA.ID_CURSO_ALUNO
+	toColumn: V_PRPGP_DISCENTES_POS.ID_CURSO_ALUNO
+
+relationship 9aa63a5f-2607-e582-7a92-3cb937ccdbb0
+	fromColumn: V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS.'Data ingresso'
+	toColumn: dCalendario.Data
+
+relationship 8c84a495-26e4-ce3b-d7a2-0058c04fc781
+	fromColumn: V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO.Data
+	toColumn: dCalendario.Data
+
+relationship 095b32c3-fe8f-a667-88f3-b152b8c823c3
+	fromColumn: V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO.ID_UNIDADE_SUP
+	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
+
+relationship b65e81d5-c4a9-627a-c6b0-751b97850293
+	crossFilteringBehavior: bothDirections
+	fromColumn: V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO.ID_CONTRATO_RH
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+
+relationship e993e7da-20f8-4a4f-eea8-d800c554e9fa
+	fromColumn: V_PRPGP_ENCARGO_DIDATICO_POS.'Data encargo'
+	toColumn: dCalendario.Data
+
+relationship fee1b589-38cc-7161-8727-afe1f47ba179
+	fromColumn: V_PRPGP_ENCARGO_DIDATICO_POS.ID_CONTRATO_RH
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+
+relationship 715aae5a-634e-4fe0-e5dc-1df0c92ea08e
+	crossFilteringBehavior: bothDirections
+	fromColumn: V_PRPGP_DISCENTES_FLUXO.ID_CURSO_ALUNO
+	toColumn: V_PRPGP_DISCENTES_POS.ID_CURSO_ALUNO
+
+relationship c9b53c5a-1041-256c-5376-3f5897bd6423
+	fromColumn: V_PRPGP_DISCENTES_FLUXO.ID_UNIDADE_SUP
+	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
+
+relationship 664c694e-73aa-d616-495c-5d404c66b13a
+	fromColumn: V_PRPGP_DISCENTES_FLUXO.Data
+	toColumn: dCalendario.Data
+
+relationship 063df5d7-790a-6b54-6302-dea62138034e
+	fromColumn: V_PRPGP_DISCENTES_POS.ID_ORIENTADOR
+	toColumn: V_PRPGP_DOCENTES_POS.ID_CONTRATO_RH
+

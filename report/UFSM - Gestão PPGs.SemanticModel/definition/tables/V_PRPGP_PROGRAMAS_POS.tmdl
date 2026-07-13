@@ -1,0 +1,76 @@
+table V_PRPGP_PROGRAMAS_POS
+	lineageTag: c804e6fc-e8b7-4cd5-a570-f57eedc4184a
+
+	column ID_CENTRO
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 477ba964-4786-4568-a634-6d9009d32e34
+		summarizeBy: none
+		sourceColumn: ID_CENTRO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Nome centro'
+		dataType: string
+		lineageTag: 347142ff-45a4-4609-a9a6-9635a7e84f1a
+		summarizeBy: none
+		sourceColumn: Nome centro
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_UNIDADE_SUP
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4b3d46ca-ab81-40ed-aa3d-1513cafd7d0a
+		summarizeBy: none
+		sourceColumn: ID_UNIDADE_SUP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome unidade'
+		dataType: string
+		lineageTag: deed6061-5ca4-4296-baa2-8ef3f2b33e84
+		summarizeBy: none
+		sourceColumn: Nome unidade
+
+		annotation SummarizationSetBy = Automatic
+
+	partition V_PRPGP_PROGRAMAS_POS = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    V_PRPGP_PROGRAMAS_POS1 = BEE{[Name="V_PRPGP_PROGRAMAS_POS"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_PROGRAMAS_POS1,{{"NOME_UNIDADE_SUP", "Nome unidade"}, {"NOME_CENTRO", "Nome centro"}}),
+				    #"Uppercased Text" = Table.TransformColumns(#"Renamed Columns",{{"Nome unidade", Text.Upper, type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Uppercased Text","PROGRAMA DE PÓS-GRADUAÇÃO EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","PROGRAMA DE PÓS-GRADUAÇÃO MESTRADO PROFISSIONAL EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","CURSO-PROGRAMA PG-M EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","CURSO-PROGRAMA PG-D EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","CURSO-PROGRAMA PG PROFISSIONAL EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","CURSO-PROGRAMA PG EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5","CURSO-PROGRAMA  PG EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","CURSO PG-MESTRADO PROFISSIONAL EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value8" = Table.ReplaceValue(#"Replaced Value7","CURSO PG-M ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value9" = Table.ReplaceValue(#"Replaced Value8","CURSO MESTRADO ACADÊMICO EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value13" = Table.ReplaceValue(#"Replaced Value9","CURSO-PROGRAMA PG ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value10" = Table.ReplaceValue(#"Replaced Value13","CURSO DE MESTRADO PROFISSIONAL EM ","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value14" = Table.ReplaceValue(#"Replaced Value10"," - Mestrado Profissional","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value11" = Table.ReplaceValue(#"Replaced Value14","- CAMPUS UFSM-FW","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Replaced Value12" = Table.ReplaceValue(#"Replaced Value11"," - UFSM-PM","",Replacer.ReplaceText,{"Nome unidade"}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Replaced Value12",{{"Nome unidade", Text.Proper, type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Capitalized Each Word",{{"Nome unidade", Text.Trim, type text}})
+				in
+				    #"Trimmed Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

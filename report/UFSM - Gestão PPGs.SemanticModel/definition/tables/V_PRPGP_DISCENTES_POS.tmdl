@@ -1,0 +1,383 @@
+table V_PRPGP_DISCENTES_POS
+	lineageTag: 68361baf-98db-4955-8b69-d6584362a50b
+
+	measure 'Aluno ativo no intervalo' = ```
+			
+			    VAR SelectedYears = VALUES(dCalendario[Ano])  -- Get the selected years from dCalendario
+			    VAR ano_ingresso = MIN(V_PRPGP_DISCENTES_POS[Ano ingresso])  -- Project start year
+			    VAR ano_saida = MAX(V_PRPGP_DISCENTES_POS[Ano saída corrigido])  -- Project end year
+			    VAR YearsInRange = FILTER(SelectedYears, ano_ingresso <= [Ano] && ano_saida >= [Ano])  
+			    -- Check overlap
+			    RETURN IF(COUNTROWS(YearsInRange) > 0, 1, 0)  -- Return 1 if there is any overlap, otherwise 0
+			```
+		formatString: 0
+		lineageTag: 7f0eb5e0-b0d0-4c65-8457-8e96fa8fa25e
+
+	measure 'Discentes Ativos' = DISTINCTCOUNT(V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO])
+		formatString: #,0
+		lineageTag: 48e2e493-2d9b-4b1d-8edb-6eb551c0bdf3
+
+	measure 'Formados por ano de formatura' =
+			CALCULATE(
+			    distinctcount(V_PRPGP_DISCENTES_POS[Matrícula]),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado"
+			)
+		formatString: #,0
+		lineageTag: b1c41e6d-28c5-4e68-b977-888b2137fd42
+
+	measure 'Doutorandos ativos' =
+			CALCULATE(
+			     DISTINCTCOUNT(V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]),
+			     V_PRPGP_DISCENTES_POS[Modalidade curso] = "Doutorado"
+			)
+		formatString: #,0
+		lineageTag: b9a547bf-13ae-47b0-afe1-131615bc4896
+
+	measure 'Mestrandos ativos' =
+			CALCULATE(
+			     DISTINCTCOUNT(V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]),
+			     V_PRPGP_DISCENTES_POS[Modalidade curso] = "Mestrado"
+			)
+		formatString: #,0
+		lineageTag: 810caefd-2db3-44ba-bf56-1d6f4d610316
+
+	measure 'Pós-doutorandos ativos' =
+			CALCULATE(
+			     DISTINCTCOUNT(V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]),
+			     V_PRPGP_DISCENTES_POS[Modalidade curso] = "Pós-Doutorado"
+			)
+		formatString: 0
+		lineageTag: b3177b2a-7a45-4bff-b1d7-0a826d50ec78
+
+	measure 'Tempo médio para formar (anos)' =
+			
+			CALCULATE(
+			    AVERAGEX(
+			        V_PRPGP_DISCENTES_POS,
+			        VAR AnoSaida = V_PRPGP_DISCENTES_POS[Ano saída]
+			        VAR AnoIngresso =
+			            CALCULATE(
+			                MIN(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Data]),
+			                REMOVEFILTERS(dCalendario)
+			            )
+			        RETURN
+			            IF(
+			                ISBLANK(AnoSaida) || ISBLANK(AnoIngresso),
+			                BLANK(),
+			                AnoSaida - AnoIngresso
+			            )
+			    ),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado"
+			)
+		lineageTag: 8a2a102f-f6fb-4647-a1b1-44293746b4fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tempo médio para formar mestres (anos)' =
+			
+			CALCULATE(
+			    AVERAGEX(
+			        V_PRPGP_DISCENTES_POS,
+			        VAR AnoSaida = V_PRPGP_DISCENTES_POS[Ano saída]
+			        VAR AnoIngresso =
+			            CALCULATE(
+			                MIN(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Data]),
+			                REMOVEFILTERS(dCalendario)
+			            )
+			        RETURN
+			            IF(
+			                ISBLANK(AnoSaida) || ISBLANK(AnoIngresso),
+			                BLANK(),
+			                AnoSaida - AnoIngresso
+			            )
+			    ),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado",
+			    V_PRPGP_DISCENTES_POS[Modalidade curso] = "Mestrado"
+			)
+		lineageTag: 427b8915-ceea-46f7-9200-7124dc49881e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tempo médio para formar doutores (anos)' =
+			
+			CALCULATE(
+			    AVERAGEX(
+			        V_PRPGP_DISCENTES_POS,
+			        VAR AnoSaida = V_PRPGP_DISCENTES_POS[Ano saída]
+			        VAR AnoIngresso =
+			            CALCULATE(
+			                MIN(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Data]),
+			                REMOVEFILTERS(dCalendario)
+			            )
+			        RETURN
+			            IF(
+			                ISBLANK(AnoSaida) || ISBLANK(AnoIngresso),
+			                BLANK(),
+			                AnoSaida - AnoIngresso
+			            )
+			    ),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado",
+			    V_PRPGP_DISCENTES_POS[Modalidade curso] = "Doutorado"
+			)
+		lineageTag: 0c7860aa-6983-47af-8f0c-cccf54c667d7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tempo médio para formar doutores (todos cursos)(anos)' =
+			
+			CALCULATE(
+			    AVERAGEX(
+			        V_PRPGP_DISCENTES_POS,
+			        VAR AnoSaida = V_PRPGP_DISCENTES_POS[Ano saída]
+			        VAR AnoIngresso =
+			            CALCULATE(
+			                MIN(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Ano]),
+			                ALL(V_PRPGP_DISCENTES_FLUXO[Data]),
+			                REMOVEFILTERS(dCalendario)
+			            )
+			        RETURN
+			            IF(
+			                ISBLANK(AnoSaida) || ISBLANK(AnoIngresso),
+			                BLANK(),
+			                AnoSaida - AnoIngresso
+			            )
+			    ),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado",
+			    V_PRPGP_DISCENTES_POS[Modalidade curso] = "Doutorado",
+			    ALL(V_PRPGP_PROGRAMAS_POS[ID_UNIDADE_SUP])
+			)
+		lineageTag: 9117a2ab-e18a-4d8b-8824-54d0ef3bc970
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quantidade matriculados' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]),
+			    ALL(dCalendario)
+			)
+		formatString: #,0
+		lineageTag: c42b2ac2-42d3-4524-ac65-6d1ca5045feb
+
+	measure 'Quantidade formados' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado",
+			    ALL(dCalendario)
+			)
+		formatString: #,0
+		lineageTag: 982b9f11-78df-478f-b197-cb625263d7cd
+
+	measure 'Taxa de Conclusão' =
+			
+			DIVIDE([Quantidade formados], [Quantidade matriculados])
+		formatString: 0%;-0%;0%
+		lineageTag: d2f74a02-231c-4b6d-b9c4-0e3b9dc49fde
+
+	measure Brasileiro =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[ID_CURSO_ALUNO]),
+			    V_PRPGP_DISCENTES_POS[País de origem discente] = "Brasil"
+			)
+		formatString: 0
+		lineageTag: ad6804cf-3d6e-4719-8dcb-89dd5cc4f158
+
+	column ID_CURSO_ALUNO
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8fc61f1e-182f-4a49-9d96-c9bf45265f8b
+		summarizeBy: none
+		sourceColumn: ID_CURSO_ALUNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Matrícula
+		dataType: string
+		lineageTag: 69e9d438-3452-4a42-aa72-6311088b2728
+		summarizeBy: none
+		sourceColumn: Matrícula
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome aluno'
+		dataType: string
+		lineageTag: a5f4b775-a258-4311-85c4-ab20c721b5a0
+		summarizeBy: none
+		sourceColumn: Nome aluno
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ano ingresso'
+		dataType: int64
+		formatString: 0
+		lineageTag: b3103874-35f6-4f66-a93c-b1b07371309e
+		summarizeBy: none
+		sourceColumn: Ano ingresso
+
+		annotation SummarizationSetBy = User
+
+	column 'Ano saída'
+		dataType: int64
+		formatString: 0
+		lineageTag: 98457c3d-3952-4741-98ba-0192f19d354c
+		summarizeBy: none
+		sourceColumn: Ano saída
+
+		annotation SummarizationSetBy = User
+
+	column 'Forma saída'
+		dataType: string
+		lineageTag: 44d55b86-2e12-47ac-8d3f-8e56efa72293
+		summarizeBy: none
+		sourceColumn: Forma saída
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PESSOA
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 93999f68-6a8d-4dae-9dfc-722a8c083f7c
+		summarizeBy: none
+		sourceColumn: ID_PESSOA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Código curso'
+		dataType: string
+		lineageTag: fa83afee-b09c-4fb9-9d85-5f4fce1e5408
+		summarizeBy: none
+		sourceColumn: Código curso
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_UNIDADE_SUP
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4c725edf-3523-4d22-a09e-11419f05acac
+		summarizeBy: none
+		sourceColumn: ID_UNIDADE_SUP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Modalidade curso'
+		dataType: string
+		lineageTag: 2dfa31c4-6e83-40ab-8546-55ceaec324a3
+		summarizeBy: none
+		sourceColumn: Modalidade curso
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ano saída corrigido'
+		dataType: double
+		isHidden
+		formatString: 0
+		lineageTag: 817e5c22-c7d1-45cb-b5b2-481cac1fd80e
+		summarizeBy: none
+		sourceColumn: Ano saída corrigido
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Gênero
+		dataType: string
+		lineageTag: dcc0bb8f-11b4-498d-86d8-c0b83eb4f095
+		summarizeBy: none
+		sourceColumn: Gênero
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPF
+		dataType: string
+		lineageTag: 2dcceb43-9f56-460a-aae3-b71fb999ef90
+		summarizeBy: none
+		sourceColumn: CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_ORIENTADOR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a3c144d8-7d92-4b1d-bb61-5af6bc076f93
+		summarizeBy: none
+		sourceColumn: ID_ORIENTADOR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NACIONALIDADE_ITEM
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 24318924-78a8-47e6-9300-63357431f4c6
+		summarizeBy: none
+		sourceColumn: NACIONALIDADE_ITEM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'País de origem discente'
+		dataType: string
+		lineageTag: 8b478d33-5b88-4b2e-a4ad-6cd46f8b45b1
+		summarizeBy: none
+		sourceColumn: País de origem discente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origem
+		dataType: string
+		lineageTag: beaa86bb-5f5b-4759-b7cb-da15df33cfcd
+		summarizeBy: none
+		sourceColumn: Origem
+
+		annotation SummarizationSetBy = Automatic
+
+	partition V_PRPGP_DISCENTES_POS = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    V_PRPGP_DISCENTES_POS1 = BEE{[Name="V_PRPGP_DISCENTES_POS"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{"ANO_EVASAO", "Ano saída"}, {"ANO_INGRESSO", "Ano ingresso"}, {"FORMA_EVASAO", "Forma saída"}, {"MATRICULA", "Matrícula"}, {"NOME_ALUNO", "Nome aluno"}, {"NOME_PAIS_PORTUGUES", "País de origem"}}),
+				    #"Inserted Date" = Table.AddColumn(#"Renamed Columns", "Data ingresso", each Date.From(Text.From([Ano ingresso], "pt-BR")), type date),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Date",{{"MODALIDADE_CURSO", "Modalidade curso"}, {"COD_CURSO", "Código curso"}, {"GENERO", "Gênero"}
+				}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"Data ingresso"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Ano saída corrigido", each if [Ano saída] is null then Date.Year(DateTime.LocalNow()) else [Ano saída]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"Ano saída corrigido", type number}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","F","Feminino",Replacer.ReplaceText,{"Gênero"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","M","Masculino",Replacer.ReplaceText,{"Gênero"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Replaced Value1",{{"País de origem", "País de origem discente"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns2", "Origem", each if [NACIONALIDADE_ITEM] = 1 then "Brasileiro"
+				else if [NACIONALIDADE_ITEM] <> null then "estrangeiro"
+				else null)
+				in
+				    #"Added Custom1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

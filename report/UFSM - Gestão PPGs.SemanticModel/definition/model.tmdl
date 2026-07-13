@@ -1,0 +1,35 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Spreadsheets
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation PBI_QueryOrder = ["V_PRPGP_DISCENTES_POS","V_PRPGP_DOCENTES_POS","V_PRPGP_MEMBROS_BANCA","Medidas","V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS","V_PRPGP_PROGRAMAS_POS","V_PRPGP_ENCARGO_DIDATICO_POS","V_PRPGP_DISCENTES_FLUXO","V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
+
+ref table V_PRPGP_DISCENTES_POS
+ref table V_PRPGP_DOCENTES_POS
+ref table V_PRPGP_MEMBROS_BANCA
+ref table Medidas
+ref table dCalendario
+ref table V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS
+ref table V_PRPGP_PROGRAMAS_POS
+ref table V_PRPGP_ENCARGO_DIDATICO_POS
+ref table V_PRPGP_DISCENTES_FLUXO
+ref table V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO
+
+ref cultureInfo en-US
+

@@ -1,0 +1,103 @@
+table V_PRPGP_ENCARGO_DIDATICO_POS
+	lineageTag: 09ce9bdf-531d-41c7-9f5e-7828f8951882
+
+	measure 'Soma Encargos' = SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])
+		lineageTag: c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Data encargo'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: a2b513dd-fc1d-400f-8318-ed212900bb50
+		summarizeBy: none
+		sourceColumn: Data encargo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ID_CONTRATO_RH
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bbdbea74-4e1d-48b0-ae36-b2e55eb46efc
+		summarizeBy: none
+		sourceColumn: ID_CONTRATO_RH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Ano encargo'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6da5b8c5-a768-4331-a06d-f280b606ffe8
+		summarizeBy: none
+		sourceColumn: Ano encargo
+
+		annotation SummarizationSetBy = User
+
+	column Semestre
+		dataType: string
+		lineageTag: 902a948c-0062-40e7-8a6f-de4732bf1b27
+		summarizeBy: none
+		sourceColumn: Semestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Encargo didático'
+		dataType: double
+		lineageTag: 11f7febd-3d57-468a-bf64-e7d7d1ca9c2b
+		summarizeBy: none
+		sourceColumn: Encargo didático
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tipo encargo'
+		dataType: string
+		lineageTag: b5ab799e-53d8-4511-b674-218dcdc2e710
+		summarizeBy: none
+		sourceColumn: Tipo encargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nível
+		dataType: string
+		lineageTag: 7c20e457-5836-440a-accf-d4ec31229027
+		summarizeBy: none
+		sourceColumn: Nível
+
+		annotation SummarizationSetBy = Automatic
+
+	partition V_PRPGP_ENCARGO_DIDATICO_POS = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    V_PRPGP_ENCARGO_DIDATICO_POS1 = BEE{[Name="V_PRPGP_ENCARGO_DIDATICO_POS"]}[Data],
+				    #"Inserted Date" = Table.AddColumn(V_PRPGP_ENCARGO_DIDATICO_POS1, "Data encargo", each Date.From(Text.From([ANO], "pt-BR")), type date),
+				    #"Renamed Columns" = Table.RenameColumns(#"Inserted Date",{{"ANO", "Ano encargo"}, {"ENCARGO", "Encargo didático"}, {"NIVEL_TIPO", "Nível"}, {"TIPO_ENCARGO", "Tipo encargo"}, {"PERIODO", "Semestre"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Semestre", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","1","1º semestre",Replacer.ReplaceText,{"Semestre"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","2","2º semestre",Replacer.ReplaceText,{"Semestre"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value1",{{"Encargo didático", type number}}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Changed Type1","GRADUAÇÃO","Graduação",Replacer.ReplaceText,{"Nível"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","DOUTORADO","Doutorado",Replacer.ReplaceText,{"Nível"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","MESTRADO","Mestrado",Replacer.ReplaceText,{"Nível"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","OUTROS","Outros",Replacer.ReplaceText,{"Nível"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5","ESPECIALIZAÇÃO/RESIDENCIA","Especialização/Residência",Replacer.ReplaceText,{"Nível"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Replaced Value6",{"ID_CONTRATO_RH", "Data encargo", "Ano encargo", "Semestre", "Nível", "Tipo encargo", "Encargo didático"})
+				in
+				    #"Reordered Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

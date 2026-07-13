@@ -1,0 +1,293 @@
+table V_PRPGP_DOCENTES_POS
+	lineageTag: d25995bd-961f-45d0-91b9-8aea0f5164e2
+
+	measure 'Quantidade docentes permanentes' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),
+			    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = "Permanente"
+			)
+		formatString: #,0
+		lineageTag: 33c7c8fb-3c7d-4e6c-b151-b5c2333a5bcc
+
+	measure 'Tempo médio de permanência' = ```
+			
+			AVERAGEX(
+			    VALUES(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_PESSOA]),
+			    VAR AnoMin = 
+			        CALCULATE(
+			            MIN(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),
+			            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),
+			            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Data]),
+			            REMOVEFILTERS(dCalendario)
+			        )
+			    VAR AnoMax = 
+			        CALCULATE(
+			            MAX(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),
+			            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),
+			            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Data]),
+			            REMOVEFILTERS(dCalendario)
+			        )
+			    RETURN 
+			        IF(
+			            ISBLANK(AnoMin) || ISBLANK(AnoMax),
+			            BLANK(),
+			            AnoMax - AnoMin + 1
+			        )
+			)
+			```
+		formatString: 0
+		lineageTag: 5fa3a188-b1b9-45c5-9fe1-13b152d6f268
+
+	measure 'Anos vinculado ao programa' = ```
+			
+			    VAR AnoReferencia = MAX(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano])
+			    VAR AnoIngresso = CALCULATE(
+			            MIN(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),
+			            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Ano]),
+			            ALL(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Data]),
+			            REMOVEFILTERS(dCalendario)
+			        )
+			    RETURN IF(
+			            ISBLANK(AnoIngresso) || ISBLANK(AnoReferencia),
+			            BLANK(),
+			            AnoReferencia - AnoIngresso
+			        )
+			```
+		formatString: 0
+		lineageTag: 255d6be7-59fd-40df-a78b-42732a60f571
+
+	measure 'Quantidade docentes colaboradores' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),
+			    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = "Colaborador"
+			)
+		formatString: #,0
+		lineageTag: 0fd8570e-2303-471d-9037-04174e32ea6a
+
+	measure 'Quantidade docentes visitantes' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),
+			    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = "Visitante"
+			)
+		formatString: #,0
+		lineageTag: 8442c448-9045-421f-b42e-0c0b6cc3b407
+
+	measure 'Professores vinculados 5+ anos' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),
+			    FILTER(
+			        VALUES(V_PRPGP_DOCENTES_POS[CPF]),
+			        NOT ISBLANK([Anos vinculado ao programa]) && [Anos vinculado ao programa] >= 5
+			    )
+			)
+		formatString: 0
+		lineageTag: cb0d5d6b-0305-4f63-9f49-42f16c8628db
+
+	measure 'Professores vinculados <5 anos' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),
+			    FILTER(
+			        VALUES(V_PRPGP_DOCENTES_POS[CPF]),
+			        NOT ISBLANK([Anos vinculado ao programa]) && [Anos vinculado ao programa] < 5
+			    )
+			)
+		formatString: 0
+		lineageTag: 73d4b1f8-2e1c-4989-9414-d41a32028d11
+
+	measure 'Docentes brasileiros' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),
+			    V_PRPGP_DOCENTES_POS[País de origem docente] = "Brasil"
+			)
+		formatString: 0
+		lineageTag: 264d1863-3898-4b34-a85a-98b9cf05affb
+
+	measure 'Docentes estrangeiros' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),
+			    V_PRPGP_DOCENTES_POS[País de origem docente] <> "Brasil"
+			)
+		formatString: 0
+		lineageTag: 1b1ea0cc-c18f-4684-8643-83f3e174f489
+
+	measure 'Média orientandos por orientador' = ```
+			
+			    DIVIDE(
+			        DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[CPF]),
+			        DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[ID_ORIENTADOR]
+			    )
+			)
+			```
+		lineageTag: 2b0a72c3-3204-425c-a108-782cec5de77b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Média formados por orientador' =
+			CALCULATE(
+			    DIVIDE(
+			        DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[CPF]),
+			        DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[ID_ORIENTADOR])
+			    ),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado"
+			)
+		lineageTag: 815f0426-d455-44ee-b4f1-22edb958e535
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quantidade docentes' = DISTINCTCOUNT(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_CONTRATO_RH])
+		formatString: #,0
+		lineageTag: bccd83af-247c-40a2-886b-cfb69f285472
+
+	column ID_CONTRATO_RH
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bc343852-689d-4e74-ac7a-5c392b2da020
+		summarizeBy: none
+		sourceColumn: ID_CONTRATO_RH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SIAPE
+		dataType: int64
+		formatString: 0
+		lineageTag: 0229dd6c-d0aa-4a7a-8bd1-8b7fd0efc6fb
+		summarizeBy: none
+		sourceColumn: SIAPE
+
+		annotation SummarizationSetBy = User
+
+	column 'Nome docente'
+		dataType: string
+		lineageTag: 3e8d8289-a64e-410c-a26f-34c0fde8d157
+		summarizeBy: none
+		sourceColumn: Nome docente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data admissão'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 93c3ad4e-e2bb-4098-9db6-4c621141a5c0
+		summarizeBy: none
+		sourceColumn: Data admissão
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Data desligamento'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 4787d5f2-fecb-4e35-acb7-e672eb9e794e
+		summarizeBy: none
+		sourceColumn: Data desligamento
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ano ingresso'
+		dataType: int64
+		formatString: 0
+		lineageTag: 02623384-597b-4fde-9a8f-563bae68b246
+		summarizeBy: none
+		sourceColumn: Ano ingresso
+
+		annotation SummarizationSetBy = User
+
+	column 'Ano desligamento'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d79eb06-8548-43d9-bd78-311e5ea25302
+		summarizeBy: none
+		sourceColumn: Ano desligamento
+
+		annotation SummarizationSetBy = User
+
+	column ID_PESSOA
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ecb75a6e-7f98-424d-8f93-a731447721f0
+		summarizeBy: none
+		sourceColumn: ID_PESSOA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Titulação
+		dataType: string
+		lineageTag: 3e8bcd32-7e91-4e8c-a922-61cbdc6c5b37
+		summarizeBy: none
+		sourceColumn: Titulação
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPF
+		dataType: string
+		lineageTag: 98b819bd-8845-4a9b-9c2b-ff2ad91b0f09
+		summarizeBy: none
+		sourceColumn: CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gênero
+		dataType: string
+		lineageTag: 0a19974d-4a74-45e3-b227-16fa2d79da5f
+		summarizeBy: none
+		sourceColumn: Gênero
+
+		annotation SummarizationSetBy = Automatic
+
+	column NACIONALIDADE_ITEM
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 171bfa58-03de-4195-8710-cba77ada1aa1
+		summarizeBy: none
+		sourceColumn: NACIONALIDADE_ITEM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'País de origem docente'
+		dataType: string
+		lineageTag: 808bfcc2-d470-4a91-ba88-b33b9ec7dc70
+		summarizeBy: none
+		sourceColumn: País de origem docente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition V_PRPGP_DOCENTES_POS = m
+		mode: import
+		source =
+				let
+				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+				    BEE = Source{[Schema="BEE"]}[Data],
+				    V_PRPGP_DOCENTES_POS1 = BEE{[Name="V_PRPGP_DOCENTES_POS"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DOCENTES_POS1,{{"DT_ADMISSAO_CARGO", "Data ingresso"}, {"DT_DESLIGAMENTO", "Data desligamento"}, {"GENERO", "Gênero"}, {"NOME_FUNCIONARIO", "Nome"},{"NOME_PAIS_PORTUGUES", "País de origem"}}),
+				    #"Inserted Year" = Table.AddColumn(#"Renamed Columns", "Ano ingresso", each Date.Year([Data ingresso]), Int64.Type),
+				    #"Inserted Year1" = Table.AddColumn(#"Inserted Year", "Ano desligamento", each Date.Year([Data desligamento]), Int64.Type),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Year1",{{"Data ingresso", "Data admissão"}, {"Nome", "Nome docente"}, {"TITULACAO", "Titulação"}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Renamed Columns1",{{"Nome docente", Text.Proper, type text}}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Capitalized Each Word",{{"País de origem", "País de origem docente"}})
+				in
+				    #"Renamed Columns2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

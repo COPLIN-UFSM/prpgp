@@ -1,0 +1,258 @@
+table Medidas
+	lineageTag: 611794bc-dc79-429c-a42e-e7b76b4fb602
+
+	measure 'Vagas ofertadas' = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Vagas ofertadas])
+		formatString: #,0
+		lineageTag: 722ec88a-7913-47ba-8343-092b9a8546d7
+
+	measure Inscritos = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Inscritos])
+		formatString: #,0
+		lineageTag: 93ab957e-fccc-43eb-8ac5-ac4ea7b2244b
+
+	measure Matriculados = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Matriculados])
+		formatString: #,0
+		lineageTag: 9151ce3d-f36c-4b1d-a28e-de71f8d6bde5
+
+	measure 'Quantidade alunos' = DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula])
+		formatString: 0
+		lineageTag: 29b81d79-61d2-4b67-acc9-7d3e05e2d1c4
+
+	measure 'Número orientandos' = ```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]), 
+			    V_PRPGP_MEMBROS_BANCA[Tipo participante] = "Presidente",
+			    FILTER(
+			        V_PRPGP_DISCENTES_POS, 
+			        V_PRPGP_DISCENTES_POS[Ano saída] = SELECTEDVALUE(dCalendario[Ano])
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: ce652f51-9eb0-4b23-8154-a9316427745b
+
+	measure Classificados = sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Classificados])
+		formatString: #,0
+		lineageTag: 4122d63c-460e-451e-af64-733555179e3a
+
+	measure HTML = ```
+			"<ul class='slides'>
+			  <input type='radio' id='control-1' name='control' checked>
+			  <input type='radio' id='control-2' name='control'>
+			  <input type='radio' id='control-3' name='control'>
+			  
+			  <!--  Left/Right Button  -->
+			  <div class='navigator slide-1'>
+			    <label for='control-3'>
+			      <i class='fas fa-chevron-left'></i>
+			    </label>
+			    <label for='control-2'>
+			      <i class='fas fa-chevron-right'></i>
+			    </label>
+			  </div>
+			  
+			  <div class='navigator slide-2'>
+			    <label for='control-1'>
+			      <i class='fas fa-chevron-left'></i>
+			    </label>
+			    <label for='control-3'>
+			      <i class='fas fa-chevron-right'></i>
+			    </label>
+			  </div>
+			  
+			  <div class='navigator slide-3'>
+			    <label for='control-2'>
+			      <i class='fas fa-chevron-left'></i>
+			    </label>
+			    <label for='control-1'>
+			      <i class='fas fa-chevron-right'></i>
+			    </label>
+			  </div>
+			  <!--  /Left/Right Button  -->
+			  
+			  <li class='slide'>1</li>
+			  <li class='slide'>2</li>
+			  <li class='slide'>3</li>
+			  
+			  <div class='controls-visible'>
+			    <label for='control-1'></label>
+			    <label for='control-2'></label>
+			    <label for='control-3'></label>
+			  </div>
+			</ul>
+			<style> 
+			body {
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  min-height: 100vh;
+			}
+			
+			ul.slides {
+			  position: relative;
+			  width: 600px;
+			  height: 280px;
+			  list-style: none;
+			  margin: 0;
+			  padding: 0;
+			  background-color: #eee;
+			  overflow: hidden;
+			}
+			
+			li.slide {
+			  margin: 0;
+			  padding: 0;
+			  width: inherit;
+			  height: inherit;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  font-family: Helvetica;
+			  font-size: 120px;
+			  color: #fff;
+			  transition: .5s transform ease-in-out;
+			}
+			
+			.slide:nth-of-type(1) {
+			  background-color: #F2E205;
+			}
+			
+			.slide:nth-of-type(2) {
+			  background-color: #F25C05;
+			  left: 100%;
+			}
+			
+			.slide:nth-of-type(3) {
+			  background-color: #495F8C;
+			  left: 200%;
+			}
+			
+			input[type='radio'] {
+			  position: relative;
+			  z-index: 100;
+			  display: none;
+			}
+			
+			.controls-visible {
+			  position: absolute;
+			  width: 100%;
+			  bottom: 12px;
+			  text-align: center;
+			}
+			
+			.controls-visible label {
+			  display: inline-block;
+			  width: 10px;
+			  height: 10px;
+			  background-color: #fff;
+			  border-radius: 50%;
+			  margin: 0 3px;
+			  border: 2px solid #fff;
+			}
+			
+			.slides input[type='radio']:nth-of-type(1):checked ~ .controls-visible label:nth-of-type(1) {
+			  background-color: #333;
+			}
+			
+			.slides input[type='radio']:nth-of-type(2):checked ~ .controls-visible label:nth-of-type(2) {
+			  background-color: #333;
+			}
+			
+			.slides input[type='radio']:nth-of-type(3):checked ~ .controls-visible label:nth-of-type(3) {
+			  background-color: #333;
+			}
+			
+			.slides input[type='radio']:nth-of-type(1):checked ~ .slide {
+			  transform: translatex(0%);
+			}
+			
+			.slides input[type='radio']:nth-of-type(2):checked ~ .slide {
+			  transform: translatex(-100%);
+			}
+			
+			.slides input[type='radio']:nth-of-type(3):checked ~ .slide {
+			  transform: translatex(-200%);
+			}
+			
+			
+			/* Left/Right Button Classes Below */
+			
+			.navigator {
+			  position: absolute;
+			  top: 50%;
+			  transform: translatey(-50%);
+			  width: 100%;
+			  z-index: 100;
+			  padding: 0 20px;
+			  display: flex;
+			  justify-content: space-between;
+			  box-sizing: border-box;
+			  display: none;
+			}
+			
+			.navigator i {
+			  font-size: 32px;
+			  color #333;
+			}
+			
+			.slides input[type='radio']:nth-of-type(1):checked ~ .navigator:nth-of-type(1) {
+			  display: flex;
+			}
+			
+			.slides input[type='radio']:nth-of-type(2):checked ~ .navigator:nth-of-type(2) {
+			  display: flex;
+			}
+			
+			.slides input[type='radio']:nth-of-type(3):checked ~ .navigator:nth-of-type(3) {
+			  display: flex;
+			}
+			</style>"
+			```
+		lineageTag: 6969c31d-1bb8-4d8e-b5ad-3e67a63bf3b0
+
+	measure 'Quantidade formados por ano de ingresso' =
+			
+			VAR AnoSelecionado = SELECTEDVALUE(dCalendario[Ano])
+			RETURN
+			    CALCULATE(
+			        DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]),
+			        V_PRPGP_DISCENTES_POS[Forma saída] = "Formado",
+			        ALL(dCalendario),
+			        IF(
+			            NOT ISBLANK(AnoSelecionado),
+			            V_PRPGP_DISCENTES_POS[Ano ingresso] = AnoSelecionado,
+			            TRUE
+			        )
+			    )
+		formatString: #,0
+		lineageTag: 8f833692-d27a-4fea-9d08-57662318d61a
+
+	column Column1
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 56645be1-c13c-46a5-9672-e762c3a9e0d3
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
