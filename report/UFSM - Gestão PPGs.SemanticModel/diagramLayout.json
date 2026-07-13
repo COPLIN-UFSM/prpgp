@@ -445,7 +445,7 @@
             "height": 433.32133091410572,
             "width": 310.7826590367946
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
@@ -458,7 +458,7 @@
             "height": 194,
             "width": 290.18666294477794
           },
-          "zIndex": 2
+          "zIndex": 1
         },
         {
           "location": {
@@ -471,7 +471,7 @@
             "height": 145,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 2
         },
         {
           "location": {
@@ -484,7 +484,7 @@
             "height": 335.21330914105647,
             "width": 301.64799106746705
           },
-          "zIndex": 5
+          "zIndex": 3
         },
         {
           "location": {
@@ -497,7 +497,7 @@
             "height": 370.46665736194478,
             "width": 304.46665736194473
           },
-          "zIndex": 1
+          "zIndex": 6
         },
         {
           "location": {
@@ -510,17 +510,17 @@
             "height": 280.45599888343338,
             "width": 415.80397599381763
           },
-          "zIndex": 6
+          "zIndex": 4
         }
       ],
       "name": "discentes",
-      "zoomValue": 61.232507835483695,
+      "zoomValue": 86.2970029811126,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "discentes",
+  "selectedDiagram": "projetos",
   "defaultDiagram": "All tables"
 }

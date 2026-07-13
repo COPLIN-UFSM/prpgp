@@ -298,6 +298,32 @@
                   }
                 ]
               },
+              "medida.quantidade_formados_por_ano_de_ingresso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Medidas",
+                    "ConceptualProperty": "Quantidade formados por ano de ingresso"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade formados por ano de ingresso": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Formados": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "medida.vagas_ofertadas": {
                 "Definition": {
                   "Binding": {
@@ -1547,22 +1573,6 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.ano_defesa": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Ano defesa"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ano defesa": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
               "v_prpgp_discentes_pos.ano_ingresso": {
                 "Definition": {
                   "Binding": {
@@ -1614,6 +1624,22 @@
                   "Value": "Hidden"
                 }
               },
+              "v_prpgp_discentes_pos.brasileiro": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Brasileiro"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "brasileiro": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "v_prpgp_discentes_pos.cpf": {
                 "Definition": {
                   "Binding": {
@@ -1645,102 +1671,6 @@
                     }
                   }
                 ]
-              },
-              "v_prpgp_discentes_pos.data_defesa": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Data defesa"
-                  }
-                },
-                "SemanticType": "Time",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "data defesa": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "date": {
-                      "State": "Generated",
-                      "Weight": 0.7
-                    }
-                  },
-                  {
-                    "information defesa": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "fact defesa": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "info defesa": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "statistic defesa": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.6
-                    }
-                  },
-                  {
-                    "document defesa": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "figure defesa": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  },
-                  {
-                    "record defesa": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.582
-                    }
-                  }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
               },
               "v_prpgp_discentes_pos.discentes_ativos": {
                 "Definition": {
@@ -2172,52 +2102,6 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_discentes_pos.latitude_pais_origem": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "LATITUDE_PAIS_ORIGEM"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "latitude pais origem": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "LATITUDE_PAIS_ORIGEM": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_discentes_pos.longitude_pais_origem": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "LONGITUDE_PAIS_ORIGEM"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "longitude pais origem": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "LONGITUDE_PAIS_ORIGEM": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
               "v_prpgp_discentes_pos.matrícula": {
                 "Definition": {
                   "Binding": {
@@ -2276,21 +2160,101 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.nacionalidade": {
+              "v_prpgp_discentes_pos.nacionalidade_item": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Nacionalidade"
+                    "ConceptualProperty": "NACIONALIDADE_ITEM"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "nacionalidade": {
+                    "nacionalidade item": {
                       "State": "Generated"
                     }
+                  },
+                  {
+                    "NACIONALIDADE_ITEM": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "nacionalidade product": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "nacionalidade element": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "nacionalidade entry": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "nacionalidade article": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "nacionalidade object": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "nacionalidade piece": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "nacionalidade token": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_discentes_pos.nome_aluno": {
                 "Definition": {
@@ -2308,18 +2272,44 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.país_de_origem": {
+              "v_prpgp_discentes_pos.origem": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "País de origem"
+                    "ConceptualProperty": "Origem"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "país de origem": {
+                    "origem": {
                       "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.país_de_origem_discente": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "País de origem discente"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "país de origem discente": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "País de origem": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -2383,38 +2373,6 @@
                 "Terms": [
                   {
                     "quantidade matriculados": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_discentes_pos.situação_defesa": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Situação defesa"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "situação defesa": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_discentes_pos.situação_plano_estudo": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Situação plano estudos"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "situação plano estudo": {
                       "State": "Generated"
                     }
                   }
@@ -2597,72 +2555,6 @@
                   {
                     "anos vinculado ao programa": {
                       "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_docentes_pos.cargo": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-                    "ConceptualProperty": "Cargo"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "cargo": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "consignment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "shipment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "payload": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "load": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.476
-                    }
-                  },
-                  {
-                    "freight": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.476
                     }
                   }
                 ]
@@ -3061,52 +2953,6 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_docentes_pos.latitude_pais_origem": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-                    "ConceptualProperty": "LATITUDE_PAIS_ORIGEM"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "latitude pais origem": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "LATITUDE_PAIS_ORIGEM": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
-              "v_prpgp_docentes_pos.longitude_pais_origem": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-                    "ConceptualProperty": "LONGITUDE_PAIS_ORIGEM"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "longitude pais origem": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "LONGITUDE_PAIS_ORIGEM": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.99
-                    }
-                  }
-                ]
-              },
               "v_prpgp_docentes_pos.média_formados_por_orientador": {
                 "Definition": {
                   "Binding": {
@@ -3139,21 +2985,101 @@
                   }
                 ]
               },
-              "v_prpgp_docentes_pos.nacionalidade": {
+              "v_prpgp_docentes_pos.nacionalidade_item": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-                    "ConceptualProperty": "Nacionalidade"
+                    "ConceptualProperty": "NACIONALIDADE_ITEM"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "nacionalidade": {
+                    "nacionalidade item": {
                       "State": "Generated"
                     }
+                  },
+                  {
+                    "NACIONALIDADE_ITEM": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "nacionalidade product": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "nacionalidade element": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "nacionalidade entry": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "nacionalidade article": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "nacionalidade object": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "nacionalidade piece": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "nacionalidade token": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_docentes_pos.nome_docente": {
                 "Definition": {
@@ -3171,17 +3097,17 @@
                   }
                 ]
               },
-              "v_prpgp_docentes_pos.país_de_origem": {
+              "v_prpgp_docentes_pos.país_de_origem_docente": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-                    "ConceptualProperty": "País de origem"
+                    "ConceptualProperty": "País de origem docente"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "país de origem": {
+                    "país de origem docente": {
                       "State": "Generated"
                     }
                   }
@@ -5399,6 +5325,39 @@
                 },
                 "State": "Generated"
               },
+              "v_prpgp_credenciamento_docente_fluxo_has_v_prpgp_docentes_pos_quantidade_docentes": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.quantidade_docentes"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_credenciamento_docente_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_credenciamento_docente_fluxo_have_quantidade_docentes",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_credenciamento_docente_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_credenciamento_docente_fluxo"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.quantidade_docentes": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.quantidade_docentes"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_prpgp_credenciamento_docente_fluxo_has_v_prpgp_docentes_pos_tempo_médio_de_permanência": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
@@ -6085,39 +6044,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_ano_defesa": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.ano_defesa"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_ano_defesas",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.ano_defesa": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.ano_defesa"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_discentes_pos_has_ano_ingresso": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -6179,6 +6105,39 @@
                   "v_prpgp_discentes_pos.ano_saída": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.ano_saída"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_brasileiro": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.brasileiro"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_brasileiro",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.brasileiro": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.brasileiro"
                     }
                   }
                 },
@@ -6349,72 +6308,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_latitude_pais_origem": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.latitude_pais_origem"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_latitude_pais_origems",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.latitude_pais_origem": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.latitude_pais_origem"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_discentes_pos_has_longitude_pais_origem": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.longitude_pais_origem"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_longitude_pais_origems",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.longitude_pais_origem": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.longitude_pais_origem"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_discentes_pos_has_matrícula": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -6514,6 +6407,39 @@
                 },
                 "State": "Generated"
               },
+              "v_prpgp_discentes_pos_has_medida_quantidade_formados_por_ano_de_ingresso": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "medida.quantidade_formados_por_ano_de_ingresso"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_formados_por_ano_de_ingresso",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "medida.quantidade_formados_por_ano_de_ingresso": {
+                    "Target": {
+                      "Entity": "medida.quantidade_formados_por_ano_de_ingresso"
+                    }
+                  },
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_prpgp_discentes_pos_has_modalidade_curso": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -6542,39 +6468,6 @@
                   "v_prpgp_discentes_pos.modalidade_curso": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.modalidade_curso"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_discentes_pos_has_nacionalidade": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.nacionalidade"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_nacionalidades",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.nacionalidade": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.nacionalidade"
                     }
                   }
                 },
@@ -6613,7 +6506,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_país_de_origem": {
+              "v_prpgp_discentes_pos_has_origem": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
                 },
@@ -6621,13 +6514,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_discentes_pos.país_de_origem"
+                        "Role": "v_prpgp_discentes_pos.origem"
                       },
                       "Subject": {
                         "Role": "v_prpgp_discentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_discentes_pos_have_país_de_origems",
+                    "ID": "v_prpgp_discentes_pos_have_origems",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -6638,9 +6531,42 @@
                       "Entity": "v_prpgp_discentes_pos"
                     }
                   },
-                  "v_prpgp_discentes_pos.país_de_origem": {
+                  "v_prpgp_discentes_pos.origem": {
                     "Target": {
-                      "Entity": "v_prpgp_discentes_pos.país_de_origem"
+                      "Entity": "v_prpgp_discentes_pos.origem"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_país_de_origem_discente": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.país_de_origem_discente"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_país_de_origem_discentes",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.país_de_origem_discente": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.país_de_origem_discente"
                     }
                   }
                 },
@@ -6707,72 +6633,6 @@
                   "v_prpgp_discentes_pos.quantidade_matriculados": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.quantidade_matriculados"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_discentes_pos_has_situação_defesa": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.situação_defesa"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_situação_defesas",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.situação_defesa": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.situação_defesa"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_discentes_pos_has_situação_plano_estudo": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.situação_plano_estudo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_situação_plano_estudos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.situação_plano_estudo": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.situação_plano_estudo"
                     }
                   }
                 },
@@ -7121,39 +6981,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_docentes_pos_has_cargo": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos.cargo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_docentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_docentes_pos_have_cargoes",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_docentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos"
-                    }
-                  },
-                  "v_prpgp_docentes_pos.cargo": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos.cargo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_docentes_pos_has_cpf": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
@@ -7286,105 +7113,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_docentes_pos_has_latitude_pais_origem": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos.latitude_pais_origem"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_docentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_docentes_pos_have_latitude_pais_origems",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_docentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos"
-                    }
-                  },
-                  "v_prpgp_docentes_pos.latitude_pais_origem": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos.latitude_pais_origem"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_docentes_pos_has_longitude_pais_origem": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos.longitude_pais_origem"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_docentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_docentes_pos_have_longitude_pais_origems",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_docentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos"
-                    }
-                  },
-                  "v_prpgp_docentes_pos.longitude_pais_origem": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos.longitude_pais_origem"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_docentes_pos_has_nacionalidade": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos.nacionalidade"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_docentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_docentes_pos_have_nacionalidades",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_docentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos"
-                    }
-                  },
-                  "v_prpgp_docentes_pos.nacionalidade": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos.nacionalidade"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_docentes_pos_has_nome_docente": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
@@ -7418,7 +7146,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_docentes_pos_has_país_de_origem": {
+              "v_prpgp_docentes_pos_has_país_de_origem_docente": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
                 },
@@ -7426,13 +7154,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_docentes_pos.país_de_origem"
+                        "Role": "v_prpgp_docentes_pos.país_de_origem_docente"
                       },
                       "Subject": {
                         "Role": "v_prpgp_docentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_docentes_pos_have_país_de_origems",
+                    "ID": "v_prpgp_docentes_pos_have_país_de_origem_docentes",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7443,9 +7171,9 @@
                       "Entity": "v_prpgp_docentes_pos"
                     }
                   },
-                  "v_prpgp_docentes_pos.país_de_origem": {
+                  "v_prpgp_docentes_pos.país_de_origem_docente": {
                     "Target": {
-                      "Entity": "v_prpgp_docentes_pos.país_de_origem"
+                      "Entity": "v_prpgp_docentes_pos.país_de_origem_docente"
                     }
                   }
                 },
@@ -7512,39 +7240,6 @@
                   "v_prpgp_docentes_pos.professores_vinculados_5_anos1": {
                     "Target": {
                       "Entity": "v_prpgp_docentes_pos.professores_vinculados_5_anos1"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_docentes_pos_has_quantidade_docentes": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos.quantidade_docentes"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_docentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_docentes_pos_have_quantidade_docentes",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_docentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos"
-                    }
-                  },
-                  "v_prpgp_docentes_pos.quantidade_docentes": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos.quantidade_docentes"
                     }
                   }
                 },
@@ -9224,19 +8919,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Nacionalidade",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "cadf0df1-88b0-4a21-8518-5edc582e972a",
-            "sourceColumn": "Nacionalidade",
-            "summarizeBy": "none"
-          },
-          {
             "name": "ID_PESSOA",
             "annotations": [
               {
@@ -9274,7 +8956,7 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "changedProperties": [
@@ -9287,7 +8969,7 @@
             "isHidden": true,
             "lineageTag": "4c725edf-3523-4d22-a09e-11419f05acac",
             "sourceColumn": "ID_UNIDADE_SUP",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Modalidade curso",
@@ -9324,70 +9006,6 @@
             "isHidden": true,
             "lineageTag": "817e5c22-c7d1-45cb-b5b2-481cac1fd80e",
             "sourceColumn": "Ano saída corrigido",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ano defesa",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "9fef4d46-0418-4731-b5c3-f31a91248ffe",
-            "sourceColumn": "Ano defesa",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Situação plano estudos",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "894936b9-1839-4040-a329-b58aeac9a69a",
-            "sourceColumn": "Situação plano estudos",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Situação defesa",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "a31957a4-f51f-48a9-badc-36de137c90fe",
-            "sourceColumn": "Situação defesa",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Data defesa",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
-              }
-            ],
-            "changedProperties": [
-              {
-                "property": "IsHidden"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
-            "isHidden": true,
-            "lineageTag": "19027145-4cfe-495c-a3e2-5e7606869c85",
-            "sourceColumn": "Data defesa",
             "summarizeBy": "none"
           },
           {
@@ -9437,7 +9055,27 @@
             "summarizeBy": "none"
           },
           {
-            "name": "País de origem",
+            "name": "NACIONALIDADE_ITEM",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "24318924-78a8-47e6-9300-63357431f4c6",
+            "sourceColumn": "NACIONALIDADE_ITEM",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "País de origem discente",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -9445,43 +9083,22 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "7a2fe2b9-3026-4fd3-b75e-23e80f835a9b",
-            "sourceColumn": "País de origem",
+            "lineageTag": "8b478d33-5b88-4b2e-a4ad-6cd46f8b45b1",
+            "sourceColumn": "País de origem discente",
             "summarizeBy": "none"
           },
           {
-            "name": "LATITUDE_PAIS_ORIGEM",
+            "name": "Origem",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "dataType": "double",
-            "lineageTag": "fe4e929d-bd6a-465c-82b3-f88414b31f0f",
-            "sourceColumn": "LATITUDE_PAIS_ORIGEM",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "LONGITUDE_PAIS_ORIGEM",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "dc8837cb-1300-46ba-9228-e306ba0f04fd",
-            "sourceColumn": "LONGITUDE_PAIS_ORIGEM",
-            "summarizeBy": "sum"
+            "dataType": "string",
+            "lineageTag": "beaa86bb-5f5b-4759-b7cb-da15df33cfcd",
+            "sourceColumn": "Origem",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -9503,7 +9120,7 @@
           {
             "name": "Discentes Ativos",
             "expression": "DISTINCTCOUNT(V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO])",
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "48e2e493-2d9b-4b1d-8edb-6eb551c0bdf3"
           },
           {
@@ -9514,7 +9131,7 @@
               "    V_PRPGP_DISCENTES_POS[Forma saída] = \"Formado\"",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "b1c41e6d-28c5-4e68-b977-888b2137fd42"
           },
           {
@@ -9525,7 +9142,7 @@
               "     V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\"",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "b9a547bf-13ae-47b0-afe1-131615bc4896"
           },
           {
@@ -9536,7 +9153,7 @@
               "     V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\"",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "810caefd-2db3-44ba-bf56-1d6f4d610316"
           },
           {
@@ -9695,7 +9312,7 @@
               "    ALL(dCalendario)",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "c42b2ac2-42d3-4524-ac65-6d1ca5045feb"
           },
           {
@@ -9708,7 +9325,7 @@
               "    ALL(dCalendario)",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "982b9f11-78df-478f-b197-cb625263d7cd"
           },
           {
@@ -9717,8 +9334,19 @@
               "",
               "DIVIDE([Quantidade formados], [Quantidade matriculados])"
             ],
-            "formatString": "0.00",
+            "formatString": "0%;-0%;0%",
             "lineageTag": "d2f74a02-231c-4b6d-b9c4-0e3b9dc49fde"
+          },
+          {
+            "name": "Brasileiro",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[ID_CURSO_ALUNO]),",
+              "    V_PRPGP_DISCENTES_POS[País de origem discente] = \"Brasil\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "ad6804cf-3d6e-4719-8dcb-89dd5cc4f158"
           }
         ],
         "partitions": [
@@ -9731,21 +9359,21 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_DISCENTES_POS1 = BEE{[Name=\"V_PRPGP_DISCENTES_POS\"]}[Data],",
-                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{\"ANO_EVASAO\", \"Ano saída\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}, {\"FORMA_EVASAO\", \"Forma saída\"}, {\"MATRICULA\", \"Matrícula\"},{\"NACIONALIDADE\", \"Nacionalidade\"}, {\"NOME_ALUNO\", \"Nome aluno\"}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{\"ANO_EVASAO\", \"Ano saída\"}, {\"ANO_INGRESSO\", \"Ano ingresso\"}, {\"FORMA_EVASAO\", \"Forma saída\"}, {\"MATRICULA\", \"Matrícula\"}, {\"NOME_ALUNO\", \"Nome aluno\"}, {\"NOME_PAIS_PORTUGUES\", \"País de origem\"}}),",
                 "    #\"Inserted Date\" = Table.AddColumn(#\"Renamed Columns\", \"Data ingresso\", each Date.From(Text.From([Ano ingresso], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Date\",{{\"MODALIDADE_CURSO\", \"Modalidade curso\"}, {\"COD_CURSO\", \"Código curso\"}}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Date\",{{\"MODALIDADE_CURSO\", \"Modalidade curso\"}, {\"COD_CURSO\", \"Código curso\"}, {\"GENERO\", \"Gênero\"}",
+                "}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Data ingresso\"}),",
                 "    #\"Added Custom\" = Table.AddColumn(#\"Removed Columns\", \"Ano saída corrigido\", each if [Ano saída] is null then Date.Year(DateTime.LocalNow()) else [Ano saída]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Ano saída corrigido\", type number}}),",
-                "    #\"Inserted Date1\" = Table.AddColumn(#\"Changed Type\", \"Data defesa\", each Date.From(Text.From([ANO_DEFESA], \"pt-BR\")), type date),",
-                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Inserted Date1\",{{\"ANO_DEFESA\", \"Ano defesa\"}, {\"SITUACAO_PLANO\", \"Situação plano estudos\"}, {\"SITUACAO_DEFESA\", \"Situação defesa\"}, {\"GENERO\", \"Gênero\"}}),",
-                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Renamed Columns2\",\"F\",\"Feminino\",Replacer.ReplaceText,{\"Gênero\"}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Changed Type\",\"F\",\"Feminino\",Replacer.ReplaceText,{\"Gênero\"}),",
                 "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"M\",\"Masculino\",Replacer.ReplaceText,{\"Gênero\"}),",
-                "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",null,\"Não especificado\",Replacer.ReplaceValue,{\"Gênero\"}),",
-                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Replaced Value2\",{{\"Nome aluno\", Text.Proper, type text}}),",
-                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Capitalized Each Word\",{{\"NOME_PAIS_PORTUGUES\", \"País de origem\"}})",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Replaced Value1\",{{\"País de origem\", \"País de origem discente\"}}),",
+                "    #\"Added Custom1\" = Table.AddColumn(#\"Renamed Columns2\", \"Origem\", each if [NACIONALIDADE_ITEM] = 1 then \"Brasileiro\"",
+                "else if [NACIONALIDADE_ITEM] <> null then \"estrangeiro\"",
+                "else null)",
                 "in",
-                "    #\"Renamed Columns3\""
+                "    #\"Added Custom1\""
               ],
               "type": "m"
             }
@@ -9813,32 +9441,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Gênero",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "90f79339-a3f8-46fd-8a85-d2a7060c6bbf",
-            "sourceColumn": "Gênero",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Cargo",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "6b63ca3d-6a5d-44ce-8e2e-b1b5f6a8ef50",
-            "sourceColumn": "Cargo",
-            "summarizeBy": "none"
-          },
-          {
             "name": "Data admissão",
             "annotations": [
               {
@@ -9884,19 +9486,6 @@
             "isHidden": true,
             "lineageTag": "4787d5f2-fecb-4e35-acb7-e672eb9e794e",
             "sourceColumn": "Data desligamento",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Nacionalidade",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "e7b8ec4c-597a-4506-bf00-ec3296d276bb",
-            "sourceColumn": "Nacionalidade",
             "summarizeBy": "none"
           },
           {
@@ -9974,7 +9563,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "País de origem",
+            "name": "Gênero",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -9982,43 +9571,42 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "c0524a15-92d3-4ac4-a468-0e721b6e0ec5",
-            "sourceColumn": "País de origem",
+            "lineageTag": "0a19974d-4a74-45e3-b227-16fa2d79da5f",
+            "sourceColumn": "Gênero",
             "summarizeBy": "none"
           },
           {
-            "name": "LATITUDE_PAIS_ORIGEM",
+            "name": "NACIONALIDADE_ITEM",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
+                "value": "User"
               }
             ],
-            "dataType": "double",
-            "lineageTag": "e0b6b31c-4da2-45c4-a865-e4d4edfc485e",
-            "sourceColumn": "LATITUDE_PAIS_ORIGEM",
-            "summarizeBy": "sum"
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "171bfa58-03de-4195-8710-cba77ada1aa1",
+            "sourceColumn": "NACIONALIDADE_ITEM",
+            "summarizeBy": "none"
           },
           {
-            "name": "LONGITUDE_PAIS_ORIGEM",
+            "name": "País de origem docente",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "dataType": "double",
-            "lineageTag": "633d7470-83e1-43b4-93cd-550717fbc82e",
-            "sourceColumn": "LONGITUDE_PAIS_ORIGEM",
-            "summarizeBy": "sum"
+            "dataType": "string",
+            "lineageTag": "808bfcc2-d470-4a91-ba88-b33b9ec7dc70",
+            "sourceColumn": "País de origem docente",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -10031,7 +9619,7 @@
               "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = \"Permanente\"",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "33c7c8fb-3c7d-4e6c-b151-b5c2333a5bcc"
           },
           {
@@ -10093,7 +9681,7 @@
               "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = \"Colaborador\"",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "0fd8570e-2303-471d-9037-04174e32ea6a"
           },
           {
@@ -10104,17 +9692,18 @@
               "    V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[Tipo de Vínculo] = \"Visitante\"",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "8442c448-9045-421f-b42e-0c0b6cc3b407"
           },
           {
             "name": "Professores vinculados 5+ anos",
             "expression": [
               "",
-              "COUNTROWS(",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),",
               "    FILTER(",
               "        VALUES(V_PRPGP_DOCENTES_POS[CPF]),",
-              "        [Anos vinculado ao programa] >= 5",
+              "        NOT ISBLANK([Anos vinculado ao programa]) && [Anos vinculado ao programa] >= 5",
               "    )",
               ")"
             ],
@@ -10125,10 +9714,11 @@
             "name": "Professores vinculados <5 anos",
             "expression": [
               "",
-              "COUNTROWS(",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),",
               "    FILTER(",
               "        VALUES(V_PRPGP_DOCENTES_POS[CPF]),",
-              "        [Anos vinculado ao programa] < 5",
+              "        NOT ISBLANK([Anos vinculado ao programa]) && [Anos vinculado ao programa] < 5",
               "    )",
               ")"
             ],
@@ -10140,7 +9730,7 @@
             "expression": [
               "CALCULATE(",
               "    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),",
-              "    V_PRPGP_DOCENTES_POS[Nacionalidade] = \"Brasileiro\"",
+              "    V_PRPGP_DOCENTES_POS[País de origem docente] = \"Brasil\"",
               ")"
             ],
             "formatString": "0",
@@ -10151,7 +9741,7 @@
             "expression": [
               "CALCULATE(",
               "    DISTINCTCOUNT(V_PRPGP_DOCENTES_POS[CPF]),",
-              "    V_PRPGP_DOCENTES_POS[Nacionalidade] = \"Estrangeiro\"",
+              "    V_PRPGP_DOCENTES_POS[País de origem docente] <> \"Brasil\"",
               ")"
             ],
             "formatString": "0",
@@ -10197,7 +9787,7 @@
           {
             "name": "Quantidade docentes",
             "expression": "DISTINCTCOUNT(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_CONTRATO_RH])",
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "bccd83af-247c-40a2-886b-cfb69f285472"
           }
         ],
@@ -10211,12 +9801,12 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_PRPGP_DOCENTES_POS1 = BEE{[Name=\"V_PRPGP_DOCENTES_POS\"]}[Data],",
-                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DOCENTES_POS1,{{\"DESCR_CARGO\", \"Cargo\"}, {\"DT_ADMISSAO_CARGO\", \"Data ingresso\"}, {\"DT_DESLIGAMENTO\", \"Data desligamento\"}, {\"NACIONALIDADE\", \"Nacionalidade\"}, {\"SEXO\", \"Gênero\"}, {\"NOME_FUNCIONARIO\", \"Nome\"}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_PRPGP_DOCENTES_POS1,{{\"DT_ADMISSAO_CARGO\", \"Data ingresso\"}, {\"DT_DESLIGAMENTO\", \"Data desligamento\"}, {\"GENERO\", \"Gênero\"}, {\"NOME_FUNCIONARIO\", \"Nome\"},{\"NOME_PAIS_PORTUGUES\", \"País de origem\"}}),",
                 "    #\"Inserted Year\" = Table.AddColumn(#\"Renamed Columns\", \"Ano ingresso\", each Date.Year([Data ingresso]), Int64.Type),",
                 "    #\"Inserted Year1\" = Table.AddColumn(#\"Inserted Year\", \"Ano desligamento\", each Date.Year([Data desligamento]), Int64.Type),",
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Year1\",{{\"Data ingresso\", \"Data admissão\"}, {\"Nome\", \"Nome docente\"}, {\"TITULACAO\", \"Titulação\"}}),",
-                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Renamed Columns1\",{{\"Nome docente\", Text.Proper, type text}, {\"Cargo\", Text.Proper, type text}}),",
-                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Capitalized Each Word\",{{\"NOME_PAIS_PORTUGUES\", \"País de origem\"}})",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Renamed Columns1\",{{\"Nome docente\", Text.Proper, type text}}),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Capitalized Each Word\",{{\"País de origem\", \"País de origem docente\"}})",
                 "in",
                 "    #\"Renamed Columns2\""
               ],
@@ -10478,19 +10068,19 @@
           {
             "name": "Vagas ofertadas",
             "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Vagas ofertadas])",
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "722ec88a-7913-47ba-8343-092b9a8546d7"
           },
           {
             "name": "Inscritos",
             "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Inscritos])",
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "93ab957e-fccc-43eb-8ac5-ac4ea7b2244b"
           },
           {
             "name": "Matriculados",
             "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Matriculados])",
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "9151ce3d-f36c-4b1d-a28e-de71f8d6bde5"
           },
           {
@@ -10508,7 +10098,7 @@
               "    V_PRPGP_MEMBROS_BANCA[Tipo participante] = \"Presidente\",",
               "    FILTER(",
               "        V_PRPGP_DISCENTES_POS, ",
-              "        V_PRPGP_DISCENTES_POS[Ano defesa] = SELECTEDVALUE(dCalendario[Ano])",
+              "        V_PRPGP_DISCENTES_POS[Ano saída] = SELECTEDVALUE(dCalendario[Ano])",
               "    )",
               ")",
               ""
@@ -10519,7 +10109,7 @@
           {
             "name": "Classificados",
             "expression": "sum(V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS[Classificados])",
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "4122d63c-460e-451e-af64-733555179e3a"
           },
           {
@@ -10701,6 +10291,26 @@
               "</style>\""
             ],
             "lineageTag": "6969c31d-1bb8-4d8e-b5ad-3e67a63bf3b0"
+          },
+          {
+            "name": "Quantidade formados por ano de ingresso",
+            "expression": [
+              "",
+              "VAR AnoSelecionado = SELECTEDVALUE(dCalendario[Ano])",
+              "RETURN",
+              "    CALCULATE(",
+              "        DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]),",
+              "        V_PRPGP_DISCENTES_POS[Forma saída] = \"Formado\",",
+              "        ALL(dCalendario),",
+              "        IF(",
+              "            NOT ISBLANK(AnoSelecionado),",
+              "            V_PRPGP_DISCENTES_POS[Ano ingresso] = AnoSelecionado,",
+              "            TRUE",
+              "        )",
+              "    )"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "8f833692-d27a-4fea-9d08-57662318d61a"
           }
         ],
         "partitions": [
