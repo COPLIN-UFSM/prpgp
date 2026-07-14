@@ -190,6 +190,22 @@ table V_PRPGP_DISCENTES_POS
 		formatString: 0
 		lineageTag: ad6804cf-3d6e-4719-8dcb-89dd5cc4f158
 
+	measure 'Cotutelas origem externa' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[ID_CURSO_ALUNO]),
+			    V_PRPGP_DISCENTES_POS[Cotutela] = "Externo"
+			)
+		formatString: 0
+		lineageTag: ff92e951-75f9-46ea-985d-bbb48ad42767
+
+	measure 'Cotutelas origem interna' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[ID_CURSO_ALUNO]),
+			    V_PRPGP_DISCENTES_POS[Cotutela] = "Interno"
+			)
+		formatString: 0
+		lineageTag: 5b07e03c-802a-45b0-bdca-710220075c71
+
 	column ID_CURSO_ALUNO
 		dataType: int64
 		isHidden
@@ -354,6 +370,14 @@ table V_PRPGP_DISCENTES_POS
 
 		annotation SummarizationSetBy = Automatic
 
+	column Cotutela
+		dataType: string
+		lineageTag: 1e958d2f-e70f-4d50-8c35-84fad01dd23b
+		summarizeBy: none
+		sourceColumn: Cotutela
+
+		annotation SummarizationSetBy = Automatic
+
 	partition V_PRPGP_DISCENTES_POS = m
 		mode: import
 		source =
@@ -361,7 +385,7 @@ table V_PRPGP_DISCENTES_POS
 				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
 				    BEE = Source{[Schema="BEE"]}[Data],
 				    V_PRPGP_DISCENTES_POS1 = BEE{[Name="V_PRPGP_DISCENTES_POS"]}[Data],
-				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{"ANO_EVASAO", "Ano saída"}, {"ANO_INGRESSO", "Ano ingresso"}, {"FORMA_EVASAO", "Forma saída"}, {"MATRICULA", "Matrícula"}, {"NOME_ALUNO", "Nome aluno"}, {"NOME_PAIS_PORTUGUES", "País de origem"}}),
+				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{"ANO_EVASAO", "Ano saída"}, {"ANO_INGRESSO", "Ano ingresso"}, {"FORMA_EVASAO", "Forma saída"}, {"MATRICULA", "Matrícula"}, {"NOME_ALUNO", "Nome aluno"}, {"NOME_PAIS_PORTUGUES", "País de origem"}, {"COTUTELA", "Cotutela"}}),
 				    #"Inserted Date" = Table.AddColumn(#"Renamed Columns", "Data ingresso", each Date.From(Text.From([Ano ingresso], "pt-BR")), type date),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Date",{{"MODALIDADE_CURSO", "Modalidade curso"}, {"COD_CURSO", "Código curso"}, {"GENERO", "Gênero"}
 				}),
@@ -373,9 +397,11 @@ table V_PRPGP_DISCENTES_POS
 				    #"Renamed Columns2" = Table.RenameColumns(#"Replaced Value1",{{"País de origem", "País de origem discente"}}),
 				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns2", "Origem", each if [NACIONALIDADE_ITEM] = 1 then "Brasileiro"
 				else if [NACIONALIDADE_ITEM] <> null then "Estrangeiro"
-				else null)
+				else null),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Added Custom1",{{"Nome aluno", Text.Proper, type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Capitalized Each Word", each true)
 				in
-				    #"Added Custom1"
+				    #"Filtered Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 
