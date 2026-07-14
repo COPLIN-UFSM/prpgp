@@ -283,9 +283,11 @@ table V_PRPGP_DOCENTES_POS
 				    #"Inserted Year1" = Table.AddColumn(#"Inserted Year", "Ano desligamento", each Date.Year([Data desligamento]), Int64.Type),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Year1",{{"Data ingresso", "Data admissão"}, {"Nome", "Nome docente"}, {"TITULACAO", "Titulação"}}),
 				    #"Capitalized Each Word" = Table.TransformColumns(#"Renamed Columns1",{{"Nome docente", Text.Proper, type text}}),
-				    #"Renamed Columns2" = Table.RenameColumns(#"Capitalized Each Word",{{"País de origem", "País de origem docente"}})
+				    #"Renamed Columns2" = Table.RenameColumns(#"Capitalized Each Word",{{"País de origem", "País de origem docente"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns2","F","Feminino",Replacer.ReplaceText,{"Gênero"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","M","Masculino",Replacer.ReplaceText,{"Gênero"})
 				in
-				    #"Renamed Columns2"
+				    #"Replaced Value1"
 
 	annotation PBI_NavigationStepName = Navigation
 

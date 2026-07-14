@@ -372,7 +372,7 @@ table V_PRPGP_DISCENTES_POS
 				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","M","Masculino",Replacer.ReplaceText,{"Gênero"}),
 				    #"Renamed Columns2" = Table.RenameColumns(#"Replaced Value1",{{"País de origem", "País de origem discente"}}),
 				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns2", "Origem", each if [NACIONALIDADE_ITEM] = 1 then "Brasileiro"
-				else if [NACIONALIDADE_ITEM] <> null then "estrangeiro"
+				else if [NACIONALIDADE_ITEM] <> null then "Estrangeiro"
 				else null)
 				in
 				    #"Added Custom1"
