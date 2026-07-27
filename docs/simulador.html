@@ -15,6 +15,22 @@
         Simulador Nota CAPES
     </title>
     <style>
+        :root {
+            --navbar-color: #00487c;
+        }
+
+        .navbar {
+            background-color: var(--navbar-color);
+        }
+
+        .navbar a {
+            color: white;
+        }
+
+        .navbar button {
+            color: white;
+        }
+
         .gauge-label {
             font-size: 2rem;
             font-weight: bold;
@@ -70,7 +86,7 @@
 <body>
 <header>
     <!-- barra de navegação -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
             <a id="brand" class="navbar-brand titulo" href="#">
                 PRPGP
@@ -224,8 +240,8 @@
                 <li>Solidariedade e nucleação de grupos de pesquisa e da oferta de pós-graduação</li>
                 <li>Interdisciplinaridade</li>
                 <li>Ciência aberta e boas práticas de formação, pesquisa e disseminação científica</li>
-                <li>A área de avaliação poderá acrescentar outras dimensões em seu Documento de Área.</li>
                 </ul>
+                A área de avaliação poderá acrescentar outras dimensões em seu Documento de Área.
             </div>
         </div>
         <div class="row my-5">
@@ -234,8 +250,7 @@
                 <ol>
                     <li>
                         <a
-                                href="https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/documentos-do-novo-ciclo-avaliativo-2025-2028
-">
+                            href="https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/documentos-do-novo-ciclo-avaliativo-2025-2028">
                             Documentos do ciclo avaliativo 2025-2028
                         </a>
                     </li>
@@ -243,7 +258,10 @@
             </div>
         </div>
     </div>
-
+    <!-- footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-1 px-2 my-1 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">Feito por humanos, para humanos.</p>
+    </footer>
 </main>
 </body>
 <script
