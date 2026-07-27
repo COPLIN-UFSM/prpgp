@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous"
+    >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <title>
+        Simulador Nota CAPES
+    </title>
+    <style>
+        .gauge-label {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .canvas-container {
+            width: fit-content;
+            text-align: center;
+        }
+
+        #canvas {
+            display: block;
+        }
+
+        /* Center on smaller screens */
+        @media (max-width: 768px) {
+            .canvas-container {
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+<!--    <link rel="stylesheet" type="text/css" href="static/css/main.css">-->
+    <!-- tags para redes sociais (Facebook, Discord, Twitter, etc) -->
+    <meta name="title" content="Simulador Nota CAPES">
+    <meta name="description" content="Simulador da nota CAPES de programas de pós-graduação">
+    <meta name="author" content="Henry Cagnini">
+
+    <!-- padrão da meta para preview -->
+    <meta property="og:title" content="Simulador Nota CAPES"/>
+    <meta property="og:description" content="Simulador da nota CAPES de programas de pós-graduação"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="pt_BR"/>
+    <meta property="og:url" content="https://coplin-ufsm.github.io/prpgp/simulator"/>
+
+    <!-- imagem para o Facebook -->
+<!--    <meta property="og:image" content="https://coplin-ufsm.github.io/prpgp/static/images/cover.png"/>-->
+    <meta property="og:image:width" content="536"/>
+    <meta property="og:image:height" content="750"/>
+    <meta property="og:image:alt" content="Imagem da capa do Simulador Nota CAPES"/>
+
+    <!-- twitter -->
+    <meta name="twitter:title" content="Simulador Nota CAPES">
+    <meta name="twitter:description" content="Simulador da nota CAPES de programas de pós-graduação"/>
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:domain" content="coplin-ufsm.github.io">
+    <meta property="twitter:url" content="https://coplin-ufsm.github.io/prpgp">
+    <meta name="twitter:url" content="https://coplin-ufsm.github.io/prpgp">
+<!--    <meta name="twitter:image" content="https://coplin-ufsm.github.io/prpgp/static/images/cover.png">-->
+    <meta name="twitter:image:alt" content="Imagem da capa do Simulador Nota CAPES">
+</head>
+
+<body>
+<header>
+    <!-- barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a id="brand" class="navbar-brand titulo" href="#">
+                PRPGP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <!--<span class="navbar-toggler-icon"></span>-->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="nav-link-index" class="nav-link texto" href="../index.html">Painel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-simulador" class="nav-link texto" href="#">Simulador</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container gap-4">
+        <div class="row">
+            <div class="col">
+                <div class="text-left">
+                    <h1 class="title my-3">Simulador Nota CAPES</h1>
+                    <p class="lead">Simulador de nota CAPES com base nos conceitos obtidos nos quesitos da ficha de avaliação.</p>
+                </div>
+                <form id="form-simulador" class="d-flex flex-column gap-2">
+                    <!-- quesito 1 -->
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-2" for="input-quesito-1">Quesito 1</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" aria-label="select quesito 1" id="input-quesito-1" name="input-quesito-1">
+                                <option selected>Selecione um valor</option>
+                                <option value="I">Insuficiente</option>
+                                <option value="F">Fraco</option>
+                                <option value="R">Regular</option>
+                                <option value="B">Bom</option>
+                                <option value="MB">Muito Bom</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- quesito 2 -->
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-2" for="input-quesito-2">Quesito 2</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" aria-label="select quesito 1" id="input-quesito-2" name="input-quesito-2">
+                                <option selected>Selecione um valor</option>
+                                <option value="I">Insuficiente</option>
+                                <option value="F">Fraco</option>
+                                <option value="R">Regular</option>
+                                <option value="B">Bom</option>
+                                <option value="MB">Muito Bom</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- quesito 3 -->
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-2" for="input-quesito-3">Quesito 3</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" aria-label="select quesito 1" id="input-quesito-3" name="input-quesito-3">
+                                <option selected>Selecione um valor</option>
+                                <option value="I">Insuficiente</option>
+                                <option value="F">Fraco</option>
+                                <option value="R">Regular</option>
+                                <option value="B">Bom</option>
+                                <option value="MB">Muito Bom</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <h2 class="title">Nota</h2>
+                <p>
+                    As notas 6 e 7 são atribuídas somente a programas inicialmente enquadrados na nota 5, com desempenho
+                    superior e destacado em perspectiva multidimensional.
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="canvas-container">
+                            <canvas id="canvas"></canvas>
+                            <p class="gauge-label" id="p-nota"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <h3>Requisitos para nota 6</h3>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-6-item-1" name="checkbox-nota-6-item-1">
+                    <label for="checkbox-nota-6-item-1">Curso de doutorado em funcionamento nos dois últimos quadriênios
+                        completos.</label>
+                </div>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-6-item-2" name="checkbox-nota-6-item-2">
+                    <label for="checkbox-nota-6-item-2">Conceito <b>Muito Bom</b> nos três quesitos.</label>
+                </div>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-6-item-3" name="checkbox-nota-6-item-3">
+                    <label for="checkbox-nota-6-item-3">Até dois conceitos <b>Bom</b> em itens da ficha, sendo no máximo
+                        um deles em item do Quesito 2.</label>
+                </div>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-6-item-4" name="checkbox-nota-6-item-4">
+                    <label for="checkbox-nota-6-item-4">Excelência na maioria das dimensões comuns; a
+                        internacionalização pode ou não integrar os critérios da nota 6, conforme definição da
+                        área.</label>
+                </div>
+                <h3>Requisitos para nota 7</h3>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-7-item-1" name="checkbox-nota-7-item-1">
+                    <label for="checkbox-nota-7-item-1">
+                        Curso de doutorado em funcionamento nos dois últimos quadriênios completos.
+                    </label>
+                </div>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-7-item-2" name="checkbox-nota-7-item-2">
+                    <label for="checkbox-nota-7-item-2">
+                        Conceito <b>Muito Bom</b> nos três quesitos e em todos os itens dos Quesitos 1 a 3.
+                    </label>
+                </div>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-7-item-3" name="checkbox-nota-7-item-3">
+                    <label for="checkbox-nota-7-item-3">
+                        Excelência em todas as dimensões comuns.
+                    </label>
+                </div>
+                <div class="d-flex flex-row justify-content-start gap-2">
+                    <input type="checkbox" id="checkbox-nota-7-item-4" name="checkbox-nota-7-item-4">
+                    <label for="checkbox-nota-7-item-4">
+                        Excelência obrigatória em internacionalização, com referência aos cenários institucionais de
+                        excelência mundial da área.
+                    </label>
+                </div>
+
+                <h3>Dimensões comuns</h3>
+                <ul>
+                <li>Impacto na sociedade</li>
+                <li>Internacionalização</li>
+                <li>Contribuição para os Objetivos de Desenvolvimento Sustentável</li>
+                <li>Solidariedade e nucleação de grupos de pesquisa e da oferta de pós-graduação</li>
+                <li>Interdisciplinaridade</li>
+                <li>Ciência aberta e boas práticas de formação, pesquisa e disseminação científica</li>
+                <li>A área de avaliação poderá acrescentar outras dimensões em seu Documento de Área.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <h2 class="title">Bibliografia</h2>
+                <ol>
+                    <li>
+                        <a
+                                href="https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/documentos-do-novo-ciclo-avaliativo-2025-2028
+">
+                            Documentos do ciclo avaliativo 2025-2028
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</main>
+</body>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous">
+</script>
+<!-- gauge library -->
+<script src="https://bernii.github.io/gauge.js/dist/gauge.min.js">
+</script>
+<script type="application/javascript">
+    // opções do acelerador
+    const opts = {
+        angle: 0, // The span of the gauge arc
+        lineWidth: 0.3, // The line thickness
+        radiusScale: 0.8, // Relative radius
+        pointer: {
+            length: 0.6, // // Relative to gauge radius
+            strokeWidth: 0.06, // The thickness
+            color: '#000000' // Fill color
+        },
+        limitMax: false,     // If false, max value increases automatically if value > maxValue
+        limitMin: false,     // If true, the min value of the gauge will be fixed
+        colorStart: '#FDE725',   // Colors
+        colorStop: '#A0DA39',    // just experiment with them
+        strokeColor: '#CCCCCC',  // to see which ones work best for you
+        generateGradient: true,
+        highDpiSupport: true,     // High resolution support
+
+    };
+    let target = document.getElementById('canvas'); // your canvas element
+    let gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = 7; // set max gauge value
+    gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+    gauge.animationSpeed = 70; // set animation speed (32 is default value)
+    gauge.set(0); // set actual value
+
+    function calcularNota() {
+        const regras = [
+            { q1: ["I","F","R","B","MB"], q2: ["I"], q3: ["I","F","R","B","MB"], nota: 1 },
+            { q1: ["I","F","R","B","MB"], q2: ["F","R","B","MB"], q3: ["I"], nota: 1 },
+
+            { q1: ["F","R","B","MB"], q2: ["F"], q3: ["I","F","R","B","MB"], nota: 2 },
+            { q1: ["I","F","R","B","MB"], q2: ["F"], q3: ["F","R","B","MB"], nota: 2 },
+            { q1: ["I"], q2: ["R","B","MB"], q3: ["F","R","B","MB"], nota: 2 },
+            { q1: ["F","R","B","MB"], q2: ["R","B","MB"], q3: ["I"], nota: 2 },
+            { q1: ["F"], q2: ["R","B","MB"], q3: ["F"], nota: 2 },
+
+            { q1: ["R","B","MB"], q2: ["R"], q3: ["F","R","B","MB"], nota: 3 },
+            { q1: ["F","R","B","MB"], q2: ["R"], q3: ["R","B","MB"], nota: 3 },
+            { q1: ["F"], q2: ["B","MB"], q3: ["R","B","MB"], nota: 3 },
+            { q1: ["R","B","MB"], q2: ["B","MB"], q3: ["F"], nota: 3 },
+            { q1: ["R"], q2: ["B","MB"], q3: ["R"], nota: 3 },
+
+            { q1: ["R","B","MB"], q2: ["B"], q3: ["B","MB"], nota: 4 },
+            { q1: ["B","MB"], q2: ["B"], q3: ["R","B","MB"], nota: 4 },
+            { q1: ["R"], q2: ["MB"], q3: ["B","MB"], nota: 4 },
+            { q1: ["B","MB"], q2: ["MB"], q3: ["R"], nota: 4 },
+            { q1: ["B"], q2: ["MB"], q3: ["B"], nota: 4 },
+
+            { q1: ["B"], q2: ["MB"], q3: ["MB"], nota: 5 },
+            { q1: ["MB"], q2: ["MB"], q3: ["B"], nota: 5 },
+            { q1: ["MB"], q2: ["MB"], q3: ["MB"], nota: 5, observacao: "elegível para 6 ou 7" },
+        ];
+
+        const regra = regras.find(r =>
+            r.q1.includes(quesitos[0].value) &&
+            r.q2.includes(quesitos[1].value) &&
+            r.q3.includes(quesitos[2].value)
+        );
+
+        if(regra.observacao) {
+            const nota_6_cumprida = checkboxes_nota_6.every((c) => c.checked);
+            const nota_7_cumprida = checkboxes_nota_7.every((c) => c.checked);
+
+            if(nota_6_cumprida && nota_7_cumprida) {
+                return 7;
+            }
+            if(nota_6_cumprida) {
+                return 6;
+            }
+        }
+        return regra?.nota ?? 0;
+    }
+
+    function onValueChange(event) {
+        if(event.target.type === 'checkbox') {
+            localStorage.setItem(event.target.id, event.target.checked);
+        } else if(event.target.type === 'select') {
+            localStorage.setItem(event.target.id, event.target.value);
+        }
+        event.preventDefault();
+        const nota = calcularNota();
+        document.getElementById('p-nota').innerHTML = nota;
+        gauge.set(nota);
+    }
+
+    function loadValuesFromLocalStorage() {
+        quesitos.forEach((q) => {
+            const value = localStorage.getItem(q.id);
+            if(value) {
+                q.value = value;
+            }
+        });
+
+        checkboxes_nota_6.forEach((c) => {
+            const value = localStorage.getItem(c.id);
+            if(value) {
+                c.checked = value;
+            }
+        });
+
+        checkboxes_nota_7.forEach((c) => {
+            const value = localStorage.getItem(c.id);
+            if(value) {
+                c.checked = value;
+            }
+        })
+    }
+
+    const quesitos = [
+        document.getElementById('input-quesito-1'),
+        document.getElementById('input-quesito-2'),
+        document.getElementById('input-quesito-3')
+    ];
+
+    const checkboxes_nota_6 = [
+        document.getElementById('checkbox-nota-6-item-1'),
+        document.getElementById('checkbox-nota-6-item-2'),
+        document.getElementById('checkbox-nota-6-item-3'),
+        document.getElementById('checkbox-nota-6-item-4')
+    ];
+
+    const checkboxes_nota_7 = [
+        document.getElementById('checkbox-nota-7-item-1'),
+        document.getElementById('checkbox-nota-7-item-2'),
+        document.getElementById('checkbox-nota-7-item-3'),
+        document.getElementById('checkbox-nota-7-item-4')
+    ];
+
+    quesitos.forEach((q) => {
+        q.addEventListener('change', onValueChange);
+    })
+
+    checkboxes_nota_6.forEach((q) => {
+        q.addEventListener('change', onValueChange);
+    })
+
+    checkboxes_nota_7.forEach((q) => {
+        q.addEventListener('change', onValueChange);
+    })
+
+    document.addEventListener('DOMContentLoaded', onValueChange);
+</script>
+</html>
