@@ -124,7 +124,7 @@ table V_PRPGP_DOCENTES_POS
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Média formados por orientador' =
+	measure 'Média titulados por orientador' =
 			CALCULATE(
 			    DIVIDE(
 			        DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[CPF]),
@@ -139,6 +139,14 @@ table V_PRPGP_DOCENTES_POS
 	measure 'Quantidade docentes' = DISTINCTCOUNT(V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_CONTRATO_RH])
 		formatString: #,0
 		lineageTag: bccd83af-247c-40a2-886b-cfb69f285472
+
+	measure 'Número formados por orientador' =
+			CALCULATE(
+			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[CPF]),
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado"
+			)
+		formatString: 0
+		lineageTag: f9f3e33e-5a7d-4fcc-a99e-127b556d088f
 
 	column ID_CONTRATO_RH
 		dataType: int64
@@ -271,6 +279,14 @@ table V_PRPGP_DOCENTES_POS
 
 		annotation SummarizationSetBy = Automatic
 
+	column Etnia
+		dataType: string
+		lineageTag: 22037096-57d0-4813-8f82-426a798d441f
+		summarizeBy: none
+		sourceColumn: Etnia
+
+		annotation SummarizationSetBy = Automatic
+
 	partition V_PRPGP_DOCENTES_POS = m
 		mode: import
 		source =
@@ -278,16 +294,17 @@ table V_PRPGP_DOCENTES_POS
 				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
 				    BEE = Source{[Schema="BEE"]}[Data],
 				    V_PRPGP_DOCENTES_POS1 = BEE{[Name="V_PRPGP_DOCENTES_POS"]}[Data],
-				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DOCENTES_POS1,{{"DT_ADMISSAO_CARGO", "Data ingresso"}, {"DT_DESLIGAMENTO", "Data desligamento"}, {"GENERO", "Gênero"}, {"NOME_FUNCIONARIO", "Nome"},{"NOME_PAIS_PORTUGUES", "País de origem"}}),
+				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DOCENTES_POS1,{{"DT_ADMISSAO_CARGO", "Data ingresso"}, {"DT_DESLIGAMENTO", "Data desligamento"}, {"GENERO", "Gênero"}, {"NOME_FUNCIONARIO", "Nome"},{"NOME_PAIS_PORTUGUES", "País de origem"}, {"ETNIA", "Etnia"}}),
 				    #"Inserted Year" = Table.AddColumn(#"Renamed Columns", "Ano ingresso", each Date.Year([Data ingresso]), Int64.Type),
 				    #"Inserted Year1" = Table.AddColumn(#"Inserted Year", "Ano desligamento", each Date.Year([Data desligamento]), Int64.Type),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Year1",{{"Data ingresso", "Data admissão"}, {"Nome", "Nome docente"}, {"TITULACAO", "Titulação"}}),
 				    #"Capitalized Each Word" = Table.TransformColumns(#"Renamed Columns1",{{"Nome docente", Text.Proper, type text}}),
 				    #"Renamed Columns2" = Table.RenameColumns(#"Capitalized Each Word",{{"País de origem", "País de origem docente"}}),
 				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns2","F","Feminino",Replacer.ReplaceText,{"Gênero"}),
-				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","M","Masculino",Replacer.ReplaceText,{"Gênero"})
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","M","Masculino",Replacer.ReplaceText,{"Gênero"}),
+				    #"Capitalized Each Word1" = Table.TransformColumns(#"Replaced Value1",{{"Etnia", Text.Proper, type text}})
 				in
-				    #"Replaced Value1"
+				    #"Capitalized Each Word1"
 
 	annotation PBI_NavigationStepName = Navigation
 

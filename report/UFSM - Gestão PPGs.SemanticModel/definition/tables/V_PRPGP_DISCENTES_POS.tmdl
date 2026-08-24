@@ -20,9 +20,10 @@ table V_PRPGP_DISCENTES_POS
 	measure 'Formados por ano de formatura' =
 			CALCULATE(
 			    distinctcount(V_PRPGP_DISCENTES_POS[Matrícula]),
-			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado"
+			    V_PRPGP_DISCENTES_POS[Forma saída] = "Formado",
+			    (V_PRPGP_DISCENTES_POS[Modalidade curso] = "Mestrado" || V_PRPGP_DISCENTES_POS[Modalidade curso] = "Doutorado")
 			)
-		formatString: #,0
+		formatString: 0
 		lineageTag: b1c41e6d-28c5-4e68-b977-888b2137fd42
 
 	measure 'Doutorandos ativos' =
@@ -166,7 +167,7 @@ table V_PRPGP_DISCENTES_POS
 		formatString: #,0
 		lineageTag: c42b2ac2-42d3-4524-ac65-6d1ca5045feb
 
-	measure 'Quantidade formados' =
+	measure 'Quantidade titulados' =
 			
 			CALCULATE(
 			    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]),
@@ -178,7 +179,7 @@ table V_PRPGP_DISCENTES_POS
 
 	measure 'Taxa de Conclusão' =
 			
-			DIVIDE([Quantidade formados], [Quantidade matriculados])
+			DIVIDE([Quantidade titulados], [Quantidade matriculados])
 		formatString: 0%;-0%;0%
 		lineageTag: d2f74a02-231c-4b6d-b9c4-0e3b9dc49fde
 
@@ -378,6 +379,26 @@ table V_PRPGP_DISCENTES_POS
 
 		annotation SummarizationSetBy = Automatic
 
+	column ID_CURSO
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 22c1c419-36e9-4be0-b761-9910d12230c3
+		summarizeBy: sum
+		sourceColumn: ID_CURSO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Etnia
+		dataType: string
+		lineageTag: 7aa4be32-f433-4f41-8765-58112fd09ab3
+		summarizeBy: none
+		sourceColumn: Etnia
+
+		annotation SummarizationSetBy = Automatic
+
 	partition V_PRPGP_DISCENTES_POS = m
 		mode: import
 		source =
@@ -385,7 +406,7 @@ table V_PRPGP_DISCENTES_POS
 				    Source = DB2.Database("bi.proj.ufsm.br", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
 				    BEE = Source{[Schema="BEE"]}[Data],
 				    V_PRPGP_DISCENTES_POS1 = BEE{[Name="V_PRPGP_DISCENTES_POS"]}[Data],
-				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{"ANO_EVASAO", "Ano saída"}, {"ANO_INGRESSO", "Ano ingresso"}, {"FORMA_EVASAO", "Forma saída"}, {"MATRICULA", "Matrícula"}, {"NOME_ALUNO", "Nome aluno"}, {"NOME_PAIS_PORTUGUES", "País de origem"}, {"COTUTELA", "Cotutela"}}),
+				    #"Renamed Columns" = Table.RenameColumns(V_PRPGP_DISCENTES_POS1,{{"ANO_EVASAO", "Ano saída"}, {"ANO_INGRESSO", "Ano ingresso"}, {"FORMA_EVASAO", "Forma saída"}, {"MATRICULA", "Matrícula"}, {"NOME_ALUNO", "Nome aluno"}, {"NOME_PAIS_PORTUGUES", "País de origem"}, {"COTUTELA", "Cotutela"}, {"ETNIA", "Etnia"}}),
 				    #"Inserted Date" = Table.AddColumn(#"Renamed Columns", "Data ingresso", each Date.From(Text.From([Ano ingresso], "pt-BR")), type date),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Date",{{"MODALIDADE_CURSO", "Modalidade curso"}, {"COD_CURSO", "Código curso"}, {"GENERO", "Gênero"}
 				}),
@@ -399,9 +420,10 @@ table V_PRPGP_DISCENTES_POS
 				else if [NACIONALIDADE_ITEM] <> null then "Estrangeiro"
 				else null),
 				    #"Capitalized Each Word" = Table.TransformColumns(#"Added Custom1",{{"Nome aluno", Text.Proper, type text}}),
-				    #"Filtered Rows" = Table.SelectRows(#"Capitalized Each Word", each true)
+				    #"Filtered Rows" = Table.SelectRows(#"Capitalized Each Word", each true),
+				    #"Capitalized Each Word1" = Table.TransformColumns(#"Filtered Rows",{{"Etnia", Text.Proper, type text}})
 				in
-				    #"Filtered Rows"
+				    #"Capitalized Each Word1"
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -426,6 +426,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "chave unicum": {
@@ -1147,9 +1150,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "id unidade sup": {
@@ -1473,16 +1473,6 @@ cultureInfo en-US
 			        {
 			          "forma saída": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Situação": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2097,7 +2087,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-			          "ConceptualProperty": "Quantidade formados"
+			          "ConceptualProperty": "Quantidade titulados"
 			        }
 			      },
 			      "State": "Generated",
@@ -2704,7 +2694,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-			          "ConceptualProperty": "Média formados por orientador"
+			          "ConceptualProperty": "Média titulados por orientador"
 			        }
 			      },
 			      "State": "Generated",
@@ -2728,6 +2718,16 @@ cultureInfo en-US
 			        {
 			          "média orientandos por orientador": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Média orientandos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -4221,16 +4221,6 @@ cultureInfo en-US
 			          "curso vaga": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Curso da vaga": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -4702,6 +4692,184 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "v_prpgp_discentes_pos.cotutela": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+			          "ConceptualProperty": "Cotutela"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cotutela": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos.id_curso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+			          "ConceptualProperty": "ID_CURSO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "id curso": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_CURSO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification curso": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity curso": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier curso": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential curso": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos.etnia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+			          "ConceptualProperty": "Etnia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "etnia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos.cotutelas_origem_externa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+			          "ConceptualProperty": "Cotutelas origem externa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cotutelas origem externa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos.cotutelas_origem_interna": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+			          "ConceptualProperty": "Cotutelas origem interna"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cotutelas origem interna": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v_prpgp_docentes_pos.etnia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+			          "ConceptualProperty": "Etnia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "etnia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v_prpgp_docentes_pos.número_formados_por_orientador": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+			          "ConceptualProperty": "Número formados por orientador"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "número formados por orientador": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v_prpgp_programas_pos.sigla_centro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "V_PRPGP_PROGRAMAS_POS",
+			          "ConceptualProperty": "Sigla centro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sigla centro": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -5034,52 +5202,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v_prpgp_discentes_fluxo_has_v_prpgp_programas_pos": {
-			      "Binding": {
-			        "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_prpgp_discentes_fluxo": {
-			          "Target": {
-			            "Entity": "v_prpgp_discentes_fluxo"
-			          }
-			        },
-			        "v_prpgp_programas_pos": {
-			          "Target": {
-			            "Entity": "v_prpgp_programas_pos"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_prpgp_discentes_fluxo"
-			            },
-			            "Object": {
-			              "Role": "v_prpgp_programas_pos"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "v_prpgp_discentes_fluxo_have_v_prpgp_programas_pos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_prpgp_programas_pos"
-			            },
-			            "Object": {
-			              "Role": "v_prpgp_discentes_fluxo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "v_prpgp_programas_pos_have_v_prpgp_discentes_fluxo"
-			        }
-			      ]
-			    },
 			    "v_prpgp_discentes_fluxo_has_v_prpgp_discentes_pos": {
 			      "Binding": {
 			        "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO"
@@ -5268,6 +5390,237 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_calendarios_have_v_prpgp_credenciamento_docente_fluxo"
+			        }
+			      ]
+			    },
+			    "v_prpgp_programas_pos_has_sigla_centro": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_PROGRAMAS_POS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_programas_pos": {
+			          "Target": {
+			            "Entity": "v_prpgp_programas_pos"
+			          }
+			        },
+			        "v_prpgp_programas_pos.sigla_centro": {
+			          "Target": {
+			            "Entity": "v_prpgp_programas_pos.sigla_centro"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_programas_pos"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_programas_pos.sigla_centro"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_programas_pos_have_sigla_centro"
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos_has_v_prpgp_docentes_pos_número_formados_por_orientador": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_discentes_pos": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos"
+			          }
+			        },
+			        "v_prpgp_docentes_pos.número_formados_por_orientador": {
+			          "Target": {
+			            "Entity": "v_prpgp_docentes_pos.número_formados_por_orientador"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_discentes_pos"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_docentes_pos.número_formados_por_orientador"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_discentes_pos_have_número_formados_por_orientador"
+			        }
+			      ]
+			    },
+			    "v_prpgp_docentes_pos_has_etnia": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_DOCENTES_POS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_docentes_pos": {
+			          "Target": {
+			            "Entity": "v_prpgp_docentes_pos"
+			          }
+			        },
+			        "v_prpgp_docentes_pos.etnia": {
+			          "Target": {
+			            "Entity": "v_prpgp_docentes_pos.etnia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_docentes_pos"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_docentes_pos.etnia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_docentes_pos_have_etnias"
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos_has_cotutelas_origem_interna": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_discentes_pos": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos"
+			          }
+			        },
+			        "v_prpgp_discentes_pos.cotutelas_origem_interna": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos.cotutelas_origem_interna"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_discentes_pos"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_discentes_pos.cotutelas_origem_interna"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_discentes_pos_have_cotutelas_origem_interna"
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos_has_cotutelas_origem_externa": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_discentes_pos": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos"
+			          }
+			        },
+			        "v_prpgp_discentes_pos.cotutelas_origem_externa": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos.cotutelas_origem_externa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_discentes_pos"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_discentes_pos.cotutelas_origem_externa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_discentes_pos_have_cotutelas_origem_externa"
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos_has_etnia": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_discentes_pos": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos"
+			          }
+			        },
+			        "v_prpgp_discentes_pos.etnia": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos.etnia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_discentes_pos"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_discentes_pos.etnia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_discentes_pos_have_etnias"
+			        }
+			      ]
+			    },
+			    "v_prpgp_discentes_pos_has_cotutela": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_discentes_pos": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos"
+			          }
+			        },
+			        "v_prpgp_discentes_pos.cotutela": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_pos.cotutela"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_discentes_pos"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_discentes_pos.cotutela"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_discentes_pos_have_cotutelas"
 			        }
 			      ]
 			    },
@@ -7812,6 +8165,39 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "v_prpgp_discentes_fluxo_has_id_unidade_sup": {
+			      "Binding": {
+			        "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_prpgp_discentes_fluxo": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_fluxo"
+			          }
+			        },
+			        "v_prpgp_discentes_fluxo.id_unidade_sup": {
+			          "Target": {
+			            "Entity": "v_prpgp_discentes_fluxo.id_unidade_sup"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_prpgp_discentes_fluxo"
+			            },
+			            "Object": {
+			              "Role": "v_prpgp_discentes_fluxo.id_unidade_sup"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "v_prpgp_discentes_fluxo_have_id_unidade_sups"
+			        }
+			      ]
+			    },
 			    "v_prpgp_discentes_fluxo_has_id_pessoa": {
 			      "Binding": {
 			        "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO"
@@ -7974,39 +8360,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "v_prpgp_credenciamento_docente_fluxo_have_tipo_de_vínculos"
-			        }
-			      ]
-			    },
-			    "v_prpgp_credenciamento_docente_fluxo_has_chave_unicum": {
-			      "Binding": {
-			        "ConceptualEntity": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_prpgp_credenciamento_docente_fluxo": {
-			          "Target": {
-			            "Entity": "v_prpgp_credenciamento_docente_fluxo"
-			          }
-			        },
-			        "v_prpgp_credenciamento_docente_fluxo.chave_unicum": {
-			          "Target": {
-			            "Entity": "v_prpgp_credenciamento_docente_fluxo.chave_unicum"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_prpgp_credenciamento_docente_fluxo"
-			            },
-			            "Object": {
-			              "Role": "v_prpgp_credenciamento_docente_fluxo.chave_unicum"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "v_prpgp_credenciamento_docente_fluxo_have_chave_unica"
 			        }
 			      ]
 			    },

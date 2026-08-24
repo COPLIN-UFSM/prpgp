@@ -36,10 +36,6 @@ relationship 715aae5a-634e-4fe0-e5dc-1df0c92ea08e
 	fromColumn: V_PRPGP_DISCENTES_FLUXO.ID_CURSO_ALUNO
 	toColumn: V_PRPGP_DISCENTES_POS.ID_CURSO_ALUNO
 
-relationship c9b53c5a-1041-256c-5376-3f5897bd6423
-	fromColumn: V_PRPGP_DISCENTES_FLUXO.ID_UNIDADE_SUP
-	toColumn: V_PRPGP_PROGRAMAS_POS.ID_UNIDADE_SUP
-
 relationship 664c694e-73aa-d616-495c-5d404c66b13a
 	fromColumn: V_PRPGP_DISCENTES_FLUXO.Data
 	toColumn: dCalendario.Data

@@ -14,7 +14,7 @@ table V_PRPGP_DISCENTES_FLUXO
 		dataType: int64
 		formatString: 0
 		lineageTag: 647605b7-ab2b-44cf-b141-e38b203fe09f
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: ID_UNIDADE_SUP
 
 		annotation SummarizationSetBy = Automatic
