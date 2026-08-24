@@ -94,9 +94,12 @@ table V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO
 
 	column CHAVE_UNICA
 		dataType: string
+		isHidden
 		lineageTag: a8ae490a-680f-4a72-952b-216a1913a3fd
 		summarizeBy: none
 		sourceColumn: CHAVE_UNICA
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

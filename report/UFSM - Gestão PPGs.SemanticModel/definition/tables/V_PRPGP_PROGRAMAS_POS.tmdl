@@ -41,6 +41,14 @@ table V_PRPGP_PROGRAMAS_POS
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Sigla centro'
+		dataType: string
+		lineageTag: eac6525c-83e0-4d0e-b20e-7b9fce4fa59b
+		summarizeBy: none
+		sourceColumn: Sigla centro
+
+		annotation SummarizationSetBy = Automatic
+
 	partition V_PRPGP_PROGRAMAS_POS = m
 		mode: import
 		source =
@@ -66,9 +74,10 @@ table V_PRPGP_PROGRAMAS_POS
 				    #"Replaced Value11" = Table.ReplaceValue(#"Replaced Value14","- CAMPUS UFSM-FW","",Replacer.ReplaceText,{"Nome unidade"}),
 				    #"Replaced Value12" = Table.ReplaceValue(#"Replaced Value11"," - UFSM-PM","",Replacer.ReplaceText,{"Nome unidade"}),
 				    #"Capitalized Each Word" = Table.TransformColumns(#"Replaced Value12",{{"Nome unidade", Text.Proper, type text}}),
-				    #"Trimmed Text" = Table.TransformColumns(#"Capitalized Each Word",{{"Nome unidade", Text.Trim, type text}})
+				    #"Trimmed Text" = Table.TransformColumns(#"Capitalized Each Word",{{"Nome unidade", Text.Trim, type text}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Trimmed Text",{{"SIGLA_CENTRO", "Sigla centro"}})
 				in
-				    #"Trimmed Text"
+				    #"Renamed Columns1"
 
 	annotation PBI_NavigationStepName = Navigation
 

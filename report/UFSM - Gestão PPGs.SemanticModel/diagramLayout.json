@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 692.64046141100948,
-        "y": 684.42733341008841
+        "x": 581.76323339857515,
+        "y": 410.65640004605308
       },
       "nodes": [
         {
@@ -369,8 +369,8 @@
       "nodes": [
         {
           "location": {
-            "x": 1303.6175002671123,
-            "y": 393.29267449799073
+            "x": 1301.0191032766954,
+            "y": 597.26683824571671
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -382,7 +382,7 @@
         },
         {
           "location": {
-            "x": 414.29399775154656,
+            "x": 303.86212565882863,
             "y": 0
           },
           "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
@@ -395,7 +395,7 @@
         },
         {
           "location": {
-            "x": 883.35745171898327,
+            "x": 846.97989385314679,
             "y": 0
           },
           "nodeIndex": "dCalendario",
@@ -408,8 +408,8 @@
         },
         {
           "location": {
-            "x": 1311.1662515249718,
-            "y": 8.43587434674511
+            "x": 1308.5678545345547,
+            "y": 131.85973139154743
           },
           "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
           "nodeLineageTag": "8074a767-b605-475b-9a3c-4803970216f8",
@@ -421,8 +421,8 @@
         },
         {
           "location": {
-            "x": 889.02237881073893,
-            "y": 309.51421832297416
+            "x": 876.03039385865463,
+            "y": 430.33967837735958
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -434,8 +434,8 @@
         },
         {
           "location": {
-            "x": 346.53723735835973,
-            "y": 266.51083012187109
+            "x": 237.40456376085029,
+            "y": 413.32026008042544
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
           "nodeLineageTag": "e0e41ed3-cfbf-4bb0-be75-974e4050791b",
@@ -447,13 +447,13 @@
         }
       ],
       "name": "discentes",
-      "zoomValue": 86.2970029811126,
+      "zoomValue": 76.9705325004674,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "All tables",
+  "selectedDiagram": "discentes",
   "defaultDiagram": "All tables"
 }
