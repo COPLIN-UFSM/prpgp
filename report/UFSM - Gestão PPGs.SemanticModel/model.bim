@@ -2235,22 +2235,6 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.quantidade_formados": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Quantidade titulados"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "quantidade formados": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
               "v_prpgp_discentes_pos.quantidade_matriculados": {
                 "Definition": {
                   "Binding": {
@@ -2262,6 +2246,22 @@
                 "Terms": [
                   {
                     "quantidade matriculados": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.quantidade_titulados": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Quantidade titulados"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade titulados": {
                       "State": "Generated"
                     }
                   }
@@ -2858,22 +2858,6 @@
                   "Value": "Hidden"
                 }
               },
-              "v_prpgp_docentes_pos.média_formados_por_orientador": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
-                    "ConceptualProperty": "Média titulados por orientador"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "média formados por orientador": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
               "v_prpgp_docentes_pos.média_orientandos_por_orientador": {
                 "Definition": {
                   "Binding": {
@@ -2896,6 +2880,22 @@
                       },
                       "State": "Suggested",
                       "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.média_titulados_por_orientador": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Média titulados por orientador"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média titulados por orientador": {
+                      "State": "Generated"
                     }
                   }
                 ]
@@ -3264,6 +3264,52 @@
                   {
                     "titulação": {
                       "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.total_orientandos_por_orientador": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Total orientandos por orientador"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "total orientandos por orientador": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "aggregate orientando por orientador": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.599
+                    }
+                  },
+                  {
+                    "overall orientando por orientador": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.599
+                    }
+                  },
+                  {
+                    "Total orientandos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -6493,39 +6539,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_quantidade_formados": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.quantidade_formados"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_quantidade_formados",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.quantidade_formados": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.quantidade_formados"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_discentes_pos_has_quantidade_matriculados": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -6554,6 +6567,39 @@
                   "v_prpgp_discentes_pos.quantidade_matriculados": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.quantidade_matriculados"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_quantidade_titulados": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.quantidade_titulados"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_titulados",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.quantidade_titulados": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.quantidade_titulados"
                     }
                   }
                 },
@@ -6770,39 +6816,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_v_prpgp_docentes_pos_média_formados_por_orientador": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_docentes_pos.média_formados_por_orientador"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_média_formados_por_orientador",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_docentes_pos.média_formados_por_orientador": {
-                    "Target": {
-                      "Entity": "v_prpgp_docentes_pos.média_formados_por_orientador"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_discentes_pos_has_v_prpgp_docentes_pos_média_orientandos_por_orientador": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -6836,6 +6849,39 @@
                 },
                 "State": "Generated"
               },
+              "v_prpgp_discentes_pos_has_v_prpgp_docentes_pos_média_titulados_por_orientador": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.média_titulados_por_orientador"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_média_titulados_por_orientador",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.média_titulados_por_orientador": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.média_titulados_por_orientador"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_prpgp_discentes_pos_has_v_prpgp_docentes_pos_número_formados_por_orientador": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -6864,6 +6910,39 @@
                   "v_prpgp_docentes_pos.número_formados_por_orientador": {
                     "Target": {
                       "Entity": "v_prpgp_docentes_pos.número_formados_por_orientador"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_v_prpgp_docentes_pos_total_orientandos_por_orientador": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.total_orientandos_por_orientador"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_total_orientandos_por_orientador",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.total_orientandos_por_orientador": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.total_orientandos_por_orientador"
                     }
                   }
                 },
@@ -9901,6 +9980,12 @@
             ],
             "formatString": "0",
             "lineageTag": "f9f3e33e-5a7d-4fcc-a99e-127b556d088f"
+          },
+          {
+            "name": "Total orientandos por orientador",
+            "expression": "DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[CPF])",
+            "formatString": "0",
+            "lineageTag": "dcd991f5-fc03-4d68-9f9b-32a93241fffb"
           }
         ],
         "partitions": [
@@ -11080,10 +11165,11 @@
             "annotations": [
               {
                 "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
+                "value": "{\"isDecimal\":true}"
               }
             ],
             "expression": "SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
+            "formatString": "#,0",
             "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
           }
         ],
