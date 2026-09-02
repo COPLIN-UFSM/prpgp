@@ -51,6 +51,12 @@
                 margin: 0 auto;
             }
         }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
+
     </style>
 
 <!--    <link rel="stylesheet" type="text/css" href="static/css/main.css">-->
@@ -68,9 +74,9 @@
 
     <!-- imagem para o Facebook -->
 <!--    <meta property="og:image" content="https://coplin-ufsm.github.io/prpgp/static/images/cover.png"/>-->
-    <meta property="og:image:width" content="536"/>
-    <meta property="og:image:height" content="750"/>
-    <meta property="og:image:alt" content="Imagem da capa do Simulador Nota CAPES"/>
+<!--    <meta property="og:image:width" content="536"/> -->
+<!--    <meta property="og:image:height" content="750"/> -->
+<!--    <meta property="og:image:alt" content="Imagem da capa do Simulador Nota CAPES"/> -->
 
     <!-- twitter -->
     <meta name="twitter:title" content="Simulador Nota CAPES">
@@ -79,8 +85,8 @@
     <meta property="twitter:domain" content="coplin-ufsm.github.io">
     <meta property="twitter:url" content="https://coplin-ufsm.github.io/prpgp">
     <meta name="twitter:url" content="https://coplin-ufsm.github.io/prpgp">
-<!--    <meta name="twitter:image" content="https://coplin-ufsm.github.io/prpgp/static/images/cover.png">-->
-    <meta name="twitter:image:alt" content="Imagem da capa do Simulador Nota CAPES">
+<!--    <meta name="twitter:image" content="https://coplin-ufsm.github.io/prpgp/static/images/cover.png"> -->
+<!--    <meta name="twitter:image:alt" content="Imagem da capa do Simulador Nota CAPES"> -->
 </head>
 
 <body>
@@ -122,8 +128,8 @@
                 <form id="form-simulador" class="d-flex flex-column gap-2">
                     <!-- quesito 1 -->
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-2" for="input-quesito-1">Quesito 1</label>
-                        <div class="col-sm-10">
+                        <label class="col-form-label col-sm-3" for="input-quesito-1"><a href="#quesito_programa">Quesito 1 - Programa</a></label>
+                        <div class="col-sm-9">
                             <select class="form-select" aria-label="select quesito 1" id="input-quesito-1" name="input-quesito-1">
                                 <option selected>Selecione um valor</option>
                                 <option value="I">Insuficiente</option>
@@ -136,8 +142,8 @@
                     </div>
                     <!-- quesito 2 -->
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-2" for="input-quesito-2">Quesito 2</label>
-                        <div class="col-sm-10">
+                        <label class="col-form-label col-sm-3" for="input-quesito-2"><a href="#quesito_formacao">Quesito 2 - Formação</a></label>
+                        <div class="col-sm-9">
                             <select class="form-select" aria-label="select quesito 1" id="input-quesito-2" name="input-quesito-2">
                                 <option selected>Selecione um valor</option>
                                 <option value="I">Insuficiente</option>
@@ -150,8 +156,8 @@
                     </div>
                     <!-- quesito 3 -->
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-2" for="input-quesito-3">Quesito 3</label>
-                        <div class="col-sm-10">
+                        <label class="col-form-label col-sm-3" for="input-quesito-3"><a href="#quesito_impacto">Quesito 3 - Impacto na Sociedade</a></label>
+                        <div class="col-sm-9">
                             <select class="form-select" aria-label="select quesito 1" id="input-quesito-3" name="input-quesito-3">
                                 <option selected>Selecione um valor</option>
                                 <option value="I">Insuficiente</option>
@@ -242,6 +248,27 @@
                 <li>Ciência aberta e boas práticas de formação, pesquisa e disseminação científica</li>
                 </ul>
                 A área de avaliação poderá acrescentar outras dimensões em seu Documento de Área.
+
+                <h3>Quesitos</h3>
+                <h4 id="quesito_programa">Programa</h4>
+                <ul>
+                    <li>Identidade e condições de funcionamento do Programa: missão, corpo docente, infraestrutura, articulação entre áreas de concentração, linhas/projetos de pesquisa e estrutura curricular.</li>
+                    <li>Princípios, procedimentos e usos dos resultados da autoavaliação alinhados ao planejamento estratégico do Programa.</li>
+                    <li>Planejamento estratégico do Programa em articulação com o Plano de Desenvolvimento Institucional ou equivalente, incluindo as políticas afirmativas e de promoção de equidade.</li>
+                </ul>
+                <h4 id="quesito_formacao">Formação</h4>
+                <ul>
+                    <li>Qualidade das teses, dissertações ou equivalentes e adequação às áreas de concentração e linhas de pesquisa do Programa.</li>
+                    <li>Destino e atuação dos egressos do Programa em relação à formação recebida.</li>
+                    <li>Qualidade da produção intelectual de discentes e egressos do Programa.</li>
+                    <li>Qualidade das atividades de pesquisa e da produção intelectual do corpo docente do Programa.</li>
+                </ul>
+                <h4 id="quesito_impacto">Impacto na sociedade</h4>
+                <ul>
+                    <li>Inserção, visibilidade, popularização da ciência.</li>
+                    <li>Inovação, transferência e compartilhamento de conhecimento.</li>
+                    <li>Impactos do Programa para a sociedade.</li>
+                </ul>
             </div>
         </div>
         <div class="row my-5">
