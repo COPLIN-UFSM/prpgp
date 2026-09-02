@@ -4467,6 +4467,16 @@
                     "curso vaga": {
                       "State": "Generated"
                     }
+                  },
+                  {
+                    "Nível": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
