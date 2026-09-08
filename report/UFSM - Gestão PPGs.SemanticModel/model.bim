@@ -3634,7 +3634,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
-                    "ConceptualProperty": "Soma Encargos"
+                    "ConceptualProperty": "Média Encargos"
                   }
                 },
                 "State": "Generated",
@@ -11406,16 +11406,58 @@
         "lineageTag": "09ce9bdf-531d-41c7-9f5e-7828f8951882",
         "measures": [
           {
+            "name": "Média Encargos",
+            "expression": "AVERAGE(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
+            "formatString": "#,0.00",
+            "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
+          },
+          {
             "name": "Soma Encargos",
             "annotations": [
               {
                 "name": "PBI_FormatHint",
-                "value": "{\"isDecimal\":true}"
+                "value": "{\"isGeneralNumber\":true}"
               }
             ],
             "expression": "SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
-            "formatString": "#,0",
-            "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
+            "lineageTag": "90748280-86ef-4ef5-9762-14c8489a1bf7"
+          },
+          {
+            "name": "Encargos docentes tabela",
+            "expression": [
+              "",
+              "VAR TotaisPorAno =",
+              "    VALUES(V_PRPGP_ENCARGO_DIDATICO_POS[Ano encargo])",
+              "",
+              "RETURN",
+              "IF(",
+              "    ISINSCOPE(V_PRPGP_ENCARGO_DIDATICO_POS[Tipo encargo]),",
+              "    ",
+              "    -- Expanded: average of the category total per year",
+              "    AVERAGEX(",
+              "        TotaisPorAno,",
+              "        COALESCE(",
+              "            CALCULATE(",
+              "                SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
+              "            ),",
+              "            0",
+              "        )",
+              "    ),",
+              "",
+              "    -- Collapsed: average of the professor's TOTAL workload per year",
+              "    AVERAGEX(",
+              "        TotaisPorAno,",
+              "        COALESCE(",
+              "            CALCULATE(",
+              "                SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
+              "            ),",
+              "            0",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "1ca9dcb7-bcf1-40d2-be64-01ddcb118090"
           }
         ],
         "partitions": [
