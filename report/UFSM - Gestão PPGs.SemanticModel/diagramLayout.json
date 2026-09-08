@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 581.76323339857515,
-        "y": 410.65640004605308
+        "x": 213.32579037955469,
+        "y": 297.73527578153676
       },
       "nodes": [
         {
@@ -140,7 +140,7 @@
         }
       ],
       "name": "All tables",
-      "zoomValue": 73.053774388115343,
+      "zoomValue": 65.158553849812378,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
@@ -369,8 +369,8 @@
       "nodes": [
         {
           "location": {
-            "x": 1301.0191032766954,
-            "y": 597.26683824571671
+            "x": 1333.4990656569064,
+            "y": 611.55802169300966
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -378,11 +378,11 @@
             "height": 433.32133091410572,
             "width": 310.7826590367946
           },
-          "zIndex": 4
+          "zIndex": 6
         },
         {
           "location": {
-            "x": 303.86212565882863,
+            "x": 236.30380390798945,
             "y": 0
           },
           "nodeIndex": "V_PRPGP_PROGRAMAS_POS",
@@ -408,8 +408,8 @@
         },
         {
           "location": {
-            "x": 1308.5678545345547,
-            "y": 131.85973139154743
+            "x": 1344.9454124003912,
+            "y": 112.37175396342076
           },
           "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
           "nodeLineageTag": "8074a767-b605-475b-9a3c-4803970216f8",
@@ -417,30 +417,30 @@
             "height": 335.21330914105647,
             "width": 301.64799106746705
           },
-          "zIndex": 6
-        },
-        {
-          "location": {
-            "x": 876.03039385865463,
-            "y": 430.33967837735958
-          },
-          "nodeIndex": "V_PRPGP_DOCENTES_POS",
-          "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
-          "size": {
-            "height": 370.46665736194478,
-            "width": 304.46665736194473
-          },
           "zIndex": 5
         },
         {
           "location": {
-            "x": 237.40456376085029,
-            "y": 413.32026008042544
+            "x": 817.56646157427463,
+            "y": 565.45632187903789
+          },
+          "nodeIndex": "V_PRPGP_DOCENTES_POS",
+          "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
+          "size": {
+            "height": 457.51295654091069,
+            "width": 304.46665736194473
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 171.14544050521954,
+            "y": 519.854536687518
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
           "nodeLineageTag": "e0e41ed3-cfbf-4bb0-be75-974e4050791b",
           "size": {
-            "height": 280.45599888343338,
+            "height": 331.12474019656281,
             "width": 415.80397599381763
           },
           "zIndex": 3
@@ -454,6 +454,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "discentes",
+  "selectedDiagram": "All tables",
   "defaultDiagram": "All tables"
 }

@@ -2688,6 +2688,32 @@
                   }
                 ]
               },
+              "v_prpgp_docentes_pos.doutorandos_mesmo_curso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Doutorandos mesmo curso"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "doutorandos mesmo curso": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Doutorandos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "v_prpgp_docentes_pos.etnia": {
                 "Definition": {
                   "Binding": {
@@ -2858,6 +2884,32 @@
                   "Value": "Hidden"
                 }
               },
+              "v_prpgp_docentes_pos.mestrandos_mesmo_curso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Mestrandos mesmo curso"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "mestrandos mesmo curso": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Mestrandos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "v_prpgp_docentes_pos.média_orientandos_por_orientador": {
                 "Definition": {
                   "Binding": {
@@ -3024,6 +3076,32 @@
                   {
                     "número formados por orientador": {
                       "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_docentes_pos.orientandos_mesmo_curso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DOCENTES_POS",
+                    "ConceptualProperty": "Orientandos mesmo curso"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "orientandos mesmo curso": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Total orientandos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -3300,16 +3378,6 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.599
-                    }
-                  },
-                  {
-                    "Total orientandos": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
                     }
                   }
                 ]
@@ -5884,6 +5952,105 @@
                   "v_prpgp_discentes_pos.tempo_médio_para_formar_mestres_anos": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.tempo_médio_para_formar_mestres_anos"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_fluxo_has_v_prpgp_docentes_pos_doutorandos_mesmo_curso": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.doutorandos_mesmo_curso"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_fluxo_have_doutorandos_mesmo_curso",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_fluxo"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.doutorandos_mesmo_curso": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.doutorandos_mesmo_curso"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_fluxo_has_v_prpgp_docentes_pos_mestrandos_mesmo_curso": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.mestrandos_mesmo_curso"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_fluxo_have_mestrandos_mesmo_curso",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_fluxo"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.mestrandos_mesmo_curso": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.mestrandos_mesmo_curso"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_fluxo_has_v_prpgp_docentes_pos_orientandos_mesmo_curso": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_FLUXO"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_docentes_pos.orientandos_mesmo_curso"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_fluxo"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_fluxo_have_orientandos_mesmo_curso",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_fluxo": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_fluxo"
+                    }
+                  },
+                  "v_prpgp_docentes_pos.orientandos_mesmo_curso": {
+                    "Target": {
+                      "Entity": "v_prpgp_docentes_pos.orientandos_mesmo_curso"
                     }
                   }
                 },
@@ -9220,7 +9387,7 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "changedProperties": [
@@ -9233,7 +9400,7 @@
             "isHidden": true,
             "lineageTag": "22c1c419-36e9-4be0-b761-9910d12230c3",
             "sourceColumn": "ID_CURSO",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Etnia",
@@ -9996,6 +10163,74 @@
             "expression": "DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[CPF])",
             "formatString": "0",
             "lineageTag": "dcd991f5-fc03-4d68-9f9b-32a93241fffb"
+          },
+          {
+            "name": "Mestrandos mesmo curso",
+            "expression": [
+              "",
+              "VAR ProgramasDoOrientador =",
+              "    VALUES (",
+              "        V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_UNIDADE_SUP]",
+              "    )",
+              "RETURN",
+              "    CALCULATE (",
+              "        DISTINCTCOUNT (",
+              "            V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]",
+              "        ),",
+              "        V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\",",
+              "        TREATAS (",
+              "            ProgramasDoOrientador,",
+              "            V_PRPGP_DISCENTES_POS[ID_UNIDADE_SUP]",
+              "        )",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "0699aec4-5fba-42c9-b2a0-e0df714fe037"
+          },
+          {
+            "name": "Doutorandos mesmo curso",
+            "expression": [
+              "",
+              "VAR ProgramasDoOrientador =",
+              "    VALUES (",
+              "        V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_UNIDADE_SUP]",
+              "    )",
+              "RETURN",
+              "    CALCULATE (",
+              "        DISTINCTCOUNT (",
+              "            V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]",
+              "        ),",
+              "        V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\",",
+              "        TREATAS (",
+              "            ProgramasDoOrientador,",
+              "            V_PRPGP_DISCENTES_POS[ID_UNIDADE_SUP]",
+              "        )",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "30402bba-4030-43ba-acdf-7af2054d7981"
+          },
+          {
+            "name": "Orientandos mesmo curso",
+            "expression": [
+              "",
+              "VAR ProgramasDoOrientador =",
+              "    VALUES (",
+              "        V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_UNIDADE_SUP]",
+              "    )",
+              "RETURN",
+              "    CALCULATE (",
+              "        DISTINCTCOUNT (",
+              "            V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]",
+              "        ),",
+              "        TREATAS (",
+              "            ProgramasDoOrientador,",
+              "            V_PRPGP_DISCENTES_POS[ID_UNIDADE_SUP]",
+              "        )",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "e7b4b068-6d03-4f28-95b9-a94ccabdc154"
           }
         ],
         "partitions": [
