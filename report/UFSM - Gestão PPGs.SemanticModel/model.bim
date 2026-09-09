@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\"]"
+        "value": "[\"V_PRPGP_DISCENTES_POS\",\"V_PRPGP_DOCENTES_POS\",\"V_PRPGP_MEMBROS_BANCA\",\"Medidas\",\"V_PRPGP_VAGAS_INSCRITOS_MATRICULADOS\",\"V_PRPGP_PROGRAMAS_POS\",\"V_PRPGP_ENCARGO_DIDATICO_POS\",\"V_PRPGP_DISCENTES_FLUXO\",\"V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO\",\"V_SUCUPIRA_CONCEITOS_VALORES\",\"V_SUCUPIRA_PROGRAMAS\",\"IES\",\"Errors in V_SUCUPIRA_CONCEITOS_VALORES\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -27,6 +27,143 @@
               }
             },
             "Entities": {
+              "IE": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "IE": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "IE.categoria_administrativa": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES",
+                    "ConceptualProperty": "Categoria Administrativa"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "categoria administrativa": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "IE.cod_IE": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES",
+                    "ConceptualProperty": "COD_IES"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "cod IE": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "COD_IES": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "IE.nome_IE": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES",
+                    "ConceptualProperty": "Nome IES"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "nome IE": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "IE.organização_acadêmica": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES",
+                    "ConceptualProperty": "Organização Acadêmica"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "organização acadêmica": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "IE.região": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES",
+                    "ConceptualProperty": "Região"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "região": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "IE.sigla": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES",
+                    "ConceptualProperty": "Sigla"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "sigla": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "IE.uf": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "IES",
+                    "ConceptualProperty": "UF"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "uf": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "d_calendario": {
                 "Definition": {
                   "Binding": {
@@ -3532,6 +3669,22 @@
                   }
                 ]
               },
+              "v_prpgp_encargo_didatico_pos.encargos_docentes_tabela": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Encargos docentes tabela"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "encargos docentes tabela": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "v_prpgp_encargo_didatico_pos.id_contrato_rh": {
                 "Definition": {
                   "Binding": {
@@ -3598,6 +3751,22 @@
                   "Value": "Hidden"
                 }
               },
+              "v_prpgp_encargo_didatico_pos.média_encargos": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
+                    "ConceptualProperty": "Média Encargos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média encargos": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "v_prpgp_encargo_didatico_pos.nível": {
                 "Definition": {
                   "Binding": {
@@ -3634,7 +3803,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS",
-                    "ConceptualProperty": "Média Encargos"
+                    "ConceptualProperty": "Soma Encargos"
                   }
                 },
                 "State": "Generated",
@@ -5016,10 +5185,646 @@
                     }
                   }
                 ]
+              },
+              "v_sucupira_conceitos_valore": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "v sucupira conceitos valore": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "v sucupira conceito valore": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.78
+                    }
+                  },
+                  {
+                    "V_SUCUPIRA_CONCEITOS_VALORES": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.ano": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Ano"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "ano": {
+                      "State": "Generated"
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_sucupira_conceitos_valore.codigo_programa_sucupira": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "CODIGO_PROGRAMA_SUCUPIRA"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "codigo programa sucupira": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "CODIGO_PROGRAMA_SUCUPIRA": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_sucupira_conceitos_valore.conceito": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Conceito"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "conceito": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.data": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Data"
+                  }
+                },
+                "SemanticType": "Time",
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "data": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "date": {
+                      "State": "Generated",
+                      "Weight": 0.7
+                    }
+                  },
+                  {
+                    "information": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "fact": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "info": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "statistic": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "document": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.714
+                    }
+                  },
+                  {
+                    "figure": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.714
+                    }
+                  },
+                  {
+                    "record": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.714
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_sucupira_conceitos_valore.média_conceito": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Média conceito"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média conceito": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Conceito programa": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Média Conceito Brasil"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média conceito irrespectivo programa": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Média do Brasil": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.média_conceito_por_UF": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Média Conceito por UF"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média conceito por UF": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Média da UF": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.média_conceito_por_região": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Média Conceito por Região"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média conceito por região": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Média da Região": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.média_conceito_por_área": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Média Conceito por Área"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média conceito por área": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Média da área de avaliação": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_programa": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "v sucupira programa": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "V_SUCUPIRA_PROGRAMAS": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_programa.cod_IE": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS",
+                    "ConceptualProperty": "COD_IES"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "cod IE": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "COD_IES": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_sucupira_programa.codigo_programa_sucupira": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS",
+                    "ConceptualProperty": "CODIGO_PROGRAMA_SUCUPIRA"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "codigo programa sucupira": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "CODIGO_PROGRAMA_SUCUPIRA": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  }
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
+              },
+              "v_sucupira_programa.modalidade": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS",
+                    "ConceptualProperty": "Modalidade"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "modalidade": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_programa.nome_programa": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS",
+                    "ConceptualProperty": "Nome Programa"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "nome programa": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_programa.área_de_avaliação": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS",
+                    "ConceptualProperty": "Área de Avaliação"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "área de avaliação": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
               }
             },
             "Language": "en-US",
             "Relationships": {
+              "IE_has_categoria_administrativa": {
+                "Binding": {
+                  "ConceptualEntity": "IES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "IE.categoria_administrativa"
+                      },
+                      "Subject": {
+                        "Role": "IE"
+                      }
+                    },
+                    "ID": "IE_have_categoria_administrativas",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "IE": {
+                    "Target": {
+                      "Entity": "IE"
+                    }
+                  },
+                  "IE.categoria_administrativa": {
+                    "Target": {
+                      "Entity": "IE.categoria_administrativa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "IE_has_nome_IE": {
+                "Binding": {
+                  "ConceptualEntity": "IES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "IE.nome_IE"
+                      },
+                      "Subject": {
+                        "Role": "IE"
+                      }
+                    },
+                    "ID": "IE_have_nome_IE",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "IE": {
+                    "Target": {
+                      "Entity": "IE"
+                    }
+                  },
+                  "IE.nome_IE": {
+                    "Target": {
+                      "Entity": "IE.nome_IE"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "IE_has_organização_acadêmica": {
+                "Binding": {
+                  "ConceptualEntity": "IES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "IE.organização_acadêmica"
+                      },
+                      "Subject": {
+                        "Role": "IE"
+                      }
+                    },
+                    "ID": "IE_have_organização_acadêmicas",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "IE": {
+                    "Target": {
+                      "Entity": "IE"
+                    }
+                  },
+                  "IE.organização_acadêmica": {
+                    "Target": {
+                      "Entity": "IE.organização_acadêmica"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "IE_has_região": {
+                "Binding": {
+                  "ConceptualEntity": "IES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "IE.região"
+                      },
+                      "Subject": {
+                        "Role": "IE"
+                      }
+                    },
+                    "ID": "IE_have_regiãos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "IE": {
+                    "Target": {
+                      "Entity": "IE"
+                    }
+                  },
+                  "IE.região": {
+                    "Target": {
+                      "Entity": "IE.região"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "IE_has_sigla": {
+                "Binding": {
+                  "ConceptualEntity": "IES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "IE.sigla"
+                      },
+                      "Subject": {
+                        "Role": "IE"
+                      }
+                    },
+                    "ID": "IE_have_siglas",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "IE": {
+                    "Target": {
+                      "Entity": "IE"
+                    }
+                  },
+                  "IE.sigla": {
+                    "Target": {
+                      "Entity": "IE.sigla"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "IE_has_uf": {
+                "Binding": {
+                  "ConceptualEntity": "IES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "IE.uf"
+                      },
+                      "Subject": {
+                        "Role": "IE"
+                      }
+                    },
+                    "ID": "IE_have_ufs",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "IE": {
+                    "Target": {
+                      "Entity": "IE"
+                    }
+                  },
+                  "IE.uf": {
+                    "Target": {
+                      "Entity": "IE.uf"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "d_calendario_has_ano": {
                 "Binding": {
                   "ConceptualEntity": "dCalendario"
@@ -7765,6 +8570,72 @@
                 },
                 "State": "Generated"
               },
+              "v_prpgp_encargo_didatico_pos_has_encargos_docentes_tabela": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_encargo_didatico_pos.encargos_docentes_tabela"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_encargo_didatico_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_encargo_didatico_pos_have_encargos_docentes_tabela",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_encargo_didatico_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos"
+                    }
+                  },
+                  "v_prpgp_encargo_didatico_pos.encargos_docentes_tabela": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos.encargos_docentes_tabela"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_encargo_didatico_pos_has_média_encargos": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_encargo_didatico_pos.média_encargos"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_encargo_didatico_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_encargo_didatico_pos_have_média_encargos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_encargo_didatico_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos"
+                    }
+                  },
+                  "v_prpgp_encargo_didatico_pos.média_encargos": {
+                    "Target": {
+                      "Entity": "v_prpgp_encargo_didatico_pos.média_encargos"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_prpgp_encargo_didatico_pos_has_nível": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_ENCARGO_DIDATICO_POS"
@@ -8971,6 +9842,455 @@
                   }
                 },
                 "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_conceito": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.conceito"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_conceitos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.conceito": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.conceito"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_d_calendario": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "d_calendario"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_d_calendarios",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      },
+                      "Subject": {
+                        "Role": "d_calendario"
+                      }
+                    },
+                    "ID": "d_calendarios_have_v_sucupira_conceitos_valore",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "d_calendario": {
+                    "Nouns": [
+                      {
+                        "data": {
+                          "State": "Generated"
+                        }
+                      }
+                    ],
+                    "Target": {
+                      "Entity": "d_calendario"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_média_conceito": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.média_conceito"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_média_conceito",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.média_conceito": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_média_conceito_irrespectivo_programa": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_média_conceito_irrespectivo_programa",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_média_conceito_por_UF": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.média_conceito_por_UF"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_média_conceito_por_UF",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.média_conceito_por_UF": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito_por_UF"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_média_conceito_por_região": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.média_conceito_por_região"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_média_conceito_por_região",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.média_conceito_por_região": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito_por_região"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_média_conceito_por_área": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.média_conceito_por_área"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_média_conceito_por_área",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.média_conceito_por_área": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito_por_área"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_v_sucupira_programa": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_programa"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_v_sucupira_programa",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_programa"
+                      }
+                    },
+                    "ID": "v_sucupira_programa_have_v_sucupira_conceitos_valore",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_programa_has_IE": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "IE"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_programa"
+                      }
+                    },
+                    "ID": "v_sucupira_programa_have_IE",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_programa"
+                      },
+                      "Subject": {
+                        "Role": "IE"
+                      }
+                    },
+                    "ID": "IE_have_v_sucupira_programa",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "IE": {
+                    "Nouns": [
+                      {
+                        "cod IE": {
+                          "State": "Generated"
+                        }
+                      }
+                    ],
+                    "Target": {
+                      "Entity": "IE"
+                    }
+                  },
+                  "v_sucupira_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_programa_has_modalidade": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_programa.modalidade"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_programa"
+                      }
+                    },
+                    "ID": "v_sucupira_programa_have_modalidades",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa"
+                    }
+                  },
+                  "v_sucupira_programa.modalidade": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa.modalidade"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_programa_has_nome_programa": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_programa.nome_programa"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_programa"
+                      }
+                    },
+                    "ID": "v_sucupira_programa_have_nome_programas",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa"
+                    }
+                  },
+                  "v_sucupira_programa.nome_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa.nome_programa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_programa_has_área_de_avaliação": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_PROGRAMAS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_programa.área_de_avaliação"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_programa"
+                      }
+                    },
+                    "ID": "v_sucupira_programa_have_área_de_avaliaçãos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa"
+                    }
+                  },
+                  "v_sucupira_programa.área_de_avaliação": {
+                    "Target": {
+                      "Entity": "v_sucupira_programa.área_de_avaliação"
+                    }
+                  }
+                },
+                "State": "Generated"
               }
             },
             "Version": "4.1.0"
@@ -8984,6 +10304,41 @@
       "returnErrorValuesAsNull": true
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "Errors in V_SUCUPIRA_CONCEITOS_VALORES",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "Source = V_SUCUPIRA_CONCEITOS_VALORES,",
+          "  #\"Detected Type Mismatches\" = let",
+          "    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),",
+          "    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),",
+          "    fieldNames = Record.FieldNames(recordTypeFields),",
+          "    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),",
+          "    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = \"The type of the value does not match the type of the column.\", Detail = v], fieldTypes{i}})",
+          "in",
+          "    Table.TransformColumns(Source, pairs),",
+          "  #\"Added Index\" = Table.AddIndexColumn(#\"Detected Type Mismatches\", \"Row Number\" ,1),",
+          "  #\"Kept Errors\" = Table.SelectRowsWithErrors(#\"Added Index\", {\"CODIGO_PROGRAMA_SUCUPIRA\", \"Ano\", \"Conceito\", \"Data\"}),",
+          "  #\"Reordered Columns\" = Table.ReorderColumns(#\"Kept Errors\", {\"Row Number\", \"CODIGO_PROGRAMA_SUCUPIRA\", \"Ano\", \"Conceito\", \"Data\"})",
+          "in",
+          "  #\"Reordered Columns\""
+        ],
+        "kind": "m",
+        "lineageTag": "15491b3f-9f62-4ab4-85f3-7c2cfdac58fa",
+        "queryGroup": "Query Errors - 09/09/2026 12:49:20"
+      }
+    ],
     "queryGroups": [
       {
         "annotations": [
@@ -9002,6 +10357,16 @@
           }
         ],
         "folder": "Spreadsheets"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "2"
+          }
+        ],
+        "description": "Errors in queries that were loaded on 09/09/2026 12:49:20.",
+        "folder": "Query Errors - 09/09/2026 12:49:20"
       }
     ],
     "relationships": [
@@ -9083,6 +10448,27 @@
         "fromTable": "V_PRPGP_DISCENTES_POS",
         "toColumn": "ID_CONTRATO_RH",
         "toTable": "V_PRPGP_DOCENTES_POS"
+      },
+      {
+        "name": "b29e9ef3-ac3b-1c06-2739-97c09d21ea0b",
+        "fromColumn": "Data",
+        "fromTable": "V_SUCUPIRA_CONCEITOS_VALORES",
+        "toColumn": "Data",
+        "toTable": "dCalendario"
+      },
+      {
+        "name": "AutoDetected_03f48b64-9388-4e5b-a799-eb5acfb03451",
+        "fromColumn": "CODIGO_PROGRAMA_SUCUPIRA",
+        "fromTable": "V_SUCUPIRA_CONCEITOS_VALORES",
+        "toColumn": "CODIGO_PROGRAMA_SUCUPIRA",
+        "toTable": "V_SUCUPIRA_PROGRAMAS"
+      },
+      {
+        "name": "AutoDetected_1ed505c3-cee2-4bb1-b92c-1b97a9c473d0",
+        "fromColumn": "COD_IES",
+        "fromTable": "V_SUCUPIRA_PROGRAMAS",
+        "toColumn": "COD_IES",
+        "toTable": "IES"
       }
     ],
     "sourceQueryCulture": "pt-BR",
@@ -11832,6 +13218,464 @@
                 "    #\"Renamed Columns\" = Table.RenameColumns(#\"Inserted Date\",{{\"TIPO_VINCULO\", \"Tipo de Vínculo\"}, {\"ANO\", \"Ano\"}})",
                 "in",
                 "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "V_SUCUPIRA_CONCEITOS_VALORES",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CODIGO_PROGRAMA_SUCUPIRA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "746e482d-b07b-4b4c-94da-d80d1654b57e",
+            "sourceColumn": "CODIGO_PROGRAMA_SUCUPIRA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "5cfbe27e-6bc5-4792-ba53-12c26d3d2794",
+            "sourceColumn": "Ano",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Conceito",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d7d30842-5ab8-44ba-9744-2b2a61b44619",
+            "sourceColumn": "Conceito",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Data",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isHidden": true,
+            "lineageTag": "f93ec47b-a1cd-4d14-a7d0-fb62060c7dac",
+            "sourceColumn": "Data",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "f7253bf6-7abb-49f7-bf9d-1e29105f7cf0",
+        "measures": [
+          {
+            "name": "Média Conceito Brasil",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
+              "    REMOVEFILTERS(V_SUCUPIRA_CONCEITOS_VALORES),",
+              "    REMOVEFILTERS(V_SUCUPIRA_PROGRAMAS),",
+              "    REMOVEFILTERS(IES)",
+              ")"
+            ],
+            "formatString": "0.0",
+            "lineageTag": "e24795b3-9e1b-48ec-ac5a-90b21afa90c4"
+          },
+          {
+            "name": "Média conceito",
+            "expression": "AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito])",
+            "formatString": "0.0",
+            "lineageTag": "ea4888c8-583e-4fae-9ffb-a0a8bcfb36f2"
+          },
+          {
+            "name": "Média Conceito por Área",
+            "expression": [
+              "",
+              "VAR AreaAtual =",
+              "    CALCULATE(",
+              "        SELECTEDVALUE(V_SUCUPIRA_PROGRAMAS[Área de Avaliação])",
+              "    )",
+              "",
+              "RETURN",
+              "CALCULATE(",
+              "    AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
+              "    REMOVEFILTERS(V_SUCUPIRA_PROGRAMAS[Nome Programa]),",
+              "    V_SUCUPIRA_PROGRAMAS[Área de Avaliação] = AreaAtual",
+              ")"
+            ],
+            "formatString": "0.0",
+            "lineageTag": "582c20ca-eec4-4460-8c5b-5f3a72ddf65d"
+          },
+          {
+            "name": "Média Conceito por Região",
+            "expression": [
+              "",
+              "VAR RegiaoAtual =",
+              "    SELECTEDVALUE(IES[Região])",
+              "",
+              "RETURN",
+              "CALCULATE(",
+              "    AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
+              "    REMOVEFILTERS(V_SUCUPIRA_PROGRAMAS[Nome Programa]),",
+              "    REMOVEFILTERS(IES[UF]),",
+              "    REMOVEFILTERS(IES[Região]),",
+              "    IES[Região] = RegiaoAtual",
+              ")"
+            ],
+            "formatString": "0.0",
+            "lineageTag": "90f76659-0dc9-4115-bbaf-067546abeb85"
+          },
+          {
+            "name": "Média Conceito por UF",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDecimal\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR UFAAtual =",
+              "    SELECTEDVALUE(IES[UF])",
+              "",
+              "RETURN",
+              "CALCULATE(",
+              "    AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
+              "    REMOVEFILTERS(V_SUCUPIRA_PROGRAMAS[Nome Programa]),",
+              "    REMOVEFILTERS(IES[UF]),",
+              "    REMOVEFILTERS(IES[Região]),",
+              "    IES[UF] = UFAAtual",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "f93d8e88-c1a0-4c43-8e90-f951b1cb9bb5"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_SUCUPIRA_CONCEITOS_VALORES",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    V_SUCUPIRA_CONCEITOS_VALORES1 = BEE{[Name=\"V_SUCUPIRA_CONCEITOS_VALORES\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(V_SUCUPIRA_CONCEITOS_VALORES1,{\"ANO_CONCEITO\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\",{{\"ANO\", \"Ano\"}, {\"CONCEITO_PROGRAMA\", \"Conceito\"}}),",
+                "    #\"Inserted Date\" = Table.AddColumn(#\"Renamed Columns\", \"Data\", each Date.From(Text.From([Ano], \"pt-BR\")), type date),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Inserted Date\",\"E\",\"1\",Replacer.ReplaceText,{\"Conceito\"}),",
+                "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"D\",\"2\",Replacer.ReplaceText,{\"Conceito\"}),",
+                "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",\"C\",\"3\",Replacer.ReplaceText,{\"Conceito\"}),",
+                "    #\"Replaced Value3\" = Table.ReplaceValue(#\"Replaced Value2\",\"B\",\"4\",Replacer.ReplaceText,{\"Conceito\"}),",
+                "    #\"Replaced Value4\" = Table.ReplaceValue(#\"Replaced Value3\",\"A\",\"5\",Replacer.ReplaceText,{\"Conceito\"}),",
+                "    #\"Replaced Value5\" = Table.ReplaceValue(#\"Replaced Value4\",\"N\",\"\",Replacer.ReplaceText,{\"Conceito\"}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Replaced Value5\",{{\"Conceito\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "V_SUCUPIRA_PROGRAMAS",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "COD_IES",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "469501e7-f0e0-42a3-b02b-4db13710aea5",
+            "sourceColumn": "COD_IES",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CODIGO_PROGRAMA_SUCUPIRA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "b9c586aa-9bdf-4441-9b8f-74e8810f3117",
+            "sourceColumn": "CODIGO_PROGRAMA_SUCUPIRA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nome Programa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a68c7cf3-ed19-4757-8c3d-05d466795bc5",
+            "sourceColumn": "Nome Programa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Modalidade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4ec99ec4-b132-40c1-bd9e-34edde4bac9a",
+            "sourceColumn": "Modalidade",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Área de Avaliação",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "672f3452-419f-4924-bd13-07840b4e59ef",
+            "sourceColumn": "Área de Avaliação",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4596eead-090c-48a6-a64e-270ce5466c20",
+        "partitions": [
+          {
+            "name": "V_SUCUPIRA_PROGRAMAS",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    V_SUCUPIRA_PROGRAMAS1 = BEE{[Name=\"V_SUCUPIRA_PROGRAMAS\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_SUCUPIRA_PROGRAMAS1,{{\"NOME_PROGRAMA_SUCUPIRA\", \"Nome do Programa\"}, {\"MODALIDADE\", \"Modalidade\"}, {\"CATEGORIA_ADMINISTRATIVA\", \"Categoria Administrativa\"}, {\"ORGANIZACAO_ACADEMICA\", \"Tipo de Organização\"}, {\"REGIAO\", \"Região\"}, {\"AREA_AVALIACAO\", \"Área de Avaliação\"}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"ID_AREA_AVALIACAO\", \"Categoria Administrativa\", \"Tipo de Organização\", \"Região\", \"UF\", \"COD_IBGE_CIDADE\"}),",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Removed Columns\",{{\"Nome do Programa\", Text.Proper, type text}, {\"Modalidade\", Text.Proper, type text}}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Capitalized Each Word\",{\"ID_PROGRAMA_SUCUPIRA\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Removed Columns1\",{{\"Nome do Programa\", \"Nome Programa\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "IES",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "COD_IES",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "0d765d2a-6008-45c3-90f0-b4ee7508e893",
+            "sourceColumn": "COD_IES",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nome IES",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f0af69d6-34ae-48ed-9fc5-68de5c49c407",
+            "sourceColumn": "Nome IES",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sigla",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "768b49d1-5702-4015-ba6e-bdaf82a54114",
+            "sourceColumn": "Sigla",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organização Acadêmica",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8612abde-a214-4c60-9955-7f97ac49cff1",
+            "sourceColumn": "Organização Acadêmica",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Categoria Administrativa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f27e9427-d8df-4a16-b7d7-36a8b5beafe2",
+            "sourceColumn": "Categoria Administrativa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "UF",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d585b296-3108-4a3e-ab39-84f6822587d5",
+            "sourceColumn": "UF",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Região",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bb916af1-aa0d-437b-b21d-5201aa25d3d0",
+            "sourceColumn": "Região",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4f491d8c-2911-4ff8-8a25-395791ae7d4c",
+        "partitions": [
+          {
+            "name": "IES",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
+                "    BEE = Source{[Schema=\"BEE\"]}[Data],",
+                "    IES1 = BEE{[Name=\"IES\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(IES1,{{\"NOME_IES\", \"Nome\"}, {\"SIGLA_IES\", \"Sigla\"}, {\"ORGANIZACAO_ACADEMICA\", \"Organização Acadêmica\"}, {\"CATEGORIA_ADMINISTRATIVA\", \"Categoria Administrativa\"}, {\"REGIAO\", \"Região\"}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"SIGLA_REGIAO\", \"COD_UO\", \"COD_UG\", \"COD_IBGE\", \"SCOPUS_AFFILIATION_ID\", \"SCIVAL_INSTITUTION_ID\", \"BEE.CENSO_CURSOS\", \"BEE.CENSO_CURSOS_FATOS2\", \"BEE.MUNICIPIOS_IBGE\", \"BEE.PNP_INSTITUICOES\", \"BEE.POSGRAD_ENTIDADES_CAPES\", \"BEE.POSGRAD_SCIVAL_IES_AREAS_CONHECIMENTO_FATOS\", \"BEE.POSGRAD_SCIVAL_IES_FATOS\", \"BEE.QUERO_EDUCACAO_FATOS\", \"BEE.R_GREEN_UNIVERSIDADES\", \"BEE.R_LATIN_UNIVERSIDADES\", \"BEE.R_QS_UNIVERSIDADES\", \"BEE.R_QS_UNIVERSIDADES_FULL\", \"BEE.R_THE_UNIVERSIDADES\", \"BEE.R_UE_UNIVERSIDADES\", \"BEE.R_URAP_UNIVERSIDADES\", \"BEE.SIAPE_CHEFIAS_FATOS\", \"BEE.SIAPE_FATOS\", \"BEE.TCU_INDICADORES_FATOS\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Removed Columns\",{{\"Nome\", \"Nome IES\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
               ],
               "type": "m"
             }
