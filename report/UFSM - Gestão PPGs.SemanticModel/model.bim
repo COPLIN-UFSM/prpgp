@@ -132,17 +132,17 @@
                   }
                 ]
               },
-              "IE.sigla": {
+              "IE.sigla_IE": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "IES",
-                    "ConceptualProperty": "Sigla"
+                    "ConceptualProperty": "Sigla IES"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "sigla": {
+                    "sigla IE": {
                       "State": "Generated"
                     }
                   }
@@ -3858,7 +3858,10 @@
                       "Weight": 0.99
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.cpf": {
                 "Definition": {
@@ -3874,7 +3877,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.id_contrato_rh": {
                 "Definition": {
@@ -4154,7 +4160,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.nome_participante": {
                 "Definition": {
@@ -4170,7 +4179,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.sigla_instituição": {
                 "Definition": {
@@ -4186,7 +4198,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.situação": {
                 "Definition": {
@@ -4202,7 +4217,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.tipo_participante": {
                 "Definition": {
@@ -4218,7 +4236,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.tipo_vínculo": {
                 "Definition": {
@@ -4234,7 +4255,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_membros_banca.titulação": {
                 "Definition": {
@@ -4250,7 +4274,10 @@
                       "State": "Generated"
                     }
                   }
-                ]
+                ],
+                "Visibility": {
+                  "Value": "Hidden"
+                }
               },
               "v_prpgp_programas_pos": {
                 "Definition": {
@@ -4513,6 +4540,16 @@
                   {
                     "nome unidade": {
                       "State": "Generated"
+                    }
+                  },
+                  {
+                    "Programa": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -5387,7 +5424,7 @@
                     }
                   },
                   {
-                    "Conceito programa": {
+                    "Conceito do programa": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -5398,7 +5435,7 @@
                   }
                 ]
               },
-              "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa": {
+              "v_sucupira_conceitos_valore.média_conceito_brasil": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
@@ -5408,18 +5445,8 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "média conceito irrespectivo programa": {
+                    "média conceito brasil": {
                       "State": "Generated"
-                    }
-                  },
-                  {
-                    "Média do Brasil": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
                     }
                   }
                 ]
@@ -5437,16 +5464,6 @@
                     "média conceito por UF": {
                       "State": "Generated"
                     }
-                  },
-                  {
-                    "Média da UF": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
                   }
                 ]
               },
@@ -5462,16 +5479,6 @@
                   {
                     "média conceito por região": {
                       "State": "Generated"
-                    }
-                  },
-                  {
-                    "Média da Região": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
                     }
                   }
                 ]
@@ -5491,13 +5498,29 @@
                     }
                   },
                   {
-                    "Média da área de avaliação": {
+                    "Média da área de avaliação (Brasil)": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
                       },
                       "State": "Suggested",
                       "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.percentil_programa": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Percentil programa"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "percentil programa": {
+                      "State": "Generated"
                     }
                   }
                 ]
@@ -5759,7 +5782,7 @@
                 },
                 "State": "Generated"
               },
-              "IE_has_sigla": {
+              "IE_has_sigla_IE": {
                 "Binding": {
                   "ConceptualEntity": "IES"
                 },
@@ -5767,13 +5790,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "IE.sigla"
+                        "Role": "IE.sigla_IE"
                       },
                       "Subject": {
                         "Role": "IE"
                       }
                     },
-                    "ID": "IE_have_siglas",
+                    "ID": "IE_have_sigla_IE",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -5784,9 +5807,9 @@
                       "Entity": "IE"
                     }
                   },
-                  "IE.sigla": {
+                  "IE.sigla_IE": {
                     "Target": {
-                      "Entity": "IE.sigla"
+                      "Entity": "IE.sigla_IE"
                     }
                   }
                 },
@@ -8814,302 +8837,10 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_membros_banca_has_cpf": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.cpf"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_cpfs",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.cpf": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.cpf"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_nome_instituição": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.nome_instituição"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_nome_instituiçãos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.nome_instituição": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.nome_instituição"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_nome_participante": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.nome_participante"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_nome_participantes",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.nome_participante": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.nome_participante"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_sigla_instituição": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.sigla_instituição"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_sigla_instituiçãos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.sigla_instituição": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.sigla_instituição"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_situação": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.situação"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_situaçãos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.situação": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.situação"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_tipo_participante": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.tipo_participante"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_tipo_participantes",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.tipo_participante": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.tipo_participante"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_tipo_vínculo": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.tipo_vínculo"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_tipo_vínculos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.tipo_vínculo": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.tipo_vínculo"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v_prpgp_membros_banca_has_titulação": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca.titulação"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_titulaçãos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_membros_banca": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca"
-                    }
-                  },
-                  "v_prpgp_membros_banca.titulação": {
-                    "Target": {
-                      "Entity": "v_prpgp_membros_banca.titulação"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_membros_banca_has_v_prpgp_discentes_pos": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_MEMBROS_BANCA"
                 },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_membros_banca"
-                      }
-                    },
-                    "ID": "v_prpgp_membros_banca_have_v_prpgp_discentes_pos",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_membros_banca"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_v_prpgp_membros_banca",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
                 "Roles": {
                   "v_prpgp_discentes_pos": {
                     "Target": {
@@ -9962,7 +9693,7 @@
                 },
                 "State": "Generated"
               },
-              "v_sucupira_conceitos_valore_has_média_conceito_irrespectivo_programa": {
+              "v_sucupira_conceitos_valore_has_média_conceito_brasil": {
                 "Binding": {
                   "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
                 },
@@ -9970,13 +9701,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa"
+                        "Role": "v_sucupira_conceitos_valore.média_conceito_brasil"
                       },
                       "Subject": {
                         "Role": "v_sucupira_conceitos_valore"
                       }
                     },
-                    "ID": "v_sucupira_conceitos_valore_have_média_conceito_irrespectivo_programa",
+                    "ID": "v_sucupira_conceitos_valore_have_média_conceito_brasil",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -9987,9 +9718,9 @@
                       "Entity": "v_sucupira_conceitos_valore"
                     }
                   },
-                  "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa": {
+                  "v_sucupira_conceitos_valore.média_conceito_brasil": {
                     "Target": {
-                      "Entity": "v_sucupira_conceitos_valore.média_conceito_irrespectivo_programa"
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito_brasil"
                     }
                   }
                 },
@@ -10089,6 +9820,39 @@
                   "v_sucupira_conceitos_valore.média_conceito_por_área": {
                     "Target": {
                       "Entity": "v_sucupira_conceitos_valore.média_conceito_por_área"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_percentil_programa": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.percentil_programa"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_percentil_programa",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.percentil_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.percentil_programa"
                     }
                   }
                 },
@@ -10867,7 +10631,7 @@
               "     V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Pós-Doutorado\"",
               ")"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "b3177b2a-7a45-4bff-b1d7-0a826d50ec78"
           },
           {
@@ -11654,6 +11418,11 @@
             "value": "Table"
           }
         ],
+        "changedProperties": [
+          {
+            "property": "IsHidden"
+          }
+        ],
         "columns": [
           {
             "name": "ID_PLANO_ESTUDO",
@@ -11723,7 +11492,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "0b5a8b9b-79fa-4f2d-ba5b-6672a0a1c8c7",
             "sourceColumn": "Tipo vínculo",
             "summarizeBy": "none"
@@ -11736,7 +11511,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "1a09e5a2-7aa8-45af-8094-4ed6f5172ac9",
             "sourceColumn": "Situação",
             "summarizeBy": "none"
@@ -11749,7 +11530,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "f1cedcd9-0f37-4899-a1de-935edde69c81",
             "sourceColumn": "Tipo participante",
             "summarizeBy": "none"
@@ -11762,7 +11549,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "5b008c72-e5b4-41c0-9850-87d90d51ccb2",
             "sourceColumn": "Nome participante",
             "summarizeBy": "none"
@@ -11775,7 +11568,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "20b3a7a7-64e5-4d00-855a-4d0e5a16dbd9",
             "sourceColumn": "Nome instituição",
             "summarizeBy": "none"
@@ -11788,7 +11587,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "aec2c442-b603-43c1-8ab6-4ab79407d500",
             "sourceColumn": "Sigla instituição",
             "summarizeBy": "none"
@@ -11801,7 +11606,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "7bd59786-0ac5-40cf-b2fe-0a60721d6e3a",
             "sourceColumn": "Titulação",
             "summarizeBy": "none"
@@ -11814,7 +11625,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
+            "isHidden": true,
             "lineageTag": "7cc2249b-42e1-4114-a9e2-4dc568d4c5f5",
             "sourceColumn": "CPF",
             "summarizeBy": "none"
@@ -11840,6 +11657,7 @@
             "summarizeBy": "none"
           }
         ],
+        "isHidden": true,
         "lineageTag": "8250c80c-b9e1-44ac-a53b-6480f45db6e8",
         "partitions": [
           {
@@ -12792,12 +12610,6 @@
         "lineageTag": "09ce9bdf-531d-41c7-9f5e-7828f8951882",
         "measures": [
           {
-            "name": "Média Encargos",
-            "expression": "AVERAGE(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
-            "formatString": "#,0.00",
-            "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
-          },
-          {
             "name": "Soma Encargos",
             "annotations": [
               {
@@ -12807,6 +12619,12 @@
             ],
             "expression": "SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
             "lineageTag": "90748280-86ef-4ef5-9762-14c8489a1bf7"
+          },
+          {
+            "name": "Média Encargos",
+            "expression": "AVERAGE(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
+            "formatString": "#,0.00",
+            "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
           },
           {
             "name": "Encargos docentes tabela",
@@ -13353,6 +13171,9 @@
               "CALCULATE(",
               "    AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
               "    REMOVEFILTERS(V_SUCUPIRA_PROGRAMAS[Nome Programa]),",
+              "    REMOVEFILTERS(IES[Sigla IES]),",
+              "    REMOVEFILTERS(IES[UF]),",
+              "    REMOVEFILTERS(IES[Região]),",
               "    V_SUCUPIRA_PROGRAMAS[Área de Avaliação] = AreaAtual",
               ")"
             ],
@@ -13402,6 +13223,59 @@
             ],
             "formatString": "0",
             "lineageTag": "f93d8e88-c1a0-4c43-8e90-f951b1cb9bb5"
+          },
+          {
+            "name": "Percentil programa",
+            "expression": [
+              "",
+              "VAR ProgramaAtual =",
+              "    SELECTEDVALUE(",
+              "        V_SUCUPIRA_CONCEITOS_VALORES[CODIGO_PROGRAMA_SUCUPIRA]",
+              "    )",
+              "",
+              "VAR AnoAtual =",
+              "    SELECTEDVALUE(",
+              "        V_SUCUPIRA_CONCEITOS_VALORES[Ano]",
+              "    )",
+              "",
+              "VAR ConceitoAtual =",
+              "    CALCULATE(",
+              "        MAX(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
+              "        V_SUCUPIRA_CONCEITOS_VALORES[CODIGO_PROGRAMA_SUCUPIRA] = ProgramaAtual,",
+              "        V_SUCUPIRA_CONCEITOS_VALORES[Ano] = AnoAtual",
+              "    )",
+              "",
+              "VAR ProgramasAno =",
+              "    FILTER(",
+              "        ALL(V_SUCUPIRA_CONCEITOS_VALORES),",
+              "        V_SUCUPIRA_CONCEITOS_VALORES[Ano] = AnoAtual",
+              "            && NOT ISBLANK(V_SUCUPIRA_CONCEITOS_VALORES[Conceito])",
+              "    )",
+              "",
+              "VAR TotalProgramas =",
+              "    COUNTROWS(",
+              "        SUMMARIZE(",
+              "            ProgramasAno,",
+              "            V_SUCUPIRA_CONCEITOS_VALORES[CODIGO_PROGRAMA_SUCUPIRA]",
+              "        )",
+              "    )",
+              "",
+              "VAR ProgramasMelhores =",
+              "    COUNTROWS(",
+              "        SUMMARIZE(",
+              "            FILTER(",
+              "                ProgramasAno,",
+              "                V_SUCUPIRA_CONCEITOS_VALORES[Conceito] > ConceitoAtual",
+              "            ),",
+              "            V_SUCUPIRA_CONCEITOS_VALORES[CODIGO_PROGRAMA_SUCUPIRA]",
+              "        )",
+              "    )",
+              "",
+              "RETURN",
+              "    1 - DIVIDE(ProgramasMelhores, TotalProgramas)"
+            ],
+            "formatString": "0%;-0%;0%",
+            "lineageTag": "8ede29dc-d2cd-4ef1-a884-38158a3f871a"
           }
         ],
         "partitions": [
@@ -13595,7 +13469,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Sigla",
+            "name": "Sigla IES",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -13604,7 +13478,7 @@
             ],
             "dataType": "string",
             "lineageTag": "768b49d1-5702-4015-ba6e-bdaf82a54114",
-            "sourceColumn": "Sigla",
+            "sourceColumn": "Sigla IES",
             "summarizeBy": "none"
           },
           {
@@ -13673,7 +13547,7 @@
                 "    IES1 = BEE{[Name=\"IES\"]}[Data],",
                 "    #\"Renamed Columns\" = Table.RenameColumns(IES1,{{\"NOME_IES\", \"Nome\"}, {\"SIGLA_IES\", \"Sigla\"}, {\"ORGANIZACAO_ACADEMICA\", \"Organização Acadêmica\"}, {\"CATEGORIA_ADMINISTRATIVA\", \"Categoria Administrativa\"}, {\"REGIAO\", \"Região\"}}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"SIGLA_REGIAO\", \"COD_UO\", \"COD_UG\", \"COD_IBGE\", \"SCOPUS_AFFILIATION_ID\", \"SCIVAL_INSTITUTION_ID\", \"BEE.CENSO_CURSOS\", \"BEE.CENSO_CURSOS_FATOS2\", \"BEE.MUNICIPIOS_IBGE\", \"BEE.PNP_INSTITUICOES\", \"BEE.POSGRAD_ENTIDADES_CAPES\", \"BEE.POSGRAD_SCIVAL_IES_AREAS_CONHECIMENTO_FATOS\", \"BEE.POSGRAD_SCIVAL_IES_FATOS\", \"BEE.QUERO_EDUCACAO_FATOS\", \"BEE.R_GREEN_UNIVERSIDADES\", \"BEE.R_LATIN_UNIVERSIDADES\", \"BEE.R_QS_UNIVERSIDADES\", \"BEE.R_QS_UNIVERSIDADES_FULL\", \"BEE.R_THE_UNIVERSIDADES\", \"BEE.R_UE_UNIVERSIDADES\", \"BEE.R_URAP_UNIVERSIDADES\", \"BEE.SIAPE_CHEFIAS_FATOS\", \"BEE.SIAPE_FATOS\", \"BEE.TCU_INDICADORES_FATOS\"}),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Removed Columns\",{{\"Nome\", \"Nome IES\"}})",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Removed Columns\",{{\"Nome\", \"Nome IES\"}, {\"Sigla\", \"Sigla IES\"}})",
                 "in",
                 "    #\"Renamed Columns1\""
               ],
