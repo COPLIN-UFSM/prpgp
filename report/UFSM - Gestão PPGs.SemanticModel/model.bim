@@ -1476,6 +1476,16 @@
                       "Type": "Noun",
                       "Weight": 0.599
                     }
+                  },
+                  {
+                    "Total discentes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -2212,32 +2222,6 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.média_idade_ingressante": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Média idade ingressante geral"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "média idade ingressante": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "Média idade ingressante geral": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
               "v_prpgp_discentes_pos.média_idade_ingressante_doutorado": {
                 "Definition": {
                   "Binding": {
@@ -2249,6 +2233,22 @@
                 "Terms": [
                   {
                     "média idade ingressante doutorado": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.média_idade_ingressante_geral": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Média idade ingressante geral"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média idade ingressante geral": {
                       "State": "Generated"
                     }
                   }
@@ -7552,39 +7552,6 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_média_idade_ingressante": {
-                "Binding": {
-                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v_prpgp_discentes_pos.média_idade_ingressante"
-                      },
-                      "Subject": {
-                        "Role": "v_prpgp_discentes_pos"
-                      }
-                    },
-                    "ID": "v_prpgp_discentes_pos_have_média_idade_ingressante",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v_prpgp_discentes_pos": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos"
-                    }
-                  },
-                  "v_prpgp_discentes_pos.média_idade_ingressante": {
-                    "Target": {
-                      "Entity": "v_prpgp_discentes_pos.média_idade_ingressante"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v_prpgp_discentes_pos_has_média_idade_ingressante_doutorado": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -7613,6 +7580,39 @@
                   "v_prpgp_discentes_pos.média_idade_ingressante_doutorado": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.média_idade_ingressante_doutorado"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_média_idade_ingressante_geral": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.média_idade_ingressante_geral"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_média_idade_ingressante_geral",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.média_idade_ingressante_geral": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.média_idade_ingressante_geral"
                     }
                   }
                 },
@@ -10439,6 +10439,14 @@
         "fromTable": "V_SUCUPIRA_PROGRAMAS",
         "toColumn": "COD_IES",
         "toTable": "IES"
+      },
+      {
+        "name": "51a61aa0-037b-93c6-135d-df3b91a1fd98",
+        "fromColumn": "ID_UNIDADE_SUP",
+        "fromTable": "V_PRPGP_DISCENTES_FLUXO",
+        "isActive": false,
+        "toColumn": "ID_UNIDADE_SUP",
+        "toTable": "V_PRPGP_PROGRAMAS_POS"
       }
     ],
     "sourceQueryCulture": "pt-BR",
@@ -11067,7 +11075,21 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "expression": "AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso])",
+            "expression": [
+              "",
+              "VAR ProgramasDoOrientador =",
+              "    VALUES (",
+              "        V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_UNIDADE_SUP]",
+              "    )",
+              "RETURN",
+              "    CALCULATE (",
+              "        AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso]),",
+              "        TREATAS (",
+              "            ProgramasDoOrientador,",
+              "            V_PRPGP_DISCENTES_POS[ID_UNIDADE_SUP]",
+              "        )",
+              "    )"
+            ],
             "lineageTag": "b72bbbef-c0dc-4017-b722-e087803dd69c"
           },
           {
@@ -11079,10 +11101,20 @@
               }
             ],
             "expression": [
-              "CALCULATE(",
-              "    AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso]),",
-              "    V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\"",
-              ")"
+              "",
+              "VAR ProgramasDoOrientador =",
+              "    VALUES (",
+              "        V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_UNIDADE_SUP]",
+              "    )",
+              "RETURN",
+              "    CALCULATE (",
+              "        AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso]),",
+              "        V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\",",
+              "        TREATAS (",
+              "            ProgramasDoOrientador,",
+              "            V_PRPGP_DISCENTES_POS[ID_UNIDADE_SUP]",
+              "        )",
+              "    )"
             ],
             "lineageTag": "313f307b-4e4a-45f1-a55c-5a16786d3cfd"
           },
@@ -11095,10 +11127,20 @@
               }
             ],
             "expression": [
-              "CALCULATE(",
-              "    AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso]),",
-              "    V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\"",
-              ")"
+              "",
+              "VAR ProgramasDoOrientador =",
+              "    VALUES (",
+              "        V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO[ID_UNIDADE_SUP]",
+              "    )",
+              "RETURN",
+              "    CALCULATE (",
+              "        AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso]),",
+              "        V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\",",
+              "        TREATAS (",
+              "            ProgramasDoOrientador,",
+              "            V_PRPGP_DISCENTES_POS[ID_UNIDADE_SUP]",
+              "        )",
+              "    )"
             ],
             "lineageTag": "2b401ca2-c05a-4feb-b046-b23d1085a64d"
           }
@@ -11598,7 +11640,7 @@
               "        )",
               "    )"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "0699aec4-5fba-42c9-b2a0-e0df714fe037"
           },
           {
@@ -11621,7 +11663,7 @@
               "        )",
               "    )"
             ],
-            "formatString": "0",
+            "formatString": "#,0",
             "lineageTag": "30402bba-4030-43ba-acdf-7af2054d7981"
           },
           {
