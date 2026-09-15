@@ -399,8 +399,8 @@
       "nodes": [
         {
           "location": {
-            "x": 1333.4990656569064,
-            "y": 611.55802169300966
+            "x": 1165.2877614968106,
+            "y": 520.10333205256927
           },
           "nodeIndex": "V_PRPGP_DISCENTES_POS",
           "nodeLineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -425,7 +425,7 @@
         },
         {
           "location": {
-            "x": 846.97989385314679,
+            "x": 724.49593451327121,
             "y": 0
           },
           "nodeIndex": "dCalendario",
@@ -438,8 +438,8 @@
         },
         {
           "location": {
-            "x": 1344.9454124003912,
-            "y": 112.37175396342076
+            "x": 1152.2373163723203,
+            "y": 27.44954215444038
           },
           "nodeIndex": "V_PRPGP_DISCENTES_FLUXO",
           "nodeLineageTag": "8074a767-b605-475b-9a3c-4803970216f8",
@@ -451,8 +451,8 @@
         },
         {
           "location": {
-            "x": 817.56646157427463,
-            "y": 565.45632187903789
+            "x": 701.61498006585907,
+            "y": 358.050150730182
           },
           "nodeIndex": "V_PRPGP_DOCENTES_POS",
           "nodeLineageTag": "d25995bd-961f-45d0-91b9-8aea0f5164e2",
@@ -464,8 +464,8 @@
         },
         {
           "location": {
-            "x": 171.14544050521954,
-            "y": 519.854536687518
+            "x": 125.41809568499934,
+            "y": 340.21139632236725
           },
           "nodeIndex": "V_PRPGP_CREDENCIAMENTO_DOCENTE_FLUXO",
           "nodeLineageTag": "e0e41ed3-cfbf-4bb0-be75-974e4050791b",
@@ -477,7 +477,7 @@
         }
       ],
       "name": "discentes",
-      "zoomValue": 76.9705325004674,
+      "zoomValue": 61.23250783548373,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
@@ -487,7 +487,7 @@
       "ordinal": 5,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 58
       },
       "nodes": [
         {
@@ -551,6 +551,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "conceitos",
+  "selectedDiagram": "discentes",
   "defaultDiagram": "All tables"
 }

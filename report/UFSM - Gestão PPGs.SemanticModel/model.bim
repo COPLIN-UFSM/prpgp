@@ -2128,6 +2128,32 @@
                   "Value": "Hidden"
                 }
               },
+              "v_prpgp_discentes_pos.idade_quando_ingressou_no_curso": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Idade quando ingressou no curso"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "idade quando ingressou no curso": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "idade quando ingressou number curso": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.605
+                    }
+                  }
+                ]
+              },
               "v_prpgp_discentes_pos.matrícula": {
                 "Definition": {
                   "Binding": {
@@ -2181,6 +2207,64 @@
                 "Terms": [
                   {
                     "modalidade curso": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.média_idade_ingressante": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Média idade ingressante geral"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média idade ingressante": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Média idade ingressante geral": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.média_idade_ingressante_doutorado": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Média idade ingressante doutorado"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média idade ingressante doutorado": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.média_idade_ingressante_mestrado": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Média idade ingressante mestrado"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "média idade ingressante mestrado": {
                       "State": "Generated"
                     }
                   }
@@ -4540,16 +4624,6 @@
                   {
                     "nome unidade": {
                       "State": "Generated"
-                    }
-                  },
-                  {
-                    "Programa": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
                     }
                   }
                 ]
@@ -7280,6 +7354,39 @@
                 },
                 "State": "Generated"
               },
+              "v_prpgp_discentes_pos_has_idade_quando_ingressou_no_curso": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.idade_quando_ingressou_no_curso"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_idade_quando_ingressou_no_cursos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.idade_quando_ingressou_no_curso": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.idade_quando_ingressou_no_curso"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_prpgp_discentes_pos_has_matrícula": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
@@ -7440,6 +7547,105 @@
                   "v_prpgp_discentes_pos.modalidade_curso": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.modalidade_curso"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_média_idade_ingressante": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.média_idade_ingressante"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_média_idade_ingressante",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.média_idade_ingressante": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.média_idade_ingressante"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_média_idade_ingressante_doutorado": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.média_idade_ingressante_doutorado"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_média_idade_ingressante_doutorado",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.média_idade_ingressante_doutorado": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.média_idade_ingressante_doutorado"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_média_idade_ingressante_mestrado": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.média_idade_ingressante_mestrado"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_média_idade_ingressante_mestrado",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.média_idade_ingressante_mestrado": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.média_idade_ingressante_mestrado"
                     }
                   }
                 },
@@ -10564,6 +10770,20 @@
             "lineageTag": "7aa4be32-f433-4f41-8765-58112fd09ab3",
             "sourceColumn": "Etnia",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Idade quando ingressou no curso",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2fb8d518-e193-438a-8f08-4a8fc5545c7a",
+            "sourceColumn": "Idade quando ingressou no curso",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "68361baf-98db-4955-8b69-d6584362a50b",
@@ -10838,6 +11058,49 @@
             ],
             "formatString": "0",
             "lineageTag": "5b07e03c-802a-45b0-bdca-710220075c71"
+          },
+          {
+            "name": "Média idade ingressante geral",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso])",
+            "lineageTag": "b72bbbef-c0dc-4017-b722-e087803dd69c"
+          },
+          {
+            "name": "Média idade ingressante mestrado",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "CALCULATE(",
+              "    AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso]),",
+              "    V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\"",
+              ")"
+            ],
+            "lineageTag": "313f307b-4e4a-45f1-a55c-5a16786d3cfd"
+          },
+          {
+            "name": "Média idade ingressante doutorado",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "CALCULATE(",
+              "    AVERAGE(V_PRPGP_DISCENTES_POS[Idade quando ingressou no curso]),",
+              "    V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\"",
+              ")"
+            ],
+            "lineageTag": "2b401ca2-c05a-4feb-b046-b23d1085a64d"
           }
         ],
         "partitions": [
@@ -10865,9 +11128,10 @@
                 "else null),",
                 "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Added Custom1\",{{\"Nome aluno\", Text.Proper, type text}}),",
                 "    #\"Filtered Rows\" = Table.SelectRows(#\"Capitalized Each Word\", each true),",
-                "    #\"Capitalized Each Word1\" = Table.TransformColumns(#\"Filtered Rows\",{{\"Etnia\", Text.Proper, type text}})",
+                "    #\"Capitalized Each Word1\" = Table.TransformColumns(#\"Filtered Rows\",{{\"Etnia\", Text.Proper, type text}}),",
+                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Capitalized Each Word1\",{{\"IDADE_INGRESSO\", \"Idade quando ingressou no curso\"}})",
                 "in",
-                "    #\"Capitalized Each Word1\""
+                "    #\"Renamed Columns3\""
               ],
               "type": "m"
             }
