@@ -1476,16 +1476,6 @@
                       "Type": "Noun",
                       "Weight": 0.599
                     }
-                  },
-                  {
-                    "Total discentes": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
                   }
                 ]
               },
@@ -5345,6 +5335,22 @@
                   "Value": "Hidden"
                 }
               },
+              "v_sucupira_conceitos_valore.ano_publicação_conceito": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Ano publicação conceito"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "ano publicação conceito": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
               "v_sucupira_conceitos_valore.codigo_programa_sucupira": {
                 "Definition": {
                   "Binding": {
@@ -5595,6 +5601,58 @@
                   {
                     "percentil programa": {
                       "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.primeiro_ano_publicação_conceito": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Primeiro ano publicação conceito"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "primeiro ano publicação conceito": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Ano da primeira avaliação": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_sucupira_conceitos_valore.último_ano_publicação_conceito": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES",
+                    "ConceptualProperty": "Último ano publicação conceito"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "último ano publicação conceito": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Ano da última avaliação": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -5983,6 +6041,105 @@
                   "v_prpgp_discentes_pos.aluno_ativo_no_intervalo": {
                     "Target": {
                       "Entity": "v_prpgp_discentes_pos.aluno_ativo_no_intervalo"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "d_calendario_has_v_sucupira_conceitos_valore_média_conceito": {
+                "Binding": {
+                  "ConceptualEntity": "dCalendario"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.média_conceito"
+                      },
+                      "Subject": {
+                        "Role": "d_calendario"
+                      }
+                    },
+                    "ID": "d_calendarios_have_média_conceito",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "d_calendario": {
+                    "Target": {
+                      "Entity": "d_calendario"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.média_conceito": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "d_calendario_has_v_sucupira_conceitos_valore_média_conceito_por_área": {
+                "Binding": {
+                  "ConceptualEntity": "dCalendario"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.média_conceito_por_área"
+                      },
+                      "Subject": {
+                        "Role": "d_calendario"
+                      }
+                    },
+                    "ID": "d_calendarios_have_média_conceito_por_área",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "d_calendario": {
+                    "Target": {
+                      "Entity": "d_calendario"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.média_conceito_por_área": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.média_conceito_por_área"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "d_calendario_has_v_sucupira_conceitos_valore_percentil_programa": {
+                "Binding": {
+                  "ConceptualEntity": "dCalendario"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.percentil_programa"
+                      },
+                      "Subject": {
+                        "Role": "d_calendario"
+                      }
+                    },
+                    "ID": "d_calendarios_have_percentil_programa",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "d_calendario": {
+                    "Target": {
+                      "Entity": "d_calendario"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.percentil_programa": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.percentil_programa"
                     }
                   }
                 },
@@ -9780,6 +9937,39 @@
                 },
                 "State": "Generated"
               },
+              "v_sucupira_conceitos_valore_has_ano_publicação_conceito": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.ano_publicação_conceito"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_ano_publicação_conceitos",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.ano_publicação_conceito": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.ano_publicação_conceito"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_sucupira_conceitos_valore_has_conceito": {
                 "Binding": {
                   "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
@@ -10064,6 +10254,39 @@
                 },
                 "State": "Generated"
               },
+              "v_sucupira_conceitos_valore_has_primeiro_ano_publicação_conceito": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.primeiro_ano_publicação_conceito"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_primeiro_ano_publicação_conceito",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.primeiro_ano_publicação_conceito": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.primeiro_ano_publicação_conceito"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "v_sucupira_conceitos_valore_has_v_sucupira_programa": {
                 "Binding": {
                   "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
@@ -10105,6 +10328,39 @@
                   "v_sucupira_programa": {
                     "Target": {
                       "Entity": "v_sucupira_programa"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_sucupira_conceitos_valore_has_último_ano_publicação_conceito": {
+                "Binding": {
+                  "ConceptualEntity": "V_SUCUPIRA_CONCEITOS_VALORES"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_sucupira_conceitos_valore.último_ano_publicação_conceito"
+                      },
+                      "Subject": {
+                        "Role": "v_sucupira_conceitos_valore"
+                      }
+                    },
+                    "ID": "v_sucupira_conceitos_valore_have_último_ano_publicação_conceito",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_sucupira_conceitos_valore": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore"
+                    }
+                  },
+                  "v_sucupira_conceitos_valore.último_ano_publicação_conceito": {
+                    "Target": {
+                      "Entity": "v_sucupira_conceitos_valore.último_ano_publicação_conceito"
                     }
                   }
                 },
@@ -11027,10 +11283,7 @@
           },
           {
             "name": "Taxa de Conclusão",
-            "expression": [
-              "",
-              "DIVIDE([Quantidade titulados], [Quantidade matriculados])"
-            ],
+            "expression": "DIVIDE([Quantidade titulados], [Quantidade matriculados])",
             "formatString": "0%;-0%;0%",
             "lineageTag": "d2f74a02-231c-4b6d-b9c4-0e3b9dc49fde"
           },
@@ -11143,6 +11396,32 @@
               "    )"
             ],
             "lineageTag": "2b401ca2-c05a-4feb-b046-b23d1085a64d"
+          },
+          {
+            "name": "Quantidade evadidos",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]),",
+              "    V_PRPGP_DISCENTES_POS[Forma saída] <> \"Formado\",",
+              "    V_PRPGP_DISCENTES_POS[Forma saída] <> \"Estudante Regular\",",
+              "    (V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\") || (V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\"),",
+              "    ALL(dCalendario)",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "d592c34e-f4d9-4f1b-bfe9-a774e352f21d"
+          },
+          {
+            "name": "Taxa de Evasão",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "DIVIDE([Quantidade evadidos], [Quantidade matriculados])",
+            "lineageTag": "6c27e44c-2007-40b1-a18d-c23d4545f180"
           }
         ],
         "partitions": [
@@ -13440,6 +13719,25 @@
             "lineageTag": "f93ec47b-a1cd-4d14-a7d0-fb62060c7dac",
             "sourceColumn": "Data",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Ano publicação conceito",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0cc2c03d-fd10-40c0-93a9-03efde1fd443",
+            "sourceColumn": "Ano publicação conceito",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "f7253bf6-7abb-49f7-bf9d-1e29105f7cf0",
@@ -13460,13 +13758,30 @@
           },
           {
             "name": "Média conceito",
-            "expression": "AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito])",
-            "formatString": "0.0",
+            "expression": [
+              "",
+              "VAR AnoAtual = SELECTEDVALUE(dCalendario[Ano])",
+              "VAR UltimoAnoPublicacao = MAX(V_SUCUPIRA_CONCEITOS_VALORES[Ano publicação conceito])",
+              "",
+              "RETURN IF(",
+              "    AnoAtual <= UltimoAnoPublicacao,",
+              "    AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
+              "    BLANK()",
+              ")"
+            ],
+            "formatString": "#,0.0",
             "lineageTag": "ea4888c8-583e-4fae-9ffb-a0a8bcfb36f2"
           },
           {
             "name": "Média Conceito por Área",
             "expression": [
+              "",
+              "",
+              "VAR AnoAtual =",
+              "    SELECTEDVALUE(dCalendario[Ano])",
+              "",
+              "VAR UltimoAnoPublicacao =",
+              "    MAX(V_SUCUPIRA_CONCEITOS_VALORES[Ano publicação conceito])",
               "",
               "VAR AreaAtual =",
               "    CALCULATE(",
@@ -13474,13 +13789,20 @@
               "    )",
               "",
               "RETURN",
-              "CALCULATE(",
-              "    AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
-              "    REMOVEFILTERS(V_SUCUPIRA_PROGRAMAS[Nome Programa]),",
-              "    REMOVEFILTERS(IES[Sigla IES]),",
-              "    REMOVEFILTERS(IES[UF]),",
-              "    REMOVEFILTERS(IES[Região]),",
-              "    V_SUCUPIRA_PROGRAMAS[Área de Avaliação] = AreaAtual",
+              "",
+              "IF(",
+              "    AnoAtual <= UltimoAnoPublicacao,",
+              "",
+              "    CALCULATE(",
+              "        AVERAGE(V_SUCUPIRA_CONCEITOS_VALORES[Conceito]),",
+              "        REMOVEFILTERS(V_SUCUPIRA_PROGRAMAS[Nome Programa]),",
+              "        REMOVEFILTERS(IES[Sigla IES]),",
+              "        REMOVEFILTERS(IES[UF]),",
+              "        REMOVEFILTERS(IES[Região]),",
+              "        V_SUCUPIRA_PROGRAMAS[Área de Avaliação] = AreaAtual",
+              "    ),",
+              "",
+              "    BLANK()",
               ")"
             ],
             "formatString": "0.0",
@@ -13534,15 +13856,17 @@
             "name": "Percentil programa",
             "expression": [
               "",
+              "",
               "VAR ProgramaAtual =",
               "    SELECTEDVALUE(",
               "        V_SUCUPIRA_CONCEITOS_VALORES[CODIGO_PROGRAMA_SUCUPIRA]",
               "    )",
               "",
               "VAR AnoAtual =",
-              "    SELECTEDVALUE(",
-              "        V_SUCUPIRA_CONCEITOS_VALORES[Ano]",
-              "    )",
+              "    SELECTEDVALUE(dCalendario[Ano])",
+              "",
+              "VAR UltimoAnoPublicacao =",
+              "    MAX(V_SUCUPIRA_CONCEITOS_VALORES[Ano publicação conceito])",
               "",
               "VAR ConceitoAtual =",
               "    CALCULATE(",
@@ -13578,10 +13902,46 @@
               "    )",
               "",
               "RETURN",
-              "    1 - DIVIDE(ProgramasMelhores, TotalProgramas)"
+              "",
+              "IF(",
+              "    AnoAtual <= UltimoAnoPublicacao,",
+              "    1 - DIVIDE(ProgramasMelhores, TotalProgramas),",
+              "    BLANK()",
+              ")"
             ],
             "formatString": "0%;-0%;0%",
             "lineageTag": "8ede29dc-d2cd-4ef1-a884-38158a3f871a"
+          },
+          {
+            "name": "Último ano publicação conceito",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX(",
+              "        V_SUCUPIRA_CONCEITOS_VALORES[Ano publicação conceito]",
+              "    ),",
+              "    REMOVEFILTERS(",
+              "        dCalendario[Ano]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "ae3c7ca0-4ed0-4123-a40e-ec3007877970"
+          },
+          {
+            "name": "Primeiro ano publicação conceito",
+            "expression": [
+              "CALCULATE(",
+              "    MIN(",
+              "        V_SUCUPIRA_CONCEITOS_VALORES[Ano publicação conceito]",
+              "    ),",
+              "    REMOVEFILTERS(",
+              "        dCalendario[Ano]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "44c02108-1b74-4692-9907-8a9944dab648"
           }
         ],
         "partitions": [
@@ -13594,8 +13954,7 @@
                 "    Source = DB2.Database(\"bi.proj.ufsm.br\", \"bee\", [HierarchicalNavigation=true, Implementation=\"Microsoft\"]),",
                 "    BEE = Source{[Schema=\"BEE\"]}[Data],",
                 "    V_SUCUPIRA_CONCEITOS_VALORES1 = BEE{[Name=\"V_SUCUPIRA_CONCEITOS_VALORES\"]}[Data],",
-                "    #\"Removed Columns\" = Table.RemoveColumns(V_SUCUPIRA_CONCEITOS_VALORES1,{\"ANO_CONCEITO\"}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\",{{\"ANO\", \"Ano\"}, {\"CONCEITO_PROGRAMA\", \"Conceito\"}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(V_SUCUPIRA_CONCEITOS_VALORES1,{{\"ANO\", \"Ano\"}, {\"ANO_CONCEITO\", \"Ano publicação conceito\"}, {\"CONCEITO_PROGRAMA\", \"Conceito\"}}),",
                 "    #\"Inserted Date\" = Table.AddColumn(#\"Renamed Columns\", \"Data\", each Date.From(Text.From([Ano], \"pt-BR\")), type date),",
                 "    #\"Replaced Value\" = Table.ReplaceValue(#\"Inserted Date\",\"E\",\"1\",Replacer.ReplaceText,{\"Conceito\"}),",
                 "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"D\",\"2\",Replacer.ReplaceText,{\"Conceito\"}),",
