@@ -1492,6 +1492,16 @@
                     "ano ingresso": {
                       "State": "Generated"
                     }
+                  },
+                  {
+                    "Ano de ingresso": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -2446,50 +2456,186 @@
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.quantidade_matriculados": {
+              "v_prpgp_discentes_pos.quantidade_discentes_mestrado_e_doutorado": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Quantidade matriculados"
+                    "ConceptualProperty": "Quantidade discentes (mestrado e doutorado)"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "quantidade matriculados": {
+                    "quantidade discentes (mestrado e doutorado)": {
                       "State": "Generated"
+                    }
+                  },
+                  {
+                    "quantidade discentes": {
+                      "State": "Generated",
+                      "Weight": 0.75
                     }
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.quantidade_titulados": {
+              "v_prpgp_discentes_pos.quantidade_discentes_todos": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Quantidade titulados"
+                    "ConceptualProperty": "Quantidade discentes (todos)"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
+                  {
+                    "quantidade discentes (todos)": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "quantidade discentes": {
+                      "State": "Generated",
+                      "Weight": 0.75
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.quantidade_evadidos_mestrado_e_doutorado": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Quantidade evadidos (mestrado e doutorado)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade evadidos (mestrado e doutorado)": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "quantidade evadidos": {
+                      "State": "Generated",
+                      "Weight": 0.75
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.quantidade_titulados_mestrado_e_doutorado": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Quantidade titulados (mestrado e doutorado)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "quantidade titulados (mestrado e doutorado)": {
+                      "State": "Generated"
+                    }
+                  },
                   {
                     "quantidade titulados": {
-                      "State": "Generated"
+                      "State": "Generated",
+                      "Weight": 0.75
                     }
                   }
                 ]
               },
-              "v_prpgp_discentes_pos.taxa_de_conclusão": {
+              "v_prpgp_discentes_pos.taxa_de_conclusão_mestrado_e_doutorado": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
-                    "ConceptualProperty": "Taxa de Conclusão"
+                    "ConceptualProperty": "Taxa de Conclusão (mestrado e doutorado)"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "taxa de conclusão": {
+                    "taxa de conclusão (mestrado e doutorado)": {
                       "State": "Generated"
+                    }
+                  },
+                  {
+                    "taxa de conclusão": {
+                      "State": "Generated",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "Titulados": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.taxa_de_evasão_mestrado_e_doutorado": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Taxa de Evasão (mestrado e doutorado)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "taxa de evasão (mestrado e doutorado)": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "taxa de evasão": {
+                      "State": "Generated",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "Evadidos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "v_prpgp_discentes_pos.taxa_de_matriculados_mestrado_e_doutorado": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "V_PRPGP_DISCENTES_POS",
+                    "ConceptualProperty": "Taxa de matriculados (mestrado e doutorado)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "taxa de matriculados (mestrado e doutorado)": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "taxa de matriculados": {
+                      "State": "Generated",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "Matriculados": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -7907,7 +8053,7 @@
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_quantidade_matriculados": {
+              "v_prpgp_discentes_pos_has_quantidade_discentes_mestrado_e_doutorado": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
                 },
@@ -7915,13 +8061,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_discentes_pos.quantidade_matriculados"
+                        "Role": "v_prpgp_discentes_pos.quantidade_discentes_mestrado_e_doutorado"
                       },
                       "Subject": {
                         "Role": "v_prpgp_discentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_discentes_pos_have_quantidade_matriculados",
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_discentes_mestrado_e_doutorado",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7932,15 +8078,15 @@
                       "Entity": "v_prpgp_discentes_pos"
                     }
                   },
-                  "v_prpgp_discentes_pos.quantidade_matriculados": {
+                  "v_prpgp_discentes_pos.quantidade_discentes_mestrado_e_doutorado": {
                     "Target": {
-                      "Entity": "v_prpgp_discentes_pos.quantidade_matriculados"
+                      "Entity": "v_prpgp_discentes_pos.quantidade_discentes_mestrado_e_doutorado"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_quantidade_titulados": {
+              "v_prpgp_discentes_pos_has_quantidade_discentes_todos": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
                 },
@@ -7948,13 +8094,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_discentes_pos.quantidade_titulados"
+                        "Role": "v_prpgp_discentes_pos.quantidade_discentes_todos"
                       },
                       "Subject": {
                         "Role": "v_prpgp_discentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_discentes_pos_have_quantidade_titulados",
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_discentes_todos",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7965,15 +8111,15 @@
                       "Entity": "v_prpgp_discentes_pos"
                     }
                   },
-                  "v_prpgp_discentes_pos.quantidade_titulados": {
+                  "v_prpgp_discentes_pos.quantidade_discentes_todos": {
                     "Target": {
-                      "Entity": "v_prpgp_discentes_pos.quantidade_titulados"
+                      "Entity": "v_prpgp_discentes_pos.quantidade_discentes_todos"
                     }
                   }
                 },
                 "State": "Generated"
               },
-              "v_prpgp_discentes_pos_has_taxa_de_conclusão": {
+              "v_prpgp_discentes_pos_has_quantidade_evadidos_mestrado_e_doutorado": {
                 "Binding": {
                   "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
                 },
@@ -7981,13 +8127,13 @@
                   {
                     "Attribute": {
                       "Object": {
-                        "Role": "v_prpgp_discentes_pos.taxa_de_conclusão"
+                        "Role": "v_prpgp_discentes_pos.quantidade_evadidos_mestrado_e_doutorado"
                       },
                       "Subject": {
                         "Role": "v_prpgp_discentes_pos"
                       }
                     },
-                    "ID": "v_prpgp_discentes_pos_have_taxa_de_conclusão",
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_evadidos_mestrado_e_doutorado",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -7998,9 +8144,141 @@
                       "Entity": "v_prpgp_discentes_pos"
                     }
                   },
-                  "v_prpgp_discentes_pos.taxa_de_conclusão": {
+                  "v_prpgp_discentes_pos.quantidade_evadidos_mestrado_e_doutorado": {
                     "Target": {
-                      "Entity": "v_prpgp_discentes_pos.taxa_de_conclusão"
+                      "Entity": "v_prpgp_discentes_pos.quantidade_evadidos_mestrado_e_doutorado"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_quantidade_titulados_mestrado_e_doutorado": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.quantidade_titulados_mestrado_e_doutorado"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_quantidade_titulados_mestrado_e_doutorado",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.quantidade_titulados_mestrado_e_doutorado": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.quantidade_titulados_mestrado_e_doutorado"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_taxa_de_conclusão_mestrado_e_doutorado": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.taxa_de_conclusão_mestrado_e_doutorado"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_taxa_de_conclusão_mestrado_e_doutorado",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.taxa_de_conclusão_mestrado_e_doutorado": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.taxa_de_conclusão_mestrado_e_doutorado"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_taxa_de_evasão_mestrado_e_doutorado": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.taxa_de_evasão_mestrado_e_doutorado"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_taxa_de_evasão_mestrado_e_doutorado",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.taxa_de_evasão_mestrado_e_doutorado": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.taxa_de_evasão_mestrado_e_doutorado"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "v_prpgp_discentes_pos_has_taxa_de_matriculados_mestrado_e_doutorado": {
+                "Binding": {
+                  "ConceptualEntity": "V_PRPGP_DISCENTES_POS"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_prpgp_discentes_pos.taxa_de_matriculados_mestrado_e_doutorado"
+                      },
+                      "Subject": {
+                        "Role": "v_prpgp_discentes_pos"
+                      }
+                    },
+                    "ID": "v_prpgp_discentes_pos_have_taxa_de_matriculados_mestrado_e_doutorado",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "v_prpgp_discentes_pos": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos"
+                    }
+                  },
+                  "v_prpgp_discentes_pos.taxa_de_matriculados_mestrado_e_doutorado": {
+                    "Target": {
+                      "Entity": "v_prpgp_discentes_pos.taxa_de_matriculados_mestrado_e_doutorado"
                     }
                   }
                 },
@@ -11256,7 +11534,7 @@
             "lineageTag": "9117a2ab-e18a-4d8b-8824-54d0ef3bc970"
           },
           {
-            "name": "Quantidade matriculados",
+            "name": "Quantidade discentes (todos)",
             "expression": [
               "",
               "CALCULATE(",
@@ -11268,7 +11546,7 @@
             "lineageTag": "c42b2ac2-42d3-4524-ac65-6d1ca5045feb"
           },
           {
-            "name": "Quantidade titulados",
+            "name": "Quantidade titulados (mestrado e doutorado)",
             "expression": [
               "",
               "CALCULATE(",
@@ -11282,8 +11560,8 @@
             "lineageTag": "982b9f11-78df-478f-b197-cb625263d7cd"
           },
           {
-            "name": "Taxa de Conclusão",
-            "expression": "DIVIDE([Quantidade titulados], [Quantidade matriculados])",
+            "name": "Taxa de Conclusão (mestrado e doutorado)",
+            "expression": "DIVIDE([Quantidade titulados (mestrado e doutorado)], [Quantidade discentes (mestrado e doutorado)])",
             "formatString": "0%;-0%;0%",
             "lineageTag": "d2f74a02-231c-4b6d-b9c4-0e3b9dc49fde"
           },
@@ -11398,7 +11676,7 @@
             "lineageTag": "2b401ca2-c05a-4feb-b046-b23d1085a64d"
           },
           {
-            "name": "Quantidade evadidos",
+            "name": "Quantidade evadidos (mestrado e doutorado)",
             "expression": [
               "",
               "CALCULATE(",
@@ -11413,15 +11691,32 @@
             "lineageTag": "d592c34e-f4d9-4f1b-bfe9-a774e352f21d"
           },
           {
-            "name": "Taxa de Evasão",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "expression": "DIVIDE([Quantidade evadidos], [Quantidade matriculados])",
+            "name": "Taxa de Evasão (mestrado e doutorado)",
+            "expression": "DIVIDE([Quantidade evadidos (mestrado e doutorado)], [Quantidade discentes (mestrado e doutorado)])",
+            "formatString": "0%;-0%;0%",
             "lineageTag": "6c27e44c-2007-40b1-a18d-c23d4545f180"
+          },
+          {
+            "name": "Taxa de matriculados (mestrado e doutorado)",
+            "expression": [
+              "",
+              "    1 - ([Taxa de Conclusão (mestrado e doutorado)] + [Taxa de Evasão (mestrado e doutorado)])"
+            ],
+            "formatString": "0%;-0%;0%",
+            "lineageTag": "5e76b377-55e7-4f71-8aad-8b4cab6397cd"
+          },
+          {
+            "name": "Quantidade discentes (mestrado e doutorado)",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(V_PRPGP_DISCENTES_POS[Matrícula]),",
+              "    (V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\") || (V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\"),",
+              "    ALL(dCalendario)",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "3392d120-0ee9-427a-8ae2-a8cd8431f02c"
           }
         ],
         "partitions": [
