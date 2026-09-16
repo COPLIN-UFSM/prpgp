@@ -5766,7 +5766,7 @@
                     }
                   },
                   {
-                    "Ano da primeira avaliação": {
+                    "Ano da primeira nota disponível": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -5792,7 +5792,7 @@
                     }
                   },
                   {
-                    "Ano da última avaliação": {
+                    "Ano da última nota disponível": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
