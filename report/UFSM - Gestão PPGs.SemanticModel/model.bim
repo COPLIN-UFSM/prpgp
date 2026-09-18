@@ -10978,7 +10978,6 @@
         "name": "51a61aa0-037b-93c6-135d-df3b91a1fd98",
         "fromColumn": "ID_UNIDADE_SUP",
         "fromTable": "V_PRPGP_DISCENTES_FLUXO",
-        "isActive": false,
         "toColumn": "ID_UNIDADE_SUP",
         "toTable": "V_PRPGP_PROGRAMAS_POS"
       }
