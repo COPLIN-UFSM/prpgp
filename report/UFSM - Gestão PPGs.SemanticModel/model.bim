@@ -12205,7 +12205,7 @@
               "RETURN",
               "    CALCULATE (",
               "        DISTINCTCOUNT (",
-              "            V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]",
+              "            V_PRPGP_DISCENTES_POS[Matrícula]",
               "        ),",
               "        V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Mestrado\",",
               "        TREATAS (",
@@ -12228,7 +12228,7 @@
               "RETURN",
               "    CALCULATE (",
               "        DISTINCTCOUNT (",
-              "            V_PRPGP_DISCENTES_FLUXO[ID_CURSO_ALUNO]",
+              "            V_PRPGP_DISCENTES_POS[Matrícula]",
               "        ),",
               "        V_PRPGP_DISCENTES_POS[Modalidade curso] = \"Doutorado\",",
               "        TREATAS (",
@@ -13490,6 +13490,12 @@
         "lineageTag": "09ce9bdf-531d-41c7-9f5e-7828f8951882",
         "measures": [
           {
+            "name": "Média Encargos",
+            "expression": "AVERAGE(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
+            "formatString": "#,0.00",
+            "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
+          },
+          {
             "name": "Soma Encargos",
             "annotations": [
               {
@@ -13499,12 +13505,6 @@
             ],
             "expression": "SUM(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
             "lineageTag": "90748280-86ef-4ef5-9762-14c8489a1bf7"
-          },
-          {
-            "name": "Média Encargos",
-            "expression": "AVERAGE(V_PRPGP_ENCARGO_DIDATICO_POS[Encargo didático])",
-            "formatString": "#,0.00",
-            "lineageTag": "c3ab3b8d-e20d-466d-8d0f-afd3ee7da91a"
           },
           {
             "name": "Encargos docentes tabela",
